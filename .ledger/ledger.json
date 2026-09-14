@@ -160,7 +160,28 @@
  "deltas": [],
  "waivers": [],
  "contested": [],
- "probe": null,
+ "probe": {
+  "score": 100,
+  "results": [
+   {
+    "id": "L0",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-flash-0731",
+    "control": "passed"
+   },
+   {
+    "id": "L1",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-flash-0731",
+    "control": "passed"
+   }
+  ],
+  "at": "2026-09-14T23:17:11+00:00"
+ },
  "events": [
   {
    "kind": "init",
@@ -243,6 +264,15 @@
    "at": "2026-09-14T23:05:37+00:00",
    "prev": "09edd8c89b2a2e010b6e346e2dbb8c92de54ab22ca2e4c1c4ce3ceb763649689",
    "receipt": "be9591e55aeba137a37cc9af9f03ef7ae24149be2552396246dbb964b1473074"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 100
+   },
+   "at": "2026-09-14T23:17:11+00:00",
+   "prev": "be9591e55aeba137a37cc9af9f03ef7ae24149be2552396246dbb964b1473074",
+   "receipt": "42a6609a5d57835c4fbc39227e0707e7f6a0ee45abf2d29bba9160d7a84169e2"
   }
  ]
 }
