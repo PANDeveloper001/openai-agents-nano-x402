@@ -1,0 +1,156 @@
+{
+ "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect — no Nano payment logic rebuilt",
+ "repo": "/root/work/openai-agents-nano-x402",
+ "created": "2026-09-14T22:29:41+00:00",
+ "base_commit": null,
+ "ledger_id": "67d65614b8e7d4e4",
+ "laws": [
+  {
+   "id": "L0",
+   "block": 1.0,
+   "statement": "make_nano_x402_tool returns an OpenAI Agents SDK FunctionTool named nano_x402_fetch that reuses feeless402's Wallet, RPC and request_with_payment",
+   "test": "python tests/test_tool.py and confirm a tool named nano_x402_fetch with a function-tool handle is produced and feeless402's request_with_payment is callable via the package",
+   "scope": [
+    "src/*,pyproject.toml"
+   ],
+   "oracle": "cd /root/work/openai-agents-nano-x402 && .venv/bin/python -c \"from openai_agents_nano.tool import make_nano_x402_tool; t=make_nano_x402_tool(); assert t.name=='nano_x402_fetch' or getattr(t,'name','')=='nano_x402_fetch', t.name; print('TOOL_OK',t.name)\"",
+   "expect": "TOOL_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 2,
+   "minted": "2026-09-14T22:38:41+00:00"
+  },
+  {
+   "id": "L1",
+   "block": 1.0,
+   "statement": "dry_run spends nothing and a price above the cap is refused without signing",
+   "test": "called with dry_run=True never spends; server price above the cap returns a refusal string and no block is signed",
+   "scope": [
+    "src/*"
+   ],
+   "oracle": "cd /root/work/openai-agents-nano-x402 && .venv/bin/python tests/fail_closed_offline.py",
+   "expect": "FAIL_CLOSED_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 2,
+   "minted": "2026-09-14T22:39:09+00:00"
+  }
+ ],
+ "blocks": {
+  "1": {
+   "status": "pending",
+   "attempts": [
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L0",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 0,
+        "killed": 0
+       },
+       "judge": "deepseek/deepseek-v4-flash-0731",
+       "control": "passed"
+      },
+      {
+       "id": "L1",
+       "pass": false,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano.egg-info/PKG-INFO:14 '>='→'<'",
+       "mutants": {
+        "total": 6,
+        "killed": 0
+       },
+       "judge": "deepseek/deepseek-v4-flash-0731",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "86c74ec6222fb76b7ce8fb8c0f665fb5f807e13f7f1287793c8e7887cedb9047",
+     "tier": "cheap",
+     "coverage_gaps": [
+      "pyproject.toml",
+      "scope-manifest.json",
+      "tests/fail_closed_offline.py",
+      "tests/test_tool.py"
+     ],
+     "injection": [],
+     "at": "2026-09-14T22:55:29+00:00"
+    }
+   ]
+  }
+ },
+ "deltas": [],
+ "waivers": [],
+ "contested": [],
+ "probe": null,
+ "events": [
+  {
+   "kind": "init",
+   "payload": {
+    "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect — no Nano payment logic rebuilt",
+    "spec": null
+   },
+   "at": "2026-09-14T22:29:41+00:00",
+   "prev": "genesis",
+   "receipt": "66d28f653317bd161cd996843669a7f66e8e1c62892683a532ac534e284b0fb3"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L0",
+    "block": "1",
+    "statement_sha": "1580db760dde20552f035d5eb5cf63148b424b3cdfdda5fcd68c926e03cbfa02"
+   },
+   "at": "2026-09-14T22:38:41+00:00",
+   "prev": "66d28f653317bd161cd996843669a7f66e8e1c62892683a532ac534e284b0fb3",
+   "receipt": "f85f922040a02a798de57b5ada1f8c4d4bceed21f45175624aa3dca4bed6ac23"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L1",
+    "block": "1",
+    "statement_sha": "e1a605b69566cf9330a6e51a25d95ee78b357822bbe6cea6c5bb76f6e74b018c"
+   },
+   "at": "2026-09-14T22:39:09+00:00",
+   "prev": "f85f922040a02a798de57b5ada1f8c4d4bceed21f45175624aa3dca4bed6ac23",
+   "receipt": "3ef88020bff8cc0f92f7e112d9e7557adbd1b5c98f678cbe1af41eabc1e42602"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "1",
+    "ok": false
+   },
+   "at": "2026-09-14T22:55:29+00:00",
+   "prev": "3ef88020bff8cc0f92f7e112d9e7557adbd1b5c98f678cbe1af41eabc1e42602",
+   "receipt": "13f1e5b3bb60476a8ca1677cd9d9ee8bb695a9230fb52752d534a4a774f6c648"
+  },
+  {
+   "kind": "amend",
+   "payload": {
+    "id": "L0",
+    "version": 2
+   },
+   "at": "2026-09-14T22:56:49+00:00",
+   "prev": "13f1e5b3bb60476a8ca1677cd9d9ee8bb695a9230fb52752d534a4a774f6c648",
+   "receipt": "752b07cb86071f73601a014a74e5075b6e38cac57c5881bbee8d6bde0dffcd07"
+  },
+  {
+   "kind": "amend",
+   "payload": {
+    "id": "L1",
+    "version": 2
+   },
+   "at": "2026-09-14T22:57:13+00:00",
+   "prev": "752b07cb86071f73601a014a74e5075b6e38cac57c5881bbee8d6bde0dffcd07",
+   "receipt": "140c367565e9fc1a86329861b0d036a1b157cb8e2e46a8f350aac87327a044eb"
+  }
+ ]
+}

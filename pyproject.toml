@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openai-agents-nano"
+version = "0.1.0"
+description = "Pay any x402-priced HTTP endpoint in self-custodied Nano (XNO) from an OpenAI Agents SDK agent — a thin adapter on the MIT feeless402 client"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["feeless402", "openai-agents"]
+keywords = ["x402", "nano", "xno", "openai-agents", "ai-agents", "micropayments"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/PANDeveloper001/openai-agents-nano-x402"
+Source = "https://github.com/PANDeveloper001/openai-agents-nano-x402"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

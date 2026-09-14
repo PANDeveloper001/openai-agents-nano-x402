@@ -1,0 +1,16 @@
+{
+  "project": "openai-agents-nano-x402",
+  "summary": "A drop-in OpenAI Agents SDK Tool that lets any OpenAI agent pay an x402-priced HTTP endpoint in Nano (XNO) from a self-custodied wallet, reusing the existing Nano x402 rail (feeless402 client + x402nano-exact dialect) instead of rebuilding any payment logic.",
+  "builds": ["openai-agents-tool", "python-sdk"],
+  "target": {
+    "ecosystem": "OpenAI Agents SDK (openai-agents-python)",
+    "audience": "developers building agents with the OpenAI Agents SDK that consume paid HTTP APIs",
+    "why_missing": "The OpenAI Agents SDK's only x402 payment integration, AsterPay, settles in USDC (EVM/Base) only. There is no Nano (XNO) x402 payer or tool for the OpenAI Agents SDK anywhere: OpenAI has an MCP client pay-for-tools flow on EVM USDC, Cloudflare Agents SDK pays EVM USDC, paygraph and x402-agent cover LangGraph/CrewAI with USDC. None speak the Nano x402 dialect. Search for an existing openai-agents Nano adapter (PyPI and GitHub) returns nothing."
+  },
+  "reuses": [
+    "gh-x402nano-exact",
+    "nanodir-feeless402",
+    "nanodir-402nano-org"
+  ],
+  "novelty": "No Nano (XNO) x402 Tool exists for the OpenAI Agents SDK anywhere (verified: no PyPI package openai-agents-nano, agents-nano-x402, x402-nano-agents; every framework x402 payer AsterPay, Cloudflare, paygraph, x402-langchain, AgentSwarm is USDC/EVM-only). This is a thin adapter: it wraps the existing MIT-licensed feeless402 self-custodied Nano client (Wallet + RPC + request_with_payment) as an OpenAI Agents SDK Tool, so OpenAI agents gain a fee-free, instant, self-custody XNO rail that no other framework offers. It reuses the x402nano-exact scheme and the 402nano.org facilitator, and rebuilds none of them."
+}

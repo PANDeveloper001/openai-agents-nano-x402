@@ -1,0 +1,9 @@
+.venv/
+.ledger/tmp/
+__pycache__/
+*.pyc
+*.egg-info/
+nano_wallet*.json
+.wallet.json
+dist/
+build/
