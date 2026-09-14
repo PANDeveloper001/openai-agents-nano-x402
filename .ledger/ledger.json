@@ -38,7 +38,7 @@
  ],
  "blocks": {
   "1": {
-   "status": "pending",
+   "status": "pass",
    "attempts": [
     {
      "kind": "verify",
@@ -81,6 +81,78 @@
      ],
      "injection": [],
      "at": "2026-09-14T22:55:29+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L0",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 0,
+        "killed": 0
+       },
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-flash-0731",
+       "control": "passed"
+      },
+      {
+       "id": "L1",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 0,
+        "killed": 0
+       },
+       "judge": "deepseek/deepseek-v4-flash-0731",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "601714a983e6e62ed496d3396c89045b4ce4724c6550dacd901cf911434f7f8b",
+     "tier": "cheap",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-14T23:05:12+00:00"
+    }
+   ]
+  },
+  "2": {
+   "status": "pending",
+   "attempts": [
+    {
+     "kind": "unwind",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L0",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-flash-0731",
+       "control": "passed"
+      },
+      {
+       "id": "L1",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-flash-0731",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "601714a983e6e62ed496d3396c89045b4ce4724c6550dacd901cf911434f7f8b",
+     "tier": "cheap",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-14T23:05:37+00:00"
     }
    ]
   }
@@ -151,6 +223,26 @@
    "at": "2026-09-14T22:57:13+00:00",
    "prev": "752b07cb86071f73601a014a74e5075b6e38cac57c5881bbee8d6bde0dffcd07",
    "receipt": "140c367565e9fc1a86329861b0d036a1b157cb8e2e46a8f350aac87327a044eb"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "1",
+    "ok": true
+   },
+   "at": "2026-09-14T23:05:12+00:00",
+   "prev": "140c367565e9fc1a86329861b0d036a1b157cb8e2e46a8f350aac87327a044eb",
+   "receipt": "09edd8c89b2a2e010b6e346e2dbb8c92de54ab22ca2e4c1c4ce3ceb763649689"
+  },
+  {
+   "kind": "unwind",
+   "payload": {
+    "block": "2",
+    "ok": true
+   },
+   "at": "2026-09-14T23:05:37+00:00",
+   "prev": "09edd8c89b2a2e010b6e346e2dbb8c92de54ab22ca2e4c1c4ce3ceb763649689",
+   "receipt": "be9591e55aeba137a37cc9af9f03ef7ae24149be2552396246dbb964b1473074"
   }
  ]
 }
