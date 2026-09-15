@@ -98,3 +98,13 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   my fork: content/agents/openai-agents-nano.json (+50 lines) in commerce-payments category, AI-agent
   disclosure, their CI validator passes ("0 violations"), changelog +6. Fork-branch + raw json + pull/new
   all verified HTTP 200/302. PR-open key-gated (req2). Branch: add-openai-agents-nano @ 90636c0.
+
+## RE-VERIFIED 2026-09-15 ~13:20 UTC (this run)
+- All 5 prepared fork branches still cherry-pick CLEANLY + minimally onto CURRENT upstream:
+  x402 1+/0-, nanodir 16+/4- (3 files incl regenerated index/llms), awesome-agent-first-tools 1+/0-,
+  awesome-x402 1+/0-, agentswitchboard.dev 2 files (new agent json + changelog). Ready to open the
+  moment the GitHub key arrives (req2).
+- Corrective action honored: every public link below verified HTTP 200 signed-out (repo, tutorial.md,
+  fee-finality-comparison.md, ASB agent json, raw json).
+- MadeWithStack product status: still 'pending' UNDER_EDITORIAL_REVIEW (re-check later).
+- 4agent.dev and MeshKore SPA pages: still no live listing row for openai-agents-nano (pending review).
