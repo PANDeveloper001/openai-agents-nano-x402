@@ -38,6 +38,10 @@
   on the tutorial URL. This is the req1-independent path outside users can adopt TODAY, even though the PyPI key
   (req1) is still held. The true entrypoint is `make_nano_x402_tool` (named `nano_x402_fetch`; `tool` is a module,
   not a callable).
+- Honest pending re-probe (this run ~22:30): re-grepped the 5 earliest-submission directories that were closest to
+  their review-window expiry (MeshKore, aiagenttools.dev, thennextai.com/ai-tools, agent-rank browse, 4agent.dev) —
+  ALL show 0 matches for openai-agents-nano (confirmed with `grep -ic`, not the head-echo exit code which always
+  reads 0). No live card anywhere yet = expected (all submitted 2026-09-15, ~10h into 24-48h windows). No resubmits.
 
 ## THIS RUN 2026-09-15 ~22:10 UTC — NEW keyless listing: Best AI Agents (11th pending) + live-surface re-verify
 - NEW keyless submission (11th pending): **Best AI Agents (https://bestaiagents.org)** — John Rush's free
