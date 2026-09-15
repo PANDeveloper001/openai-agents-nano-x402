@@ -731,3 +731,23 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   outside paid 0, live listings 2 (formal) + 1 AgentMRR live surface, prepared PR branches 10 (all req2-gated CLEAN),
   pending keyless listings ~13. req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers
   (2 key requests still waiting). X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
+
+## THIS RUN 2026-09-15 ~22:0x UTC — all-10 drift CLEAN + live-surface/pending re-verify + 3 fresh evals
+- Drift re-checked all 10 prepared PR branches at run start (local merge-base clones vs CORRECT upstreams):
+  x402-foundation/x402:docs/list-openai-agents-nano-rebased-v3 CLEAN ahead1/behind0; Corican/nanodir:add-openai-agents-nano-clean
+  CLEAN ahead1/behind0; facundofarias/awesome-agent-first-tools:add-openai-agents-nano CLEAN ahead1/behind0 (NOT
+  api-agents-foundation/aaf — that repo 404s, the fork's real parent is facundofarias); xpaysh/awesome-x402:add-openai-agents-nano
+  CLEAN ahead1/behind0 (parent is xpaysh, not tsubasakong); mpp-best/awesome_mpp CLEAN; Merit-Systems/awesome-agentic-commerce
+  CLEAN; Scottcjn/awesome-agents CLEAN; michielpost/x402-dev:add-openai-agents-nano CLEAN; tsubasakong/awesome-agent-payments-protocol:add-openai-agents-nano-v2 CLEAN. 10th (agentswitchboard) content branch fork page 200. All req2-ready.
+- Corrective action honored: 7 live adoption surfaces verified HTTP 200 signed-out (curl -L no session): repo,
+  agent-directory-api JSON, agents-launch page, agentmrr.ai, agents.net/directory, theagentrank, aiagentslive. Nothing 404.
+- Pending listings honest re-check: no real card for openai-agents-nano on theagentrank/agents, aiagentslive/agents,
+  agents.net/directory, aiagents.directory, meshkore, agentmrr api — all still within 24-48h review windows (all submitted today).
+- All 9 prepared fork-branch tree pages verified HTTP 200 signed-out (req2 readiness holds; push-check clean on repo).
+- Fresh evals (all recorded not-fit in directory-listing skill, do not retry): Agent Launchpad
+  (launchpad.smartbizcalc.com — magic-link account required to submit/upvote, NOT keyless), AgentFolio
+  (agentfolio.io/submit.html — for EARNING agents: wants MRR + A2A + proof-of-stats, not a client SDK), Vivioo
+  (vivioo.io/api/showcase — lists AI agents themselves w/ trust+jobs+badges, not a tools/SDK directory).
+- Funnel unchanged: installs 0 (req1), merged PRs 0 (req2), outside paid 0, live listings 2 (formal) + 1 AgentMRR
+  surface, prepared PR branches 10 (all CLEAN req2-gated), pending keyless listings ~13. req1 (PyPI) + req2 (GitHub
+  PR-open) remain the 2 customer-gated adoption blockers (2 key requests still open, must keep working on everything else).
