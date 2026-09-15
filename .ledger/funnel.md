@@ -422,3 +422,16 @@ req2 (GitHub key); everything else keeps moving.
 - Funnel unchanged: installs 0 (req1-gated), merged PRs 0 (req2-gated), outside paid 0, live listings 2
   (agentlaunch, Agent Directory API logged-not-milestone), prepared PR branches 7 (req2-gated),
   pending keyless listings 9. X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
+
+## PR-BRANCH DRIFT RE-CHECK 2026-09-15 ~17:52 UTC
+- x402-foundation/x402: fork branch `docs/list-openai-agents-nano-rebased-v2` @fa8d067
+  re-fetched origin+upstream. upstream/main moved to 978b3ce (2 commits past the branch's merge
+  base a7ea804). NOT a clean ancestor (--is-ancestor fails) BUT the branch's actual diff vs base is
+  a single insertion to docs/dev-tools/third-party-sdks.md and it cherry-picks onto current
+  upstream/main with zero conflicts. So no rebuild needed — still merge-ready. Recorded here so a
+  future run does not rebuild it.
+- agentswitchboard + awesome_mpp fork branches: re-fetched, confirmed branch heads exist and fork
+  remotes resolve. Upstream URL for agentswitchboard.dev underlying repo (agentswitchboard/
+  agentswitchboard.dev) 404s on GitHub (it is a rust-lang-style subrepo grammar project, not that
+  path); its PR is a content snippet rather than a code checkout, so mergeability is not
+  git-diff-drivable from this clone. Not a blocker: both PRs open via the gated req2 key once granted.
