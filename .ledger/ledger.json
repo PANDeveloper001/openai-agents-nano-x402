@@ -2,7 +2,7 @@
  "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect — no Nano payment logic rebuilt",
  "repo": "/root/work/openai-agents-nano-x402",
  "created": "2026-09-14T22:29:41+00:00",
- "base_commit": "efb40ea00768e4b422bda36626d00886d600047a",
+ "base_commit": "04fa6fae61ac34ac49e1fc08d851278bbafed2c5",
  "ledger_id": "67d65614b8e7d4e4",
  "laws": [
   {
@@ -181,6 +181,38 @@
    "grounding": "oracle",
    "version": 1,
    "minted": "2026-09-15T01:59:52+00:00"
+  },
+  {
+   "id": "L11",
+   "block": 3.0,
+   "statement": "A redeem result is never headed PAID unless the ledger confirmed settlement, block and verdict shown honestly",
+   "test": "tests/receipt_honesty_offline.py prints RECEIPT_HONESTY_OK when labels and verdicts are truthful",
+   "scope": [
+    "src/*",
+    "tests/*"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/receipt_honesty_offline.py",
+   "expect": "RECEIPT_HONESTY_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T02:39:33+00:00"
+  },
+  {
+   "id": "L12",
+   "block": 3.0,
+   "statement": "A redeem whose merchant never replied reports the signed block and ledger verdict so the agent never re-pays blind",
+   "test": "tests/payment_failure_honesty_offline.py prints PAYMENT_FAILURE_HONESTY_OK when unreachable-reply receipts keep the block and verdict",
+   "scope": [
+    "src/*",
+    "tests/*"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/payment_failure_honesty_offline.py",
+   "expect": "PAYMENT_FAILURE_HONESTY_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T02:40:02+00:00"
   }
  ],
  "blocks": {
@@ -980,6 +1012,10 @@
      "at": "2026-09-15T02:03:35+00:00"
     }
    ]
+  },
+  "3": {
+   "status": "pending",
+   "attempts": []
   }
  },
  "deltas": [],
@@ -1550,6 +1586,38 @@
    "at": "2026-09-15T02:04:47+00:00",
    "prev": "f8cd45743f4293294af1fd17184aabd88bd401c3d85ceb6b11c4e580f9bf94dc",
    "receipt": "14d70be3cbdf1ab52d6b651eb4f97077df74c530aca647fa058cb14fab20bc81"
+  },
+  {
+   "kind": "rebase",
+   "payload": {
+    "base_commit": "04fa6fae61ac34ac49e1fc08d851278bbafed2c5",
+    "why": "re-anchor before block 3 so changed_files reflects only block-3 edits"
+   },
+   "at": "2026-09-15T02:37:59+00:00",
+   "prev": "14d70be3cbdf1ab52d6b651eb4f97077df74c530aca647fa058cb14fab20bc81",
+   "receipt": "864f9ce0ec7b81a315c552c3fa20185f9ca44e6d645eb940b84a8833e7236ec3"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L11",
+    "block": "3",
+    "statement_sha": "92493d91bc4ed22745d117f4fe40db5d8682bd8e755b4ff68b18d3d43e37534d"
+   },
+   "at": "2026-09-15T02:39:33+00:00",
+   "prev": "864f9ce0ec7b81a315c552c3fa20185f9ca44e6d645eb940b84a8833e7236ec3",
+   "receipt": "0861c2f7d82468963c3c37d9f0f01dca3305304ce56d5885436bd5d9f7421b66"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L12",
+    "block": "3",
+    "statement_sha": "066da39a67dfda0c965e6ff289dab4229eeef0a6e35dbaa2d6525c1876421407"
+   },
+   "at": "2026-09-15T02:40:02+00:00",
+   "prev": "0861c2f7d82468963c3c37d9f0f01dca3305304ce56d5885436bd5d9f7421b66",
+   "receipt": "a9cbd7c8e392d2d634cde9f6af9e8790dc70c54ac5e2b4cb2442bf2070a544e0"
   }
  ]
 }

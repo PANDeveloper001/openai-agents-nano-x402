@@ -32,7 +32,7 @@ except Exception:  # pragma: no cover - optional dependency
 
 from nano_pay.rpc import RPC
 from nano_pay.wallet import Wallet
-from nano_pay.x402 import request_with_payment
+from nano_pay.x402 import PaidRequestFailed, request_with_payment
 from nano_pay import xno_to_raw, raw_to_xno
 
 DEFAULT_WALLET_ENV = "X402_WALLET_PATH"
@@ -159,8 +159,22 @@ def _format_cap_refusal(price_xno: str, cap_xno: str) -> str:
 
 
 def _format_receipt(resp, receipt: dict, cap_xno: str) -> str:
+    """Render a redeem result with a truthful head line.
+
+    Only a ledger-confirmed payment may be headed PAID. A block the ledger
+    does not hold (settled False) or whose verdict is indeterminate must never
+    read as paid: the block hash and verdict are always shown so a caller can
+    check before ever paying again.
+    """
+    settled = receipt.get("settled")
+    if settled is True:
+        headline = "PAID (Nano x402):"
+    elif settled is False:
+        headline = "NOT PAID (Nano x402) - ledger does not hold the block:"
+    else:
+        headline = "UNCONFIRMED (Nano x402) - verdict indeterminate; check the block hash before paying again:"
     lines = [
-        "PAID (Nano x402):",
+        headline,
         f"  status:    {resp.status_code}",
         f"  amount:    {receipt.get('amount_xno')} XNO  (cap {cap_xno})",
         f"  pay_to:    {receipt.get('pay_to')}",
@@ -178,6 +192,36 @@ def _format_receipt(resp, receipt: dict, cap_xno: str) -> str:
         body = ""
     body = (body or "").strip()
     lines.append(body[:4000] if body else "  (empty response body)")
+    return "\n".join(lines)
+
+
+def _format_failed_payment(exc: "PaidRequestFailed", cap_xno: str) -> str:
+    """A signed block was handed to the merchant but no reply came back.
+
+    Never a generic error that hides the block: the money may well have
+    moved. Surface the signed block hash and the ledger verdict and tell the
+    caller to re-present the SAME block, never to pay again blind.
+    """
+    rec = exc.receipt or {}
+    block = rec.get("block") or "?"
+    amount = rec.get("amount_xno") or "?"
+    settled = rec.get("settled")
+    ledger = rec.get("ledger")
+    lines = [
+        f"PAYMENT OUTCOME UNKNOWN (Nano x402) - merchant did not reply:",
+        f"  block:     {block}",
+        f"  amount:    {amount} XNO  (cap {cap_xno})",
+        f"  settled:   {settled}",
+        f"  ledger:    {ledger}",
+    ]
+    note = rec.get("note")
+    if note:
+        lines.append(f"  note:      {note}")
+    lines.append(
+        "  action:    do NOT pay again; this block may already be on the ledger. "
+        f"Re-present the SAME block {block} to collect your resource, or ask the "
+        "merchant about it before paying anything else."
+    )
     return "\n".join(lines)
 
 
@@ -284,6 +328,11 @@ def make_nano_x402_tool(
                     dry_run=False,
                     **req_kwargs,
                 )
+            except PaidRequestFailed as e:
+                # A signed block is in the merchant's hands with no reply: the
+                # money may have moved. Never swallow this into a generic
+                # "failed" that invites a blind re-pay.
+                return _format_failed_payment(e, cap_xno)
             except Exception as e:
                 return f"ERROR: payment or request failed: {e}"
             receipt = receipt or {}
