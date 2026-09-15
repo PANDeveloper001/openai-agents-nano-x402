@@ -1,32 +1,25 @@
-"""Thin OpenAI Agents SDK adapter that reuses feeless402's Nano client.
+"""Thin OpenAI Agents SDK adapter reusing feeless402's Nano client.
 
 `make_nano_x402_tool(...)` returns an OpenAI Agents SDK `FunctionTool` named
-`nano_x402_fetch`. It binds a self-custodied Nano `Wallet` and an `RPC` once at
-construction — the model never sees a wallet path, seed or RPC URL. Every spend
-goes through feeless402's `request_with_payment`, so no Nano payment logic is
-rebuilt here.
+`nano_x402_fetch`, binding a self-custodied `Wallet` plus an `RPC` at
+construction; the model never sees a wallet path, seed, plain RPC URL.
 
-Tool behaviour
---------------
-- `dry_run=True` is spendless: it runs `request_with_payment(dry_run=True)`,
-  which stops after the server's 402 quote, and returns agent-readable quote
-  text (price, pay_to, cap) without signing or broadcasting anything.
-- `dry_run=False` first reads the spendless quote, and refuses with a plain
-  refusal string (not an exception the model can loop around) if the price is
-  above the applied cap. Only then does it call `request_with_payment(...)`,
-  which signs locally, retries with the payment header, and verifies on the
-  ledger. The applied cap is `min(max_xno, default_max_xno)`.
-- Payments that share one wallet are serialised with an `asyncio.Lock`
-  (Nano blocks are stateful and non-replayable: parallel sends from one wallet
-  would race on the frontier/nonce), exactly as the design requires.
-- The return value is agent-readable text: on success a receipt with status,
-  body, amount_xno, pay_to, block, settled, ledger, note; on a cap refusal a
-  short refusal.
+This is two-phase, so an agent only ever pays an offer it has seen:
+`dry_run=true` returns a spendless quote plus a single-use `quote_token`
+bound to that exact offer.  `dry_run=false` refuses unless a valid,
+unspent, matching token returns (missing, stale, replayed, re-offered
+tokens get refused prior to signing).  A valid token is consumed, then
+feeless402 signs locally, then verifies on the ledger.  The cap is
+`min(max_xno, default)`.  Payments sharing one wallet are serialised
+behind an `asyncio.Lock` since Nano blocks are stateful, non-replayable.
+The return value is always agent-readable text.
 """
 from __future__ import annotations
 
 import asyncio
 import os
+import secrets
+import time
 from decimal import Decimal
 from pathlib import Path
 from typing import Optional
@@ -45,10 +38,54 @@ from nano_pay import xno_to_raw, raw_to_xno
 DEFAULT_WALLET_ENV = "X402_WALLET_PATH"
 DEFAULT_WALLET_PATH = "~/.nano-pay/wallet.json"
 DEFAULT_MAX_XNO = os.environ.get("X402_MAX_XNO", "0.01")  # hard default cap
+QUOTE_TOKEN_TTL_S = 60 * 30  # a preview is only good for half an hour
 
 
 class NanoX402ToolError(Exception):
     """Raised only for conditions the tool cannot represent as text."""
+
+
+class QuoteTokenStore:
+    """Single-use, expiring quote tokens bound to an exact quoted offer.
+
+    A token is minted on `dry_run=true` against the offer the server just
+    quoted, and is consumed on the first successful redeem. A token is either
+    VALID (present, unexpired, pay_to plus amount match the offer the redeem
+    is about to pay, so the redeemer saw exactly this offer) or REFUSED
+    (missing-token, stale, already-used, offer-changed).  Thread-safety comes
+    from the tool serialising payments behind a single asyncio.Lock, so a
+    dict is sufficient here.
+    """
+
+    def __init__(self, ttl_s: float = QUOTE_TOKEN_TTL_S, now=None):
+        self.ttl_s = ttl_s
+        self._now = now or time.time
+        self._tokens = {}  # token -> (pay_to, amount_raw, expires)
+
+    def mint(self, pay_to: str, amount_raw: int) -> str:
+        token = secrets.token_urlsafe(24)
+        self._tokens[token] = (
+            str(pay_to),
+            int(amount_raw),
+            self._now() + self.ttl_s,
+        )
+        return token
+
+    def reject(self, token: str, pay_to: str, amount_raw: int) -> Optional[str]:
+        """Return a refusal reason if ``token`` cannot redeem this offer, else None."""
+        if not token:
+            return "missing"
+        rec = self._tokens.get(token)
+        if rec is None:
+            return "invalid-or-used"
+        bound_pay_to, bound_amount, expires = rec
+        if self._now() > expires:
+            self._tokens.pop(token, None)
+            return "expired"
+        if str(pay_to) != bound_pay_to or int(amount_raw) != bound_amount:
+            return "offer-changed"
+        self._tokens.pop(token, None)  # single-use: consumed here
+        return None
 
 
 def _wallet_path(wallet_path: Optional[str]) -> str:
@@ -71,17 +108,47 @@ def _apply_cap(requested: Optional[str], default: str) -> Decimal:
     return cap
 
 
-def _format_quote(quote: dict, cap_xno: str) -> str:
-    return (
-        "QUOTE (dry run, nothing spent):\n"
-        f"  price:  {quote.get('amount_xno')} XNO\n"
-        f"  pay_to: {quote.get('pay_to')}\n"
-        f"  cap:    {cap_xno} XNO (refusing to pay more than this)\n"
-        "Call again with dry_run=false to pay this amount."
-    )
+def _format_quote(quote: dict, cap_xno: str, token: Optional[str]) -> str:
+    lines = [
+        "QUOTE (dry run, nothing spent):",
+        f"  price:  {quote.get('amount_xno')} XNO",
+        f"  pay_to: {quote.get('pay_to')}",
+        f"  cap:    {cap_xno} XNO (refusing to pay more than this)",
+        "Call again with dry_run=false, passing the quote_token below, to pay",
+        "this exact offer.",
+    ]
+    if token:
+        lines.append(f"  quote_token: {token}")
+    return "\n".join(lines)
 
 
-def _format_refusal(price_xno: str, cap_xno: str) -> str:
+_REFUSAL_REASONS = {
+    "missing": (
+        "REFUSED: no quote token. Call dry_run=true first to preview the offer "
+        "and receive a single-use quote_token, then redeem with dry_run=false "
+        "and that token."
+    ),
+    "invalid-or-used": (
+        "REFUSED: the quote token is invalid or already used. Call dry_run=true "
+        "to mint a fresh quote_token."
+    ),
+    "expired": (
+        "REFUSED: the quote token has expired. Call dry_run=true to re-preview "
+        "and mint a fresh quote_token."
+    ),
+    "offer-changed": (
+        "REFUSED: the endpoint changed its price or pay_to since your preview. "
+        "Call dry_run=true again to re-preview the new offer and mint a fresh "
+        "quote_token."
+    ),
+}
+
+
+def _format_refusal(reason: str) -> str:
+    return _REFUSAL_REASONS.get(reason, f"REFUSED: {reason}")
+
+
+def _format_cap_refusal(price_xno: str, cap_xno: str) -> str:
     return (
         "REFUSED: the endpoint's price is above your cap.\n"
         f"  price: {price_xno} XNO\n"
@@ -118,6 +185,7 @@ def make_nano_x402_tool(
     wallet_path: Optional[str] = None,
     rpc: Optional[RPC] = None,
     default_max_xno: Optional[str] = None,
+    token_store: Optional[QuoteTokenStore] = None,
 ) -> FunctionTool:
     """Return an OpenAI Agents SDK FunctionTool named ``nano_x402_fetch``.
 
@@ -126,6 +194,7 @@ def make_nano_x402_tool(
     rpc: a feeless402 ``RPC``. Default: a fresh ``RPC()`` against public nodes.
     default_max_xno: the hard cap when the model does not pass one. Default:
       the ``X402_MAX_XNO`` env var, else 0.01 XNO.
+    token_store: normally omitted (one is created per tool). Injectable for tests.
     """
     if function_tool is None:  # pragma: no cover - optional dependency
         raise ImportError(
@@ -136,16 +205,19 @@ def make_nano_x402_tool(
     rpc = rpc or RPC()
     default_cap = str(default_max_xno or DEFAULT_MAX_XNO)
     lock = asyncio.Lock()
+    tokens = token_store or QuoteTokenStore()
 
     @function_tool(
         name_override="nano_x402_fetch",
         description_override=(
             "Fetch an HTTP resource that requires an x402 payment, paying in "
-            "self-custodied Nano (XNO). Use dry_run=true first to see the price "
-            "and the cap (nothing is spent). If the price is below the cap and "
-            "you intend to pay, call with dry_run=false: it pays from the "
-            "configured wallet and returns the resource body plus the on-ledger "
-            "receipt. Never pay more than necessary; keep max_xno small."
+            "self-custodied Nano (XNO). Two-phase: first call with dry_run=true "
+            "to preview the price, pay_to and cap and receive a single-use "
+            "quote_token (nothing is spent). Then, only if the price is within "
+            "an acceptable cap and you intend to pay, call with dry_run=false, "
+            "passing that exact quote_token back — it pays from the configured "
+            "wallet and returns the resource body plus the on-ledger receipt. "
+            "Never pay more than necessary; keep max_xno small."
         ),
     )
     async def _nano_x402_fetch(
@@ -154,6 +226,7 @@ def make_nano_x402_tool(
         json_body: str = "",
         max_xno: Optional[str] = None,
         dry_run: bool = False,
+        quote_token: Optional[str] = None,
     ) -> str:
         if not wallet.exists():
             wallet.create()
@@ -187,15 +260,21 @@ def make_nano_x402_tool(
             if dry_run:
                 if quote is None:
                     return f"NOTE: {url} returned {_resp.status_code}, not a 402 x402 quote; nothing spent."
-                return _format_quote(quote, cap_xno)
+                token = tokens.mint(quote.get("pay_to") or "", quote.get("amount_raw") or 0)
+                return _format_quote(quote, cap_xno, token)
 
-            # Not dry_run: confirm the price is within the applied cap before signing.
+            # Not dry_run: two-phase redeem. The agent must hold a single-use
+            # quote token minted against the exact offer it is about to pay.
+            if quote is None:
+                return f"NOTE: {url} returned {_resp.status_code}, not a 402 x402 quote; nothing spent."
+            reason = tokens.reject(quote_token or "", quote.get("pay_to") or "", quote.get("amount_raw") or 0)
+            if reason is not None:
+                return _format_refusal(reason)
+
+            # The quoted offer is authorised; enforce the cap before signing.
             price_raw = int(quote.get("amount_raw") or 0)
-            if quote is None or price_raw > cap_raw:
-                return _format_refusal(
-                    raw_to_xno(price_raw) if quote else "?",
-                    cap_xno,
-                )
+            if price_raw > cap_raw:
+                return _format_cap_refusal(raw_to_xno(price_raw), cap_xno)
 
             try:
                 resp, receipt = await asyncio.to_thread(
@@ -213,4 +292,4 @@ def make_nano_x402_tool(
     return _nano_x402_fetch
 
 
-__all__ = ["make_nano_x402_tool", "NanoX402ToolError"]
+__all__ = ["make_nano_x402_tool", "QuoteTokenStore", "NanoX402ToolError"]

@@ -38,8 +38,9 @@ agent = Agent(
     name="Paying agent",
     instructions=(
         "You can buy from paid x402 APIs. Always call nano_x402_fetch with "
-        "dry_run=true first to see the price; only call with dry_run=false "
-        "if the price is within an acceptable cap."
+        "dry_run=true first to see the price and get its quote_token; only "
+        "call with dry_run=false, passing that quote_token back, if the "
+        "price is within an acceptable cap."
     ),
     tools=[tool],
 )
@@ -50,28 +51,37 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
 ### Tool behaviour
 
 - One tool, `nano_x402_fetch(url, method="GET", json_body="", max_xno=None,
-  dry_run=False)`.
-- **`dry_run=true` is spendless**: reads the server's 402 quote and returns the
-  price, pay_to and cap as agent-readable text. Never signs or broadcasts.
-- **`dry_run=false`**: re-reads the quote, and refuses (plain refusal string,
-  not an exception) if the price exceeds `min(max_xno, default cap)`. Only then
-  signs locally via feeless402, retries with the payment header, and verifies
-  on the ledger before returning a receipt (status, body, amount_xno, pay_to,
-  block, settled, ledger, note).
+  dry_run=False, quote_token=None)`.
+- **Two-phase**, so an agent only ever pays an offer it has actually seen:
+  - **`dry_run=true` is spendless**: reads the server's 402 quote and returns
+    the price, pay_to and cap as agent-readable text, plus a **single-use
+    `quote_token`** binding that exact offer. Never signs or broadcasts.
+  - **`dry_run=false` (redeem)**: re-reads the quote and refuses with a plain
+    refusal string (not an exception) unless a valid, unspent `quote_token`
+    matching the current offer is passed back. A missing, expired, reused or
+    offer-changed token is refused before anything is signed. A valid token is
+    consumed (single-use), then feeless402 signs locally, retries with the
+    payment header, and verifies on the ledger before the tool returns a
+    receipt (status, body, amount_xno, pay_to, block, settled, ledger, note).
 - Payments are serialised behind an `asyncio.Lock`: Nano blocks are stateful
   and non-replayable, so one wallet never sends concurrently.
 
 ## Safety
 
 - The wallet path and RPC are construction-bound; the model sees neither.
+- **Single-use quote tokens** stop an agent from paying a quote it never
+  previewed, and stop an endpoint from changing pay_to/price between the
+  preview and the redeem (an irreversible Nano block is only ever authorised
+  against the offer the agent was shown).
 - Per-call cap enforced in deterministic code before any signing.
 - Self-custodied: your seed stays on disk; nothing here holds your funds.
 
 ## Tests
 
 ```bash
-python -m pytest -q          # structural
-python tests/fail_closed_offline.py   # L1: dry_run spends nothing, over-cap refused
+python -m pytest -q                          # structural
+python tests/fail_closed_offline.py          # L1: dry_run spends nothing, over-cap refused
+python tests/two_phase_offline.py            # L2/L3: single-use token gate + offer-change refusal
 ```
 
 ## License

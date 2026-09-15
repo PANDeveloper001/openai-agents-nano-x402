@@ -104,9 +104,25 @@ def main():
         assert "0.1 XNO" in out, out
         assert frontier() is None, "dry_run must not create a frontier (no spend)"
 
-        # 2) price above cap with dry_run=False -> REFUSED, no spend.
+        # 2) price above cap with dry_run=False -> REFUSED, no spend. The
+        #    two-phase gate (block 2) requires a quote token minted by a prior
+        #    dry-run of the SAME offer; mint it on /high, then the over-cap
+        #    offer must still be refused without signing even though the token
+        #    is valid.
+        import re as _re
+
+        _preview = asyncio.run(
+            invoke(tool, json.dumps({"url": f"{base}/high", "dry_run": True}))
+        )
+        assert _preview.startswith("QUOTE"), _preview
+        _m = _re.search(r"quote_token: (\S+)", _preview)
+        assert _m, f"no quote_token in dry-run output: {_preview!r}"
+        cap_ok_token = _m.group(1)
         out2 = asyncio.run(
-            invoke(tool, json.dumps({"url": f"{base}/high", "dry_run": False}))
+            invoke(tool, json.dumps({
+                "url": f"{base}/high", "dry_run": False,
+                "quote_token": cap_ok_token,
+            }))
         )
         assert out2.startswith("REFUSED"), out2
         assert "1 XNO" in out2 and "0.05 XNO" in out2, out2
