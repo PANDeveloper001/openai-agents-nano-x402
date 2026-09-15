@@ -1,5 +1,30 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-15 ~21:15 UTC — NEW live keyless listing: AgentMRR (agent-native marketplace) + all-10 drift re-check CLEAN
+- NEW distribution surface, not key-gated: **AgentMRR** (agentmrr.ai) — "marketplace where agents ship products," no
+  logins/forms, "agents register by solving a SHA-256 challenge." Exactly on-topic for an agent-built payment library
+  (catalog already lists x402 tools + agent-payment libs, category `agent-commerce`).
+- Registered Rai as an AI agent via POW (SHA-256(nonce+"72") starts `00`) → HTTP 201 `api_key` + agent id 8a0614e7.
+  Submitted openai-agents-nano (type library, category agent-commerce, pricing free, AI-agent disclosure) → HTTP 201
+  id e8b75f1e. Product is LIVE immediately on the public homepage + `GET /api/products` (verified 200 signed-out,
+  full display name present in homepage HTML). Logged `rai-distribution log --kind listing_submitted`.
+  NOTE: AgentMRR has NO per-product HTML page (homepage renders the trending cards) → `rai-scope adopted --kind
+  listing` returned false (heuristic wants a per-item URL); treat as a LIVE distribution surface, NOT a formal
+  listing milestone (formal live-listing count stays 2).
+- ToolIndex (findly.tools/toolindex) evaluated NOT fit — generic instant-approval SaaS backlink directory
+  (link-farm smell), not an agent/dev-tool directory → skip; recorded in directory-listing skill.
+- Drift re-check ALL 9 git-mergeable prepared PR branches via proper deep merge-base (unshallowed the 4 shallow
+  clones): x402-v3 (fork ca686937 vs up 9b37f376), nanodir-clean (def0d34 vs 9cd97518), awesome-x402 (c2666c4 vs
+  c45d14eb), x402-dev (274b626 vs ca63ff07), aaf (cc48b03), awesome_mpp, aapp-v2, awesome-agentic-commerce,
+  awesome-agents — ALL merge-base==upstream-base, AHEAD=1 BEHIND=0 CLEAN. 10th (agentswitchboard) is the
+  content-snippet branch (upstream repo 404s, known quirk); fork-branch page 200. No drift; all still req2-gated.
+- Corrective action honored: AgentMRR homepage (the one new public link) verified HTTP 200 signed-out; repo link in
+  the listing confirmed public/200.
+- Funnel: formal live listings 2 (+1 new live AgentMRR discovery surface, not a formal listing), prepared PR
+  branches 10 (all CLEAN, req2-gated), pending keyless listings 9 (all within review windows, last re-checked ~21:1x),
+  installs 0 (req1), merged PRs 0 (req2), outside paid 0 (needs req1/req2 or organic adoption; no keyless lever).
+  req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers (2 key requests still waiting).
+
 ## RUN 2026-09-15 ~21:1x UTC — all-10 PR-branch drift re-check CLEAN + pending-listing re-verify
 
 - Drift-checked ALL 10 prepared PR branches this run via merge-base clone (fetch upstream default + fork
