@@ -99,6 +99,17 @@ python tests/two_phase_offline.py            # L2/L3: single-use token gate + of
 python tests/receipt_honesty_offline.py      # L11: never headed PAID unless the ledger confirmed settlement
 python tests/payment_failure_honesty_offline.py  # L12: a never-replied redeem surfaces the signed block + verdict, so an agent never re-pays blind
 python tests/wallet_load_offline.py              # L13: an existing funded wallet is loaded (not re-created) before signing
+python tests/release_install_offline.py          # L21/L22: a built wheel installs in a fresh venv and the installed tool constructs + executes
+```
+
+## Building and verifying the distribution
+
+```bash
+uv build                                # builds dist/openai_agents_nano-0.1.0.tar.gz + .whl
+python tests/release_install_offline.py # builds the wheel, installs it into a brand-new venv,
+                                        # and asserts the installed tool is a real nano_x402_fetch
+                                        # FunctionTool that dry-runs (QUOTE, nothing spent) and
+                                        # refuses an over-cap redeem before signing
 ```
 
 ## License
