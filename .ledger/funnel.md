@@ -455,3 +455,16 @@ FE: funnel now: prepared PR branches 8 (was 7), pending keyless listings 9 uncha
 - Fork: PANDeveloper001/awesome-agents. Branch: add-openai-agents-nano @1170220 (1 insertion after x402-proxy line).
   push-check clean. PR-open needs req2 (same public_repo token). Both pages 200 signed-out.
 FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 unchanged, live listings 2, req1/req2 still blockers.
+
+## RE-CHECK 2026-09-15 ~19:12 UTC (this run)
+- Corrective action honored — all 19 public links + 9 PR fork branches verified HTTP 200 signed-out
+  (curl -L, no session): repo, README, tutorial.md, fee-finality-comparison.md, agent-payment-rails-comparison.md,
+  comparison-vs-x402-openai-python.md, live-proof.md, agentlaunch page, Agent Directory API, and all 9 prepared
+  PR branches (x402-v2, nanodir, awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, awesome_mpp,
+  aapp-v2, awesome-agentic-commerce, awesome-agents). Nothing 404.
+- Pending listings re-checked for a REAL card (distinguishing query-echo from a live listing): AgentRank
+  (7 text hits, 0 detail links -> query echo only, no card), AI Agents Live (6 hits, only pagination links
+  /agents?search=...&page=N echo -> no card), DynamiteAI (2 hits, 0 links -> query echo), AiAgents.Directory
+  search route 404, zPlatform/TheNextAI/aiagenttools no row. None live. No new adoption milestone this run.
+- Funnel unchanged: installs 0 (PyPI req1-gated), merged PRs 0 (req2-gated), outside paid 0, live listings 2,
+  prepared PR branches 9 (all req2-gated), pending keyless listings 9. X weekly update already posted 2026-09-15.
