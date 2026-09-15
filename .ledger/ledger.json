@@ -1226,7 +1226,6 @@
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
-    "cached": true,
     "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
    },
@@ -1235,7 +1234,6 @@
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
-    "cached": true,
     "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
    },
@@ -1246,9 +1244,25 @@
     "oracle_ok": true,
     "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
+   },
+   {
+    "id": "L11",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
+   },
+   {
+    "id": "L12",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
    }
   ],
-  "at": "2026-09-15T02:04:47+00:00"
+  "at": "2026-09-15T03:40:21+00:00"
  },
  "events": [
   {
@@ -1849,6 +1863,26 @@
    "at": "2026-09-15T03:18:25+00:00",
    "prev": "7126e6e317c31253eefca214446bca7bdc4e160a97e7464631e23771af9d38d6",
    "receipt": "86aca4a45e130f9016dda85e6b81c062c1a2924152b3362e04cbdb24e9327c3d"
+  },
+  {
+   "kind": "redteam",
+   "payload": {
+    "block": "3",
+    "attacks": 7,
+    "contested": 0
+   },
+   "at": "2026-09-15T03:37:40+00:00",
+   "prev": "86aca4a45e130f9016dda85e6b81c062c1a2924152b3362e04cbdb24e9327c3d",
+   "receipt": "867619df91b517bb92b1e7d2ba6d6d2750cd6626c81249b5a9296a4c8f64f2ef"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 100
+   },
+   "at": "2026-09-15T03:40:21+00:00",
+   "prev": "867619df91b517bb92b1e7d2ba6d6d2750cd6626c81249b5a9296a4c8f64f2ef",
+   "receipt": "0e067a8a8b3e20ec68055de03e45106c53fcbd24cf9a4f4efa1465d7faf21edd"
   }
  ]
 }
