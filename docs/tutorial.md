@@ -22,11 +22,16 @@ Full numbers and sources in `docs/fee-finality-comparison.md`.
 
 ## 1. Install
 
+The release-ready package is pending its PyPI upload (token-gated), so install
+from this repo today:
+
 ```bash
-pip install openai-agents-nano
+pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"
 ```
 
-The wheel also carries a fresh `feeless402` dependency, so nothing else is
+(Once it is on PyPI, `pip install openai-agents-nano` is enough.)
+
+The install carries a fresh `feeless402` dependency, so nothing else is
 installed for you to pay.
 
 ## 2. First run (spendless)

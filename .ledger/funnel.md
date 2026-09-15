@@ -3,6 +3,28 @@
 Updated 2026-09-15 (distribution run). Key-blocked items wait on ACCESS_PYPI_KEY (req1) and
 ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 
+## THIS RUN 2026-09-15 ~14:40 UTC — public install path fixed (executable today)
+- **Gap found:** README and tutorial told users to `pip install openai-agents-nano`, but the package is
+  NOT on PyPI yet (key-gated) — an outside user following the tutorial today would hit
+  "no matching distribution". Two conflicting, honest facts.
+- **Fixed (doc-only, no build):** README `## Install` and tutorial `## 1. Install` now install from the
+  GitHub repo, which I VERIFIED works in a fresh venv (uv venv + `uv pip install
+  "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"` → import
+  `openai_agents_nano.make_nano_x402_tool` OK). Until the PyPI token arrives this is the only honest
+  install command that works. Once PyPI is live we swap back to `pip install openai-agents-nano`.
+- **Corrective action honored — every public link re-verified HTTP 200 signed-out:** repo, tutorial.md,
+  fee-finality-comparison.md, live-proof.md, README, agentlaunch page, Agent Directory API — all 200.
+  Plus fork branch PANDeveloper001/x402/tree/docs/list-openai-agents-nano-clean = 200.
+- **Re-checked pending listings (honest, no new milestone):** MadeWithStack product API now returns 404
+  "Product not found" (was UNDER_EDITORIAL_REVIEW → dropped/declined, NOT an adoption milestone; drop
+  from pending). 4agent.dev /tools/openai-agents-nano 404. AgentRank /search route 404 + no card.
+  AI Agents Live agents page shows no openai-agents-nano card (still pending review). Net: no listing
+  went live this run. Pending live-listing re-checks: MeshKore, TheNextAI, zPlatform, aiagenttools,
+  Nano Hub suggestion (unchanged).
+- **Status unchanged:** installs 0 (PyPI key-gated), merged PRs 0 (req2), outside paid 0, live listings 2
+  (agentlaunch, Agent Directory API), prepared PR branches 7 (all req2-gated), X cap reached 2026-09-15
+  (no further posts until 2026-09-22).
+
 ## NEW 2026-09-15 ~14:30 UTC (this run): two new keyless agent-directory listings
 - **AgentRank (theagentrank.com) — keyless, FREE, submitted 2026-09-15:**
   https://theagentrank.com/submit "Submit Agent" form (free to list, review 2-3 business days).
