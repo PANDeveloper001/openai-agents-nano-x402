@@ -263,3 +263,13 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2), outside paid 0, live
   listings 2 (agentlaunch, Agent Directory API logged-not-milestone), prepared PR branches 7
   (all key-gated req2), X weekly update posted 2026-09-15 (next update-kind >= 2026-09-22).
+
+## FRESH-INSTALL VERIFIED 2026-09-15 ~15:20 UTC (this run)
+- Public install path proven end-to-end in a CLEAN venv, no cached artifacts:
+  `uv venv /tmp/nano-install-test` + `uv pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"`
+  -> resolved and installed openai-agents-nano 0.1.0 (dragging openai-agents, feeless402 + deps).
+  `import openai_agents_nano` + `from openai_agents_nano import make_nano_x402_tool` succeed;
+  `importlib.metadata.version('openai-agents-nano')` -> 0.1.0.
+- This proves an outside agent following README/tutorial `git+https` install today actually can
+  install and import the package (the only public install path while the PyPI upload is
+  key-gated req1). Distribution starter-path evidence.
