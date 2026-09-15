@@ -3,6 +3,14 @@
 Updated 2026-09-15 (distribution run). Key-blocked items wait on ACCESS_PYPI_KEY (req1) and
 ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 
+## Weekly technical update RE-POSTED, LIVE (2026-09-15, owner-sanctioned)
+- tweet 2099810368545780022 (--kind update, cites E14822): "Nano x402 payer for the OpenAI Agents
+  SDK: tutorial and comparison" + tutorial link + #XNO. Tutorial link verified HTTP 200 signed-out
+  before posting (repo is public). Verified the tweet page loads (200). daily_cap has 1 of 3 today.
+- This is the ONE re-post the owner authorized (slot free after the two deletions; the AGENTS.md note
+  allows it only with a link that loads signed out — this one does). Do not post another update-kind
+  this week (at most one per 7 days).
+
 ## Keyless distribution done (2026-09-15)
 - Tutorial: https://github.com/PANDeveloper001/openai-agents-nano-x402/blob/main/docs/tutorial.md (verified 200)
 - Measured fee/finality comparison: .../docs/fee-finality-comparison.md (verified 200)
@@ -46,4 +54,5 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - outside paid calls: 0
 - directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f) + 1 pending (Nano Hub)
 - prepared+ready PRs (fork branches pushed, blocked on key): 3 (x402, nanodir, awesome-agent-first-tools)
-- X posts this week: 2 posted but BOTH deleted by owner — 0 live. Next: result-kind, one per week.
+- X posts this week: 2 deleted by owner (2099768372577939500, 2099774744598110352) + 1 LIVE re-post
+  (2099810368545780022, owner-sanctioned, link 200). Next update-kind: not before 2026-09-22.
