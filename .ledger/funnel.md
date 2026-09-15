@@ -55,7 +55,11 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   Needs ACCESS_GITHUB_KEY (req2): POST /repos/facundofarias/awesome-agent-first-tools/pulls
   (opening it returned 403 "Resource not accessible" — the token can read/fork but not open
   PRs on third-party repos, exactly as req2 documents). Scan clean (rai-publish push-check).
-- RE-VERIFIED 2026-09-15 (two checks): all three branches still cherry-pick cleanly onto CURRENT
+- awesome-x402 PR (NEW 2026-09-15): fork PANDeveloper001/awesome-x402, branch `add-openai-agents-nano`
+  @ c2666c4 pushed; 1-line SDK row under "SDKs & Client Libraries > Python" (the exact place x402
+  client libraries live; 287-star active index, our kind is a client library). 245 commits clean scan
+  (rai-publish push-check). Needs req2: POST /repos/xpaysh/awesome-x402/pulls.
+- RE-VERIFIED 2026-09-15 (two checks): all three earlier branches still cherry-pick cleanly onto CURRENT
   upstream as minimal insertions — x402: 1 line in docs/dev-tools/third-party-sdks.md (upstream
   now f59930b, still clean); nanodir: 16+/4- across directory.json + regenerated index.html/
   llms.txt (upstream now 9cd9751, still clean); aaf: 1 line in README.md Payments & Commerce
@@ -67,6 +71,6 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - outside paid calls: 0
 - directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f)
   + 2 pending (Nano Hub suggestion; MadeWithStack under-editorial-review, slug openai-agents-nano)
-- prepared+ready PRs (fork branches pushed, blocked on key): 3 (x402, nanodir, awesome-agent-first-tools)
+- prepared+ready PRs (fork branches pushed, blocked on key): 4 (x402, nanodir, awesome-agent-first-tools, awesome-x402)
 - X posts this week: 2 deleted by owner (2099768372577939500, 2099774744598110352) + 1 LIVE re-post
   (2099810368545780022, owner-sanctioned, link 200). Next update-kind: not before 2026-09-22.
