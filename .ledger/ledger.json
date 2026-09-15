@@ -1219,7 +1219,7 @@
    ]
   },
   "3": {
-   "status": "pass",
+   "status": "pending",
    "attempts": [
     {
      "kind": "verify",
@@ -1404,6 +1404,80 @@
      "coverage_gaps": [],
      "injection": [],
      "at": "2026-09-15T03:07:57+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "52e66749da8b62a3554dcfc1060a66f842de5b4cc1aabb683da9ee73b3e0ed4b",
+     "tier": "strong",
+     "coverage_gaps": [
+      "docs/live-proof.md"
+     ],
+     "injection": [],
+     "at": "2026-09-15T04:54:39+00:00"
     }
    ]
   },
@@ -2326,6 +2400,16 @@
    "at": "2026-09-15T04:51:05+00:00",
    "prev": "6f6de766c5ac9388680df6b916931d61301c97278708f36eb35211ed85d8eafd",
    "receipt": "e680b054969a3f064055db4d7f10f31686b3a945f464f6740fd9535cd0cc4842"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "3",
+    "ok": false
+   },
+   "at": "2026-09-15T04:54:39+00:00",
+   "prev": "e680b054969a3f064055db4d7f10f31686b3a945f464f6740fd9535cd0cc4842",
+   "receipt": "fa59efb0ec6700ee4fc2b50220ad01ca92e94a745abacffaed1a685d0ecc8ddc"
   }
  ]
 }

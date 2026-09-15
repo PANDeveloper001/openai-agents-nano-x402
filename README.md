@@ -65,6 +65,14 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
     receipt (status, body, amount_xno, pay_to, block, settled, ledger, note).
 - Payments are serialised behind an `asyncio.Lock`: Nano blocks are stateful
   and non-replayable, so one wallet never sends concurrently.
+- Both a brand-new and an **existing funded wallet** work: the tool creates a
+  fresh wallet file on first use and *loads* one that already exists, so an
+  imported or topped-up `~/.nano-pay/wallet.json` signs with its held balance
+  instead of crashing (block 4).
+- **Proven live on mainnet** (`docs/live-proof.md`): a real capped redeem
+  through a locally-run rail-reusing server settled a confirmed XNO block
+  (0.0001 XNO, verified on two public nodes). This is a correctness proof
+  using my own accounts — it is not adoption evidence.
 
 ## Safety
 
@@ -90,6 +98,7 @@ python tests/fail_closed_offline.py          # L1: dry_run spends nothing, over-
 python tests/two_phase_offline.py            # L2/L3: single-use token gate + offer-change refusal
 python tests/receipt_honesty_offline.py      # L11: never headed PAID unless the ledger confirmed settlement
 python tests/payment_failure_honesty_offline.py  # L12: a never-replied redeem surfaces the signed block + verdict, so an agent never re-pays blind
+python tests/wallet_load_offline.py              # L13: an existing funded wallet is loaded (not re-created) before signing
 ```
 
 ## License
