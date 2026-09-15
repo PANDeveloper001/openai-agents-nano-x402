@@ -20,9 +20,9 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
-- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased-v2` @ fa8d0675 (rebuilt 2026-09-15 ~17:3x UTC
-  onto CURRENT upstream main a7ea8041; upstream moved 3 commits since `...-rebased` @ bb8d172, so open from v2.
-  behind 0, cherry-picks cleanly. Push-check clean, fork-branch + pull/new both 200.)
+- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased-v3` @ ca686937 (rebuilt 2026-09-15 ~19:2x UTC
+  onto CURRENT upstream main 9b37f376; upstream moved 5 commits since v2 @ fa8d067 which was behind 5. Cherry-pick of the
+  same 1-line docs row applied cleanly (1 insertion). behind-0, push-check clean, fork-branch 200 + pull/new 302.)
 - Corican/nanodir:        fork PAN branch `add-openai-agents-nano-clean` @ def0d34
 - facundofarias/awesome-agent-first-tools: branch `add-openai-agents-nano` @ d790b55
 - xpaysh/awesome-x402:    branch `add-openai-agents-nano` @ c2666c4

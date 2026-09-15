@@ -481,3 +481,15 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   pull/new 302 + raw Projects.md row present verified. PR-open needs req2 (same public_repo token).
 - Funnel: prepared PR branches now 10 (was 9). Pending keyless listings 9 unchanged. Live listings 2.
   req1/req2 still the blockers.
+
+## PR DRIFT RE-CHECK + x402 v3 REBUILD 2026-09-15 ~19:22 UTC
+- All 10 prepared PR branches drift-verified vs CURRENT upstream (local merge-base clone, correct default branches):
+  x402-v3, x402-dev, nanodir, awesome-agent-first-tools, awesome-x402, awesome_mpp, aapp-v2, awesome-agentic-commerce,
+  awesome-agents -> BEHIND-0 CLEAN. agentswitchboard -> content-snippet branch (upstream repo 404s, known subrepo
+  quirk); fork-branch page 200 + raw content json 200 verified directly.
+- x402 upstream moved again (5 commits past v2 base a7ea8041 -> 9b37f376): rebuilt V3 branch
+  docs/list-openai-agents-nano-rebased-v3 @ ca686937 by cherry-picking the 1-line docs row onto CURRENT main
+  (no force-push; v2 kept as history). behind-0, push-check clean, fork-branch 200 + pull/new 302.
+- on-key-arrival.md updated to open from v3.
+- Funnel unchanged: installs 0 (req1), merged PRs 0 (req2), outside paid 0, live listings 2, prepared PR branches 10,
+  pending keyless listings 9. req1 + req2 still the only open adoption blockers.
