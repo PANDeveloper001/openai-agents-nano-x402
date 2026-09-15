@@ -3,6 +3,23 @@
 Updated 2026-09-15 (distribution run). Key-blocked items wait on ACCESS_PYPI_KEY (req1) and
 ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 
+## RE-VERIFIED + x402 PR UNSTUCK 2026-09-15 ~16:20 UTC (this run)
+- Corrective action honored — every public link re-checked HTTP 200 signed-out (curl -L, no session):
+  repo root + README, docs/tutorial.md, docs/fee-finality-comparison.md, docs/agent-payment-rails-comparison.md,
+  docs/live-proof.md, agentlaunch agents page, Agent Directory API, x402.org, feeless402.com, and all 7 PR
+  fork-branches (x402, nanodir, aaf, awesome-x402, agentswitchboard.dev, awesome_mpp, aapp) — all 200. Nothing 404.
+- Pending listings re-checked via browser DOM (none live): MeshKore, TheNextAI, zPlatform, aiagenttools,
+  AI Agents Live /agents — no openai-agents-nano card. MadeWithStack still status 'pending'
+  UNDER_EDITORIAL_REVIEW (API 200); 4agent.dev still 404; AgentRank /search still 404. No new adoption milestone.
+- **x402 PR UNSTUCK keylessly:** the diverged `docs/list-openai-agents-nano-clean` (ahead 1, behind 5) was
+  superseded by a fresh `docs/list-openai-agents-nano-rebased` @ bb8d172 rebuilt onto CURRENT upstream main
+  (6b93027) via cherry-pick of the same 1-line docs commit; push-check clean; page + pull/new both 200; pushed to
+  the fork without force-push. All 7 PR branches now re-verified ahead-1/behind-0 against their CURRENT upstream
+  (compare API). on-key-arrival.md updated to the new branch name.
+- Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2, still open), outside paid 0, live
+  listings 2, prepared PR branches 7 (6 identical + 1 rebased), pending keyless listings 9. X weekly update
+  already posted 2026-09-15 (next update-kind >= 2026-09-22).
+
 ## THIS RUN 2026-09-15 ~14:40 UTC — public install path fixed (executable today)
 - **Gap found:** README and tutorial told users to `pip install openai-agents-nano`, but the package is
   NOT on PyPI yet (key-gated) — an outside user following the tutorial today would hit

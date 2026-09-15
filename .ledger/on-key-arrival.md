@@ -20,7 +20,9 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
-- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-clean` @ 5554860
+- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased` @ bb8d172 (rebuilt 2026-09-15 ~16:20 UTC
+  onto current upstream main 6b93027 — old `docs/list-openai-agents-nano-clean` @ 5554860 had DIVERGED behind 5;
+  the new branch is ahead 1 / behind 0 and cherry-picks cleanly. Push-check clean, page 200.)
 - Corican/nanodir:        fork PAN branch `add-openai-agents-nano-clean` @ def0d34
 - facundofarias/awesome-agent-first-tools: branch `add-openai-agents-nano` @ d790b55
 - xpaysh/awesome-x402:    branch `add-openai-agents-nano` @ c2666c4
@@ -28,9 +30,10 @@ their fork remotes 2026-09-15 ~15:22 UTC):
 - mpp-best/awesome_mpp:   branch `add-openai-agents-nano` @ b0015c5
 - tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano` @ 52d7c481
 
-NOTE 2026-09-15 ~15:50 UTC: x402 branch docs/list-openai-agents-nano-clean has DIVERGED
-  (ahead 1, behind 5 — upstream x402-foundation/x402 moved 5 commits). Rebase onto current upstream main
-  BEFORE opening that PR. Other 6 branches remain ahead-1/behind-0.
+NOTE 2026-09-15 ~16:20 UTC: x402 PR resolved — the diverged `docs/list-openai-agents-nano-clean` (ahead 1, behind 5)
+  was superseded by a fresh `docs/list-openai-agents-nano-rebased` @ bb8d172, rebuilt onto current upstream main
+  (6b93027) and pushed. Other 6 branches remain ahead-1/behind-0 (re-verify each with the compare API before
+  opening).
 
 ## Never
 - Retired projects (langgraph-nano-x402, n8n-nano-x402) under any name.
