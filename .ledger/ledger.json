@@ -1015,7 +1015,81 @@
   },
   "3": {
    "status": "pending",
-   "attempts": []
+   "attempts": [
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L6",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L7",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L10",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L11",
+       "pass": false,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano/tool.py:8 'true'→'false'",
+       "mutants": {
+        "total": 6,
+        "killed": 0
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L12",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "1ce92e4cfbca3014d4ffab9c1489f40063f0efa39ca1c9ffa4fbc3774b476b64",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T02:52:48+00:00"
+    }
+   ]
   }
  },
  "deltas": [],
@@ -1618,6 +1692,16 @@
    "at": "2026-09-15T02:40:02+00:00",
    "prev": "0861c2f7d82468963c3c37d9f0f01dca3305304ce56d5885436bd5d9f7421b66",
    "receipt": "a9cbd7c8e392d2d634cde9f6af9e8790dc70c54ac5e2b4cb2442bf2070a544e0"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "3",
+    "ok": false
+   },
+   "at": "2026-09-15T02:52:48+00:00",
+   "prev": "a9cbd7c8e392d2d634cde9f6af9e8790dc70c54ac5e2b4cb2442bf2070a544e0",
+   "receipt": "81d98704d65e68a88cff1c4b0cfa1604062dd495c50454d3914cbdc13bc6b1d0"
   }
  ]
 }

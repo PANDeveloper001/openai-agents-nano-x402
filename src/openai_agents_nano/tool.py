@@ -4,9 +4,9 @@
 `nano_x402_fetch`, binding a self-custodied `Wallet` plus an `RPC` at
 construction; the model never sees a wallet path, seed, plain RPC URL.
 
-This is two-phase, so an agent only ever pays an offer it has seen:
-`dry_run=true` returns a spendless quote plus a single-use `quote_token`
-bound to that exact offer.  `dry_run=false` refuses unless a valid,
+This is two-phase, so an agent only ever pays an offer it has seen: a
+dry-run preview returns a spendless quote plus a single-use `quote_token`
+bound to that exact offer.  Redeem mode refuses unless a valid,
 unspent, matching token returns (missing, stale, replayed, re-offered
 tokens get refused prior to signing).  A valid token is consumed, then
 feeless402 signs locally, then verifies on the ledger.  The cap is
@@ -48,10 +48,10 @@ class NanoX402ToolError(Exception):
 class QuoteTokenStore:
     """Single-use, expiring quote tokens bound to an exact quoted offer.
 
-    A token is minted on `dry_run=true` against the offer the server just
-    quoted, and is consumed on the first successful redeem. A token is either
-    VALID (present, unexpired, pay_to plus amount match the offer the redeem
-    is about to pay, so the redeemer saw exactly this offer) or REFUSED
+    A token is minted on a dry-run preview against the offer the server just
+    quoted, then consumed on the first successful redeem. A token is either
+    VALID (present, unexpired, pay_to plus amount both match the offer the
+    redeem is about to pay) or REFUSED
     (missing-token, stale, already-used, offer-changed).  Thread-safety comes
     from the tool serialising payments behind a single asyncio.Lock, so a
     dict is sufficient here.
