@@ -31,6 +31,8 @@ their fork remotes 2026-09-15 ~15:22 UTC):
 - Merit-Systems/awesome-agentic-commerce: branch `add-openai-agents-nano` @ 0b06312 (NEW 8th target, prepared 2026-09-15 ~18:5x
   UTC; upstream base 01feff1 = current master, clean ancestor; 1 insertion after x402-anthropic-typescript block in Open
   Source & SDKs; push-check clean; fork-branch 200 + pull/new 302 signed-out). Section is sister to xpaysh/awesome-x402.
+- Scottcjn/awesome-agents: branch `add-openai-agents-nano` @ 1170220 (NEW 9th target, prepared 2026-09-15 ~19:0x UTC;
+  1 insertion after x402-proxy line in Blockchain & Rewards section; push-check clean; fork-branch 200 signed-out).
 - tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano-v2` @ 297b9f8 (rebuilt 2026-09-15 ~17:3x
   UTC onto CURRENT upstream main 1e20c4d; upstream moved 1 commit (weekly scan) since `add-openai-agents-nano`
   @ 52d7c481 drifted behind-1/ahead-1, so open from v2. Push-check clean, fork-branch + pull/new 200.)

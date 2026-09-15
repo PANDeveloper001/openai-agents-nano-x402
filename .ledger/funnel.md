@@ -446,3 +446,12 @@ req2 (GitHub key); everything else keeps moving.
   rai-publish push-check clean (23 commits scanned). PR-open needs req2 (same GitHub public_repo token). Both pages 200/302 signed-out.
 - New scope: fork-branch URL previously 404 — file existed, first prepared-at this run (re-check 3 times, none live).
 FE: funnel now: prepared PR branches 8 (was 7), pending keyless listings 9 unchanged, live listings 2, req1/req2 still the blockers.
+
+## NEW 9TH PR BRANCH 2026-09-15 ~19:0x UTC
+- Prepared a NEW keyless PR branch (9th). Target: Scottcjn/awesome-agents (101★, active 2026-09-07, main, CONTRIBUTING
+  welcomes individual PRs, format "[Name](link) - Description.", no tokens/financial-instrument-only projects). Its
+  "Blockchain and Rewards" section lists x402 Payment Protocol + x402-proxy — an on-topic x402 payments subsection, Nano absent.
+  Not a mega-list (~190 lines). No secret-scanner hook.
+- Fork: PANDeveloper001/awesome-agents. Branch: add-openai-agents-nano @1170220 (1 insertion after x402-proxy line).
+  push-check clean. PR-open needs req2 (same public_repo token). Both pages 200 signed-out.
+FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 unchanged, live listings 2, req1/req2 still blockers.
