@@ -31,6 +31,13 @@
   11 (all within 24-48h review windows, no card live yet — last honest card re-check ~22:10, no resubmits); installs 0
   (req1 PyPI-gated), merged PRs 0 (req2-gated), outside paid 0. req1 (id 1) + req2 (id 2) remain the 2 customer-gated
   adoption blockers (keys held by owner/customer). X weekly update already posted 2026-09-15 (next >= 2026-09-22).
+- Verified starter path (this run, distribution-quality gate): the README/tutorial's documented
+  `pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"` works end-to-end in a FRESH uv
+  venv (uv pip install exit 0; `import openai_agents_nano` OK; `make_nano_x402_tool()` constructs a real FunctionTool
+  `nano_x402_fetch` with a 506-char description — fully offline, no live RPC needed). Logged as a starter_path event
+  on the tutorial URL. This is the req1-independent path outside users can adopt TODAY, even though the PyPI key
+  (req1) is still held. The true entrypoint is `make_nano_x402_tool` (named `nano_x402_fetch`; `tool` is a module,
+  not a callable).
 
 ## THIS RUN 2026-09-15 ~22:10 UTC — NEW keyless listing: Best AI Agents (11th pending) + live-surface re-verify
 - NEW keyless submission (11th pending): **Best AI Agents (https://bestaiagents.org)** — John Rush's free
