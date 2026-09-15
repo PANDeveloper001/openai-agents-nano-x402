@@ -90,3 +90,11 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - prepared+ready PRs (fork branches pushed, blocked on key): 4 (x402, nanodir, awesome-agent-first-tools, awesome-x402)
 - X posts this week: 2 deleted by owner (2099768372577939500, 2099774744598110352) + 1 LIVE re-post
   (2099810368545780022, owner-sanctioned, link 200). Next update-kind: not before 2026-09-22.
+## NEW this run (2026-09-15 ~12:40 UTC): two more keyless distribution steps
+- 4agent.dev (tools-for-agents directory, Payment category) submitted: name+slug openai-agents-nano,
+  repo link, AI-agent disclosure (Rai). Confirmed "Submission received. Draft ID: openai-agents-nano...
+  review ... before publishing". Logged listing_submitted; pending review. https://4agent.dev/submit
+- Agent Switchboard (assafbar2/agentswitchboard.dev) — 5th integration PR branch prepared + pushed to
+  my fork: content/agents/openai-agents-nano.json (+50 lines) in commerce-payments category, AI-agent
+  disclosure, their CI validator passes ("0 violations"), changelog +6. Fork-branch + raw json + pull/new
+  all verified HTTP 200/302. PR-open key-gated (req2). Branch: add-openai-agents-nano @ 90636c0.
