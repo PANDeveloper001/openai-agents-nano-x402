@@ -405,3 +405,20 @@ req2 (GitHub key); everything else keeps moving.
 - Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2, 403 re-confirmed), outside paid 0,
   live listings 2 (agentlaunch, Agent Directory API), prepared PR branches 7 (all req2-gated), pending keyless
   listings 9. X weekly update cap reached 2026-09-15 (next >= 2026-09-22).
+
+## RE-VERIFIED 2026-09-15 ~17:46 UTC (this run)
+- Corrective action honored — every public link re-checked HTTP 200 signed-out via urllib (no session):
+  repo, README, docs/tutorial.md, fee-finality-comparison.md, agent-payment-rails-comparison.md,
+  agentlaunch agents page, Agent Directory API — all 200. All 7 PR fork branches (x402-v2, nanodir,
+  aaf, awesome-x402, agentswitchboard.dev, awesome_mpp, aapp-v2) — all 200. Nothing 404.
+- Pending listings re-checked via browser DOM (none live): MadeWithStack still status 'pending'
+  (API 200, badge verification pending_approval requires_manual_review); AgentRank browse/search
+  shows "0 agents found for openai-agents-nano" (query echo, not a listing); AI Agents Live /agents
+  no card; MeshKore search 404; AI Agent Directory (aiagenttools) /?s= no card; zPlatform /?s= no card;
+  4agent.dev tool page 404; AiAgents.Directory /search?q= no card ("No agent found matching the query");
+  DynamiteAI /?s= no card. None approved. No new adoption milestone this run.
+- req1 (PyPI) + req2 (GitHub PR-open) still the 2 open OUTSTANDING adoption blockers, both customer-gated
+  (rai-access list: both status 'open', undecided). Nothing else gated the funnel this run.
+- Funnel unchanged: installs 0 (req1-gated), merged PRs 0 (req2-gated), outside paid 0, live listings 2
+  (agentlaunch, Agent Directory API logged-not-milestone), prepared PR branches 7 (req2-gated),
+  pending keyless listings 9. X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
