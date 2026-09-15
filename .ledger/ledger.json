@@ -34,7 +34,8 @@
    "source": null,
    "grounding": "oracle",
    "version": 3,
-   "minted": "2026-09-14T22:39:09+00:00"
+   "minted": "2026-09-14T22:39:09+00:00",
+   "retired": true
   },
   {
    "id": "L2",
@@ -164,6 +165,22 @@
    "version": 1,
    "minted": "2026-09-15T01:16:13+00:00",
    "retired": true
+  },
+  {
+   "id": "L10",
+   "block": 1.0,
+   "statement": "dry_run spends nothing and a price above the cap is refused without signing",
+   "test": "tests/fail_closed_offline.py proves dry_run creates no wallet frontier and an over-cap redeem returns a refusal string without signing",
+   "scope": [
+    "src/*",
+    "tests/*"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/fail_closed_offline.py",
+   "expect": "FAIL_CLOSED_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T01:59:52+00:00"
   }
  ],
  "blocks": {
@@ -872,6 +889,95 @@
      "coverage_gaps": [],
      "injection": [],
      "at": "2026-09-15T01:30:57+00:00"
+    },
+    {
+     "kind": "unwind",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L1",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "e988542b1545b735322c2507da693f63f07d3d8ca44a3298b4f7623b6b9fd551",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T01:35:53+00:00"
+    },
+    {
+     "kind": "unwind",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L1",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "e988542b1545b735322c2507da693f63f07d3d8ca44a3298b4f7623b6b9fd551",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T01:35:59+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L6",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L7",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L10",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 1
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "4469712d98b5cad131572d5af0ede5015ccff83d549055b8ba4ef04bf33f3268",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T02:03:35+00:00"
     }
    ]
   }
@@ -889,23 +995,33 @@
   "score": 100,
   "results": [
    {
-    "id": "L0",
+    "id": "L6",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
-    "judge": "deepseek/deepseek-v4-flash-0731",
+    "cached": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
    },
    {
-    "id": "L1",
+    "id": "L7",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
-    "judge": "deepseek/deepseek-v4-flash-0731",
+    "cached": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
+   },
+   {
+    "id": "L10",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
    }
   ],
-  "at": "2026-09-14T23:17:11+00:00"
+  "at": "2026-09-15T02:04:47+00:00"
  },
  "events": [
   {
@@ -1356,6 +1472,84 @@
    "at": "2026-09-15T01:30:57+00:00",
    "prev": "f032f7b24ddead13241f523b012c935efd95d8ff651b552e891cb119160454cc",
    "receipt": "0673fb72e76c9392d26e691967fa87b0e5df2d565383eeec8bffd85941d455ea"
+  },
+  {
+   "kind": "unwind",
+   "payload": {
+    "block": "2",
+    "ok": true
+   },
+   "at": "2026-09-15T01:35:53+00:00",
+   "prev": "0673fb72e76c9392d26e691967fa87b0e5df2d565383eeec8bffd85941d455ea",
+   "receipt": "c69f800fb47653127db4d946932c77a3be9737ca0e2f17f7a0767f06c67eacd3"
+  },
+  {
+   "kind": "unwind",
+   "payload": {
+    "block": "2",
+    "ok": true
+   },
+   "at": "2026-09-15T01:35:59+00:00",
+   "prev": "c69f800fb47653127db4d946932c77a3be9737ca0e2f17f7a0767f06c67eacd3",
+   "receipt": "65cb257a60c71a690ce167dea4f1df1cb1284e2b9f6fb6d3f85176e308f2352d"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 67
+   },
+   "at": "2026-09-15T01:48:30+00:00",
+   "prev": "65cb257a60c71a690ce167dea4f1df1cb1284e2b9f6fb6d3f85176e308f2352d",
+   "receipt": "8864e1d91a664af7b85f6999cd63c5eca145d4af02c206e331b7533ba4d3f7a1"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 67
+   },
+   "at": "2026-09-15T01:57:01+00:00",
+   "prev": "8864e1d91a664af7b85f6999cd63c5eca145d4af02c206e331b7533ba4d3f7a1",
+   "receipt": "825a8ff5db8fc426ea733dde72c857c2cf89c6513ba08bfc44287d66c71d1f65"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L1",
+    "reason": "L1 scope is src/* only, so the probe judge cannot see the fail_closed_offline.py test that proves it and rejects it; re-mint with src/* plus tests/* (as L6/L7) so evidence always contains the proof"
+   },
+   "at": "2026-09-15T01:59:51+00:00",
+   "prev": "825a8ff5db8fc426ea733dde72c857c2cf89c6513ba08bfc44287d66c71d1f65",
+   "receipt": "b8a7ffdbb880fd74853dcce6cec98283be1dff2301503cd6bdc29e28d970fc39"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L10",
+    "block": "1",
+    "statement_sha": "e1a605b69566cf9330a6e51a25d95ee78b357822bbe6cea6c5bb76f6e74b018c"
+   },
+   "at": "2026-09-15T01:59:52+00:00",
+   "prev": "b8a7ffdbb880fd74853dcce6cec98283be1dff2301503cd6bdc29e28d970fc39",
+   "receipt": "24593d17ae7fed7d44df05f59a919da3a5591ccc65875d0dde9509fce1dc1a36"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "2",
+    "ok": true
+   },
+   "at": "2026-09-15T02:03:35+00:00",
+   "prev": "24593d17ae7fed7d44df05f59a919da3a5591ccc65875d0dde9509fce1dc1a36",
+   "receipt": "f8cd45743f4293294af1fd17184aabd88bd401c3d85ceb6b11c4e580f9bf94dc"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 100
+   },
+   "at": "2026-09-15T02:04:47+00:00",
+   "prev": "f8cd45743f4293294af1fd17184aabd88bd401c3d85ceb6b11c4e580f9bf94dc",
+   "receipt": "14d70be3cbdf1ab52d6b651eb4f97077df74c530aca647fa058cb14fab20bc81"
   }
  ]
 }
