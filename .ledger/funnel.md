@@ -650,3 +650,27 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   0, live listings 2, prepared PR branches 10, pending keyless listings 9. No new adoption milestone this run.
   req1 (PyPI) + req2 (GitHub PR-open) are the two open blockers, encrusted in 2 key requests still waiting on
   the customer; not re-asking, continue everything else.
+
+## THIS RUN 2026-09-15 ~21:45 UTC — all-10 drift CLEAN + new-surface re-verify + 2 not-fit evals
+- Drift re-checked all 10 prepared PR branches this run (local merge-base clones): 9 git-mergeable are
+  BEHIND-0 AHEAD-1 CLEAN (x402-v3 @ca686937, nanodir -clean @def0d34, aaf @d790b55, awesome-x402 @c2666c4,
+  mpp @b0015c5, aac @0b06312, saa @1170220, x402-dev @274b626, aapp-v2 @297b9f8). 10th (agentswitchboard) is a
+  content-snippet branch whose upstream GitHub path 404s (known subrepo quirk) — verified its fork-branch page
+  on the CORRECT fork (PANDeveloper001/agentswitchboard.dev, not agentswitchboard) is HTTP 200. No drift; req2
+  remains the only gate on opening all 10.
+- Corrective action honored: re-verified public links HTTP 200 signed-out — repo, README, tutorial, both live
+  listing pages (Agent Directory API JSON + agents-launch page), agents.net/directory, AgentMRR homepage + API,
+  and the agentswitchboard+nanodir fork branches. Nothing 404.
+- Pending keyless listings re-checked for a REAL card (not query echo): theagentrank /agents?q=, aiagentslive
+  /agents?search=, dynamite /?s=, agents.net/directory — all show the term ONLY in the search box / pagination
+  echo, no anchor href to a per-agent page. 4agent.dev tool page 404. aiagents.directory search route 404.
+  MadeWithStack product API still status 'pending'. None live (all submitted 2026-09-15, within 24-48h windows).
+- NEW evaluation (both recorded not-fit): a2a-registry.org and a2alist.ai are x402/A2A AGENT/SERVICE registries
+  (they index endpoint services/facilitators that answer 402 + A2A agents), NOT client SDK libraries; a2alist
+  also charges a $0.99 USDC fee. Same out-of-scope logic as agent-tools.cloud/MCP registries -> skip.
+- AgentMRR (new surface, added ~21:15) re-verified STILL LIVE: homepage HTML + GET /api/products both contain
+  'openai-agents-nano' (agent-commerce, Free). Distribution surface persists.
+- Funnel unchanged: installs 0 (req1), merged PRs 0 (req2), outside paid 0, live listings 2 (formal) + 1 live
+  AgentMRR discovery surface, prepared PR branches 10 (all req2-gated CLEAN), pending keyless listings ~12.
+  req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers (2 key requests waiting).
+  X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
