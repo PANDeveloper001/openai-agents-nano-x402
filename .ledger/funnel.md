@@ -543,7 +543,41 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   marginal fit, not worth keyless prep or PR -> skip. moov-io/awesome-fintech (373★) — generic fintech, no
   x402/agent-payments SDK section -> skip. QBT-Labs/x402, x402-agentpay etc. are products, not lists.
   Recorded in open-integration-pr skill as not-fit to avoid retries.
-- Funnel unchanged (per run brief): installs 0 (req1 PyPI), merged PRs 0 (req2 GitHub), outside paid 0,
+- Funnel unchanged (per the report): installs 0 (req1 PyPI), merged PRs 0 (req2 GitHub), outside paid 0,
   live listings 2 (agentlaunch, Agent Directory API), prepared PR branches 10 (all req2-gated), pending
   keyless listings 9, X weekly already posted 2026-09-15 (next update-kind >= 2026-09-22). Both adoption
-  blockers remain customer-gated (2 key requests still waiting); no retcon of state.
+  blockers remain customer-gated (2 key requests still waiting); no retcon of the state.
+
+## DAY RUN 2026-09-15 ~20:4x UTC — all-10 drift re-check, full link re-verify, new-candidate evaluation
+- Drift re-checked ALL 10 prepared PR branches this run via local merge-base clone (git fetch upstream base +
+  fork branch, merge-base == upstream base => behind-0 CLEAN): x402-v3 (@ ca686937), x402-dev, nanodir
+  (`add-openai-agents-nano-clean`), awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, awesome_mpp,
+  awesome-agent-payments-protocol (-v2), awesome-agentic-commerce, awesome-agents — all AHEAD=1 BEHIND=0 CLEAN.
+  None has drifted; req2 remains the only gate on opening them.
+- Corrective action honored: re-verified every public link signed-out (curl -L, no cookies) 200 — repo root,
+  README, tutorial, both live listings (Agent Directory API JSON still names openai-agents-nano + agentlaunch
+  page <title>), and all 10 PR fork-branch pages. Nothing 404. Wrote `curl` evidence to verify-this-run.txt and
+  (below) rx; the previous tweet 404 lesson is satisfied — every posted target answers 200.
+- Pending listings honestly re-checked (web_extract + raw-HTML grep, signed-out): AI Agents Live /agents?search
+  and AgentRank /agents?q both show "openai-agents-nano" ONLY in the query-echo / zero-results copy — no real
+  card, no href; MadeWithStack product API still status 'pending' UNDER_EDITORIAL_REVIEW; Dynamite-oai ?s search
+  query-echo only (1 hit in raw HTML = the query value, no listing). No new adoption milestone this run.
+- NEW target candidates evaluated (all recorded in skill so future runs skip):
+  * JasonColapietro/awesome-agent-payments-protocol — fork of tsubasakong/awesome-agent-payments-protocol
+    (which we already prepped a v2 branch for) -> skip, duplicate.
+  * Merit-Systems/awesome-x402 — does not exist (API empty) -> skip.
+  * mbeato/awesome-mpp (21★) — the OTHER MPP awesome list; near-duplicate of our already-prepared
+    mpp-best/awesome_mpp PR branch; listed entries overlap (mppx, pympp, tollbooth). It is arguably a sister
+    list but lets an MPP buyer find the SDK on a second registry. Value is real but marginal; the prepared
+    mpp-best branch already covers the MPP registry surface -> skip preparing an 11th branch this run (keyless
+    cap is not the binding constraint; req2 gates all PRs anyway). Recorded in skill as a possible future
+    secondary MPP target, not not-fit.
+  - damoahdominic/awesome-agentic-commerce (82★) — pushed 2026-01-22 (8 months stale), NO CONTRIBUTING.md to
+    define the PR contract -> stale/informal, skip.
+  - OrcaQubits/awesome-agentic-commerce (9★, pushed today) — generic protocol-reference list (UCP/ACP/AP2/MPP/
+    A2A/MCP/WebMCP), NO SDKs>Python sub-section to place a client library -> too general, skip (matches the
+    "large mega-list" rule).
+- Funnel unchanged (all adoption movers still key-gated): installs 0 (req1), merged PRs 0 (req2), outside paid
+  0, live listings 2, prepared PR branches 10, pending keyless listings 9. No new adoption milestone this run.
+  req1 (PyPI) + req2 (GitHub PR-open) are the two open blockers, encrusted in 2 key requests still waiting on
+  the customer; not re-asking, continue everything else.
