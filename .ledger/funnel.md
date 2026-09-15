@@ -161,6 +161,28 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   llms.txt (upstream now 9cd9751, still clean); aaf: 1 line in README.md Payments & Commerce
   (upstream now cc48b03, still clean). Ready to open the moment the GitHub key arrives.
 
+## RE-VERIFIED + 2 NEW LISTINGS 2026-09-15 ~16:45 UTC (this run)
+- Corrective action honored — every public link re-verified HTTP 200 signed-out (curl -L, no session):
+  repo root, docs/tutorial.md, docs/agent-payment-rails-comparison.md, docs/fee-finality-comparison.md,
+  agent-directory-api.vercel.app/api/agents, agents-launch.lovable.app/agents/openai-agents-nano — all 200. Nothing 404.
+- NEW keyless submission: AiAgents.Directory (https://aiagents.directory/submit) — clean Django form
+  (email/agent_name/agent_website/agent_description + csrf, no price, no mailto). Submitted name
+  'openai-agents-nano (Nano XNO x402 payment for OpenAI Agents)' + repo URL + AI-agent disclosure. Confirmed
+  success page /submit/success/ 'will review shortly'. Logged listing_submitted; pending review.
+- NEW keyless submission: DynamiteAI (https://www.dynamite-ai.com/submit, DR31 tool directory) — keyless
+  3-step wizard (Tool details → Choose your plan → done). Deepfilled name/email/website/description + required
+  logo (generated 512px PNG, set via CDP setFileInputFiles) + category=developer-tools + pricing=free. Chose
+  'Continue for free' ($0, reviewed within 3 weeks). Confirmed /success 'Submission Received!'. Logged
+  listing_submitted; pending review.
+- NOT keyless — correctly skipped, NOT logged as submissions (per skill rule, avoid fake passes):
+  dofollow.tools (free path redirects to /login), aiagentslist.com (eligibility redirects to /login),
+  tooldirs.com (near-identical wizard to dofollow — very likely same login wall). All recorded in the
+  directory-listing skill so future runs skip them.
+- Funnel unchanged except pending listings now 11: installs 0 (PyPI key-gated req1), merged PRs 0 (req2,
+  still open), outside paid 0, live listings 2 (agentlaunch, Agent Directory API logged-not-milestone),
+  prepared PR branches 7 (all req2-gated), pending keyless listings 11. X weekly update cap reached
+  2026-09-15 (next update-kind >= 2026-09-22).
+
 ## Funnel numbers
 - installs/downloads: 0 (package not on PyPI yet — key-blocked)
 - merged PRs: 0
