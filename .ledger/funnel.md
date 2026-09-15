@@ -55,10 +55,11 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   Needs ACCESS_GITHUB_KEY (req2): POST /repos/facundofarias/awesome-agent-first-tools/pulls
   (opening it returned 403 "Resource not accessible" — the token can read/fork but not open
   PRs on third-party repos, exactly as req2 documents). Scan clean (rai-publish push-check).
-- RE-VERIFIED 2026-09-15 (this run): all three branches still cherry-pick cleanly onto CURRENT
-  upstream as minimal insertions (x402: 1 line in docs/dev-tools/third-party-sdks.md; nanodir:
-  16+/4- across directory.json + regenerated index.html/llms.txt; aaf: 1 line in README.md
-  Payments & Commerce). Ready to open the moment the GitHub key arrives.
+- RE-VERIFIED 2026-09-15 (two checks): all three branches still cherry-pick cleanly onto CURRENT
+  upstream as minimal insertions — x402: 1 line in docs/dev-tools/third-party-sdks.md (upstream
+  now f59930b, still clean); nanodir: 16+/4- across directory.json + regenerated index.html/
+  llms.txt (upstream now 9cd9751, still clean); aaf: 1 line in README.md Payments & Commerce
+  (upstream now cc48b03, still clean). Ready to open the moment the GitHub key arrives.
 
 ## Funnel numbers
 - installs/downloads: 0 (package not on PyPI yet — key-blocked)
