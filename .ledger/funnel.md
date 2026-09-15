@@ -124,3 +124,28 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   project; not an adoption path right now.
 - Funnel PR-count line to keep updated: now 6 prepared+ready PR branches
   (x402, nanodir, awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, mpp-best/awesome_mpp).
+
+## RE-VERIFIED 2026-09-15 ~13:45 UTC (this run)
+- Corrective action honored: all 10 public links load HTTP 200 signed-out and unsigned
+  (repo, tutorial.md, fee-finality-comparison.md, agentlaunch, Agent Directory API,
+  all 6 fork branches: awesome_mpp, awesome-agent-first-tools, awesome-x402,
+  agentswitchboard.dev, nanodir, x402). No link 404.
+- Pending listings re-checked: MadeWithStack still UNDER_EDITORIAL_REVIEW (HTTP 200, status
+  pending, claim submitted); 4agent.dev has NO live page yet (404 on /tools/openai-agents-nano);
+  MeshKore/TheNextAI/zPlatform/aiagenttools searches show no live openai-agents-nano page yet.
+  None approved yet -> re-check next run.
+- New directories evaluated, NOT keyless, skipped (record to avoid retries):
+  * theagentsindex.com/submit (The Agents Index, agent-tool directory): docs claim keyless
+    anonymous POST /api/submit, but live API returned HTTP 401 sign_in_required and the
+    browser form requires account sign-in -> skipped.
+  * agentlocker.ai/submit-your-tool (agent tool directory): requires account creation
+    (GitHub/Google/email signup) -> skipped.
+  * theresanaiforthat.com (DR 62), supertools, aitoolkit, dang.ai: bot-walled (403/000) or
+    account-required -> skipped.
+  * AgentLocker, PromptFrenzy (badge-required: needs a badge on a real domain we do not
+    have), a2alist.ai (USDC fee): not usable keyless -> skipped.
+- Net: no new keyless submission this run; pool stays at 8 pending (Nano Hub, MadeWithStack,
+  MeshKore, AI Agent Directory, TheNextAI, zPlatform, 4agent.dev) + 1 under-review.
+- Funnel numbers unchanged: installs 0 (PyPI key-gated), merged PRs 0 (req2), outside paid 0,
+  live listings 2, prepared PR branches 6 (all req2-key-gated), X updates: weekly cap reached
+  on 2026-09-15 -> no more this week.
