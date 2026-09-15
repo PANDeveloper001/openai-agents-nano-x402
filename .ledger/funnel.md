@@ -65,7 +65,8 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - installs/downloads: 0 (package not on PyPI yet — key-blocked)
 - merged PRs: 0
 - outside paid calls: 0
-- directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f) + 1 pending (Nano Hub)
+- directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f)
+  + 2 pending (Nano Hub suggestion; MadeWithStack under-editorial-review, slug openai-agents-nano)
 - prepared+ready PRs (fork branches pushed, blocked on key): 3 (x402, nanodir, awesome-agent-first-tools)
 - X posts this week: 2 deleted by owner (2099768372577939500, 2099774744598110352) + 1 LIVE re-post
   (2099810368545780022, owner-sanctioned, link 200). Next update-kind: not before 2026-09-22.
