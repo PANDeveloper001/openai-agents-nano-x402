@@ -279,3 +279,31 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   search no card, zPlatform search no card, aiagenttools search no card, AgentRank browse no
   card, AI Agents Live /agents no card. All still under review; no new adoption milestone.
 - Fresh-install proof logged via rai-distribution (starter_path). Public link list all 200.
+
+## RE-VERIFIED 2026-09-15 ~15:50 UTC (this run)
+- Corrective action honored — every public link re-checked HTTP 200 signed-out (curl -L, no session):
+  repo, README, docs/tutorial.md, docs/agent-payment-rails-comparison.md, docs/fee-finality-comparison.md,
+  docs/live-proof.md, agentlaunch agents API, Agent Directory API, and all 7 prepared PR fork-branches
+  (x402, nanodir, awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, awesome_mpp,
+  awesome-agent-payments-protocol) — all 200. Nothing 404.
+- PR-open RE-TESTED with the stored git token (has permissionless API access): POST /repos/Corican/nanodir/pulls
+  still returns 403 "Resource not accessible by personal access token" — token pushes to own forks but cannot
+  open third-party PRs, exactly as the on-key-arrival runbook records. req2 still genuinely pending.
+- NEW drift found: x402 PR branch has DIVERGED (ahead 1, behind 5) — upstream moved 5 commits since the branch
+  was prepared. It needs a cherry-pick/`git rebase` onto current upstream BEFORE opening the PR (recorded in
+  the on-key-arrival runbook). All other 6 branches are clean ahead-1/behind-0.
+- Pending listings re-checked via browser (none live): MeshKore search 404, TheNextAI no card, zPlatform no
+  card, aiagenttools no card, AgentRank browse no card, AI Agents Live /agents no card, 4agent tool page 404.
+  MadeWithStack not re-checked (dropped to 404 earlier run). None live.
+- NEW target evaluations this run: awesome-agent-cortex (0xNyk, 218★, has an Agent Payments section fitting our
+  tool, active 2026-09-02) — REJECTED: its own claude/hooks/secret-scanner.js sits in the fork's inherited
+  history and rai-publish push-check refuses the branch push ("private key block"); it is upstream's own file,
+  already public in the fork's default branch, but the gate is a hard rule — dropping the target, not bypassing.
+  fushu.dev/register — site returns HTTP 500 on every page, not submittable. theagentsindex.com/api/submit —
+  live call returns 401 Unauthorized (llms.txt claims keyless but it is auth-gated in practice), skip.
+  jim-schwoebel/awesome_ai_agents (1978★), Supersynergy & caramaschiHG & Ridgeio awesome-ai-agents — evaluated:
+  general 300-900-entry mega-lists with no payments sub-section; adding a payments adapter there is low-precision
+  and spammy; skip (no-spam rule: list must list exactly the project's kind).
+- Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2, 403 re-confirmed), outside paid 0,
+  live listings 2 (agentlaunch, Agent Directory API), prepared PR branches 7 (all req2-gated), pending keyless
+  listings 9. X weekly update cap reached 2026-09-15 (next >= 2026-09-22).

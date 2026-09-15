@@ -28,6 +28,10 @@ their fork remotes 2026-09-15 ~15:22 UTC):
 - mpp-best/awesome_mpp:   branch `add-openai-agents-nano` @ b0015c5
 - tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano` @ 52d7c481
 
+NOTE 2026-09-15 ~15:50 UTC: x402 branch docs/list-openai-agents-nano-clean has DIVERGED
+  (ahead 1, behind 5 — upstream x402-foundation/x402 moved 5 commits). Rebase onto current upstream main
+  BEFORE opening that PR. Other 6 branches remain ahead-1/behind-0.
+
 ## Never
 - Retired projects (langgraph-nano-x402, n8n-nano-x402) under any name.
 - Secrets in PR titles/bodies. Scan before opening.
