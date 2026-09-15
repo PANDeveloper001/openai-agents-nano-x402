@@ -240,3 +240,15 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - **Vibedonalds (vibedonalds.com/submit) — evaluated, skipped:** keyless form but audience is
   vibe-coded consumer apps/games/MCP servers, and "instant publishing" costs $10 -> mismatch for a
   developer library; skip.
+
+## RE-VERIFIED 2026-09-15 ~15:16 UTC (this run)
+- Corrective action honored — every public link re-verified HTTP 200 signed-out (curl -L, no session):
+  repo, README, docs/tutorial.md, docs/fee-finality-comparison.md, docs/live-proof.md, agentlaunch
+  agents page, Agent Directory API, x402.org, feeless402.com — all 200.
+- Pending listings re-checked (honest, no new milestone): MadeWithStack product API still status
+  'pending' UNDER_EDITORIAL_REVIEW (HTTP 200); AgentRank search route is 404 and browse shows
+  no openai-agents-nano card (pending review); AI Agents Live /agents has no card (pending review);
+  4agent.dev /tools/openai-agents-nano still 404. Net: no listing went live this run.
+- Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2), outside paid 0,
+  live listings 2 (agentlaunch, Agent Directory API logged-but-not-milestone), prepared PRs 7
+  (all req2-gated), X weekly update posted 2026-09-15 (cap reached; next update-kind >= 2026-09-22).
