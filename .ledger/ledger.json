@@ -115,7 +115,8 @@
    "source": null,
    "grounding": "oracle",
    "version": 2,
-   "minted": "2026-09-15T00:03:51+00:00"
+   "minted": "2026-09-15T00:03:51+00:00",
+   "retired": true
   },
   {
    "id": "L7",
@@ -131,7 +132,8 @@
    "source": null,
    "grounding": "oracle",
    "version": 2,
-   "minted": "2026-09-15T00:03:51+00:00"
+   "minted": "2026-09-15T00:03:51+00:00",
+   "retired": true
   },
   {
    "id": "L8",
@@ -180,7 +182,8 @@
    "source": null,
    "grounding": "oracle",
    "version": 1,
-   "minted": "2026-09-15T01:59:52+00:00"
+   "minted": "2026-09-15T01:59:52+00:00",
+   "retired": true
   },
   {
    "id": "L11",
@@ -196,7 +199,8 @@
    "source": null,
    "grounding": "oracle",
    "version": 1,
-   "minted": "2026-09-15T02:39:33+00:00"
+   "minted": "2026-09-15T02:39:33+00:00",
+   "retired": true
   },
   {
    "id": "L12",
@@ -212,7 +216,8 @@
    "source": null,
    "grounding": "oracle",
    "version": 1,
-   "minted": "2026-09-15T02:40:02+00:00"
+   "minted": "2026-09-15T02:40:02+00:00",
+   "retired": true
   },
   {
    "id": "L13",
@@ -243,7 +248,103 @@
    "source": ".ledger/live-proof.md:1",
    "grounding": "source",
    "version": 1,
-   "minted": "2026-09-15T04:40:08+00:00"
+   "minted": "2026-09-15T04:40:08+00:00",
+   "retired": true
+  },
+  {
+   "id": "L15",
+   "block": 2.0,
+   "statement": "a real payment redeems only with a single-use quote token bound to its offer",
+   "test": "tests/two_phase_offline.py proves dry_run mints a token; redeem without, with a bogus, and with a spent token is REFUSED; the matching token opens the gate; an offer change is REFUSED",
+   "scope": [
+    "src/openai_agents_nano/tool.py",
+    "tests/two_phase_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/two_phase_offline.py",
+   "expect": "TWO_PHASE_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T04:44:46+00:00"
+  },
+  {
+   "id": "L16",
+   "block": 2.0,
+   "statement": "a redeem is refused when the endpoint changes pay_to or price after the previewed quote",
+   "test": "tests/two_phase_offline.py case 6 proves redeem against a quote that changed since preview is REFUSED with offer-changed",
+   "scope": [
+    "src/openai_agents_nano/tool.py",
+    "tests/two_phase_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/two_phase_offline.py",
+   "expect": "TWO_PHASE_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T04:44:46+00:00"
+  },
+  {
+   "id": "L17",
+   "block": 1.0,
+   "statement": "dry_run spends nothing and a price above the cap is refused without signing",
+   "test": "tests/fail_closed_offline.py proves dry_run creates no wallet frontier and an over-cap redeem returns a refusal string without signing",
+   "scope": [
+    "src/openai_agents_nano/tool.py",
+    "tests/fail_closed_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/fail_closed_offline.py",
+   "expect": "FAIL_CLOSED_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T04:44:55+00:00"
+  },
+  {
+   "id": "L18",
+   "block": 3.0,
+   "statement": "A redeem result is never headed PAID unless the ledger confirmed settlement, block and verdict shown honestly",
+   "test": "tests/receipt_honesty_offline.py prints RECEIPT_HONESTY_OK when labels and verdicts are truthful",
+   "scope": [
+    "src/openai_agents_nano/tool.py",
+    "tests/receipt_honesty_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/receipt_honesty_offline.py",
+   "expect": "RECEIPT_HONESTY_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T04:44:55+00:00"
+  },
+  {
+   "id": "L19",
+   "block": 3.0,
+   "statement": "A redeem whose merchant never replied reports the signed block and ledger verdict so the agent never re-pays blind",
+   "test": "tests/payment_failure_honesty_offline.py prints PAYMENT_FAILURE_HONESTY_OK when unreachable-reply receipts keep the block and verdict",
+   "scope": [
+    "src/openai_agents_nano/tool.py",
+    "tests/payment_failure_honesty_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/payment_failure_honesty_offline.py",
+   "expect": "PAYMENT_FAILURE_HONESTY_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T04:44:55+00:00"
+  },
+  {
+   "id": "L20",
+   "block": 4.0,
+   "statement": "A real capped mainnet redeem through a locally-run rail-reusing server settles a confirmed XNO block under the adapter's cap",
+   "test": "docs/live-proof.md records the live run (block 66b5e8c3...); the block is confirmed on two public nodes and shown on block explorers",
+   "scope": [
+    "docs/live-proof.md"
+   ],
+   "oracle": null,
+   "expect": null,
+   "source": "docs/live-proof.md",
+   "grounding": "source",
+   "version": 1,
+   "minted": "2026-09-15T04:51:05+00:00"
   }
  ],
  "blocks": {
@@ -328,6 +429,30 @@
      "coverage_gaps": [],
      "injection": [],
      "at": "2026-09-14T23:05:12+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "ef620e4c2c89b67ac5d34c2176b70b57626194b78126185e3777b3be4f6f3e44",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T04:45:49+00:00"
     }
    ]
   },
@@ -1041,6 +1166,55 @@
      "coverage_gaps": [],
      "injection": [],
      "at": "2026-09-15T02:03:35+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "bc83b3b5eb8025503f978e195a07e04f92c72395695e28db979d8fe4e4c322f1",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T04:47:42+00:00"
     }
    ]
   },
@@ -1235,7 +1409,63 @@
   },
   "4": {
    "status": "pending",
-   "attempts": []
+   "attempts": [
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L6",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L7",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L10",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L11",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L12",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L13",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L14",
+       "pass": false,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "20635f3a3bf106d8df29400f61e997248664278b0036e3534b48e45be755528a",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T04:41:03+00:00"
+    }
+   ]
   }
  },
  "deltas": [
@@ -1940,6 +2170,162 @@
    "at": "2026-09-15T04:40:08+00:00",
    "prev": "99d38903976feca305589a9b7d5bf843bc4833dbe8182861ecd104cfbfaf98e5",
    "receipt": "92c34ae30bb60dfdad8f4f7c2b3a91863c8f72763278b7be96827cdc5f8d1459"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "4",
+    "ok": false
+   },
+   "at": "2026-09-15T04:41:03+00:00",
+   "prev": "92c34ae30bb60dfdad8f4f7c2b3a91863c8f72763278b7be96827cdc5f8d1459",
+   "receipt": "e2f23f819f1230f2880e98b75a1d24cb7f85d971c2848061d2bd6e105e48b01e"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L6",
+    "reason": "scope tests/* was over-broad (covered all tests); re-minted with tests/two_phase_offline.py only so evidence stays under the cap"
+   },
+   "at": "2026-09-15T04:44:25+00:00",
+   "prev": "e2f23f819f1230f2880e98b75a1d24cb7f85d971c2848061d2bd6e105e48b01e",
+   "receipt": "e29058bdab6bef32dc8c6d86d709337a157888fb0ff9b63ee37a58273825f530"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L7",
+    "reason": "scope tests/* was over-broad (covered all tests); re-minted with tests/two_phase_offline.py only"
+   },
+   "at": "2026-09-15T04:44:25+00:00",
+   "prev": "e29058bdab6bef32dc8c6d86d709337a157888fb0ff9b63ee37a58273825f530",
+   "receipt": "3c6ac424e4e9c3135da7234f958f1a0ab5baf230dd1d9695b7fb9399dc935fc1"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L10",
+    "reason": "scope tests/* was over-broad (covered all tests); re-minted with tests/fail_closed_offline.py only"
+   },
+   "at": "2026-09-15T04:44:25+00:00",
+   "prev": "3c6ac424e4e9c3135da7234f958f1a0ab5baf230dd1d9695b7fb9399dc935fc1",
+   "receipt": "2c817121a13454203f0ac11cfbc931e440c492a2b28e625d40c8512689f43172"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L11",
+    "reason": "scope tests/* was over-broad (covered all tests); re-minted with tests/receipt_honesty_offline.py only"
+   },
+   "at": "2026-09-15T04:44:25+00:00",
+   "prev": "2c817121a13454203f0ac11cfbc931e440c492a2b28e625d40c8512689f43172",
+   "receipt": "e81032d57b9527a1a1c9395361686c9555b3d5aba4fa760d742bf582860e78a7"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L12",
+    "reason": "scope tests/* was over-broad (covered all tests); re-minted with tests/payment_failure_honesty_offline.py only"
+   },
+   "at": "2026-09-15T04:44:25+00:00",
+   "prev": "e81032d57b9527a1a1c9395361686c9555b3d5aba4fa760d742bf582860e78a7",
+   "receipt": "0ae6856435c0cd0d38bd9eec9567735d293d1418f84e7bd8cff3e80380940950"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L15",
+    "block": "2",
+    "statement_sha": "f03c70d94b80f0b4900c5973203d3ff9581addd737f85d1f1c735a0f4839436d"
+   },
+   "at": "2026-09-15T04:44:46+00:00",
+   "prev": "0ae6856435c0cd0d38bd9eec9567735d293d1418f84e7bd8cff3e80380940950",
+   "receipt": "fe722aac1382a0af07982ff564a3421bcbb0cb105eb1aaa46fd6970ac1c50558"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L16",
+    "block": "2",
+    "statement_sha": "17ac431f72ad2186379c1711e3b64cf30e2a37565029c476a3b211b82cc7d4bd"
+   },
+   "at": "2026-09-15T04:44:46+00:00",
+   "prev": "fe722aac1382a0af07982ff564a3421bcbb0cb105eb1aaa46fd6970ac1c50558",
+   "receipt": "54f38a6189b9c1fc0f0450216d9f8968ffcc3e753b2f13d91686aca1cc9ef6a6"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L17",
+    "block": "1",
+    "statement_sha": "e1a605b69566cf9330a6e51a25d95ee78b357822bbe6cea6c5bb76f6e74b018c"
+   },
+   "at": "2026-09-15T04:44:55+00:00",
+   "prev": "54f38a6189b9c1fc0f0450216d9f8968ffcc3e753b2f13d91686aca1cc9ef6a6",
+   "receipt": "8d579e8d6b44ff1b600d87273077780971f22329125b245f97e33a46e2ae2661"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L18",
+    "block": "3",
+    "statement_sha": "92493d91bc4ed22745d117f4fe40db5d8682bd8e755b4ff68b18d3d43e37534d"
+   },
+   "at": "2026-09-15T04:44:55+00:00",
+   "prev": "8d579e8d6b44ff1b600d87273077780971f22329125b245f97e33a46e2ae2661",
+   "receipt": "da78c477f5e0896bfc52ea02987d08908a3154e4d1bbd10716e6f3220a625f6c"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L19",
+    "block": "3",
+    "statement_sha": "066da39a67dfda0c965e6ff289dab4229eeef0a6e35dbaa2d6525c1876421407"
+   },
+   "at": "2026-09-15T04:44:55+00:00",
+   "prev": "da78c477f5e0896bfc52ea02987d08908a3154e4d1bbd10716e6f3220a625f6c",
+   "receipt": "f2fab19aa4a90460de9174f22c1c0471096da0e6060472d13e17e1423d9b72d8"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "1",
+    "ok": true
+   },
+   "at": "2026-09-15T04:45:49+00:00",
+   "prev": "f2fab19aa4a90460de9174f22c1c0471096da0e6060472d13e17e1423d9b72d8",
+   "receipt": "5916568d0df26ad049c533d3423a5151316f541738754ed73ed277154c3e65ca"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "2",
+    "ok": true
+   },
+   "at": "2026-09-15T04:47:42+00:00",
+   "prev": "5916568d0df26ad049c533d3423a5151316f541738754ed73ed277154c3e65ca",
+   "receipt": "e06f84df4c6907018b0e2c50510054fb0d31db6082b1a647f5a8412e468ad494"
+  },
+  {
+   "kind": "retire",
+   "payload": {
+    "id": "L14",
+    "reason": "source lived under .ledger which the evidence builder excludes; re-mint with scope docs/live-proof.md so the judge sees the proof"
+   },
+   "at": "2026-09-15T04:51:05+00:00",
+   "prev": "e06f84df4c6907018b0e2c50510054fb0d31db6082b1a647f5a8412e468ad494",
+   "receipt": "6f6de766c5ac9388680df6b916931d61301c97278708f36eb35211ed85d8eafd"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L20",
+    "block": "4",
+    "statement_sha": "4c8bb942ae1667b8bad1c48143aa806d76b30e9f29f1c0729eb1e32c86e66e3f"
+   },
+   "at": "2026-09-15T04:51:05+00:00",
+   "prev": "6f6de766c5ac9388680df6b916931d61301c97278708f36eb35211ed85d8eafd",
+   "receipt": "e680b054969a3f064055db4d7f10f31686b3a945f464f6740fd9535cd0cc4842"
   }
  ]
 }
