@@ -149,3 +149,21 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - Funnel numbers unchanged: installs 0 (PyPI key-gated), merged PRs 0 (req2), outside paid 0,
   live listings 2, prepared PR branches 6 (all req2-key-gated), X updates: weekly cap reached
   on 2026-09-15 -> no more this week.
+
+## NEW 2026-09-15 ~13:55 UTC (this run): 7th PR branch + one list evaluated-not-fit
+- **7th integration PR branch prepared (keyless prep, public docs bundle):**
+  tsubasakong/awesome-agent-payments-protocol (agentic-commerce protocol awesome list; "PRs welcome!"
+  in the README; exactly our kind — a Python x402 client library for OpenAI Agents). 1-line SDK row
+  added under "Developer Tools & Starters > x402 Implementation > SDKs & Libraries" (README.md:299).
+  Nano is entirely absent from the list — genuine gap. Fork PANDeveloper001/
+  awesome-agent-payments-protocol, branch `add-openai-agents-nano` @ 52d7c481. Scan clean
+  (rai-publish push-check, 16 commits). fork-branch page 200 + compare/pull page 200 both verified
+  unsigned. PR-open key-gated on req2 (same as the other 6). Note: git stored the token in the
+  branch tracking config after the explicit-URL push; unset branch.add-openai-agents-nano.remote/
+  .merge after pushing to avoid persisting the token.
+- **bitrefill/awesome-agentic-payments — evaluated, NOT a fit:** CONTRIBUTING requires "Only official
+  sources are accepted: specs, official documentation, SDKs, and official blog posts from the
+  maintaining organizations". Our third-party SDK row would likely be rejected there. Skip.
+- Funnel PR-count line to keep updated: now 7 prepared+ready PR branches
+  (x402, nanodir, awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, mpp-best/awesome_mpp,
+  awesome-agent-payments-protocol).
