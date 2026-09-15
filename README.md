@@ -74,6 +74,12 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
   preview and the redeem (an irreversible Nano block is only ever authorised
   against the offer the agent was shown).
 - Per-call cap enforced in deterministic code before any signing.
+- **Honest results:** only a ledger-confirmed settlement is reported as PAID.
+  A block the ledger does not hold, or an indeterminate verdict, is reported
+  as NOT PAID / UNCONFIRMED with its block hash; and if a merchant never
+  replies after the block is signed, the tool surfaces the signed block and
+  verdict with a "re-present the SAME block, do not re-pay blind" action —
+  never a generic failure that invites a double payment.
 - Self-custodied: your seed stays on disk; nothing here holds your funds.
 
 ## Tests
@@ -82,6 +88,8 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
 python -m pytest -q                          # structural
 python tests/fail_closed_offline.py          # L1: dry_run spends nothing, over-cap refused
 python tests/two_phase_offline.py            # L2/L3: single-use token gate + offer-change refusal
+python tests/receipt_honesty_offline.py      # L11: never headed PAID unless the ledger confirmed settlement
+python tests/payment_failure_honesty_offline.py  # L12: a never-replied redeem surfaces the signed block + verdict, so an agent never re-pays blind
 ```
 
 ## License

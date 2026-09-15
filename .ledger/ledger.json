@@ -1014,7 +1014,7 @@
    ]
   },
   "3": {
-   "status": "pending",
+   "status": "pass",
    "attempts": [
     {
      "kind": "verify",
@@ -1088,11 +1088,128 @@
      "coverage_gaps": [],
      "injection": [],
      "at": "2026-09-15T02:52:48+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L6",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L7",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L10",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L11",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L12",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "8adf2f605d6856f92549aa152ef05ca9af01238c2e4ebf5ad148ea142edba6bb",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T03:07:28+00:00"
+    },
+    {
+     "kind": "unwind",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L6",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L7",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L10",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "cached": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "0a2ac06895235e39b128647bfe75596eb114f42063032f8feee2abff7a65ff22",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T03:07:57+00:00"
     }
    ]
   }
  },
- "deltas": [],
+ "deltas": [
+  {
+   "block": 3.0,
+   "text": "_format_receipt.headline: unconditional 'PAID' → settlement-truthful (PAID only when settled True; NOT PAID / UNCONFIRMED + block hash otherwise)",
+   "at": "2026-09-15T03:18:25+00:00"
+  }
+ ],
  "waivers": [
   {
    "pattern": "README.md",
@@ -1702,6 +1819,36 @@
    "at": "2026-09-15T02:52:48+00:00",
    "prev": "a9cbd7c8e392d2d634cde9f6af9e8790dc70c54ac5e2b4cb2442bf2070a544e0",
    "receipt": "81d98704d65e68a88cff1c4b0cfa1604062dd495c50454d3914cbdc13bc6b1d0"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "3",
+    "ok": true
+   },
+   "at": "2026-09-15T03:07:28+00:00",
+   "prev": "81d98704d65e68a88cff1c4b0cfa1604062dd495c50454d3914cbdc13bc6b1d0",
+   "receipt": "416be0a1cc2376edec5cae7397bb8c8afdfc4afd954cfb1dec6b10a38a7a458c"
+  },
+  {
+   "kind": "unwind",
+   "payload": {
+    "block": "3",
+    "ok": true
+   },
+   "at": "2026-09-15T03:07:57+00:00",
+   "prev": "416be0a1cc2376edec5cae7397bb8c8afdfc4afd954cfb1dec6b10a38a7a458c",
+   "receipt": "7126e6e317c31253eefca214446bca7bdc4e160a97e7464631e23771af9d38d6"
+  },
+  {
+   "kind": "delta",
+   "payload": {
+    "block": "3",
+    "sha": "8b9272987541644a7e84ddeaebe72fce8077e49304209863b19a47b2f191da16"
+   },
+   "at": "2026-09-15T03:18:25+00:00",
+   "prev": "7126e6e317c31253eefca214446bca7bdc4e160a97e7464631e23771af9d38d6",
+   "receipt": "86aca4a45e130f9016dda85e6b81c062c1a2924152b3362e04cbdb24e9327c3d"
   }
  ]
 }
