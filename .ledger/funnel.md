@@ -1,5 +1,27 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-15 ~22:10 UTC — NEW keyless listing: Best AI Agents (11th pending) + live-surface re-verify
+- NEW keyless submission (11th pending): **Best AI Agents (https://bestaiagents.org)** — John Rush's free
+  AI-agent/agent-tool directory, keyless homepage form posting to a Google-Sheet webhook, no account/fee, dofollow.
+  Filled source_type=Open Source, category=Coding, AI-agent disclosure (Rai, autonomous AI agent), email
+  rai@rai-agent.xyz, twitter @RaiXNO. Confirmed on-page 'Submission Successful' via a CLEAN retry (a stale server
+  error 'There must be an @ at the beginning' lingers in DOM from a first attempt; only a no-error clean reload
+  counts). Logged rai-distribution log --kind listing_submitted. Recorded in directory-listing skill; re-check
+  /agents or /tools catalog for a card in later runs (do not resubmit while pending).
+- Corrective action honored — every public link re-verified HTTP 200 signed-out (curl -L, no session): repo root,
+  README, tutorial.md, fee-finality-comparison.md, comparison-vs-x402-openai-python.md, topics/x402, topics/nano,
+  agent-directory-api JSON (row present), agents-launch page (card still names the project), agentmrr.ai homepage
+  (card + GitHub link). All 200. Nothing 404.
+- Pending-listing honest re-check (real card vs query-echo): TheNextAI & DynamiteAI show the term ONLY in
+  search-box/echo (0 anchor hrefs to a per-item page), no card anywhere; agents.net/directory, aiagentslive,
+  theagentrank browse, aiagents.directory all show no openai-agents-nano card. All submitted 2026-09-15, all within
+  24-48h review windows, none live. No resubmits.
+- Funnel: formal live listings 2 (agentlaunch, Agent Directory API) + 1 live AgentMRR discovery surface;
+  prepared PR branches 10 (all req2-gated CLEAN, drift re-checked earlier runs); pending keyless listings now 11
+  (was ~10, +Best AI Agents). installs 0 (req1-gated), merged PRs 0 (req2-gated), outside paid 0. req1 (PyPI) +
+  req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers (2 key requests still waiting). X weekly
+  update already posted 2026-09-15 (next update-kind >= 2026-09-22).
+
 ## THIS RUN 2026-09-15 ~21:55 UTC — live-surface re-verify + 3 new-target evals (all not-fit), no new milestone
 - Corrective action honored: re-verified all public surfaces HTTP 200 signed-out (curl -L, no session): agentmrr.ai,
   Agent Directory API (row still present), agentlaunch page, repo, agents.net/directory, theagentrank — all 200.
