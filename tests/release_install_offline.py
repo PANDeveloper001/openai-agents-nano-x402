@@ -120,6 +120,7 @@ def phase_two_in_venv(cap: str) -> None:
     assert out.startswith("QUOTE"), out
     assert "0.1 XNO" in out, out
     assert _frontier(_wallet()) is None, "dry_run must not sign/broadcast"
+    print("  dry_run preview ->", out.splitlines()[0], "| 0.1 XNO | no frontier")
 
     # L22b: over-cap redeem (valid token) -> REFUSED before signing, no spend.
     import re as _re
@@ -135,6 +136,7 @@ def phase_two_in_venv(cap: str) -> None:
     assert out2.startswith("REFUSED"), out2
     assert "1 XNO" in out2 and f"{cap} XNO" in out2, out2
     assert _frontier(_wallet()) is None, "cap refusal must not spend"
+    print("  over-cap redeem ->", out2.splitlines()[0], "| 1 XNO >", cap, "XNO | no frontier")
 
     print("RELEASE_INSTALL_OK")
     print("name:", tool.name)
