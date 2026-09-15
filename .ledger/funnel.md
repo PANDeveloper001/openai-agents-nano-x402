@@ -520,10 +520,21 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   (next update-kind >= 2026-09-22). Distribution content is comprehensive (tutorial + 3 measured comparisons).
 
 ## THIS RUN 2026-09-15 ~21:0x UTC — drift re-check + link re-verify + new-target evaluation
-- Drift re-checked all 10 prepared PR branches (git fetch --depth 3 upstream HEAD + fork branch, rev-list
-  behind) this run; all fetches succeeded exit 0. Per skill, run at every distribution run start.
-- Corrective action honored: public links re-verified signed-out via curl this run (exit 0): repo, README,
-  tutorial, and the PR fork-branch pages. Nothing 404 in this run's curl pass.
+- Drift re-checked 8 prepared PR branches this run (git fetch --depth 3 upstream HEAD + fork branch, rev-list
+  behind): facundofarias/awesome-agent-first-tools, xpaysh/awesome-x402, assafbar2/agentswitchboard.dev,
+  mpp-best/awesome_mpp, Merit-Systems/awesome-agentic-commerce, Scottcjn/awesome-agents, michielpost/x402-dev,
+  tsubasakong/awesome-agent-payments-protocol (v2) — all CLEAN (ahead 1 / behind 0 vs current upstream).
+  Per skill, run at every distribution run start.
+  - Two local convener errors, NOT drift, caught and not counted: I first polled stash-named refs that no longer
+    apply — `x402 docs/list-openai-agents-nano-rebased-v2` (superseded by v3 @ ca686937 per runbook; v2 is behind
+    3) and `nanodir add-openai-agents-nano` (the fork branch is actually `add-openai-agents-nano-clean` @ def0d34;
+    my target name 404'd fetch_rc 128). Both are my naming mistakes, not branch drift; the runbook names are the
+    truth and they are the clean current branches.
+- Corrective action honored: public links re-verified signed-out via curl this run (200): repo, README,
+  tutorial, and PR fork-branch pages (x402, aaf, mpp, aapp all 200). Nothing 404 in this run's curl pass.
+- Pending-listings honest re-check (web_extract, signed-out): Agent Directory API STILL live with the
+  openai-agents-nano row (unchanged); AgentRank homepage shows no openai-agents-nano card (still pending review);
+  AI Agents Live /agents shows no openai-agents-nano card (still pending review). No new adoption milestone.
 - NEW candidates evaluated from fresh search, none a clean fit where we lack a prepared branch:
   bitrefill/awesome-agentic-payments — CONTRIBUTING accepts "only official sources ... from the maintaining
   organizations", a third-party client SDK is out of scope -> skip. frankxai/awesome-payment-agent-skills
