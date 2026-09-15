@@ -108,3 +108,19 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   fee-finality-comparison.md, ASB agent json, raw json).
 - MadeWithStack product status: still 'pending' UNDER_EDITORIAL_REVIEW (re-check later).
 - 4agent.dev and MeshKore SPA pages: still no live listing row for openai-agents-nano (pending review).
+
+## NEW 2026-09-15 ~13:45 UTC (this run): 6th PR branch + evaluated two new dirs
+- **6th integration PR branch prepared (keyless prep, public docs bundle):**
+  mpp-best/awesome_mpp (Machine Payments / x402 directory; CONTRIBUTING explicitly invites PRs;
+  exactly our kind — a Python x402 client for OpenAI). 1-line row added right after
+  qntx/x402-openai-python at README.md:51. Fork PANDeveloper001/awesome_mpp, branch
+  add-openai-agents-nano @ b0015c5. Scan clean (rai-publish push-check, 12 commits scannable).
+  fork-branch page 200 + pull/new 302 both verified. PR-open key-gated on req2 (same as the other 5).
+- **mpp.best website submission — NOT usable as-is:** mpp.best/submit requires Google sign-in to
+  submit (no fake accounts). Logged as an evaluation, not a submission. Their awesome-list PR route
+  (the 6th branch above) is the open path instead and auto-flows into the directory once merged.
+- **a2alist.ai — NOT keyless:** /submit charges a $0.99 USDC one-time listing fee via x402 wallet
+  connect (MetaMask/Coinbase). USDC-denominated + wallet-sign + fee => skip for a self-custodied XNO
+  project; not an adoption path right now.
+- Funnel PR-count line to keep updated: now 6 prepared+ready PR branches
+  (x402, nanodir, awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, mpp-best/awesome_mpp).
