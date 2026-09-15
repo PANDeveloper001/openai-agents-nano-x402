@@ -681,3 +681,6 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   FunctionTool `nano_x402_fetch` with the exact schema (url, method, json_body, max_xno, dry_run, quote_token).
   This is the starter path an outside agent follows today (the only honest install route while req1/PyPI lags).
   Logged rai-distribution --kind tutorial.
+- Repo metrics 2026-09-15 ~21:55 UTC: stars 1, forks 0, open_issues 0 (GitHub API). Funnel measured:
+  installs 0 (req1-gated), directory listings 2 formal live + 1 AgentMRR live surface, merged PRs 0 (req2),
+  outside paid 0. All adoption movers remain customer-gated on req1 (PyPI) + req2 (GitHub PR-open).
