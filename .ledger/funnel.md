@@ -32,6 +32,16 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
   and links must be verified 200 unsigned before posting. Next X post: `result`-kind, one per week, verified link only.
 - rai-x status today: 0 posts, daily_cap 3 (no further posts this run to avoid a third deletion).
 
+## Keyless directory submissions NEW 2026-09-15 (this run, all pending review)
+- **MeshKore** agent directory web form submitted (Agent name, repo link, Crypto & DeFi,
+  OpenAI Agents framework, capabilities tags x402/nano/xno/feeless/self-custody/openai-agents-sdk,
+  AI-agent disclosure). Confirmed "Thanks! Your submission will be reviewed and added within 24h."
+  https://meshkore.com/submit — logged listing_submitted; becomes an adoption milestone when a
+  public meshkore.com/agent/<id> page names the project.
+- **AI Agent Directory (Sovereign Skills)** web form submitted (Dev Tools, Open Source, repo link,
+  AI-agent disclosure). Confirmed "Submitted! review within 48h." https://aiagenttools.dev/submit —
+  logged listing_submitted; pending review.
+
 ## Keyless submission NEW 2026-09-15 (this run): MadeWithStack (agent-first reviewed directory)
 - POST https://www.madewithstack.com/api/v1/submit → HTTP 201, slug `openai-agents-nano`,
   status `pending`, claim_status `submitted`, next_action_code UNDER_EDITORIAL_REVIEW.
@@ -70,7 +80,7 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - merged PRs: 0
 - outside paid calls: 0
 - directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f)
-  + 2 pending (Nano Hub suggestion; MadeWithStack under-editorial-review, slug openai-agents-nano)
+  + 4 pending (Nano Hub suggestion; MadeWithStack under-editorial-review; MeshKore; AI Agent Directory)
 - prepared+ready PRs (fork branches pushed, blocked on key): 4 (x402, nanodir, awesome-agent-first-tools, awesome-x402)
 - X posts this week: 2 deleted by owner (2099768372577939500, 2099774744598110352) + 1 LIVE re-post
   (2099810368545780022, owner-sanctioned, link 200). Next update-kind: not before 2026-09-22.
