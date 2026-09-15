@@ -274,6 +274,8 @@ def make_nano_x402_tool(
     ) -> str:
         if not wallet.exists():
             wallet.create()
+        else:
+            wallet.load()  # an existing funded wallet must be loaded to sign
         try:
             cap_xno = str(_apply_cap(max_xno, default_cap))
         except ValueError as e:

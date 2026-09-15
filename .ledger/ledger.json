@@ -213,6 +213,37 @@
    "grounding": "oracle",
    "version": 1,
    "minted": "2026-09-15T02:40:02+00:00"
+  },
+  {
+   "id": "L13",
+   "block": 4.0,
+   "statement": "An existing funded wallet is loaded (not re-created) so a redeem signs with the held balance instead of crashing",
+   "test": "tests/wallet_load_offline.py proves a pre-existing wallet file's known seed is loaded (wallet.data.seed matches) and the redeem settles with it",
+   "scope": [
+    "src/openai_agents_nano/tool.py",
+    "tests/wallet_load_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/wallet_load_offline.py",
+   "expect": "WALLET_LOAD_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-15T04:40:04+00:00"
+  },
+  {
+   "id": "L14",
+   "block": 4.0,
+   "statement": "A real capped mainnet redeem through a locally-run rail-reusing server settles a confirmed XNO block (block 66b5e8c3...) under the adapter's cap",
+   "test": ".ledger/live-proof.md records the live run; the block is confirmed on two public nodes and shown on block explorers",
+   "scope": [
+    ".ledger/live-proof.md"
+   ],
+   "oracle": null,
+   "expect": null,
+   "source": ".ledger/live-proof.md:1",
+   "grounding": "source",
+   "version": 1,
+   "minted": "2026-09-15T04:40:08+00:00"
   }
  ],
  "blocks": {
@@ -1201,6 +1232,10 @@
      "at": "2026-09-15T03:07:57+00:00"
     }
    ]
+  },
+  "4": {
+   "status": "pending",
+   "attempts": []
   }
  },
  "deltas": [
@@ -1883,6 +1918,28 @@
    "at": "2026-09-15T03:40:21+00:00",
    "prev": "867619df91b517bb92b1e7d2ba6d6d2750cd6626c81249b5a9296a4c8f64f2ef",
    "receipt": "0e067a8a8b3e20ec68055de03e45106c53fcbd24cf9a4f4efa1465d7faf21edd"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L13",
+    "block": "4",
+    "statement_sha": "b41200f2f988ec5951201b77e4d0f8d95d4e52fbbfd98c67c536b99eb32db955"
+   },
+   "at": "2026-09-15T04:40:04+00:00",
+   "prev": "0e067a8a8b3e20ec68055de03e45106c53fcbd24cf9a4f4efa1465d7faf21edd",
+   "receipt": "99d38903976feca305589a9b7d5bf843bc4833dbe8182861ecd104cfbfaf98e5"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L14",
+    "block": "4",
+    "statement_sha": "5fa5b8f284cb7feb31358bf569ab3a926b77c8731ef52f3cdaf7be0bc6507cad"
+   },
+   "at": "2026-09-15T04:40:08+00:00",
+   "prev": "99d38903976feca305589a9b7d5bf843bc4833dbe8182861ecd104cfbfaf98e5",
+   "receipt": "92c34ae30bb60dfdad8f4f7c2b3a91863c8f72763278b7be96827cdc5f8d1459"
   }
  ]
 }
