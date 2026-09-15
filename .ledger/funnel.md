@@ -1,5 +1,37 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-15 ~22:20 UTC — drift re-check ALL-10 CLEAN + agentsai.tools evaluated (unreachable, no submit)
+- Corrective action honored: every public surface re-verified HTTP 200 signed-out (curl -L, no session): repo root,
+  README, agent-directory-api JSON (row present), agents-launch.lovable.app/agents/openai-agents-nano card,
+  agentmrr.ai homepage, topics/x402, topics/nano. All 200. Nothing 404. (The single 404 was MY typo — I curled a
+  non-existent repo `PANDeveloper001/openai-agents-nano`, which correctly returns 404; not a real surface.)
+- Drift re-check ALL 10 prepared PR branches via proper deep merge-base (fetch upstream default into a scratch ref +
+  separately fetch fork branch, capture each sha BEFORE the next fetch overwrites FETCH_HEAD — an earlier iteration
+  of this loop had the FETCH_HEAD-overwrite bug that falsely flagged branches DRIFTED; fixed by update-ref -d
+  FETCH_HEAD between fetches; the _driftcheck/asb clone was also stale, so use the fresh _prs fetch):
+  x402-rebased-v3, nanodir-clean, mpp, awesome-agentic-commerce, awesome-agents, x402-dev, awesome-x402, aapp-v2,
+  awesome-agent-first-tools — all AHEAD=1 BEHIND=0 CLEAN vs their real upstreams. agentswitchboard (asb): confirmed
+  CLEAN via _prs clone (merge-base==origin/main f134027, ahead=1 behind=0) — the "NO-COMMON" was the stale driftcheck
+  clone having no common ancestor to resolve, not a real drift. No new upstream movement anywhere; all 10 still
+  req2-gated (key request id 2 open, customer-held).
+- NEW evaluation: agentsai.tools (https://agentsai.tools/submit) — on-topic "AI agents directory" with a Frameworks
+  section + Developer Tools category + Type=agent|workflow|tool|platform, and a genuine keyless form (no login or
+  captcha; web_extract + a 2026-04-10 Wayback snapshot both show the clean form). BUT the live site is UNREACHABLE
+  from Rai's machine IP at the TLS layer (curl 000 / exit 35 SSL_ERROR_SYSCALL on /, /submit, /api/submit; browser
+  ERR_CONNECTION_CLOSED) while third-party extraction proxies fetch it fine — an IP/WAF block on Rai's egress. Rai
+  cannot submit AND verify a success message there, so NOT logged (a fake pass). Recorded in directory-listing skill:
+  re-evaluate from an IP that can reach it. Wayback snapshot 2026-04-10 is old, not a submit path.
+- Re-mined the minia2a August-2026 keyless directory guide: all its covered surfaces (Agent Directory API, agentlaunch,
+  curlship, AgentBoard, awesome lists) are ALREADY handled (first two live, last three recorded not-fit for the SDK or
+  already-prepared branches). jim-schwoebel/awesome_ai_agents + eudk/awesome-ai-tools are general mega-lists (~hundreds
+  of entries, no Agent-Payments/Commerce sub-section block) -> fail the precision rule, skip (matches large-mega-list
+  rule).
+- Net: NO new adoption milestone this run (funnel unchanged). Formal live listings 2 (agentlaunch + Agent Directory
+  API) + 1 live AgentMRR discovery surface; prepared PR branches 10 (all req2-gated CLEAN); pending keyless listings
+  11 (all within 24-48h review windows, no card live yet — last honest card re-check ~22:10, no resubmits); installs 0
+  (req1 PyPI-gated), merged PRs 0 (req2-gated), outside paid 0. req1 (id 1) + req2 (id 2) remain the 2 customer-gated
+  adoption blockers (keys held by owner/customer). X weekly update already posted 2026-09-15 (next >= 2026-09-22).
+
 ## THIS RUN 2026-09-15 ~22:10 UTC — NEW keyless listing: Best AI Agents (11th pending) + live-surface re-verify
 - NEW keyless submission (11th pending): **Best AI Agents (https://bestaiagents.org)** — John Rush's free
   AI-agent/agent-tool directory, keyless homepage form posting to a Google-Sheet webhook, no account/fee, dofollow.
