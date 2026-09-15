@@ -1219,7 +1219,7 @@
    ]
   },
   "3": {
-   "status": "pending",
+   "status": "pass",
    "attempts": [
     {
      "kind": "verify",
@@ -1478,11 +1478,83 @@
      ],
      "injection": [],
      "at": "2026-09-15T04:54:39+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "95308168106a4306b6e8625c1240317ef58a0e44ef0c00e2fcd9a028e7852b22",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T05:16:11+00:00"
     }
    ]
   },
   "4": {
-   "status": "pending",
+   "status": "pass",
    "attempts": [
     {
      "kind": "verify",
@@ -1538,6 +1610,148 @@
      "coverage_gaps": [],
      "injection": [],
      "at": "2026-09-15T04:41:03+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L13",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L20",
+       "pass": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "54c059551136615a05c48964db73c636fb91dada40aa9a5f347d70709b7e0503",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T04:59:29+00:00"
+    },
+    {
+     "kind": "unwind",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "43ff27a625d12852ba8f21130df3ab54566cda9ce8999b82477599744d219cdc",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T05:01:07+00:00"
     }
    ]
   }
@@ -1547,6 +1761,11 @@
    "block": 3.0,
    "text": "_format_receipt.headline: unconditional 'PAID' → settlement-truthful (PAID only when settled True; NOT PAID / UNCONFIRMED + block hash otherwise)",
    "at": "2026-09-15T03:18:25+00:00"
+  },
+  {
+   "block": 4.0,
+   "text": "law scope L6/L7/L10/L11/L12: tests/* wildcard → specific proof file each (evidence cap)",
+   "at": "2026-09-15T05:18:45+00:00"
   }
  ],
  "waivers": [
@@ -1561,7 +1780,7 @@
   "score": 100,
   "results": [
    {
-    "id": "L6",
+    "id": "L13",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
@@ -1569,7 +1788,7 @@
     "control": "passed"
    },
    {
-    "id": "L7",
+    "id": "L15",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
@@ -1577,7 +1796,7 @@
     "control": "passed"
    },
    {
-    "id": "L10",
+    "id": "L16",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
@@ -1585,7 +1804,7 @@
     "control": "passed"
    },
    {
-    "id": "L11",
+    "id": "L17",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
@@ -1593,15 +1812,29 @@
     "control": "passed"
    },
    {
-    "id": "L12",
+    "id": "L18",
     "pass": true,
     "oracle_exit": 0,
     "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
+   },
+   {
+    "id": "L19",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
+   },
+   {
+    "id": "L20",
+    "pass": true,
     "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
    }
   ],
-  "at": "2026-09-15T03:40:21+00:00"
+  "at": "2026-09-15T05:18:33+00:00"
  },
  "events": [
   {
@@ -2410,6 +2643,66 @@
    "at": "2026-09-15T04:54:39+00:00",
    "prev": "e680b054969a3f064055db4d7f10f31686b3a945f464f6740fd9535cd0cc4842",
    "receipt": "fa59efb0ec6700ee4fc2b50220ad01ca92e94a745abacffaed1a685d0ecc8ddc"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "4",
+    "ok": true
+   },
+   "at": "2026-09-15T04:59:29+00:00",
+   "prev": "fa59efb0ec6700ee4fc2b50220ad01ca92e94a745abacffaed1a685d0ecc8ddc",
+   "receipt": "48a2fafbd4d4785582cac6b8ab455e6c7f6fc6ddcd9e4c6d0d90de7cf5275958"
+  },
+  {
+   "kind": "unwind",
+   "payload": {
+    "block": "4",
+    "ok": true
+   },
+   "at": "2026-09-15T05:01:07+00:00",
+   "prev": "48a2fafbd4d4785582cac6b8ab455e6c7f6fc6ddcd9e4c6d0d90de7cf5275958",
+   "receipt": "65ea8b86b8b9a7ab0982b8b6a2592ce28c64e5648c608c5a42d7bed436eda544"
+  },
+  {
+   "kind": "redteam",
+   "payload": {
+    "block": "4",
+    "attacks": 7,
+    "contested": 0
+   },
+   "at": "2026-09-15T05:12:47+00:00",
+   "prev": "65ea8b86b8b9a7ab0982b8b6a2592ce28c64e5648c608c5a42d7bed436eda544",
+   "receipt": "23865e754f75b0f6d6a06688e242c1853879ce5515676730922b4a9c99f9988b"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "3",
+    "ok": true
+   },
+   "at": "2026-09-15T05:16:11+00:00",
+   "prev": "23865e754f75b0f6d6a06688e242c1853879ce5515676730922b4a9c99f9988b",
+   "receipt": "c7603a9f536c8fc43180fe637cec28d25ddd977d8352ae95d7cb3acb3a635090"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 100
+   },
+   "at": "2026-09-15T05:18:33+00:00",
+   "prev": "c7603a9f536c8fc43180fe637cec28d25ddd977d8352ae95d7cb3acb3a635090",
+   "receipt": "2799e057cefc1c88b10f1798e855848ba079d97039327adfbc82282c860e8a93"
+  },
+  {
+   "kind": "delta",
+   "payload": {
+    "block": "4",
+    "sha": "597d407f488ad104ed29dca0ec29f6dd3af5d30d520429068da3c0b76de442d3"
+   },
+   "at": "2026-09-15T05:18:45+00:00",
+   "prev": "2799e057cefc1c88b10f1798e855848ba079d97039327adfbc82282c860e8a93",
+   "receipt": "bcd946efa35eb3293666ff74e235f31f4f5d55968fdf25f9e5c8792b6f789e6e"
   }
  ]
 }

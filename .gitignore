@@ -6,4 +6,4 @@ __pycache__/
 nano_wallet*.json
 .wallet.json
 dist/
-build/
+build/.ledger/live-proof.md
