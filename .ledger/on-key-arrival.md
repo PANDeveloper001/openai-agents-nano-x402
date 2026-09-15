@@ -28,6 +28,9 @@ their fork remotes 2026-09-15 ~15:22 UTC):
 - xpaysh/awesome-x402:    branch `add-openai-agents-nano` @ c2666c4
 - assafbar2/agentswitchboard.dev: branch `add-openai-agents-nano` @ 90636c0
 - mpp-best/awesome_mpp:   branch `add-openai-agents-nano` @ b0015c5
+- Merit-Systems/awesome-agentic-commerce: branch `add-openai-agents-nano` @ 0b06312 (NEW 8th target, prepared 2026-09-15 ~18:5x
+  UTC; upstream base 01feff1 = current master, clean ancestor; 1 insertion after x402-anthropic-typescript block in Open
+  Source & SDKs; push-check clean; fork-branch 200 + pull/new 302 signed-out). Section is sister to xpaysh/awesome-x402.
 - tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano-v2` @ 297b9f8 (rebuilt 2026-09-15 ~17:3x
   UTC onto CURRENT upstream main 1e20c4d; upstream moved 1 commit (weekly scan) since `add-openai-agents-nano`
   @ 52d7c481 drifted behind-1/ahead-1, so open from v2. Push-check clean, fork-branch + pull/new 200.)

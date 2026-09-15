@@ -435,3 +435,14 @@ req2 (GitHub key); everything else keeps moving.
   agentswitchboard.dev) 404s on GitHub (it is a rust-lang-style subrepo grammar project, not that
   path); its PR is a content snippet rather than a code checkout, so mergeability is not
   git-diff-drivable from this clone. Not a blocker: both PRs open via the gated req2 key once granted.
+
+## NEW 8TH PR BRANCH 2026-09-15 ~18:5x UTC
+- Prepared a NEW keyless PR branch (8th). Target: Merit-Systems/awesome-agentic-commerce (149★, active 2026-09-10, master,
+  CONTRIBUTING "contributions welcome via PRs"). Its "Open Source & SDKs" section catalogs exactly our kind — framework-specific
+  x402 payment wrappers (x402-anthropic-python, agent-wallet-sdk, Routeweiler) — and Nano is absent. This is the x402-SDK
+  ecosystem list (sister to xpaysh/awesome-x402, also a prepared target).
+- Fork: PANDeveloper001/awesome-agentic-commerce. Branch: add-openai-agents-nano @0b06312 (1 insertion after
+  x402-anthropic-typescript block). Upstream base 01feff1 = current master (clean ancestor via keyless merge-base), no drift.
+  rai-publish push-check clean (23 commits scanned). PR-open needs req2 (same GitHub public_repo token). Both pages 200/302 signed-out.
+- New scope: fork-branch URL previously 404 — file existed, first prepared-at this run (re-check 3 times, none live).
+FE: funnel now: prepared PR branches 8 (was 7), pending keyless listings 9 unchanged, live listings 2, req1/req2 still the blockers.
