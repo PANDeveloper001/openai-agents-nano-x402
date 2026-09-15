@@ -7,9 +7,15 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - Tutorial: https://github.com/PANDeveloper001/openai-agents-nano-x402/blob/main/docs/tutorial.md (verified 200)
 - Measured fee/finality comparison: .../docs/fee-finality-comparison.md (verified 200)
 - Agent Directory API listing (auto-approved, VERIFIED live): https://agent-directory-api.vercel.app/api/agents
-  (id d8cd7de3). Data-only, no public page, so LOGGED but NOT an adoption milestone (rai-scope adopted=listing recorded).
+  (id d8cd7de3). Data-only, NO public page — LOGGED but NOT an adoption milestone.
+  (Note: rai-scope adopted row #1 was recorded in error; agentlaunch is the real listing milestone.)
 - Nano Hub item-suggestion form submitted (Developer Tools/AI, pending human review): https://hub.nano.org/
   (note: verification re-POST created a duplicate suggestion row).
+
+- **agentlaunch listing — GENUINE adoption milestone (VERIFIED 2026-09-15)**:
+  https://agents-launch.lovable.app/agents/openai-agents-nano returns HTTP 200 and names the project
+  (per-agent public page; managed via API POST /api/public/v1/agents, id ca04de4f). Logged with
+  rai-scope adopted --kind listing.
 
 ## X posts 2026-09-15: BOTH DELETED BY OWNER (do not treat as live, do not repost)
 - tweet 2099768372577939500 (weekly technical update) — deleted_at set in journal (owner).
