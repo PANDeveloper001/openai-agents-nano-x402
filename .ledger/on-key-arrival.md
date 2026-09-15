@@ -20,20 +20,22 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
-- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased` @ bb8d172 (rebuilt 2026-09-15 ~16:20 UTC
-  onto current upstream main 6b93027 — old `docs/list-openai-agents-nano-clean` @ 5554860 had DIVERGED behind 5;
-  the new branch is ahead 1 / behind 0 and cherry-picks cleanly. Push-check clean, page 200.)
+- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased-v2` @ fa8d0675 (rebuilt 2026-09-15 ~17:3x UTC
+  onto CURRENT upstream main a7ea8041; upstream moved 3 commits since `...-rebased` @ bb8d172, so open from v2.
+  behind 0, cherry-picks cleanly. Push-check clean, fork-branch + pull/new both 200.)
 - Corican/nanodir:        fork PAN branch `add-openai-agents-nano-clean` @ def0d34
 - facundofarias/awesome-agent-first-tools: branch `add-openai-agents-nano` @ d790b55
 - xpaysh/awesome-x402:    branch `add-openai-agents-nano` @ c2666c4
 - assafbar2/agentswitchboard.dev: branch `add-openai-agents-nano` @ 90636c0
 - mpp-best/awesome_mpp:   branch `add-openai-agents-nano` @ b0015c5
-- tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano` @ 52d7c481
+- tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano-v2` @ 297b9f8 (rebuilt 2026-09-15 ~17:3x
+  UTC onto CURRENT upstream main 1e20c4d; upstream moved 1 commit (weekly scan) since `add-openai-agents-nano`
+  @ 52d7c481 drifted behind-1/ahead-1, so open from v2. Push-check clean, fork-branch + pull/new 200.)
 
-NOTE 2026-09-15 ~16:20 UTC: x402 PR resolved — the diverged `docs/list-openai-agents-nano-clean` (ahead 1, behind 5)
-  was superseded by a fresh `docs/list-openai-agents-nano-rebased` @ bb8d172, rebuilt onto current upstream main
-  (6b93027) and pushed. Other 6 branches remain ahead-1/behind-0 (re-verify each with the compare API before
-  opening).
+NOTE 2026-09-15 ~17:3x UTC: x402 and aapp PR branches were rebuilt onto their current upstreams as NEW
+  `-v2` branches (no force-push — old `-rebased`/`add-openai-agents-nano` branches stay as history). The six
+  other branches were drift-verified behind-0/ahead-1 clean via merge-base this run. Re-verify each with the
+  compare API / merge-base before opening.
 
 ## Never
 - Retired projects (langgraph-nano-x402, n8n-nano-x402) under any name.

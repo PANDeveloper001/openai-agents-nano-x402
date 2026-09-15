@@ -1,7 +1,38 @@
 # openai-agents-nano-x402 — distribution funnel
 
-Updated 2026-09-15 (evening distribution run). Key-blocked items wait on req1 (PyPI) and
+Updated 2026-09-15 (distribution run ~17:1x UTC). Key-blocked items wait on req1 (PyPI) and
 req2 (GitHub key); everything else keeps moving.
+
+## THIS RUN 2026-09-15 ~17:1x UTC — 2 drifted PR branches rebuilt onto current upstream
+- NEW drift found & FIXED keylessly: x402 upstream moved again (now a7ea8041, 16:50Z) after the last
+  `-rebased` rebuild (was 6b93027, 14:04Z) → `docs/list-openai-agents-nano-rebased` @ bb8d172 had drifted
+  behind 3. Rebuilt by cherry-picking the 1-line docs row onto CURRENT upstream → NEW branch
+  `docs/list-openai-agents-nano-rebased-v2` @ fa8d0675, behind 0. Push-check clean; fork-branch + pull/new
+  both 200 signed-out. (No force-push; old `-rebased` branch kept as history.)
+- Same for aapp: tsubasakong/awesome-agent-payments-protocol upstream moved 1 commit (weekly scan →
+  1e20c4d) → `add-openai-agents-nano` @ 52d7c481 drifted behind-1/ahead-1. Rebuilt → NEW branch
+  `add-openai-agents-nano-v2` @ 297b9f8, behind 0. Push-check clean; both pages 200.
+- Drift-verified all 6 other branches behind-0/ahead-1 CLEAN via merge-base (aaf, nanodir, awesome-x402,
+  agentswitchboard, awesome_mpp, aapp-v2). x402-v2 also clean. on-key-arrival.md updated to the -v2 branches.
+- NEW directory evaluated: **WorthToTry** (worthtotry.com) — genuinely agent-native directory with a keyless
+  `POST /api/v1/submissions` (url + owner email, no account/token). BUT its readiness/duplicate check
+  collides at the HOST level: any `github.com/...` URL matches their existing `/tools/github-copilot`
+  listing ("This URL is already listed as /tools/github-copilot", 409), and the fix is "claim or update the
+  existing listing" — which is not ours to claim. A GitHub-hosted project cannot be listed there via the
+  URL API. NOT logged as submission (nothing was created). Recorded in directory-listing skill — skip for
+  GitHub-hosted packages unless we host on our own domain.
+- Other new dirs probed, no keyless path / not a fit: AIToolzDir (aitoolzdir.com) is a tap4/woy partner
+  aggregator — its "Submit AI Tool" nav leads nowhere direct; no keyless form. aiagentsdirectory.com/submit
+  = 404. everydev.ai/submit = 404. aiagentslist = account-walled (already known). → none logged.
+- Corrective action honored — every public link re-verified HTTP 200 signed-out this run: repo, README,
+  tutorial.md, fee-finality-comparison.md, agent-payment-rails-comparison.md, comparison-vs-x402-openai-python.md,
+  live-proof.md, agentlaunch agents page, Agent Directory API, plus BOTH new -v2 fork branches and their
+  pull/new pages — all 200. Nothing 404.
+- Pending listings re-checked (honest, none live since last check): AgentRank browse "0 agents found for
+  openai-agents-nano"; MeshKore 404; TheNextAI search no row; zPlatform no row; aiagenttools no row;
+  AI Agents Live /agents no card; AiAgents.Directory no row; DynamiteAI no row; 4agent tool page 404.
+- Net: no new adoption milestone this run (2 live listings unchanged); all 7 PR branches now CURRENT and
+  clean on upstream, ready to open the instant req2 key lands.
 
 ## EVENING RUN 2026-09-15 ~16:50 UTC — new comparison content + honest re-verifies
 - NEW distribution content: `docs/comparison-vs-x402-openai-python.md` — honest, cited
