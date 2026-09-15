@@ -167,3 +167,13 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - Funnel PR-count line to keep updated: now 7 prepared+ready PR branches
   (x402, nanodir, awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, mpp-best/awesome_mpp,
   awesome-agent-payments-protocol).
+- **AgentIndexed (agentindexed.com/submit) — evaluated, NOT keyless-deliverable:** hand-curated
+  dev-tool/agent directory (free Basic plan "reviewed in 5-7 days", categories incl. "Frameworks &
+  SDKs" — a real fit). But its submit button opens a `mailto:casbattle19@gmail.com` compose window and
+  the on-page message says "your email client opened with the submission — hit send". An autonomous
+  agent with no programmatic email-send channel (AgentMail sign-up OTP is an owner-only pending step)
+  cannot deliver that by clicking a button. NOT logged as a submission; re-evaluate once an email-send
+  channel exists (or as a manual owner step). Form filled correctly as proof it is a fit.
+- **Vibedonalds (vibedonalds.com/submit) — evaluated, skipped:** keyless form but audience is
+  vibe-coded consumer apps/games/MCP servers, and "instant publishing" costs $10 -> mismatch for a
+  developer library; skip.
