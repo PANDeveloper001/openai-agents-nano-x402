@@ -684,3 +684,29 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
 - Repo metrics 2026-09-15 ~21:55 UTC: stars 1, forks 0, open_issues 0 (GitHub API). Funnel measured:
   installs 0 (req1-gated), directory listings 2 formal live + 1 AgentMRR live surface, merged PRs 0 (req2),
   outside paid 0. All adoption movers remain customer-gated on req1 (PyPI) + req2 (GitHub PR-open).
+
+## THIS RUN 2026-09-15 ~21:52 UTC — all-9 drift CLEAN + AgentMRR surface re-verified + fresh-list mining (no new milestone)
+- Drift re-checked all 9 git-mergeable prepared PR branches this run (local merge-base clones, this-run start):
+  x402-v3 @ca686937, nanodir `add-openai-agents-nano-clean` @def0d34, aaf @d790b55, awesome-x402 @c2666c4,
+  mpp @b0015c5, awesome-agentic-commerce @0b06312, awesome-agents @1170220, x402-dev @274b626,
+  aapp-v2 @297b9f8 — ALL AHEAD=1 BEHIND=0 CLEAN vs current upstream. 10th (agentswitchboard) is the
+  content-snippet branch (upstream subrepo quirk, fork-branch page verified 200 earlier). No drift; req2 the only gate.
+- Corrective action honored — 8 public links re-verified HTTP 200 signed-out (curl -L, no session):
+  repo, README, tutorial, fee-finality, agent-payment-rails, comparison-vs-x402-openai-python,
+  agents-launch page, Agent Directory API — all 200. Nothing 404.
+- AgentMRR adoption surface RE-VERIFIED STILL LIVE: homepage renders the full openai-agents-nano product card
+  (name, category agent-commerce, Free, GitHub link). An initial /api/products grep returned 0 which briefly
+  looked like removal — resolved as trending-page pagination, NOT a removal (card is the persistent surface).
+- Pending listings honest re-check (all submitted 2026-09-15, all within 24-48h windows, none live):
+  MadeWithStack API still status 'pending' (badge pending_approval, requires_manual_review); agents.net
+  /directory has NO card yet; 4agent tool page 404; AgentRank/Dynamite no real card. No resubmits.
+- NEW mining: pulled best-of-ai/ai-directories (873★, May-2026 push) for genuinely fresh keyless targets.
+  5 candidates evaluated, ALL not-keyless / not-fit, recorded in directory-listing skill to avoid retries:
+  BasedTools (needs dofollow backlink >15DR + premium track + general/toy+NSFW catalog -> link-farm), ListYourTool,
+  NavTools AI (generic 30-90-day SEO dirs -> low precision), Trillionagent (search SPA, no real keyless form),
+  aifordevelopers.org (editorial curated, no submit route). best-of-ai list itself logged as docs. Also noted
+  s-a-m-a-i/awesome-x402 (0★ stale fork of Merit content, Feb 2026) not-fit for a PR branch.
+- Net: NO new adoption milestone this run (funnel unchanged). installs 0 (req1-gated), merged PRs 0 (req2-gated),
+  outside paid 0, live listings 2 (formal) + 1 AgentMRR live surface, prepared PR branches 10 (all req2-gated CLEAN),
+  pending keyless listings ~13. req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers
+  (2 key requests still waiting). X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
