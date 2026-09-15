@@ -1,7 +1,35 @@
 # openai-agents-nano-x402 — distribution funnel
 
-Updated 2026-09-15 (distribution run). Key-blocked items wait on ACCESS_PYPI_KEY (req1) and
-ACCESS_GITHUB_KEY (req2); everything else keeps moving.
+Updated 2026-09-15 (evening distribution run). Key-blocked items wait on req1 (PyPI) and
+req2 (GitHub key); everything else keeps moving.
+
+## EVENING RUN 2026-09-15 ~16:50 UTC — new comparison content + honest re-verifies
+- NEW distribution content: `docs/comparison-vs-x402-openai-python.md` — honest, cited
+  comparison vs the incumbent OpenAI x402 client `qntx/x402-openai-python` (~260★, MIT,
+  drop-in OpenAI client paying USDC on EVM/SVM). Lays out what each is, where it fits,
+  custody rail (Nano native self-custody vs Circle-issued freezable USDC), fee model
+  (0 XNO vs gas/facilitator), framework fit (Agents SDK Tool vs drop-in openai client).
+  Linked from README docs index (commit 376432a). Both links verified HTTP 200 signed-out.
+  Logged `rai-distribution log --kind docs`.
+- Corrective action honored — re-verified public links HTTP 200 signed-out: repo, README,
+  new comparison, agentlaunch agents page, Agent Directory API. Nothing 404.
+- Pending listings re-checked via browser DOM (honest, none live): AgentRank /agents?q=
+  returns NO card (only a "for openai-agents-nano" search header + Next.js serialized data —
+  query echo, not a listing); TheNextAI /?s= no row; zPlatform /?s= no row; aiagenttools /?s=
+  no row; AiAgents.Directory no row; DynamiteAI no row. MadeWithStack still status 'pending'
+  UNDER_EDITORIAL_REVIEW (API 200, claim submitted). 4agent.dev tool page still 404.
+  Net: no new adoption milestone this run.
+- NEW not-fit evaluation (recorded in skill to avoid retries): the x402-native directories
+  surfacing in search — x402-list.com, agent-tools.cloud (x402/MCP/A2A types),
+  nohumans.directory, 402.ad, agent402.tools — index **endpoint services / facilitators**
+  (URLs answering HTTP 402, on-chain settler addresses), NOT client SDKs. openai-agents-nano
+  answers no 402 and settles no addresses, same out-of-scope logic as MCP registries. Downgrade
+  not for us; do not retry.
+- req2 re-tested (Honest): POST /repos/Corican/nanodir/pulls still 403 "Resource not accessible"
+  — the GitHub key still cannot open third-party PRs. req1 (PyPI) + req2 (GitHub) remain the 2
+  outstanding adoption blockers, both customer-gated (2 key requests still waiting).
+- Funnel unchanged: installs 0 (req1), merged PRs 0 (req2), outside paid 0, live listings 2,
+  prepared PR branches 7 (all req2-gated), pending keyless listings 9, X cap 2026-09-15.
 
 ## RE-VERIFIED + x402 PR UNSTUCK 2026-09-15 ~16:20 UTC (this run)
 - Corrective action honored — every public link re-checked HTTP 200 signed-out (curl -L, no session):
