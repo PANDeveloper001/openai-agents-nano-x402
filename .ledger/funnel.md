@@ -3,6 +3,47 @@
 Updated 2026-09-15 (distribution run). Key-blocked items wait on ACCESS_PYPI_KEY (req1) and
 ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 
+## NEW 2026-09-15 ~14:30 UTC (this run): two new keyless agent-directory listings
+- **AgentRank (theagentrank.com) — keyless, FREE, submitted 2026-09-15:**
+  https://theagentrank.com/submit "Submit Agent" form (free to list, review 2-3 business days).
+  Filled: name "openai-agents-nano (Nano XNO x402 payment for OpenAI Agents)", tagline, ~150-word
+  description with AI-agent disclosure (Rai), website repo URL, category Coding, pricing Free,
+  tags x402/nano/xno/nano cryptocurrency/openai agents sdk/payments, email rai@rai-agent.xyz.
+  Confirmed "Submission received! We'll review within 2-3 business days." NOT yet public (no
+  listing page names project; site search shows no row yet) - pending review. Logged listing_submitted.
+- **AI Agents Live (aiagentslive.com) — keyless, FREE tier, submitted 2026-09-15:**
+  https://aiagentslive.com/agents/products/new "Submit an AI Agent" form. Filled: maker name
+  "Rai (autonomous AI agent)", maker email rai@rai-agent.xyz, list-as AI Agent, name
+  "openai-agents-nano (Nano XNO x402 payment)", website repo URL, tagline, industry Horizontal,
+  pricing Free, listing_tier free, Trix description (~500 chars) with AI disclosure, required
+  512x512 logo (generated PNG, 3KB). Redirected to /agents/products/received = "Received your
+  submission, review against criteria, email when live". NOT yet public (agents search returns
+  only query echo, no card) - pending review. Logged listing_submitted.
+  - Submitting required a logo file: generated a plain 512x512 PNG with pure python (struct+zlib,
+    no PIL) and set it via CDP `DOM.setFileInputFiles` nodeId (flattened-doc lookup missed it).
+- Re-checked the fresh 189-directory list (truvery/ai-tool-directories, July 2026) for NEW keyless
+  targets not yet attempted. Confirmed login-gated / not-keyless (skipped, avoid retries):
+  theailibrary.co/submit-tool (Login to Submit), every-ai.com/submit (Sign in needed),
+  topai.tools/submit (login), openhunts.com/submit (login), aihuntlist.com/submit (redirects to
+  /login), appscribed.com/submit (one-time payment), aiagentsverse.com (403), agentlocker/aitoolkit
+  already known. AI Agents Directory (aiagentsdirectory.com), Findyouragent, AI Agent Store have no
+  keyless submit path (404 on /submit family).
+- Funnel pending-listing count: now 9 keyless pending (Nano Hub suggestion, MadeWithStack
+  UNDER_EDITORIAL_REVIEW, MeshKore, AI Agent Directory/Sovereign Skills, TheNextAI, zPlatform,
+  4agent.dev, + AgentRank, + AI Agents Live this run) + 2 verifiable live (Agent Directory API,
+  agentlaunch).
+
+## RE-VERIFIED 2026-09-15 ~14:25 UTC (this run)
+- Corrective action honored: all 7 prepared fork PR branches load HTTP 200 unsigned (x402, nanodir,
+  awesome-agent-first-tools, awesome-x402, agentswitchboard.dev, mpp-best/awesome_mpp,
+  awesome-agent-payments-protocol) + repo, tutorial, fee-finality-comparison, agentlaunch page,
+  Agent Directory API, hub.nano.org. Nothing 404. 4agent.dev still 404 (pending review, not live).
+- MadeWithStack still UNDER_EDITORIAL_REVIEW (status pending, claim submitted). AgentRank and
+  AI Agents Live listings pending (no public page yet). -> re-check next run.
+- Funnel numbers unchanged except pending listings now 9: installs 0 (PyPI key-gated), merged PRs 0
+  (req2), outside paid 0, live listings 2, prepared PR branches 7 (all req2-key-gated), X updates:
+  weekly cap reached 2026-09-15 -> no more this week.
+
 ## Weekly technical update RE-POSTED, LIVE (2026-09-15, owner-sanctioned)
 - tweet 2099810368545780022 (--kind update, cites E14822): "Nano x402 payer for the OpenAI Agents
   SDK: tutorial and comparison" + tutorial link + #XNO. Tutorial link verified HTTP 200 signed-out
