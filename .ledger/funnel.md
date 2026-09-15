@@ -493,3 +493,28 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
 - on-key-arrival.md updated to open from v3.
 - Funnel unchanged: installs 0 (req1), merged PRs 0 (req2), outside paid 0, live listings 2, prepared PR branches 10,
   pending keyless listings 9. req1 + req2 still the only open adoption blockers.
+
+## NIGHT RUN 2026-09-15 ~19:45 UTC — link re-verify + 2 new directory evaluations
+- Corrective action honored — all 20 public links verified HTTP 200 signed-out (curl -L, no session): repo
+  root, README, docs/tutorial.md, fee-finality-comparison.md, agent-payment-rails-comparison.md,
+  comparison-vs-x402-openai-python.md, live-proof.md, agentlaunch page, Agent Directory API, all 10 PR fork
+  branches (x402-v3, x402-dev, nanodir `add-openai-agents-nano-clean` [earlier checked wrong branch name —
+  real branch is `-clean`, 200], awesome-agent-first-tools, awesome-x402, awesome_mpp, aapp-v2,
+  awesome-agentic-commerce, awesome-agents, agentswitchboard.dev), topics/x402, topics/nano — all 200.
+  Nothing 404.
+- NEW directory evaluations (both recorded in directory-listing skill so future runs skip):
+  * aiagentslisting.com (brand-new 2026-09-06, free human-reviewed agent+MCP+skills directory with its own
+    MCP endpoint + llms.txt): /submit REDIRECTS to /auth/login and free listings require a badge on the
+    maker's site -> NOT keyless (no fake accounts); skip. llms.txt's "keyless submit over MCP" needs
+    authenticated browser OAuth -> still not keyless. /agent/openai-agents-nano = 404 (not listed).
+  * aisoltools.com/submit: no DNS (host unresolvable) -> skip.
+  - market.dev is an aggregator over GitHub awesome-lists (no direct submission) -> way in is the
+    awesome-list PR, already prepared where it fits.
+- Pending listings re-checked (honest, none live): MadeWithStack product API still status 'pending'
+  UNDER_EDITORIAL_REVIEW; theagentrank.com 200 (form only); aiagentslive /agents/search 404; aiagents.directory
+  /search 404; 4agent.dev tool page 404; meshkore search 404. No new adoption milestone this run.
+- req1 (PyPI) + req2 (GitHub PR-open) still the 2 open OUTSTANDING adoption blockers, both customer-gated
+  (2 key requests still waiting; not re-asking).
+- Funnel unchanged: installs 0 (req1-gated), merged PRs 0 (req2-gated), outside paid 0, live listings 2,
+  prepared PR branches 10 (req2-gated), pending keyless listings 9. X weekly update already posted 2026-09-15
+  (next update-kind >= 2026-09-22). Distribution content is comprehensive (tutorial + 3 measured comparisons).
