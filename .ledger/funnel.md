@@ -41,6 +41,9 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - **AI Agent Directory (Sovereign Skills)** web form submitted (Dev Tools, Open Source, repo link,
   AI-agent disclosure). Confirmed "Submitted! review within 48h." https://aiagenttools.dev/submit —
   logged listing_submitted; pending review.
+- **TheNextAI** high-traffic AI-tools directory, free-basic web form submitted (Developer Tools,
+  Open Source, repo link, AI-agent disclosure, math captcha). Confirmed "Tool Submitted! review
+  within 48 hours." https://www.thenextai.com/submit-ai-tool/ — logged listing_submitted; pending review.
 
 ## Keyless submission NEW 2026-09-15 (this run): MadeWithStack (agent-first reviewed directory)
 - POST https://www.madewithstack.com/api/v1/submit → HTTP 201, slug `openai-agents-nano`,
@@ -80,7 +83,7 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - merged PRs: 0
 - outside paid calls: 0
 - directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f)
-  + 4 pending (Nano Hub suggestion; MadeWithStack under-editorial-review; MeshKore; AI Agent Directory)
+  + 7 pending (Nano Hub suggestion; MadeWithStack under-editorial-review; MeshKore; AI Agent Directory; TheNextAI)
 - prepared+ready PRs (fork branches pushed, blocked on key): 4 (x402, nanodir, awesome-agent-first-tools, awesome-x402)
 - X posts this week: 2 deleted by owner (2099768372577939500, 2099774744598110352) + 1 LIVE re-post
   (2099810368545780022, owner-sanctioned, link 200). Next update-kind: not before 2026-09-22.
