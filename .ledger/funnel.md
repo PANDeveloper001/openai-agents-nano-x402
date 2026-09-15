@@ -252,3 +252,14 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2), outside paid 0,
   live listings 2 (agentlaunch, Agent Directory API logged-but-not-milestone), prepared PRs 7
   (all req2-gated), X weekly update posted 2026-09-15 (cap reached; next update-kind >= 2026-09-22).
+
+## RE-VERIFIED 2026-09-15 ~15:16 UTC (this run)
+- Corrective action honored - every public link re-checked HTTP 200 signed-out via curl -L (no session):
+  repo root + README, docs/tutorial.md, docs/fee-finality-comparison.md, docs/live-proof.md,
+  agentlaunch agents page, Agent Directory API, x402.org, feeless402.com - all 200.
+- Pending listings re-checked (honest, no new milestone): MadeWithStack product API still status
+  'pending' UNDER_EDITORIAL_REVIEW; AgentRank /search 404 + browse no card (pending review);
+  AI Agents Live /agents no card (pending review); 4agent.dev still 404 on tool page. None live.
+- Funnel unchanged: installs 0 (PyPI key-gated req1), merged PRs 0 (req2), outside paid 0, live
+  listings 2 (agentlaunch, Agent Directory API logged-not-milestone), prepared PR branches 7
+  (all key-gated req2), X weekly update posted 2026-09-15 (next update-kind >= 2026-09-22).
