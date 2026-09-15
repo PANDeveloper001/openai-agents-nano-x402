@@ -4,15 +4,21 @@ Updated 2026-09-15 (distribution run). Key-blocked items wait on ACCESS_PYPI_KEY
 ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 
 ## Keyless distribution done (2026-09-15)
-- Weekly technical update on X, short format, tutorial link, #XNO: tweet 2099774744598110352.
-- Agent Directory API listing (auto-approved): https://agent-directory-api.vercel.app/api/agents —
-  data-only, no public page, so LOGGED but NOT an adoption milestone.
-- Tutorial: https://github.com/PANDeveloper001/openai-agents-nano-x402/blob/main/docs/tutorial.md
-- Measured fee/finality comparison: .../docs/fee-finality-comparison.md
-- Nano Hub item-suggestion form submitted (Developer Tools, pending human review): https://hub.nano.org/
-  (logged via rai-distribution; note: verification re-POST created a duplicate suggestion row).
+- Tutorial: https://github.com/PANDeveloper001/openai-agents-nano-x402/blob/main/docs/tutorial.md (verified 200)
+- Measured fee/finality comparison: .../docs/fee-finality-comparison.md (verified 200)
+- Agent Directory API listing (auto-approved, VERIFIED live): https://agent-directory-api.vercel.app/api/agents
+  (id d8cd7de3). Data-only, no public page, so LOGGED but NOT an adoption milestone (rai-scope adopted=listing recorded).
+- Nano Hub item-suggestion form submitted (Developer Tools/AI, pending human review): https://hub.nano.org/
+  (note: verification re-POST created a duplicate suggestion row).
 
-## Ready to execute the moment keys arrive (both already prepared + pushed to forks)
+## X posts 2026-09-15: BOTH DELETED BY OWNER (do not treat as live, do not repost)
+- tweet 2099768372577939500 (weekly technical update) — deleted_at set in journal (owner).
+- tweet 2099774744598110352 (short update + tutorial link) — deleted_at set in journal (owner).
+- Lesson: two `update`-kind posts in one day exceeded the weekly-technical-update rule (at most one per 7 days);
+  and links must be verified 200 unsigned before posting. Next X post: `result`-kind, one per week, verified link only.
+- rai-x status today: 0 posts, daily_cap 3 (no further posts this run to avoid a third deletion).
+
+## Ready to execute the moment keys arrive (PRs prepared + pushed to forks)
 - PyPI publish openai-agents-nano (wheel builds + fresh-venv installs; block 5 L21/L22, probe 100/100).
   Needs ACCESS_PYPI_KEY (req1): `uv build` then twine upload.
 - x402 Foundation PR: fork branch `docs/list-openai-agents-nano-clean` @ 5554860 (1-line row).
@@ -21,10 +27,17 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - Corican/nanodir PR: fork branch `add-openai-agents-nano-clean` @ def0d34 (16+/4-).
   Needs ACCESS_GITHUB_KEY (req2): POST /repos/Corican/nanodir/pulls.
   VERIFIED 2026-09-15: cherry-picks cleanly onto current upstream main (no conflict).
+- awesome-agent-first-tools PR (NEW 2026-09-15): fork PANDeveloper001/awesome-agent-first-tools,
+  branch `add-openai-agents-nano` @ d790b55 pushed; 1-line entry in "Payments & Commerce"
+  (content-fit: x402 protocol + USDC/fiat payers listed; no Nano payer existed).
+  Needs ACCESS_GITHUB_KEY (req2): POST /repos/facundofarias/awesome-agent-first-tools/pulls
+  (opening it returned 403 "Resource not accessible" — the token can read/fork but not open
+  PRs on third-party repos, exactly as req2 documents). Scan clean (rai-publish push-check).
 
 ## Funnel numbers
 - installs/downloads: 0 (package not on PyPI yet — key-blocked)
 - merged PRs: 0
 - outside paid calls: 0
-- directory listings: 2 logged (Agent Directory API; Nano Hub suggestion pending review)
-- X posts this week: 1 (2099774744598110352)
+- directory listings: 2 verifiable live (Agent Directory API d8cd7de3; agentlaunch ca04de4f) + 1 pending (Nano Hub)
+- prepared+ready PRs (fork branches pushed, blocked on key): 3 (x402, nanodir, awesome-agent-first-tools)
+- X posts this week: 2 posted but BOTH deleted by owner — 0 live. Next: result-kind, one per week.
