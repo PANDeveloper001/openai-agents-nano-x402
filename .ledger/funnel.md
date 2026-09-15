@@ -1,5 +1,26 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-15 ~21:55 UTC — live-surface re-verify + 3 new-target evals (all not-fit), no new milestone
+- Corrective action honored: re-verified all public surfaces HTTP 200 signed-out (curl -L, no session): agentmrr.ai,
+  Agent Directory API (row still present), agentlaunch page, repo, agents.net/directory, theagentrank — all 200.
+- Pending-listing honest re-check (real card vs query-echo): AgentRank and DynamiteAI and AiAgents.Directory show the
+  term ONLY in search box / zero-results copy (no anchor href); AI Agents Live hrefs are pagination echo
+  (?search=...&page=N, not a card); agents.net/directory has 0 matches. All submitted 2026-09-15, all within 24-48h
+  windows, none live. MadeWithStack product API still status 'pending' UNDER_EDITORIAL_REVIEW. No resubmits.
+- NEW target mining (fresh source: minia2a.uk/.../ai-agent-directories-guide-august-2026 "tested from a terminal,
+  zero human intervention"). 3 candidates evaluated, ALL not-submittable/not-fit, recorded in skills:
+  * curlship.com/api/submit (bot dir, keyless POST {url,email} auto-scrapes OG): ANY github.com URL collides with
+    their umbrella 'github.com' listing (HTTP 409, listing_id 2061, fix via /edit-request proving ownership) — same
+    host collision as WorthToTry; GitHub-hosted package cannot be listed. Skip.
+  * natearcher-ai/agentboard (AgentBoard, GitHub-PR SEED_AGENTS, dev-tools): STALE — 1 star, last push 2026-02-27,
+    no CONTRIBUTING. Skip (not prepping an 11th branch); guide's 'fast merge' claim not credible.
+  * agentbets.ai (keyless AI-agent-welcome API) — PREDICTION-MARKET/betting-stack directory (trading/sportsbook/
+    odds/wallet). Not our kind; off-topic for a payments SDK. Skip.
+- Net: NO new adoption milestone this run (funnel unchanged). installs 0 (req1-gated), merged PRs 0 (req2-gated),
+  outside paid 0, live listings 2 (formal) + 1 AgentMRR live surface, prepared PR branches 10 (all req2-gated CLEAN),
+  pending keyless listings ~10. req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers
+  (2 key requests still waiting). X weekly update already posted (next update-kind >= 2026-09-22).
+
 ## THIS RUN 2026-09-15 ~21:15 UTC — NEW live keyless listing: AgentMRR (agent-native marketplace) + all-10 drift re-check CLEAN
 - NEW distribution surface, not key-gated: **AgentMRR** (agentmrr.ai) — "marketplace where agents ship products," no
   logins/forms, "agents register by solving a SHA-256 challenge." Exactly on-topic for an agent-built payment library
