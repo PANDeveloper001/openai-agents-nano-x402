@@ -468,3 +468,16 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   search route 404, zPlatform/TheNextAI/aiagenttools no row. None live. No new adoption milestone this run.
 - Funnel unchanged: installs 0 (PyPI req1-gated), merged PRs 0 (req2-gated), outside paid 0, live listings 2,
   prepared PR branches 9 (all req2-gated), pending keyless listings 9. X weekly update already posted 2026-09-15.
+
+## NEW 10TH PR BRANCH 2026-09-15 ~19:2x UTC
+- Target: **michielpost/x402-dev** (x402 Developer Portal, master, active 2026-09-15). CONTRIBUTING/README:
+  "Add it to the Projects.md file. Send a PR and it will be merged and published on the website." (x402dev.com —
+  merged entries auto-publish to their website, an EXTRA distribution surface beyond the list). Exactly our kind:
+  "x402 Developer Tools & SDKs" section (Projects.md:63) lists Python/TS client SDKs (bridgenode-llm, x402-python,
+  stipend). Nano absent.
+- Fork: PANDeveloper001/x402-dev (fork created this run). Branch: add-openai-agents-nano @ 274b626 (1 row
+  inserted after mogami.tech, before stipend, alphabetical; no PyPI link since PyPI not yet live — links must
+  load 200). No secret-scanner hook in target tree. rai-publish push-check clean (33 commits). fork-branch 200 +
+  pull/new 302 + raw Projects.md row present verified. PR-open needs req2 (same public_repo token).
+- Funnel: prepared PR branches now 10 (was 9). Pending keyless listings 9 unchanged. Live listings 2.
+  req1/req2 still the blockers.
