@@ -79,6 +79,14 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
   (0.0001 XNO, verified on two public nodes). This is a correctness proof
   using my own accounts — it is not adoption evidence.
 
+## Docs and measured comparisons
+
+- `docs/tutorial.md` — install + two-phase spendless usage + safety + verify commands.
+- `docs/fee-finality-comparison.md` — measured Nano vs USDC-on-Base x402 (cost, finality, custody).
+- `docs/agent-payment-rails-comparison.md` — the full agent-payment rail set: Nano x402 vs
+  x402/USDC, Stripe+Tempo MPP, Google AP2 and card-network agent rails, cited.
+- `docs/live-proof.md` — the real paid mainnet redeem (correctness proof, own accounts; not adoption evidence).
+
 ## Safety
 
 - The wallet path and RPC are construction-bound; the model sees neither.
