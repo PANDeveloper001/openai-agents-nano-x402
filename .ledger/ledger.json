@@ -345,6 +345,36 @@
    "grounding": "source",
    "version": 1,
    "minted": "2026-09-15T04:51:05+00:00"
+  },
+  {
+   "id": "L21",
+   "block": 5.0,
+   "statement": "A freshly-installed openai-agents-nano wheel yields an OpenAI Agents SDK FunctionTool named nano_x402_fetch with the full argument schema",
+   "test": "tests/release_install_offline.py builds the wheel, installs it into a brand-new venv, and asserts the installed openai_agents_nano constructs a FunctionTool nano_x402_fetch with args url/method/json_body/max_xno/dry_run/quote_token",
+   "scope": [
+    "tests/release_install_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/release_install_offline.py",
+   "expect": "RELEASE_INSTALL_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 2,
+   "minted": "2026-09-15T05:34:21+00:00"
+  },
+  {
+   "id": "L22",
+   "block": 5.0,
+   "statement": "The installed tool executes through the SDK invoker: a dry_run returns a QUOTE spending nothing and an over-cap redeem is refused before signing",
+   "test": "tests/release_install_offline.py installs the wheel into a fresh venv, then invokes the installed nano_x402_fetch via FunctionTool.on_invoke_tool(ToolContext): it prints 'dry_run preview -> QUOTE ... no frontier' (spendless quote) and 'over-cap redeem -> REFUSED ... no frontier' (over-cap refused before signing); the oracle only passes when both prints are emitted",
+   "scope": [
+    "tests/release_install_offline.py"
+   ],
+   "oracle": "env PYTHONPATH=/root/work/openai-agents-nano-x402/.venv/lib/python3.12/site-packages python3 tests/release_install_offline.py",
+   "expect": "RELEASE_INSTALL_OK",
+   "source": null,
+   "grounding": "oracle",
+   "version": 3,
+   "minted": "2026-09-15T05:34:28+00:00"
   }
  ],
  "blocks": {
@@ -1754,6 +1784,307 @@
      "at": "2026-09-15T05:01:07+00:00"
     }
    ]
+  },
+  "5": {
+   "status": "pass",
+   "attempts": [
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L13",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L20",
+       "pass": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L21",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L22",
+       "pass": false,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "108912385bd680380bbbeeef434d5b88e5c840b2337310ff979b5825d273ce91",
+     "tier": "strong",
+     "coverage_gaps": [
+      ".gitignore"
+     ],
+     "injection": [],
+     "at": "2026-09-15T05:54:49+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L13",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 5
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L20",
+       "pass": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L21",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L22",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "a6c78037dfe609557f04f7c818f8a7198f3fb9848f0327cfc14cd12d436af924",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T06:07:02+00:00"
+    },
+    {
+     "kind": "unwind",
+     "ok": true,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L13",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L15",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L16",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L17",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L18",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L19",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L20",
+       "pass": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      }
+     ],
+     "pre_sig": "a3796066b8e7235fb13266a1cc143002ae6c9d074ee359b4cbf36afa44121f07",
+     "tier": "strong",
+     "coverage_gaps": [],
+     "injection": [],
+     "at": "2026-09-15T06:09:57+00:00"
+    }
+   ]
   }
  },
  "deltas": [
@@ -1766,6 +2097,11 @@
    "block": 4.0,
    "text": "law scope L6/L7/L10/L11/L12: tests/* wildcard → specific proof file each (evidence cap)",
    "at": "2026-09-15T05:18:45+00:00"
+  },
+  {
+   "block": 5.0,
+   "text": "release oracle: vacuous sandbox mutation (.venv/bin/python fails for every mutant in the kill_check sandbox, all trivially killed) -> python3 + absolute PYTHONPATH so mutation rebuilds the wheel from the mutated src and genuinely catches regressions",
+   "at": "2026-09-15T06:12:00+00:00"
   }
  ],
  "waivers": [
@@ -1773,6 +2109,11 @@
    "pattern": "README.md",
    "reason": "README documentation only; the code the laws govern lives in src/openai_agents_nano/tool.py and its tests",
    "at": "2026-09-15T01:05:16+00:00"
+  },
+  {
+   "pattern": ".gitignore",
+   "reason": "version-control ignore config, not governed application code; added since base_commit",
+   "at": "2026-09-15T05:58:09+00:00"
   }
  ],
  "contested": [],
@@ -1832,9 +2173,25 @@
     "pass": true,
     "judge": "deepseek/deepseek-v4-pro-0813",
     "control": "passed"
+   },
+   {
+    "id": "L21",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
+   },
+   {
+    "id": "L22",
+    "pass": true,
+    "oracle_exit": 0,
+    "oracle_ok": true,
+    "judge": "deepseek/deepseek-v4-pro-0813",
+    "control": "passed"
    }
   ],
-  "at": "2026-09-15T05:18:33+00:00"
+  "at": "2026-09-15T06:27:43+00:00"
  },
  "events": [
   {
@@ -2703,6 +3060,126 @@
    "at": "2026-09-15T05:18:45+00:00",
    "prev": "2799e057cefc1c88b10f1798e855848ba079d97039327adfbc82282c860e8a93",
    "receipt": "bcd946efa35eb3293666ff74e235f31f4f5d55968fdf25f9e5c8792b6f789e6e"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L21",
+    "block": "5",
+    "statement_sha": "665fd3ee1e73bb18740ef483ca5e9055ced632535f17a3756695d1d60c0f71e0"
+   },
+   "at": "2026-09-15T05:34:21+00:00",
+   "prev": "bcd946efa35eb3293666ff74e235f31f4f5d55968fdf25f9e5c8792b6f789e6e",
+   "receipt": "a0a0031ec0978a0d6136cd1beef45fb886c0a161902ce42c084ac58eb9134d28"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L22",
+    "block": "5",
+    "statement_sha": "1941a1b877eeabe33771829d37274ecef81012471ac4881f82530d3504c7ddfa"
+   },
+   "at": "2026-09-15T05:34:28+00:00",
+   "prev": "a0a0031ec0978a0d6136cd1beef45fb886c0a161902ce42c084ac58eb9134d28",
+   "receipt": "b368aafccb01f01cf3d4f9bc8c252d80c5d37b2600175d84e89700588d1e89b5"
+  },
+  {
+   "kind": "amend",
+   "payload": {
+    "id": "L21",
+    "version": 2
+   },
+   "at": "2026-09-15T05:44:57+00:00",
+   "prev": "b368aafccb01f01cf3d4f9bc8c252d80c5d37b2600175d84e89700588d1e89b5",
+   "receipt": "74a3cc2a37b77cd10cd45eb0524ab9fc044a9ac009d5fc7a461c32898f6aa788"
+  },
+  {
+   "kind": "amend",
+   "payload": {
+    "id": "L22",
+    "version": 2
+   },
+   "at": "2026-09-15T05:44:57+00:00",
+   "prev": "74a3cc2a37b77cd10cd45eb0524ab9fc044a9ac009d5fc7a461c32898f6aa788",
+   "receipt": "e83367aef7a4aab3bb457ea7bfb552087d453d858564e965c0f1c8175f32f9c2"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "5",
+    "ok": false
+   },
+   "at": "2026-09-15T05:54:49+00:00",
+   "prev": "e83367aef7a4aab3bb457ea7bfb552087d453d858564e965c0f1c8175f32f9c2",
+   "receipt": "273fa73f7c556649cb6999224796196c8edc44c56d9a804bbf28d20d12f7d431"
+  },
+  {
+   "kind": "amend",
+   "payload": {
+    "id": "L22",
+    "version": 3
+   },
+   "at": "2026-09-15T05:58:09+00:00",
+   "prev": "273fa73f7c556649cb6999224796196c8edc44c56d9a804bbf28d20d12f7d431",
+   "receipt": "4858d1d396c64d7cc75283f246ef2582d9ff9ed92e4e2e23c3b8cde5496e4294"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": ".gitignore",
+    "reason_sha": "7804970612d6436c286f351abe3bc555c518ff852511ca5d97d51a848d15eee3"
+   },
+   "at": "2026-09-15T05:58:09+00:00",
+   "prev": "4858d1d396c64d7cc75283f246ef2582d9ff9ed92e4e2e23c3b8cde5496e4294",
+   "receipt": "703bf8e5b67d2bb49ec4b5aa8069a4f7ecd5233b5112472cbd2b995edc4329ee"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "5",
+    "ok": true
+   },
+   "at": "2026-09-15T06:07:02+00:00",
+   "prev": "703bf8e5b67d2bb49ec4b5aa8069a4f7ecd5233b5112472cbd2b995edc4329ee",
+   "receipt": "a3bfed45ae7ec657999e164b9ea2bcc548d8badf9b4bf4c86d18b54bf146f380"
+  },
+  {
+   "kind": "unwind",
+   "payload": {
+    "block": "5",
+    "ok": true
+   },
+   "at": "2026-09-15T06:09:57+00:00",
+   "prev": "a3bfed45ae7ec657999e164b9ea2bcc548d8badf9b4bf4c86d18b54bf146f380",
+   "receipt": "30395972774c95311fc13707bba3ee8c8fc2235ad73646f5b7416931984be9f5"
+  },
+  {
+   "kind": "delta",
+   "payload": {
+    "block": "5",
+    "sha": "044e8f27ce0d2a5a6884dd2e3e1c31556193ca23a51d3c3d5e1a2a312263702d"
+   },
+   "at": "2026-09-15T06:12:00+00:00",
+   "prev": "30395972774c95311fc13707bba3ee8c8fc2235ad73646f5b7416931984be9f5",
+   "receipt": "a02a3ea4b61de302b75cb467eebe617e540534cf6b6875d0ca0fb45083fe4910"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 89
+   },
+   "at": "2026-09-15T06:17:02+00:00",
+   "prev": "a02a3ea4b61de302b75cb467eebe617e540534cf6b6875d0ca0fb45083fe4910",
+   "receipt": "ebdf478ed1362b5acfcd7e345eddfaf0c92d66a965447f10bf2e0bfa809568fb"
+  },
+  {
+   "kind": "probe",
+   "payload": {
+    "score": 100
+   },
+   "at": "2026-09-15T06:27:43+00:00",
+   "prev": "ebdf478ed1362b5acfcd7e345eddfaf0c92d66a965447f10bf2e0bfa809568fb",
+   "receipt": "0d79a3da2975519b0ac96379988808a009ca3269aafb6bb94a9c90a07c24d7fe"
   }
  ]
 }
