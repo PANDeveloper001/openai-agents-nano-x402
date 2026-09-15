@@ -1,5 +1,29 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## RUN 2026-09-15 ~21:1x UTC — all-10 PR-branch drift re-check CLEAN + pending-listing re-verify
+
+- Drift-checked ALL 10 prepared PR branches this run via merge-base clone (fetch upstream default + fork
+  branch, merge-base == upstream base and behind==0 => CLEAN ahead=1): x402-v3 (@ca686937, upstream 9b37f37),
+  nanodir (`add-openai-agents-nano-clean` @def0d34), awesome-agent-first-tools, awesome-x402, agentswitchboard.dev,
+  awesome_mpp, awesome-agent-payments-protocol (-v2), awesome-agentic-commerce, awesome-agents, x402-dev — all
+  AHEAD=1 BEHIND=0 CLEAN. x402 upstream still at 9b37f37 (no new movement since v3 rebuild ~19:2x). None drifted.
+- Corrective action honored: sampled PR fork-branch + pull/new pages verified 200 signed-out (curl -L, no
+  session) — x402-rebased-v3, nanodir-clean, aapp-v2, x402-dev, awesome-x402. Nothing 404.
+- Pending keyless listings honestly re-verified: all 10 pages answer 200 signed-out (AgentRank, AI Agents Live,
+  MeshKore, TheNextAI, zPlatform, aiagenttools, agents.net, AiAgents.Directory, DynamiteAI, 4agent). All were
+  submitted 2026-09-15, so all are STILL within their 24-48h review windows — no card live yet is expected, not a
+  failure. No resubmits (would violate the don't-resubmit-while-pending rule).
+- NEW candidate evaluations (all not-keyless, no submission made): toollist.ai/v4/submit ($29 one-time + account,
+  paid), aiagents.saastrac.com ($20-80/mo paid), 600.tools/submit (redirects to /auth/login), poweredbyai.app
+  (no /submit route, 404), aiex.me/submit (redirects to /lander, no form), vibeapps.dev/submit (general maker
+  community, off-topic for a payments SDK). Recorded so future runs skip.
+- agentlaunch.vercel.app returns HTTP 402 (an x402-style paywall), NOT a clean signed-out listing — the two live
+  adoption milestones are the recorded ones (Agent Directory API + agents-launch.lovable.app), both still 200.
+- Net: no NEW adoption milestone this run (funnel unchanged: 2 live listings, 10 prepared PR branches all CLEAN
+  req2-gated, 10 pending keyless listings, req1+req2 are the 2 remaining customer-gated adoption blockers).
+  X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22). Logged a `docs` distribution event.
+- Note: aai's SaaS/paid-dir push (toollist, saastrac) would need real money and is out of bounds (no funding asked).
+
 ## DAY RUN 2026-09-15 ~21:1x UTC — NEW keyless listing (agents.net) + 2 fresh-target evals
 
 - Corrective action honored: repo, agents.net submit + directory pages all verified HTTP 200 signed-out (curl -L, no
