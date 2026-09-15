@@ -2114,6 +2114,16 @@
    "pattern": ".gitignore",
    "reason": "version-control ignore config, not governed application code; added since base_commit",
    "at": "2026-09-15T05:58:09+00:00"
+  },
+  {
+   "pattern": "docs/tutorial.md",
+   "reason": "Distribution documentation only (tutorial for end users); the code the laws govern lives in src/openai_agents_nano/tool.py and its tests, and docs/live-proof.md is L20-scoped",
+   "at": "2026-09-15T07:50:16+00:00"
+  },
+  {
+   "pattern": "docs/fee-finality-comparison.md",
+   "reason": "Distribution documentation only (measured fee/finality comparison with cited sources); governs no code",
+   "at": "2026-09-15T07:50:16+00:00"
   }
  ],
  "contested": [],
@@ -3180,6 +3190,26 @@
    "at": "2026-09-15T06:27:43+00:00",
    "prev": "ebdf478ed1362b5acfcd7e345eddfaf0c92d66a965447f10bf2e0bfa809568fb",
    "receipt": "0d79a3da2975519b0ac96379988808a009ca3269aafb6bb94a9c90a07c24d7fe"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": "docs/tutorial.md",
+    "reason_sha": "c0f880f159a7c88d3a46ae7d6534df4b9585435cf366d2eb40b1c1407947639b"
+   },
+   "at": "2026-09-15T07:50:16+00:00",
+   "prev": "0d79a3da2975519b0ac96379988808a009ca3269aafb6bb94a9c90a07c24d7fe",
+   "receipt": "e4a9b0983e48f670bf22a4b7442953de4f51dc96e6ded6423190b3dc59622c27"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": "docs/fee-finality-comparison.md",
+    "reason_sha": "7977bd279183e483f0e2aacb6bd25e942dfae71017f4cec76cb400b12a71b685"
+   },
+   "at": "2026-09-15T07:50:16+00:00",
+   "prev": "e4a9b0983e48f670bf22a4b7442953de4f51dc96e6ded6423190b3dc59622c27",
+   "receipt": "1e48d1bb4dff011dc3e7de93a882c880fe372cef3e498dd3bbad63c0a24e1f5a"
   }
  ]
 }
