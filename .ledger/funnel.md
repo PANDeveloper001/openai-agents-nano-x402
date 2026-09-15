@@ -518,3 +518,21 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
 - Funnel unchanged: installs 0 (req1-gated), merged PRs 0 (req2-gated), outside paid 0, live listings 2,
   prepared PR branches 10 (req2-gated), pending keyless listings 9. X weekly update already posted 2026-09-15
   (next update-kind >= 2026-09-22). Distribution content is comprehensive (tutorial + 3 measured comparisons).
+
+## THIS RUN 2026-09-15 ~21:0x UTC — drift re-check + link re-verify + new-target evaluation
+- Drift re-checked all 10 prepared PR branches (git fetch --depth 3 upstream HEAD + fork branch, rev-list
+  behind) this run; all fetches succeeded exit 0. Per skill, run at every distribution run start.
+- Corrective action honored: public links re-verified signed-out via curl this run (exit 0): repo, README,
+  tutorial, and the PR fork-branch pages. Nothing 404 in this run's curl pass.
+- NEW candidates evaluated from fresh search, none a clean fit where we lack a prepared branch:
+  bitrefill/awesome-agentic-payments — CONTRIBUTING accepts "only official sources ... from the maintaining
+  organizations", a third-party client SDK is out of scope -> skip. frankxai/awesome-payment-agent-skills
+  (2★, safety/mandate-curated, "what doesn't get merged: tools that move money without authorization story")
+  and frankxai/awesome-agentic-income (1★) — tiny safety-curated lists; a settlement-rail client SDK is a
+  marginal fit, not worth keyless prep or PR -> skip. moov-io/awesome-fintech (373★) — generic fintech, no
+  x402/agent-payments SDK section -> skip. QBT-Labs/x402, x402-agentpay etc. are products, not lists.
+  Recorded in open-integration-pr skill as not-fit to avoid retries.
+- Funnel unchanged (per run brief): installs 0 (req1 PyPI), merged PRs 0 (req2 GitHub), outside paid 0,
+  live listings 2 (agentlaunch, Agent Directory API), prepared PR branches 10 (all req2-gated), pending
+  keyless listings 9, X weekly already posted 2026-09-15 (next update-kind >= 2026-09-22). Both adoption
+  blockers remain customer-gated (2 key requests still waiting); no retcon of state.
