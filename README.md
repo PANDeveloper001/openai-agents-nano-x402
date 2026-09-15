@@ -84,7 +84,10 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
 - `docs/tutorial.md` — install + two-phase spendless usage + safety + verify commands.
 - `docs/fee-finality-comparison.md` — measured Nano vs USDC-on-Base x402 (cost, finality, custody).
 - `docs/agent-payment-rails-comparison.md` — the full agent-payment rail set: Nano x402 vs
-  x402/USDC, Stripe+Tempo MPP, Google AP2 and card-network agent rails, cited.
+  x402/USDC, Stripe+Tempo MPP, Google AP2, card-network agent rails.
+- `docs/comparison-vs-x402-openai-python.md` — this repo vs the incumbent OpenAI x402 client
+  (`qntx/x402-openai-python`): what each is, where it fits, and the honest differences
+  (custody rail, fee model, framework fit).
 - `docs/live-proof.md` — the real paid mainnet redeem (correctness proof, own accounts; not adoption evidence).
 
 ## Safety
