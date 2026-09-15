@@ -273,3 +273,9 @@ ACCESS_GITHUB_KEY (req2); everything else keeps moving.
 - This proves an outside agent following README/tutorial `git+https` install today actually can
   install and import the package (the only public install path while the PyPI upload is
   key-gated req1). Distribution starter-path evidence.
+
+## RE-CHECK 2026-09-15 ~15:22 UTC (this run)
+- Pending listings re-checked via browser (none live): MeshKore search 404 + no card, TheNextAI
+  search no card, zPlatform search no card, aiagenttools search no card, AgentRank browse no
+  card, AI Agents Live /agents no card. All still under review; no new adoption milestone.
+- Fresh-install proof logged via rai-distribution (starter_path). Public link list all 200.
