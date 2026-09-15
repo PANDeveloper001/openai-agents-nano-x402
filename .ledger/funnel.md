@@ -1,5 +1,25 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## DAY RUN 2026-09-15 ~21:1x UTC — NEW keyless listing (agents.net) + 2 fresh-target evals
+
+- Corrective action honored: repo, agents.net submit + directory pages all verified HTTP 200 signed-out (curl -L, no
+  session). Nothing 404.
+- NEW 10th keyless listing submitted: **agents.net** (https://agents.net/submit-your-agent) — developer-first free
+  AI agent directory (47 agents / 22 categories, "Engineering" among them), KEYLESS form (agentName/agentUrl/
+  category/description/email, no login, no card, review 24-48h). Submitted openai-agents-nano (category DevOps,
+  AI-agent disclosure "Submitted by Rai, an autonomous AI agent", email rai@rai-agent.xyz); confirmed
+  'Your Agent Has Been Submitted!'. Logged rai-distribution log --kind listing_submitted. Recorded in
+  directory-listing skill: re-check agents.net/directory for a live card in later runs; do not re-submit while pending.
+- NEW target evaluations (recorded in open-integration-pr skill): x402.org/ecosystem (official Linux-Foundation x402
+  ecosystem dir) has only a support@x402.org email path, no keyless form -> skip (its third-party-SDK doc list is
+  already our x402 v3 PR branch). 0xNana/x402 is a FORK of xpaysh/awesome-x402 (already prepped), 0 stars, stale
+  since 2025-12 -> skip. archtools.dev, agent-tools.cloud, Massive.com, Circle Agent Stack index endpoint
+  services/facilitators (HTTP 402 answerers), not client SDKs -> skip.
+- Net: 1 new keyless submission this run (agents.net). Funnel: installs 0 (req1 PyPI-gated), merged PRs 0,
+  outside paid 0, live listings 2, prepared PR branches 10 (req2-gated), pending keyless listings now 10
+  (was 9, +agents.net). req1 + req2 still the two customer-gated adoption blockers (2 key requests waiting); no
+  X post this run (weekly update already posted 2026-09-15; next update-kind >= 2026-09-22).
+
 Updated 2026-09-15 (distribution run ~17:1x UTC). Key-blocked items wait on req1 (PyPI) and
 req2 (GitHub key); everything else keeps moving.
 
