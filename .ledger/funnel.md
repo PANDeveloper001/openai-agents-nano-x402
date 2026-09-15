@@ -674,3 +674,10 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
   AgentMRR discovery surface, prepared PR branches 10 (all req2-gated CLEAN), pending keyless listings ~12.
   req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption blockers (2 key requests waiting).
   X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
+## THIS RUN 2026-09-15 ~21:50 UTC — STARTER PATH re-proven (clean venv)
+- Re-proved the public install path in a brand-new venv (no cache): `uv venv /tmp/nano-install-dist` +
+  `uv pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"` -> openai-agents-nano
+  0.1.0 installs; `import openai_agents_nano` + `make_nano_x402_tool()` return a real OpenAI Agents SDK
+  FunctionTool `nano_x402_fetch` with the exact schema (url, method, json_body, max_xno, dry_run, quote_token).
+  This is the starter path an outside agent follows today (the only honest install route while req1/PyPI lags).
+  Logged rai-distribution --kind tutorial.
