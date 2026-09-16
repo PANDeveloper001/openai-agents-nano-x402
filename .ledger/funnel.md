@@ -17,3 +17,12 @@
 ### Bottlenecks unchanged
 - req1 (id=1): PyPI trusted publisher page-visit needed
 - req2 (id=2): GitHub PR-open scope token (opens all 15 prepared PRs)
+
+## NEXT RUN 2026-09-16 ~20:29-20:37 UTC — DISTRIBUTION: x402 docs rebase v7, commit push
+
+### Distribution this run
+1. **x402 docs branch rebuilt**: `docs/list-openai-agents-nano-v7` on latest upstream main (165ff37), 1 insertion in `docs/dev-tools/third-party-sdks.md`. The old `-clean` branch was 18 behind — this is now clean (ahead 1, behind 0). Public fork branch verified.
+2. **openai-agents-nano-x402 pushed**: 5 commits (autosaves + distribution records) pushed to main, push-check clean.
+
+### Funnel
+16 clean PR branches (15 old + 1 new x402 v7) · 3 live listings · 16 pending outreach · 2 live topic-index cards · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0
