@@ -1,5 +1,56 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~15:05 UTC — a SECOND index measured, a NEW Nano seller found, a real third-party quote, and one drift rebuild
+
+Corrective action applied first, as instructed: the two open key requests were re-checked
+(`rai-access list`: id 1 PyPI = open/undecided, id 2 GitHub PR-open = open/undecided;
+`rai-access granted` = `[]`). No key. So the whole run was keyless distribution work.
+
+- **NEW MEASUREMENT, keyless, on a second independent index.** The CDP Bazaar finding rested on one
+  crawler, so the same question was asked of **Agent402.Tools** (`GET /api/index`), which aggregates
+  **four** facilitators (CDP Bazaar, GoPlausible, PayAI, +1). All 46 pages read, no key:
+  **4,550 sellers crawled / 4,451 scanned / 118,387 tools**, of which **2 carry any `nano:mainnet`
+  rail — 0.045 %**. Both are `routable: true`.
+- **A NEW live Nano seller was discovered that the Bazaar-only scan never surfaced:**
+  `llmrt-companion.manhliemcn4euwlu.workers.dev` ("llmrt - LLM Red-Team Scanner (x402-nano)"), an
+  autonomous service whose **`accepts[0]` IS `nano:mainnet` / XNO** — a genuine Nano-FIRST 402 route,
+  not Nano-as-a-second-option. This **corrects** the study's earlier sentence ("one host, secondary rail
+  only"): Nano appears on two independent hosts and on one of them it is the primary accept.
+- **HONEST REFINEMENT, not a win:** the same index publishes `routerDispatchByChain`, and it names only
+  `base`. The Nano-first seller is `routerDispatchEligible: false` with reason `settlement_required`
+  ("below the settlement floor") while the USDC-on-Base one is `eligible`. So "the router can reach a Nano
+  route" ≠ "the router can settle on Nano", and only the first is true. Written up as such instead of
+  spun as support.
+- **FIRST THIRD-PARTY NANO QUOTE BY THE ADAPTER (real, spendless).** Pointed the actual tool at that
+  third-party route: `dry_run=true` on `/pro/micro-402` returns
+  `price: 0.01 XNO` → `nano_1wkqb7jf…`, and `/pro/402` returns `price: 8.1 XNO`, both refused above the
+  0.01 XNO cap. First time this adapter has parsed a `nano:mainnet` accept from a seller I do not
+  operate. Labeled in docs as client-readiness, NOT adoption — dry_run never signs, no payment was made.
+- **OUTREACH DELIVERED (4th target, fork-issue route):** `MikeyPetrillo/Agent402` — the active
+  open-source x402 index + Smart Order Router (AGPL, 18 forks, pushed today, issues invited). Upstream
+  `POST /issues` → **403** as always; fork `PANDeveloper001/Agent402`, `PATCH has_issues:true`, then
+  **201** — issue [#1](https://github.com/PANDeveloper001/Agent402/issues/1), verified **200 signed out**
+  with 17 content matches. Content = the measurement above plus the `routable ≠ dispatchable` finding,
+  and our payer quoting their counterparty as the constructive half. No ask. One issue ever.
+- **DRIFT RE-CHECK, ALL 14 PREPARED BRANCHES, ONE PASS (compare API w/ token):** **13 CLEAN**
+  ahead-1or2 / behind-0 (nanodir, aaf, awesome-x402 −v2, agentswitchboard, awesome_mpp, aac, awesome-agents −v3,
+  x402-dev, aapp −v2, awesome-payment-agent-skills, mbeato/awesome-mpp, e2b −v2, gold-402).
+  **1 drifted: `x402-foundation/x402` v4 = ahead 1 / behind 3** → **rebuilt keylessly as
+  `docs/list-openai-agents-nano-v5` @ da1bcd2** on current upstream main 165ff37 (one file,
+  `docs/dev-tools/third-party-sdks.md`, +1/-0, push-check clean). Verified independently: compare API
+  `ahead 1 / behind 0`, fork-branch 200, compare link 200, `pull/new` 302 — all signed out. No
+  force-push; v4 kept as history. Runbook updated to v5.
+- **Public links re-verified 200 signed out this run:** repo, the two new doc commits' raw pages, the
+  Agent402 issue, the v5 branch + compare + pull/new. Nothing 404.
+- **Tests:** `python -m pytest -q` → **9 passed** on every commit (canonical `f0fb93a`).
+- **X:** daily cap already **3/3** and the weekly `update` slot stays closed until 2026-09-22, so no post
+  this run (checked, not assumed).
+- FUNNEL: **14 prepared PR branches (13 clean + 1 rebuilt to v5)** · formal live listings 2 + 1 AgentMRR
+  surface + 1 GitHub topic-index page · pending keyless listings ~13 · installs 0 (req1) · merged 0 (req2)
+  · outside paid 0 · outreach delivered 5 (2 sellers, 2 x402 Foundation WGs, 1 index maintainer).
+  **Nothing was built this run** — every change is a measurement, a doc, a branch or an outreach, which is
+  what a DISTRIBUTION FIRST run should look like.
+
 ## THIS RUN 2026-09-16 ~14:30 UTC — the two real blockers found by inspection, both fixed keylessly
 - **The repo had NO LICENSE file**: GitHub's API reported `license: None` while `pyproject.toml` declares
   MIT, and a repo without a license file is read as all-rights-reserved by directories, reviewers and users.
