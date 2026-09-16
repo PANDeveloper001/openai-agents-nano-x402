@@ -110,11 +110,68 @@ Measured, keyless, paginated over every page:
 
 | Quantity | Value |
 | --- | --- |
-| Sellers crawled (`sellerCount`) | **4,550** |
+| Sellers crawled (`sellerCount`) | **4,550** (4,588 on a re-count later the same day) |
 | Sellers actually scanned (all 46 pages) | **4,451** |
 | Indexed tools | 118,387 (109,583 paid) |
 | Sellers carrying **any** `nano:mainnet` rail | **2** |
 | Share | **0.045 %** |
+
+### Two findings from this index's own route table (2026-09-16, second scan)
+
+Both come from re-reading the index the same day and from the Bazaar validator; neither was in the earlier
+write-up, and the second one reverses the reading of the first.
+
+**(a) The first *live Nano-first* route was already being rejected as *undiscoverable*, and that is a fixable
+seller-side bug, not a rail verdict.** `llmrt-companion.manhliemcn4euwlu.workers.dev/pro/micro-402` advertises
+`nano:mainnet / XNO` as `accepts[0]` and quotes a real 402 through the standard `PAYMENT-REQUIRED` header:
+
+| field | value |
+| --- | --- |
+| `x402Version` | 2 |
+| `accepts[0]` | `scheme: exact`, `network: nano:mainnet`, `asset: XNO`, `amount: 10000000000000000000000000000` (0.01 XNO), `payTo: nano_1yqg4hcdzcnit8wd1r4ay33qxgw6wgjx1oxonfd93jjcci5w6pn5tjdwmahc`, `extra.work: optional` |
+| `accepts[1]` | `eip155:8453` USDC, 1000 (0.001 USDC) for the same endpoint |
+
+The keyless validator's answer for that route, verbatim:
+
+```
+valid: false   simulation: {outcome: "rejected", rejectionReason: "no bazaar discovery extension found"}
+  accepts[0].network  Network "nano:mainnet" is not supported
+  accepts[0].asset    Asset "XNO" is not USDC
+  accepts[0].amount   Amount "10000000000000000000000000000" is not a base-10 integer
+  accepts[0].payTo    Missing or invalid payTo address
+  has_bazaar_extension  No bazaar extension in top-level extensions object
+```
+
+**(b) Its sibling route proves the fix: move the USDC accept to `accepts[0]`.** The *same seller's* permanently
+indexed route `pyfile-agent.taile3ff35.ts.net/v1/brief` — same Nano rail present, same 402 shape, USDC-on-Base
+listed first — validates **`valid: true`, `simulation.outcome: "accepted"`**, bazaar extension and all. So the
+sender's own account and host are fine; what fails is exactly the four `accepts[0]` checks (a Nano address is
+not a USDC `payTo`, a 30-decimal amount is not a base-10 integer, `nano:mainnet` is not a facilitator network)
+plus the missing `extensions.bazaar` block. The correct advice to such a seller is one line: *declare the
+facilitator-supported accept first and add `extensions.bazaar`; keep Nano as an additional accept.*
+
+Corollary worth stating plainly, because it is what a seller loses: with Nano as `accepts[0]` and no bazaar
+extension, the route is unreachable through the Bazaar, the Bazaar MCP server, agentic.market and Bedrock
+AgentCore — for **any** client, including the USDC one on `accepts[1]` — while the Nano price itself stays
+completely payable by a Nano-capable buyer that reads the 402 directly. Discovery is the casualty, not the rail.
+
+### Re-measurement of the Bazaar, and what did *not* change
+
+`python3 scripts/scan_nano_first.py` (new, one command, keyless) scans every page of the Bazaar index and
+reports the Nano-first count separately from the Nano-present count:
+
+| Quantity | 2026-09-16 (fresh scan, 16:03 UTC) |
+| --- | --- |
+| `pagination.total` | **15,762** |
+| `pagination.limit` returned | 1000 (page with the returned limit, not the requested one) |
+| resources with **any** `nano:mainnet` accept | **55** |
+| resources with **`accepts[0] == nano:mainnet`** | **0** |
+| distinct hosts | **1** (`pyfile-agent.taile3ff35.ts.net`) |
+| distinct Nano `payTo` | **1** (`nano_3uojbn47…`) |
+
+So inside the Bazaar itself there is still no *validating* Nano-first route: all 55 come from one host and one
+`payTo`, and none is listed first. The live Nano-first route found above lives in the **cross-seller** index,
+not in the Bazaar, and reaches it only if its own declaration is corrected.
 
 The two, with their Nano `payTo` as the index publishes it:
 
