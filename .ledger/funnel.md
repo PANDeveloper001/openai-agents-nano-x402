@@ -69,9 +69,36 @@
 - req1 (id=1): PyPI trusted publisher page-visit needed (owner only; name still free: 404)
 - req2 (id=2): GitHub PR-open scope token (opens all 16 prepared PRs; branches clean, compare links verified 200 signed out)
 
+| ## THIS RUN 2026-09-16 22:20-22:35 UTC — DISTRIBUTION: drift check, listing re-checks, new directory eval
+
+### State at start
+- req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches (previous run: all clean)
+- 24 listing submissions in review
+- X daily cap 3/3; weekly update slot free
+
+### Work done this run
+1. **Drift re-check**: all 15 prepared PR branches clean (ahead 1-2 / behind 0). Compare API with token length verified 93 (intact). x402 specs branch ahead 2 / behind 0 (expected, adds 4 files). Key targets complete: x402-foundation/x402 2/2.
+2. **PyPI name check**: still free (404 on /json/ and /simple/). No squatting.
+3. **Bazaar nano scan**: 55 nano accepts unchanged from last run (same host/payTo: pyfile-agent.taile3ff35.ts.net). Total resources: 15,757.
+4. **Release downloads**: wheel 12, sdist 5 — unchanged.
+5. **Pending listings re-checked via browser**: AgentMRR still live. All others still in review (expected: TheNextAI <48h, zPlatform <48h, AgentRank 2-3 bus days, AI Agents Live pending, aiagents.directory pending, bestaiagents.org pending, agents.net pending, x402info.com pending, MeshKore pending) — none have been published yet.
+6. **NEW directory evaluated: AgentIndexed** (agentindexed.com/submit) — free listing, has "Frameworks & SDKs" category perfect for openai-agents-nano, 0 captcha elements. BUT submission is mailto: (opens email client to casbattle19@gmail.com) — cannot complete without programmatic email-send channel. Evaluated, not submitted. Log for when email capability exists.
+7. **NEW directory evaluated: AgentHiveX** (agenthivex.com/submit) — account-required ("Log In / Sign Up" gate), not keyless. SKIP.
+
+### Funnel
+15 clean PR branches · 24 listing submissions · 25 outreach logged · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · 1 x402eco/website fork issue · 0 new live listings this run · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release downloads wheel 12, sdist 5
+
+### Bottlenecks unchanged
+- req1: PyPI trusted publisher — name still free, OIDC workflow proven ("invalid-publisher" = just need registration)
+- req2: GitHub PR-open scope — 15 clean branches ready, all verified compare links 200 signed-out
+- No email send capability: AgentIndexed free listing blocked by mailto: submission gate
+- X daily cap 3/3 consumed for today
+
 ### Next steps for next run
-1. X daily cap resets at midnight UTC (~2.5 hours) — can post the remaining daily slot(s); weekly update still locked until Sep 22
-2. Re-check pending listings that were submitted (agents.net, x402info.com, x402list.com, MeshKore, TheNextAI, zPlatform, DynamiteAI, AgentRank, AI Agents Live, Best AI Agents, aiagents.directory, agentsai.tools if IP-block resolved)
-3. Check if a2alist.ai accepts agent submissions through a discoverable keyless path or if any new free directories appeared
-4. Verify PyPI name still free (name-squatting risk since name is still unregistered)
-5. Evaluate if any Nano x402 facilitator (x402nano.org, nanoroute) provides a cross-listing or integration opportunity that doesn't need USDC
+1. **X post: weekly update** (free slot) — post BEFORE daily cap is consumed. Text: "Fee and finality: Nano (free, 0.3s) vs x402 USDC ($0-3c)." + link to fee-finality-comparison.md
+2. Re-check pending directories that should be live after 48h (agents.net, MeshKore, TheNextAI, zPlatform, AgentRank)
+3. Re-check whether customer has processed req1 or req2
+4. Verify PyPI name still free
+5. Re-check Bazaar nano count
+6. If email capability exists, submit to AgentIndexed (agentindexed.com/submit, Frameworks & SDKs category, free plan)
