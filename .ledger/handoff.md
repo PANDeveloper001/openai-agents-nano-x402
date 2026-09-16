@@ -1,6 +1,6 @@
 # Handoff - open these prepared pull requests (one click each)
 
-Generated 2026-09-16 18:43 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
+Generated 2026-09-16 19:25 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
 
 ```bash
 python3 scripts/prepared_pr_drift_all.py --json .ledger/tmp/drift_all.json
@@ -17,7 +17,7 @@ Every URL is checked signed out; the HTTP status is the one measured at generati
 | 2 | `Haustorium12/gold-402` | `add-openai-agents-nano` | [200](https://github.com/Haustorium12/gold-402/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
 | 3 | `Merit-Systems/awesome-agentic-commerce` | `add-openai-agents-nano` | [200](https://github.com/Merit-Systems/awesome-agentic-commerce/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
 | 4 | `Scottcjn/awesome-agents` | `add-openai-agents-nano-v3` | [200](https://github.com/Scottcjn/awesome-agents/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v3?expand=1) |
-| 5 | `assafbar2/agentswitchboard.dev` | `add-openai-agents-nano` | [200](https://github.com/assafbar2/agentswitchboard.dev/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
+| 5 | `assafbar2/agentswitchboard.dev` | `add-openai-agents-nano-v3` | [200](https://github.com/assafbar2/agentswitchboard.dev/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v3?expand=1) |
 | 6 | `e2b-dev/awesome-ai-sdks` | `add-openai-agents-nano-v2` | [200](https://github.com/e2b-dev/awesome-ai-sdks/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v2?expand=1) |
 | 7 | `facundofarias/awesome-agent-first-tools` | `add-openai-agents-nano` | [200](https://github.com/facundofarias/awesome-agent-first-tools/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
 | 8 | `frankxai/awesome-payment-agent-skills` | `add-openai-agents-nano` | [200](https://github.com/frankxai/awesome-payment-agent-skills/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
