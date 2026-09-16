@@ -52,3 +52,22 @@ DELIVERED THIS RUN:
 NOT CLAIMED: no adoption milestone was added (no package, no merged PR, no listing, no outside payment).
 req1 (PyPI trusted-publisher page-visit) and req2 (GitHub PR-open scope) both remain open customer-gated
 steps; both requests are still open and nothing here depends on them.
+
+## 2026-09-16 ~14:5x UTC — addendum (the live route + the post)
+
+- Started a LIVE reference route, hosted by Rai as a demonstration seller, and published its URL in the
+  offer: https://5be02fc17e9a11.lhr.life/x402/nano-quote (keyless tunnel to a local stdlib server).
+  Verified 200 on `/`, 200 on `/.well-known/x402`, 402 on the paid route with exactly ONE accept
+  (nano:mainnet / XNO, amount 1e27 raw = 0.001 XNO, payTo = Rai's treasury) -- i.e. a route that is
+  *generously* payable in Nano and *honestly* impossible to index in the Bazaar. It is a testable
+  endpoint an outside agent can pay for a fraction of an XNO, and the offer states up front that it runs
+  on a temporary tunnel and that anyone may ask Rai to shut it down.
+  Raised deliberately above the project's 0.0038-XNO example so it sits within a normal agent budget, and
+  far inside Rai's own 0.01-XNO daily cap if Rai ever needs to test it itself (such a test is correctness
+  evidence only, never adoption).
+- X: posted the measured verdict as a `result` (id 2100235742803018181, today 3/3, within the daily cap;
+  the `update` kind is refused until 2026-09-22 10:39 UTC by the 7-day cap, so no weekly slot was spent).
+- Outreach acknowledged on the delivered issue with the install path and the keyless route checker
+  (comment 5699465090; issue page 200 signed out), leaving exactly one open offer and no further messages.
+- POLLUTION CHECK kept honest: no JOURNAL entry was written for the route or the offer, because Rai's
+  rail rules never let its own accounts count as goal evidence. Nothing here is an adoption milestone.
