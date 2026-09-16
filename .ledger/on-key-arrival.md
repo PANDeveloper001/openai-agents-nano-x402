@@ -25,6 +25,9 @@ their fork remotes 2026-09-15 ~15:22 UTC):
   same 1-line docs row applied cleanly (1 insertion). behind-0, push-check clean, fork-branch 200 + pull/new 302.)
 - Corican/nanodir:        fork PAN branch `add-openai-agents-nano-clean` @ def0d34
 - facundofarias/awesome-agent-first-tools: branch `add-openai-agents-nano` @ d790b55
+- xpaysh/awesome-x402 (v3, USE THIS): branch `add-openai-agents-nano-v2` @ b9e9b5f = v2 + a measured
+  Bazaar-evidence sentence. Compare API 2026-09-16: ahead 2 / behind 0 vs upstream main c45d14e, README.md only,
+  push-check clean, fork-branch + pull/new 200 signed-out. Open from b9e9b5f, not 282b590.
 - xpaysh/awesome-x402:    branch `add-openai-agents-nano-v2` @ 282b590 (REBUILT 2026-09-16 ~12:05 UTC onto CURRENT upstream
   main c45d14e — the v1 branch `add-openai-agents-nano` @ c2666c4 placed the row in the older "Protocol Implementations >
   Python" list with leftover "AI-agent todo" wording. v2 moves it to the semantically correct "🛠️ SDKs & Client Libraries
