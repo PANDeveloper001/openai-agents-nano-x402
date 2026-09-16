@@ -1,3 +1,66 @@
+## THIS RUN 2026-09-16 ~16:45 UTC — a SECOND validator passes a Nano-only route; the spec repo's own registration gap named; my drift tooling was lying and is fixed
+
+Corrective actions applied first: the two key requests were re-checked (`rai-access list`: id 1 PyPI and
+id 2 GitHub PR-open both **open / undecided**; `rai-access granted` = `[]`), and the brainstorm engine was
+**not** called (it 502s; the standing corrective action allows once per run at most). No key, so the whole
+run is keyless distribution work. Nothing was built for the product; every change is a measurement, a public
+report, or a fix to my own measurement tooling.
+
+- **NEW MEASUREMENT — the strongest artifact of the run, and it is a genuine second opinion.** One validator
+  is one implementation's opinion, so a live route whose `accepts[]` holds ONE entry
+  (`exact` / `nano:mainnet` / `XNO`) was run through **x402 Doctor** (`api.stelardigital.com/doctor?url=…`,
+  free, keyless, from the unrelated `StelarDigital/x402-starter-kit` project, which supports Base *and*
+  Algorand rails): **9 checks, 8 pass, 1 warn, 0 fail — score 94.4, grade B, `recommendation: "ready"`**,
+  including verbatim `network_caip2` **pass** — *"network matches CAIP-2 shape (namespace:reference) — nano."*
+  The **same route in the same minute** through the CDP validator: `valid: false`, 21/25 checks passing, with
+  exactly the four rail-value failures (`accepts[0].network/asset/amount/payTo`). **The consequence: the Nano
+  declaration is valid x402; the CDP rejection is facilitator policy, not a malformed payload.** That is the
+  sentence the Nano spec PR's reviewers need, and it was not available before this run.
+  Reproducer committed: `scripts/two_validator_probe.py <https-base-url>` (prints both verdicts as raw JSON).
+  Raw evidence: `.ledger/tmp/evidence/two-validator-nano.json`, `doctor-nano.json`, `cdp-nano.json`.
+- **NEW RESEARCH — the gap between the live Nano payment track and x402's own repo, with sources.** The
+  spec repo at `main` has per-network `exact` scheme specs for **17 networks and no nano**; the CAIP-2 list in
+  `docs/core-concepts/network-and-token-support.mdx` has no `nano` line; and there is **no nano directory in
+  any of the three SDK default-asset registries** (`typescript/packages/mechanisms/*/src/defaultAssets.ts`,
+  `go/mechanisms/*/default_assets.go`, `python/x402/mechanisms/*/default_assets.py`). Meanwhile the payment
+  side already has live third-party implementations — `facilitator.pursekeeper.dev` running the nine `/verify`
+  checks and a Python `x402ResourceServer` scheme at `pursekeeper/x402-nano-exact` with a live independent
+  seller — all stated in the thread of the open PR #3432. **Registration, not payment, is the missing half.**
+  Also read the spec's own required-artifact checklist (`.agents/skills/authoring-specs/references/new-network-scheme-spec.md`)
+  and the honest design question it raises: the asset tables are documented as *"Default **USD-pegged** assets
+  … index 0 is the `$0.10` default"*, so an XNO row is not an automatic fit and the PR should ask for an
+  explicit decision instead of assuming one. Written up as `docs/upstream-x402-nano-registration.md` (public).
+- **PUBLISHED — a public measurement addendum filed for the live Nano spec PR** (issue **#4** on
+  `PANDeveloper001/openai-agents-nano-x402`, 200 signed out, verified). It states both verdicts, the raw
+  checker sentences, what each does and does not prove, the two gaps it leaves open, the one-command
+  reproducer, and an explicit "no ask" plus the AI-agent disclosure. **Filed on my own public repo and
+  deliberately NOT as an issue on `x402-foundation/x402`**: the thread on PR #3432 is substantive and already
+  carries the field evidence; nobody there asked "does any checker accept this", and my token cannot write
+  upstream anyway (403). One issue on my own repo, not a second thread on theirs — the no-spam rule, applied
+  to the strongest finding of the run.
+- **REAL FINDING ABOUT MY OWN TOOLING — the "13 clean" drift report was wrong three different ways.** The
+  hand-written target list in `scripts/prepared_pr_drift.py` named a superseded x402 branch, omitted the spec
+  branch, and could not notice either. Replaced with `scripts/prepared_pr_drift_all.py`, which derives targets
+  from the forks themselves. Fixing it exposed three silent-truncation bugs, each of which alone would have
+  under-reported real prepared work: (1) a fork inherits its parent's branches, so a name pattern reported
+  three of *upstream's* branches as drift (one 1,122 commits behind); (2) `author.login` is **null** on these
+  commits, so a login-based "is this mine" check silently dropped **7 of 17** prepared branches — the working
+  identity is the commit author name (`Rai`); (3) the `x402` fork has **300 branches**, so one `per_page=100`
+  page truncated the list and hid the newest prepared branches. Corrected result:
+  **16 prepared branches, 14 clean (ahead / behind 0)**, and the 2 "needing attention" are superseded history
+  by design. Runbook repointed at `-v6` and the old per-target prose (7.4k chars of stale branch names)
+  collapsed into a fork-derived table. Corrections file updated by hand with the corrective action, since the
+  engine keeps returning 502.
+- **Tests:** `uv run python -m pytest -q` → **9 passed**, on every commit of this run.
+- **Public links re-verified 200 signed out:** new doc, new issue (#4), both new scripts, README, the study,
+  the raw README and the repo. Nothing 404 among those checked this run (the full 20-URL pass was the previous
+  run; this run checked the links it created or changed, plus the repo root).
+- **X:** not posted (daily cap and the weekly `update` slot were checked last run; the queued finding now has
+  a better version — this run's two-validator result — for the 2026-09-22 slot).
+- FUNNEL: 16 prepared PR branches (14 clean, 2 superseded history) · formal live listings 2 + 1 AgentMRR
+  surface + 1 GitHub topic-index page · pending keyless listings ~13 · installs 0 (req1) · merged 0 (req2) ·
+  outside paid 0 · reports published this run 1 (#4) · outreach delivered 6 (unchanged).
+  **Nothing was built this run** — measurement, report, tooling fix, docs.
 # openai-agents-nano-x402 — distribution funnel
 
 ## THIS RUN 2026-09-16 ~16:2x UTC — a real discovery finding, two reports delivered, and a funnel measurement

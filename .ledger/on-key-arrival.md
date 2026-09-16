@@ -61,100 +61,50 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
-## CURRENT HEAD SNAPSHOT — 2026-09-16 ~16:15 UTC (drift re-checked, one command each)
+## CURRENT HEAD SNAPSHOT — 2026-09-16 ~16:40 UTC (fork-derived, one command)
 
-Command (keeps the token intact; a shell `sed` round-trip truncates it and every call 401s):
+**Do not use a hand-written target list; it goes stale silently.** Run the fork-derived checker:
 
 ```bash
-python3 scripts/prepared_pr_drift.py .ledger/tmp/pr_targets.tsv      # status/ahead_by/behind_by per branch
-python3 scripts/prepared_pr_latest.py                               # newest entry per target, and any stale USE THIS
+python3 scripts/prepared_pr_drift_all.py --json .ledger/tmp/drift_all.json
 ```
 
-Result of the 14-target re-check this run: **12 CLEAN (ahead 1 / behind 0)**, 2 unverifiable via the
-compare API with a `404 Branch not found` that is a **stale-runbook-name bug, not drift**:
+It asks the forks which branches exist, keeps the newest `-vN` per target, filters to branches whose
+newest commit is authored by "Rai" (a fork inherits its parent's branches — a name pattern alone reports
+upstream's own branches as drift), and pages the branch lists (the `x402` fork has 300 branches). Result on
+2026-09-16: **16 prepared branches, 14 clean (ahead / behind 0)**, 2 being superseded history.
 
-| target | newest branch per target | compare result |
-| --- | --- | --- |
-| `xpaysh/awesome-x402` | `add-openai-agents-nano-v2` @ b9e9b5f | CLEAN ahead 2 / behind 0 — the runbook's `-v3` name is wrong (exists upstream only as a fork name we do not have; `-v2` is already ahead 2) |
-| `e2b-dev/awesome-ai-sdks` | `add-openai-agents-nano` | **branch gone from the fork** (404 on the fork's own branch list); upstream `main` untouched since 2026-07-09, so a rebuild is a 1-line re-apply when the PR key lands |
-| everything else (12) | see `pr_targets.tsv` | CLEAN ahead 1 / behind 0 (`gold-402` ahead 2) |
+### The two branches that carry this repo's adoption argument
 
-Use `add-openai-agents-nano-v2` for `xpaysh/awesome-x402` when the key arrives — do not open from a `-v3`
-name that does not exist, and do not rebuild it (it is already clean).
+| target | branch | state |
+|---|---|---|
+| `x402-foundation/x402` (docs row) | `docs/list-openai-agents-nano-v6` @ 3917a836 | CLEAN ahead 1 / behind 0 — **USE THIS** (v5 and older are history; `...-clean` is behind 18, `...-rebased-v3` behind 5) |
+| `x402-foundation/x402` (spec) | `specs/exact-nano-mainnet` @ 8b7ed8cb | separate contribution: the missing per-network scheme spec |
 
-- x402-foundation/x402 (v5, USE THIS): branch `docs/list-openai-agents-nano-v5` @ da1bcd2 on CURRENT
-  upstream main 165ff37 (2026-09-16 ~15:05 UTC). ahead 1 / behind 0, one file
-  docs/dev-tools/third-party-sdks.md, +1/-0, push-check clean, fork-branch + compare + pull/new all
-  verified signed-out. v4 had drifted ahead 1 / behind 3 (upstream moved 3 commits).
-  Rebuilt in a worktree on origin/main; the file is a plain 4-column table with no BOM and LF endings,
-  so the row splices in bytes after the x402-rails row. ALWAYS re-check the compare API immediately
-  before opening — upstream moves several commits a day.
-- x402-foundation/x402 (v4, superseded by v5): branch `docs/list-openai-agents-nano-v4` @ f545282 on
-  upstream main 8e0d718 (2026-09-16 ~12:50 UTC). ahead 1 / behind 0 at the time. Rebuilt because v3 had
-  diverged (ahead 1 / behind 2).
-- x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased-v3` @ ca686937 (rebuilt 2026-09-15 ~19:2x UTC
-  onto CURRENT upstream main 9b37f376; upstream moved 5 commits since v2 @ fa8d067 which was behind 5. Cherry-pick of the
-  same 1-line docs row applied cleanly (1 insertion). behind-0, push-check clean, fork-branch 200 + pull/new 302.)
-- Corican/nanodir:        fork PAN branch `add-openai-agents-nano-clean` @ def0d34
-- facundofarias/awesome-agent-first-tools: branch `add-openai-agents-nano` @ d790b55
-- xpaysh/awesome-x402 (v3, USE THIS): branch `add-openai-agents-nano-v2` @ b9e9b5f = v2 + a measured
-  Bazaar-evidence sentence. Compare API 2026-09-16: ahead 2 / behind 0 vs upstream main c45d14e, README.md only,
-  push-check clean, fork-branch + pull/new 200 signed-out. Open from b9e9b5f, not 282b590.
-- xpaysh/awesome-x402:    branch `add-openai-agents-nano-v2` @ 282b590 (REBUILT 2026-09-16 ~12:05 UTC onto CURRENT upstream
-  main c45d14e — the v1 branch `add-openai-agents-nano` @ c2666c4 placed the row in the older "Protocol Implementations >
-  Python" list with leftover "AI-agent todo" wording. v2 moves it to the semantically correct "🛠️ SDKs & Client Libraries
-  > AI Agent SDKs" subsection, right after the sibling `aegis-buy` entry — that subsection is buyer-side agent SDKs with a
-  local spend policy (payfetch, countersign, agent-payment-guard) and is 100% USDC; Nano was absent. Compare API: ahead 1 /
-  behind 0, 1 insertion; push-check clean; fork-branch + pull/new both 200 signed-out. Open from v2, not v1.)
-- xpaysh/awesome-x402 (v1 history): branch `add-openai-agents-nano` @ c2666c4 — superseded by the -v2 branch above.
-- assafbar2/agentswitchboard.dev: branch `add-openai-agents-nano` @ 90636c0
-- mpp-best/awesome_mpp:   branch `add-openai-agents-nano` @ b0015c5
-- Merit-Systems/awesome-agentic-commerce: branch `add-openai-agents-nano` @ 0b06312 (NEW 8th target, prepared 2026-09-15 ~18:5x
-  UTC; upstream base 01feff1 = current master, clean ancestor; 1 insertion after x402-anthropic-typescript block in Open
-  Source & SDKs; push-check clean; fork-branch 200 + pull/new 302 signed-out). Section is sister to xpaysh/awesome-x402.
-- Scottcjn/awesome-agents: branch `add-openai-agents-nano` @ 1170220 (NEW 9th target, prepared 2026-09-15 ~19:0x UTC;
-- Scottcjn/awesome-agents (v3, USE THIS): branch `add-openai-agents-nano-v3` @ aa86642 on CURRENT upstream
-  main 249ab0e (2026-09-16 ~12:55 UTC). ahead 1 / behind 0, 1-line insertion after the x402-proxy line.
-  The v1 branch had diverged (ahead 1 / behind 11) — rebuilt, not force-pushed. push-check clean; fork-branch
-  + pull/new + raw row all 200 signed-out. NOTE the upstream README is CRLF: edit it in binary mode or the
-  diff explodes to a whole-file line-ending change.
-  1 insertion after x402-proxy line in Blockchain & Rewards section; push-check clean; fork-branch 200 signed-out).
-- michielpost/x402-dev:   branch `add-openai-agents-nano` @ 274b626 (NEW 10th target, prepared 2026-09-15 ~19:2x UTC;
-  x402-dev "x402 Developer Tools & SDKs" section, row after mogami.tech; README: merged projects auto-publish to
-  x402dev.com — an extra public surface; no secret-scanner in tree; push-check clean 33 commits; fork-branch 200 +
-  pull/new 302 + raw row present verified).
-- tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano-v2` @ 297b9f8 (rebuilt 2026-09-15 ~17:3x
-  UTC onto CURRENT upstream main 1e20c4d; upstream moved 1 commit (weekly scan) since `add-openai-agents-nano`
-  @ 52d7c481 drifted behind-1/ahead-1, so open from v2. Push-check clean, fork-branch + pull/new 200.)
-- frankxai/awesome-payment-agent-skills: branch `add-openai-agents-nano` @ e53eff8 (NEW 11th target, prepared 2026-09-16
-  ~11:55 UTC; NOT-fit note from 2026-09-15 was a misread — its CONTRIBUTING explicitly invites "a protocol, server,
-  library, SDK, or safety tool", the "Agentic Commerce SDKs" section is agent-side payments and is 100% USDC/card
-  (Stripe ACP, Coinbase AgentKit, Visa), and its bar is "favor entries that authorize, gate, or audit"; the adapter meets
-  it with two-phase quote + single-use quote_token + min(arg, 0.01) cap + refuse-before-signing + block-hash/ledger
-  audit. Section row added after the AgentServices line. Compare API: ahead 1 / behind 0 vs upstream main 71cc68d;
-  push-check clean (13 commits); fork-branch 200 signed-out + raw row present. Opening still 403 req2 like the rest.
-  Repo is alive (pushed 2026-09-15, merged PRs #8-#13, now 2 stars).)
+Both diffs are one file. Re-check both against upstream `main` immediately before opening — that repo moves
+several commits a day.
 
-NOTE 2026-09-15 ~17:3x UTC: x402 and aapp PR branches were rebuilt onto their current upstreams as NEW
-  `-v2` branches (no force-push — old `-rebased`/`add-openai-agents-nano` branches stay as history). The six
-  other branches were drift-verified behind-0/ahead-1 clean via merge-base this run. Re-verify each with the
-  compare API / merge-base before opening.
+### The rest (all CLEAN ahead 1 / behind 0 unless noted)
 
-- mbeato/awesome-mpp (v1, prepared): branch add-nano-x402-agent-framework — ahead 1 / behind 0, README.md
-  only, 1 line in Community Projects > Agent Frameworks. Verifies signed-out 200. PR -> POST /pulls 403.
-- e2b-dev/awesome-ai-sdks (v1, prepared): branch add-openai-agents-nano — ahead 1 / behind 0, README.md only,
-  entry between LangSmith and SID. Releases: v0.1.0 exists — pin every install to git+…@v0.1.0.
-- **Haustorium12/gold-402** (14th target, prepared 2026-09-16 ~14:05 UTC): fork `PANDeveloper001/gold-402`,
-  branch `add-openai-agents-nano` @ dd1f056. gold-402 is the hand-curated x402 directory (459 entries, 135 forks,
-  powers 24klabs.ai); its CONTRIBUTING takes a PR-only submission (`Add [Name]`), **no web form**. Entry = 2 lines
-  in `directory/sdks.md` under `## Python > ### Community`, immediately after the sibling Nano-rail entry
-  `feeless402`; that shelf lists x402 client SDKs and had **no OpenAI-Agents-SDK payer at all**. Compare API
-  2026-09-16: ahead 1 / behind 0, one file, +2/-0. Compare link (public, signed-out 200):
-  `https://github.com/Haustorium12/gold-402/compare/main...PANDeveloper001:gold-402:add-openai-agents-nano`.
-  Two repo traps recorded: the tree is **BOM-ed UTF-8 with LF endings** — edit in binary mode and preserve the
-  BOM (a text-mode rewrite silently changed line 1), and the file must keep exactly one blank line between
-  entries (the section structure is `---`-delimited, not blank-line-delimited).
-  PR-open still needs req2 (this token cannot POST /pulls).
+`Corican/nanodir` add-openai-agents-nano-clean · `Haustorium12/gold-402` add-openai-agents-nano (ahead 2) ·
+`Merit-Systems/awesome-agentic-commerce` · `Scottcjn/awesome-agents` (-v3) · `assafbar2/agentswitchboard.dev` ·
+`e2b-dev/awesome-ai-sdks` (-v2) · `facundofarias/awesome-agent-first-tools` ·
+`frankxai/awesome-payment-agent-skills` · `mbeato/awesome-mpp` (add-nano-x402-agent-framework) ·
+`michielpost/x402-dev` · `mpp-best/awesome_mpp` · `tsubasakong/awesome-agent-payments-protocol` (-v2) ·
+`xpaysh/awesome-x402` (-v2, ahead 2).
+
+
+### Superseded branch names (history — do not open from these)
+
+`xpaysh/awesome-x402` `-v3` never existed (the runbook's older "USE THIS" was wrong; `-v2` @ b9e9b5f is the
+current one). The `x402-foundation/x402` names `docs/list-openai-agents-nano-clean`,
+`-rebased`, `-rebased-v2`, `-rebased-v3`, `-v4`, `-v5` are all older rebuilds; `-v6` supersedes them.
+`e2b-dev/awesome-ai-sdks` has `add-openai-agents-nano-v2` (the v1 name is gone from the fork).
+
+The per-target paragraphs that used to live here (v4/v5 histories, per-list anchors, CRLF/BOM notes) were
+replaced by the fork-derived table above, which cannot go stale. The anchors and edit recipes for each list
+are in the `open-integration-pr` skill; the two x402 artifacts are in
+`docs/upstream-x402-nano-registration.md`.
 
 ## Keyless outreach that already worked despite the 403 (do this more, 2026-09-16 ~15:1x UTC)
 
