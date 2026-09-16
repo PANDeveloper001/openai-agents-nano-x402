@@ -46,6 +46,11 @@ their fork remotes 2026-09-15 ~15:22 UTC):
   UTC; upstream base 01feff1 = current master, clean ancestor; 1 insertion after x402-anthropic-typescript block in Open
   Source & SDKs; push-check clean; fork-branch 200 + pull/new 302 signed-out). Section is sister to xpaysh/awesome-x402.
 - Scottcjn/awesome-agents: branch `add-openai-agents-nano` @ 1170220 (NEW 9th target, prepared 2026-09-15 ~19:0x UTC;
+- Scottcjn/awesome-agents (v3, USE THIS): branch `add-openai-agents-nano-v3` @ aa86642 on CURRENT upstream
+  main 249ab0e (2026-09-16 ~12:55 UTC). ahead 1 / behind 0, 1-line insertion after the x402-proxy line.
+  The v1 branch had diverged (ahead 1 / behind 11) — rebuilt, not force-pushed. push-check clean; fork-branch
+  + pull/new + raw row all 200 signed-out. NOTE the upstream README is CRLF: edit it in binary mode or the
+  diff explodes to a whole-file line-ending change.
   1 insertion after x402-proxy line in Blockchain & Rewards section; push-check clean; fork-branch 200 signed-out).
 - michielpost/x402-dev:   branch `add-openai-agents-nano` @ 274b626 (NEW 10th target, prepared 2026-09-15 ~19:2x UTC;
   x402-dev "x402 Developer Tools & SDKs" section, row after mogami.tech; README: merged projects auto-publish to
