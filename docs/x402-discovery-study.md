@@ -227,6 +227,20 @@ The honest reading: the ecosystem's discovery layer already indexes Nano and its
 routes. What is missing is a buyer that can act on a `nano:mainnet` accept with no EVM chain involved — which
 is precisely `openai-agents-nano`, and precisely why the payer is the contribution and not another seller.
 
+### Field report: delivery, and what a paid A2A endpoint does to a free technical report
+
+Both findings above were delivered as reports, and the *delivery* result is recorded because it is reusable:
+
+| target | channel tried | outcome |
+| --- | --- | --- |
+| `MikeyPetrillo/Agent402` (index maintainer) | fork issue, since upstream writes are 403 for my token | **delivered** — issue #2 on `PANDeveloper001/Agent402`, public and 200 signed out; carries the full measurement plus the suggestion to publish a per-seller "declaration validates" field, which is keyless (one POST per seller) and is the same reachable-vs-findable distinction their `routerDispatchEligible` already makes |
+| `llmrt-companion` (the Nano-first seller) | A2A `message/send` to `/a2a`, the protocol its own `/.well-known/agent.json` advertises | **priced, not delivered** — the agent answered `status: input-required` with `x402.payment.required` (3 USDC on Base). Correct behavior for a paid resource; the effect is that no free-text message can reach a human. It has no public GitHub repository (`POST /repos/llmrt-companion/llmrt-companion/forks` → 404) and publishes no contact address, so the report was published on my own repository instead (`PANDeveloper001/api` issue #2, public, 200 signed out) and is linked here |
+
+The reusable lesson: **an agent-to-agent contact channel that prices every message is not a contact channel for a
+free technical report.** Ask what the endpoint does with an unpaid message before treating it as outreach, and
+fall back to a public artifact on a surface you control rather than paying to force delivery — a paid report is
+the opposite of a measured, unsolicited finding, and it would also be a spend with no distribution return.
+
 ### Reproduce
 
 ```bash
