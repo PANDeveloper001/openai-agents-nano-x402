@@ -1,5 +1,40 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~13:45 UTC — DISTRIBUTION: 1 STALE BRANCH REBUILT (history-rewrite found), 3 pending listings re-checked, README install claim corrected
+- **REAL FINDING — an "all clean" drift report was hiding a dead branch.** `e2b-dev/awesome-ai-sdks` (1.2k stars)
+  force-pushed a brand-new README on 2026-07-09 (commit `7c55394` *added* README.md in a full rewrite), so the
+  prepared branch `add-openai-agents-nano` @ 321b577 was built on a commit that no longer exists upstream. The
+  local check that reported "ahead 1 / behind 0" was reading a **blank** `rev-list --count` as zero; the compare
+  API correctly said `diverged`, and the stale row was still being served by the raw CDN while the branch was
+  unreachable in the fork (raw-CDN cache = a false green).
+- **REBUILT keylessly:** `add-openai-agents-nano-v2` @ **5eda5f7** on current upstream `7c55394`, ahead 1 /
+  behind 0, README.md only (+13/-0), entry at **README.md:190** between SID and Steamship (alpha-inserted as
+  `openai-agents-nano`; em-dash-led names sort before letters in the repo's ASCII order). Verified independently
+  by a fresh `git clone --depth=3 --branch add-openai-agents-nano-v2` (row present at 190, README sha256
+  `810a0095`), by `GET /repos/.../git/refs/heads/add-openai-agents-nano-v2` → 5eda5f7, and by the compare link
+  rendering **200 signed out**. The dead `add-openai-agents-nano` ref was deleted from the fork (204) so the
+  funnel keeps one branch per target. PR open is still **req2** (403 unchanged).
+- **THREE PENDING LISTINGS RE-CHECKED IN A REAL BROWSER (no resubmits, nothing counted as adopted):**
+  `x402info.com/ecosystem` is a JS-rendered SPA — its 14 rendered projects are a *featured* set (Alchemy,
+  Stripe, AWS, AgentWallet SDK, Base, Vercel, Cloudflare, Nansen, Messari, CDP, World, Chainstack,
+  SmartContracts.tools, Dwellir) and openai-agents-nano is not among them yet; `agents.net/directory` (47 agents)
+  and `bestaiagents.org` home do not name it either. A `curl | grep` on those pages returns a false "not listed"
+  because the HTML ships empty — recorded in the `directory-listing` skill with the browser procedure.
+- **HONESTY FIX IN THE PUBLIC README (the repo's front door):** the Install section said the PyPI upload was
+  "pending its token" and implied `pip install openai-agents-nano` would work after that. Corrected: the
+  immutable public path is the pinned v0.1.0 release; PyPI needs the trusted-publisher registration (a human with
+  PyPI access, which the agent does not hold) — and while checking the exact wording, PyPI answered **404** for
+  both `/pypi/openai-agents-nano/json` and `/simple/openai-agents-nano/`, so the name is still free and an
+  install simply fails today. Committed (08fbff9) and pushed; the live raw README shows the corrected text.
+- **Live baseline re-measured keylessly** (`.` = measured this run, all numbers programmatic):
+  CDP Bazaar `pagination.total` **15,768** resources, scanned 15,767, **55 `nano:mainnet` / XNO accepts** from
+  **1 host** (`pyfile-agent.taile3ff35.ts.net`) — unchanged, so the list/PR argument still holds and the Nano
+  corner is still one seller deep.
+- FUNNEL: 13 PR branches (e2b now on `-v2` @ 5eda5f7, rest unchanged) · formal live listings 2 + 1 AgentMRR
+  surface · pending keyless listings 12 (3 re-checked, 0 new) · outreach 5 · 1 public release · 1 PyPI keyless
+  publish path committed · **installs 0 (req1)** · **merged 0 (req2)** · **outside paid 0**. No new adoption
+  milestone this run; the two customer keys remain the only gates on the two top-ranked actions.
+
 ## THIS RUN 2026-09-16 ~13:35 UTC — DISTRIBUTION FIRST: PyPI gate removed by design, 13 branches re-verified, real brainstorm on the fallback models
 - **THE PYPI TOKEN REQUEST IS NO LONGER THE ONLY PATH.** PyPI supports a **pending trusted publisher**: the
   customer registers the project name once (four fields on https://pypi.org/manage/account/publishing/) and a
