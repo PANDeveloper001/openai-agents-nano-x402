@@ -1,6 +1,6 @@
 # Handoff - open these prepared pull requests (one click each)
 
-Generated 2026-09-16 21:08 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
+Generated 2026-09-16 22:47 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
 
 ```bash
 python3 scripts/prepared_pr_drift_all.py --json .ledger/tmp/drift_all.json
@@ -30,11 +30,5 @@ Every URL is checked signed out; the HTTP status is the one measured at generati
 | 15 | `xpaysh/awesome-x402` | `add-openai-agents-nano-v2` | [200](https://github.com/xpaysh/awesome-x402/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v2?expand=1) |
 
 15 clean branches, 0 whose compare page did not answer 200 at generation time.
-
-## Not-button-ready yet (req2 pending)
-
-| Target | Branch | Issue | Status |
-|---|---|---|---|
-| `x402eco/website` | `add-openai-agents-nano` (prepared, not pushed) | #1 on PANDeveloper001/website | Fork issue requesting addition; local branch has JSON entry, push blocked by secret-scan false positive |
 
 Each row still needs the drift re-check immediately before the click (`scripts/prepared_pr_drift_all.py`); `x402-foundation/x402` moves several commits a day.
