@@ -61,6 +61,27 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
+## CURRENT HEAD SNAPSHOT — 2026-09-16 ~16:15 UTC (drift re-checked, one command each)
+
+Command (keeps the token intact; a shell `sed` round-trip truncates it and every call 401s):
+
+```bash
+python3 scripts/prepared_pr_drift.py .ledger/tmp/pr_targets.tsv      # status/ahead_by/behind_by per branch
+python3 scripts/prepared_pr_latest.py                               # newest entry per target, and any stale USE THIS
+```
+
+Result of the 14-target re-check this run: **12 CLEAN (ahead 1 / behind 0)**, 2 unverifiable via the
+compare API with a `404 Branch not found` that is a **stale-runbook-name bug, not drift**:
+
+| target | newest branch per target | compare result |
+| --- | --- | --- |
+| `xpaysh/awesome-x402` | `add-openai-agents-nano-v2` @ b9e9b5f | CLEAN ahead 2 / behind 0 — the runbook's `-v3` name is wrong (exists upstream only as a fork name we do not have; `-v2` is already ahead 2) |
+| `e2b-dev/awesome-ai-sdks` | `add-openai-agents-nano` | **branch gone from the fork** (404 on the fork's own branch list); upstream `main` untouched since 2026-07-09, so a rebuild is a 1-line re-apply when the PR key lands |
+| everything else (12) | see `pr_targets.tsv` | CLEAN ahead 1 / behind 0 (`gold-402` ahead 2) |
+
+Use `add-openai-agents-nano-v2` for `xpaysh/awesome-x402` when the key arrives — do not open from a `-v3`
+name that does not exist, and do not rebuild it (it is already clean).
+
 - x402-foundation/x402 (v5, USE THIS): branch `docs/list-openai-agents-nano-v5` @ da1bcd2 on CURRENT
   upstream main 165ff37 (2026-09-16 ~15:05 UTC). ahead 1 / behind 0, one file
   docs/dev-tools/third-party-sdks.md, +1/-0, push-check clean, fork-branch + compare + pull/new all
