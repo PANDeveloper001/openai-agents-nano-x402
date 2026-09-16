@@ -63,6 +63,30 @@ XNO sellers can be silently downgraded by health probes even when their service 
   the index. But that requires deploying a public paid service and completing settled calls through
   the CDP Facilitator, which is building a new thing, and this run is distribution-only. It is the
   strongest *future* distribution lever found so far and is recorded in the backlog, not built here.
+
+  **CORRECTED 2026-09-16 ~15:0x UTC — this bullet was wrong, and the experiment is what settled it.**
+  "The network string is accepted by the index" mistook *indexed by someone else* for *acceptable on its
+  own*. I stood up a route whose `accepts[]` holds ONE entry — `nano:mainnet`, `asset XNO` — exposed it on a
+  keyless public HTTPS tunnel and pointed the keyless validator at it. Result: `valid: false`,
+  `simulation.outcome: "rejected"`, with four failed required checks:
+
+  | failed check | validator message |
+  |---|---|
+  | `accepts[0].network` | Network "nano:mainnet" is not supported — expected "a facilitator-supported network (Base, Solana, Polygon, Arbitrum, World)" |
+  | `accepts[0].asset` | Asset "XNO" is not USDC |
+  | `accepts[0].amount` | Amount "1000000000000000000000000000" is not a base-10 integer (a 30-decimal Nano amount) |
+  | `accepts[0].payTo` | Missing or invalid payTo address (a `nano_…` account) |
+
+  Everything else passed — 402, x402 v2, the `PAYMENT-REQUIRED` header, and the whole `extensions.bazaar`
+  block (info, input/output examples, schema, parse). So the protocol shape is right and the *facilitator*
+  is what closes the door.
+
+  **Consequence, and it changes the plan:** a Nano-priced resource is discoverable in the CDP Bazaar only as
+  an *additional* accept behind a facilitator-supported network. That is exactly why all 8 indexed Nano
+  accepts belong to one seller whose `accepts[0]` is USDC-on-Base. Nano cannot be the only money in a
+  Bazaar-indexed route, so there is no Nano-only listing to build and none will be built for it.
+  Reusable artifact, shipped: `examples/nano-only-seller/server.py` (+ `amount_boundary.py`) reproduces the
+  measurement in two commands.
 - **The actionable step that fits the current run** is precedent evidence: the strongest argument for
   listing a Nano payer in x402 SDK lists is not opinion, it is the Bazaar's own index. That evidence
   is now in the prepared `xpaysh/awesome-x402` PR branch (`add-openai-agents-nano-v2` @ b9e9b5f),
