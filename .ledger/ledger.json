@@ -393,6 +393,21 @@
    "grounding": "oracle",
    "version": 1,
    "minted": "2026-09-16T16:54:57+00:00"
+  },
+  {
+   "id": "L24",
+   "block": 11.0,
+   "statement": "The probe reports a route as caller-dependent only when User-Agents disagree on the status",
+   "test": "python3 tests/tunnel_ua_probe_offline.py",
+   "scope": [
+    "tests/tunnel_ua_probe_offline.py"
+   ],
+   "oracle": "python3 tests/tunnel_ua_probe_offline.py",
+   "expect": "7/7 checks passed",
+   "source": null,
+   "grounding": "oracle",
+   "version": 1,
+   "minted": "2026-09-16T17:33:46+00:00"
   }
  ],
  "blocks": {
@@ -2107,6 +2122,10 @@
   "10": {
    "status": "pending",
    "attempts": []
+  },
+  "11": {
+   "status": "pending",
+   "attempts": []
   }
  },
  "deltas": [
@@ -3293,6 +3312,17 @@
    "at": "2026-09-16T16:54:57+00:00",
    "prev": "77802ea9ddc4a5b2c55cdcf9862654717893024a8cf4ec330d1f772f97bc5ce0",
    "receipt": "382160b51b1394e0e0720f64ff38c39228c7cda16dc0805ca1f3d8198fd2adf8"
+  },
+  {
+   "kind": "mint",
+   "payload": {
+    "id": "L24",
+    "block": "11",
+    "statement_sha": "972f9adc7932b00bcfc246954c5929e60096225300238db0108eb3bf8ec80fda"
+   },
+   "at": "2026-09-16T17:33:46+00:00",
+   "prev": "382160b51b1394e0e0720f64ff38c39228c7cda16dc0805ca1f3d8198fd2adf8",
+   "receipt": "0479878db7cbd81a5c83cc275d9a98fd1932d8538e52100d8006ef994806fad0"
   }
  ]
 }
