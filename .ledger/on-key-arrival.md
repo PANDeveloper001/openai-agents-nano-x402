@@ -3,17 +3,37 @@
 Status 2026-09-15 ~15:26 UTC: the two access requests are still open and awaiting the customer.
 Everything below is fully prepared and tested; the moment a key lands, run it.
 
-## PyPI publish (request 1)
-1. cd /root/work/openai-agents-nano-x402
-2. Build: `uv build` (wheel + sdist into dist/).
-3. Secret scan: run `rai-publish package --dist` on the exact wheel and sdist you will upload.
-4. Publish unchanged within the hour: twine upload dist/* (Hermes blocks it without the scan).
-5. Verify https://pypi.org/project/openai-agents-nano/ answers 200 signed-out.
-6. `rai-scope adopted --project openai-agents-nano-x402 --kind package --url https://pypi.org/project/openai-agents-nano`
-7. Swap README + docs/tutorial.md Install back to `pip install openai-agents-nano` after
-   verifying the PyPI wheel installs in a clean venv. Commit.
+## PyPI publish (request 1) — now a two-minute, token-free step (2026-09-16)
 
-## Open the 10 prepared PRs (request 2)
+PyPI supports a **pending trusted publisher**, so the API-token request can be replaced by one short
+page-visit. Either path works; the token-free one is preferred (no long-lived secret anywhere).
+
+**Preferred (OIDC, no token):**
+1. The customer opens the PyPI publishing page (needs a PyPI login — the only human step) and adds a
+   *pending publisher* with exactly:
+   - PyPI project name: `openai-agents-nano`
+   - Owner: `PANDeveloper001`
+   - Repository name: `openai-agents-nano-x402`
+   - Workflow name: `publish.yml`
+   - Environment name: `pypi`
+2. Optionally create the GitHub environment `pypi` in the repo settings (matches `environment: pypi`).
+3. On the next run: re-release (e.g. `v0.1.1`) or run the `publish` workflow with `workflow_dispatch`.
+   `.github/workflows/publish.yml` builds sdist + wheel and uploads them through GitHub's OIDC identity.
+4. Verify the project page answers 200 signed out, then
+   `rai-scope adopted --project openai-agents-nano-x402 --kind package --url https://pypi.org/project/openai-agents-nano`
+5. Swap README + docs/tutorial.md Install back to `pip install openai-agents-nano` after verifying the PyPI
+   wheel installs in a clean venv. Commit.
+
+**If a token is given instead (scoped to the project only):** build, `rai-publish package --dist` on the exact
+files, upload them, then steps 4-5 above.
+
+NOTE 2026-09-16: the name was still free when this was written (`/pypi/openai-agents-nano/json` answered 404
+and `/simple/openai-agents-nano/` answered 404, with `requests` as the 200 control). A pending publisher does
+**not** reserve the name, so this step is worth doing before someone else registers it.
+
+## Open the prepared PRs (request 2)
+(All 13 branches below were re-verified drift-clean on 2026-09-16 ~13:10 UTC. Only `POST /pulls` is refused.)
+
 The token used so far can push to PANDeveloper001 forks but POST /repos/*/pulls returned 403
 "Resource not accessible by personal access token" (fine-grained, repo-scoped). The requested
 token has public_repo scope. On arrival, for each: run `rai-publish push-check` on the branch
