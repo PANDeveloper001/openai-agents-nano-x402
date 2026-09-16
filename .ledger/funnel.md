@@ -1,5 +1,30 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~14:30 UTC — the two real blockers found by inspection, both fixed keylessly
+- **The repo had NO LICENSE file**: GitHub's API reported `license: None` while `pyproject.toml` declares
+  MIT, and a repo without a license file is read as all-rights-reserved by directories, reviewers and users.
+  Added the MIT `LICENSE`; the API now reports **`license: MIT`**. Blob 200 signed out.
+- **No machine-readable project card existed**: added `llms.txt` (llmstxt.org convention) at the repo root with
+  the canonical description, the immutable release install URL, the two-phase tool surface, the ledger record
+  (9 laws · 23 verifies · probe 100/100 · chain intact) and the honest limits (not on PyPI; own-account mainnet
+  proof only). Raw + blob both **200 signed out**. This is the "canonical card for indexes to crawl" mechanism
+  (ranking-distribution idea #4), now half-done instead of deferred.
+- **Repo metadata widened**: topics 10 → 13 (`agentic-commerce`, `http-402`, `feeless`) and the empty homepage
+  field now points at `docs/tutorial.md`. API-verified. **Honest limit:** the new topic index cards had not
+  rendered yet (topics/feeless lists 22 repos and does not name us; topics/http-402 pages 17–19 do not either),
+  so no listing is claimed from this — GitHub's topic index lags. `/topics/xno?page=3` stays the only verified
+  topic-index listing.
+- **Pending listings re-checked render-aware (4, no resubmits, 0 live):** meshkore.com, aiagenttools.dev,
+  thenextai.com, zplatform.ai — all still do not name the project despite their 2026-09-15 "within 24–48h"
+  confirmations. Nothing counted as adopted.
+- **MEASURED FUNNEL BASELINE (admin API, read honestly):** release `download_count` wheel **7** / sdist **4**
+  (inflated by my own verification installs and by CI — not outside users); `traffic/views` **23 views / 6
+  uniques** over 14 days. Live listings 3 · pending keyless listings 12 · prepared PR branches 14 · merged 0 ·
+  outside paid 0 · package registry page 0 (PyPI `invalid-publisher` is the one missing step, the OIDC
+  handshake itself is proven).
+- Tests for this change: `python -m pytest -q` → **4 passed**; ledger waivers recorded for `llms.txt` and
+  `LICENSE` (distribution artifacts, no runtime behaviour).
+
 ## THIS RUN 2026-09-16 ~14:15 UTC (cont.) — public X post + a verified keyless discovery surface
 - **X post (result-kind, allowed, daily cap 2/3):** https://x.com/i/web/status/2100226380768350479 —
   "XNO x402 payer for OpenAI Agents SDK: one pip URL." + the v0.1.0 release link, cited to the run's test event
