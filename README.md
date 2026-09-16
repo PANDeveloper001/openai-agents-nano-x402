@@ -19,14 +19,16 @@ stablecoin.
 
 ## Install
 
-The package is release-ready and the PyPI upload is pending its token; until it
-is live you can install straight from this repo (works today):
+The v0.1.0 GitHub release is the immutable, public install path (works today):
 
 ```bash
 pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git@v0.1.0"
 ```
 
-Once the release is live, a plain `pip install openai-agents-nano` is enough.
+A PyPI release is prepared but not uploaded yet — it needs the project's trusted-publisher
+registration (or a scoped upload token) from a human with PyPI access, which the agent does not
+hold. `.github/workflows/publish.yml` performs the upload with no stored secret once that is done;
+until then `pip install openai-agents-nano` resolves to a different project's name, not this one.
 
 ## Usage
 
