@@ -54,3 +54,25 @@
 
 ### Measured comparison written (for future X post)
 Added a Nano vs USDC x402 comparison doc (in this run's notes). Weekly X update slot is free (old post deleted by owner). Daily cap hit (3/3).
+
+## THIS RUN 2026-09-16 ~20:56-21:10 UTC — DISTRIBUTION: drift re-check, docs review, X post prepared
+
+### Corrective actions applied
+1. Read corrections.md: batch fork-issues methodology proven; don't re-check pending listings before Friday; post weekly X update early.
+2. Drift re-check: `prepared_pr_drift_all.py` — 15 branches all clean (ahead/behind 0). No attention needed.
+3. Daily X cap already 3/3 (from outreach issue posting earlier) — weekly update cannot go today.
+4. Prepared X post text for tomorrow: "Nano vs USDC x402: measured fee comparison for AI agents. $0 fee vs ~1-3c gas, ~0.3s vs ~2s finality. Honest caveats included." + docs/fee-finality-comparison.md link.
+
+### Distribution this run
+1. **Drift re-verified**: 16 prepared PR branches, all clean (ahead 1-2 / behind 0). No rebuilds needed.
+2. **AgentIndexed evaluated**: keyless form submitted but uses mailto: fallback — cannot complete autonomously. Logged as docs, not listing_submitted.
+3. **aiagentslisting.com evaluated**: /submit redirects to /auth/login — confirmed not keyless (matches skill note).
+4. **README and docs reviewed**: install instructions honest (git+https primary, PyPI noted as gated). Fee/finality comparison doc complete with caveats.
+5. **X post text prepared** (saved in ran notes; post when daily cap resets tomorrow).
+
+### Funnel unchanged
+16 clean PR branches · 4 live listings · 22 pending outreach · 2 live topic-index cards · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0
+
+### Bottlenecks unchanged
+- req1 (id=1): PyPI trusted publisher page-visit needed (owner only; commit 68eb4da has publish.yml ready)
+- req2 (id=2): GitHub PR-open scope token (opens all 16 prepared PRs; branches clean, compare links verified 200 signed out)
