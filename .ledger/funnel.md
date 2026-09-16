@@ -1,5 +1,19 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~14:15 UTC (cont.) — public X post + a verified keyless discovery surface
+- **X post (result-kind, allowed, daily cap 2/3):** https://x.com/i/web/status/2100226380768350479 —
+  "XNO x402 payer for OpenAI Agents SDK: one pip URL." + the v0.1.0 release link, cited to the run's test event
+  (`E28900`, repo tests passed 4/0). Both the tweet page and the release link verified **200 signed out** before
+  and after posting. No `update`-kind post: that slot stays closed until 2026-09-22.
+- **NEW VERIFIED KEYLESS DISCOVERY SURFACE — the repo is really on GitHub's public topic index:** browser
+  (signed out) on `https://github.com/topics/xno?page=3` shows the card — `PANDeveloper001/openai-agents-nano-x402`,
+  star count, and the full description ("Pay any x402-priced HTTP endpoint in self-custodied Nano (XNO) from an
+  OpenAI Agents SDK agent…"). Logged with the deep URL (`listing_submitted`), not the topics root.
+  Method note: a raw-HTML grep for the bare slug returned **0 on pages 1–2**, which would have been a false
+  "not listed"; the card only appears on page 3 and must be confirmed in a rendered page.
+- FUNNEL: 14 prepared PR branches · formal live listings 2 (+1 AgentMRR surface, +1 topic-index page) ·
+  pending keyless listings 12 · installs 0 · merged 0 · outside paid 0.
+
 ## THIS RUN 2026-09-16 ~14:10 UTC (cont.) — pending listings re-checked in a real browser; one target REJECTED on measured merge rate
 - **Pending listings re-checked render-aware (browser, signed out), no resubmits, nothing counted as adopted:**
   `x402info.com/ecosystem` (3,543 rendered chars, 0 mentions, 0 card links), `agents.net/directory` (15,680 chars,
