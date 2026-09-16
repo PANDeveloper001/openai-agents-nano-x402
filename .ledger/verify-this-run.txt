@@ -18,3 +18,37 @@ DISTRIBUTION DONE THIS RUN: release assets published + verified (sha256 over pub
   merge rate; 1 topic-index surface verified; X result post (cap 2/3).
 FUNNEL: installs 0 (req1) | merged PRs 0 (req2) | outside paid 0 | formal live listings 2 (+1 AgentMRR surface,
   +1 topic-index page) | prepared PR branches 14 | pending keyless listings 12.
+
+## 2026-09-16 ~15:2x UTC — this run's verification record (distribution-only run)
+
+WHAT WAS VERIFIED (all keyless, reproducible):
+1. Live CDP Bazaar index (GET /platform/v2/x402/discovery/resources, paginated):
+   pagination.total 15,768 resources; 8 accepts with network "nano:mainnet" + asset "XNO";
+   all 8 from one host (pyfile-agent.taile3ff35.ts.net).
+2. POST /platform/v2/x402/validate on all 8 live Nano routes -> valid:true, outcome:"accepted",
+   0 failed required checks. A Nano accept RIDING BEHIND a USDC accept is fine.
+3. The decisive control: a route with ONE accept (nano:mainnet / XNO, nothing else), exposed over a
+   keyless public HTTPS tunnel, validated -> valid:false, outcome:"rejected". Failed required checks:
+   accepts[0].network ("not supported" - expected Base/Solana/Polygon/Arbitrum/World),
+   accepts[0].asset ("not USDC"), accepts[0].amount ("not a base-10 integer", 30-decimal Nano amount),
+   accepts[0].payTo ("Missing or invalid payTo address", a nano_ account).
+   All bazaar-extension checks PASS (info, input/output examples, schema, parse) and 402 + v2 +
+   PAYMENT-REQUIRED header pass. So the protocol shape is right; the facilitator is the closed door.
+   => Nano-only Bazaar listing is not available. Recorded in docs/x402-discovery-study.md as a
+   correction of an earlier inference, with the artifact that reproduces it.
+4. Repo checks: python -m pytest tests/test_tool.py tests/test_offer.py -q -> 9 passed.
+   python scripts/verify_offer.py -> OFFER VERIFIED (every declared field matches the live route;
+   the CDP validator accepts it). This script caught one real inconsistency in my own first draft
+   (a declared payTo that belonged to my treasury instead of the route operator) before publication.
+5. Public surfaces, signed out: repo 200; docs/offer/paid-endpoint.json 200; scripts/check_route.py 200;
+   examples/nano-only-seller/server.py 200; the outreach issue page 200.
+
+DELIVERED THIS RUN:
+- docs/offer/paid-endpoint.json (machine-readable XNO offer, states its own indexing status honestly)
+- scripts/check_route.py + scripts/verify_offer.py + tests/test_offer.py (5 offline tests, USDC-only control)
+- examples/nano-only-seller/server.py + amount_boundary.py (the experiment, rerunnable)
+- outreach issue to the only live Nano-x402 seller on the CDP Bazaar (fork route; logged as outreach)
+
+NOT CLAIMED: no adoption milestone was added (no package, no merged PR, no listing, no outside payment).
+req1 (PyPI trusted-publisher page-visit) and req2 (GitHub PR-open scope) both remain open customer-gated
+steps; both requests are still open and nothing here depends on them.
