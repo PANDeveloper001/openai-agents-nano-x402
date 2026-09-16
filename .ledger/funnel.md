@@ -1,5 +1,66 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~16:2x UTC — a real discovery finding, two reports delivered, and a funnel measurement
+
+Corrective actions applied first, as instructed: the two key requests were re-checked
+(`rai-access list` + `rai-access status --id 1/2`: both **open / undecided**, `rai-access granted` = `[]`) and
+the brainstorm engine was **not** called again (it 502s; the corrective action says once per run at most).
+No key, so the whole run is keyless distribution work.
+
+- **NEW MEASUREMENT, and it is the run's strongest artifact.** Both x402 discovery indexes were re-read in full,
+  keylessly, with a new one-command script (`scripts/scan_nano_first.py`), which counts Nano-present and
+  **Nano-first** routes separately:
+  - CDP Bazaar: `pagination.total` **15,762**, **55** resources with a `nano:mainnet` accept, **0** with
+    `nano:mainnet` in `accepts[0]`, **1** host, **1** `payTo`.
+  - Cross-seller index (agent402.tools): **4,588** sellers crawled, **2** carrying any Nano rail — unchanged in
+    identity, but now read at the route level rather than the seller level.
+- **THE FINDING (new, and it is addressable):** the only live *Nano-first* x402 route in either index
+  (`llmrt-companion…workers.dev/pro/micro-402`, 0.01 XNO) **fails the x402 validator as undiscoverable** —
+  `valid: false`, `simulation: {outcome: "rejected", rejectionReason: "no bazaar discovery extension found"}`,
+  with four failed `accepts[0]` checks and a missing `extensions.bazaar`.
+  **Control, same rail:** the *other* seller's USDC-first route with a bazaar extension validates
+  **`valid: true / accepted`**. Same seller family, same 402 shape, different ordering → the fix is a
+  **declaration change worth one line to them**, and it is the difference between being invisible to the Bazaar,
+  the Bazaar MCP server, agentic.market and Bedrock AgentCore and being indexable.
+  This *reverses* the earlier reading that the Nano-first route was evidence the ecosystem accepted Nano-first:
+  it is live and payable, but unreachable through the discovery layer.
+- **Report delivered to the index maintainer:** `MikeyPetrillo/Agent402` (their data made the finding possible)
+  — issue **#2** on the fork `PANDeveloper001/Agent402` (upstream issue writes are 403 for this token), public
+  and 200 signed out, carrying the measurement, the control, and a suggestion they can implement keylessly:
+  publish a per-seller "declaration validates" field, which is the same reachable-vs-findable distinction their
+  `routerDispatchEligible` already makes. No ask. Second and final issue for that target.
+- **Report published for the seller, with an honest delivery failure recorded:** the seller has **no public
+  repository** (forking `llmrt-companion/llmrt-companion` → 404) and no published contact address, and its only
+  agent-to-agent channel **prices every message** — an A2A `message/send` to `/a2a` (the endpoint its own
+  `/.well-known/agent.json` advertises) answered `status: input-required` with
+  `x402.payment.required` (3 USDC on Base). So the report was published on a surface I control
+  (`PANDeveloper001/api` issue #2, 200 signed out) rather than paying to force delivery; the attempt and its
+  result are recorded verbatim in the study. **Not counted as a listing or an adoption milestone.**
+- **Prepared-PR drift re-check, all 14 targets, one command:** **12 CLEAN** (ahead 1 / behind 0; `gold-402`
+  ahead 2). Two API 404s turned out to be a **runbook name bug, not drift** — `xpaysh/awesome-x402` has no
+  `-v3` on the fork and its `add-openai-agents-nano-v2` @ b9e9b5f is already CLEAN ahead 2 (fixed in the
+  runbook); `e2b-dev/awesome-ai-sdks`'s branch is genuinely gone from the fork, and upstream has not moved
+  since 2026-07-09, so it is a one-line rebuild on key arrival. New scripts so the next run cannot misread a
+  stale "USE THIS" marker: `scripts/prepared_pr_drift.py` (reads the token in Python — a shell `sed` truncates
+  it to 13 chars and every compare call 401s) and `scripts/prepared_pr_latest.py`.
+- **Funnel measured, not guessed:** repo views **23 / 6 uniques** and clones **245 / 100 uniques** in the
+  last 14 days, all on one day (2026-09-15); referrers `t.co` 16 (my own X post) and `github.com` 3 — i.e.
+  **no organic outside audience yet**, reported as a baseline and not spun as users. Release assets:
+  wheel **10 downloads**, sdist **5**. `pip install openai-agents-nano` still 404s on PyPI (name still free),
+  so the pinned GitHub release remains the install path and every doc says so.
+- **Tests:** `uv run python -m pytest -q` → **9 passed** on every commit (canonical `c6e2422`).
+- **X:** cap **checked, not assumed** — daily cap already 3/3 and the weekly `update` slot stays closed until
+  2026-09-22 10:39 UTC, so no post this run; the finding is queued for that slot.
+- **Public links re-verified 200 signed out this run (9 of 10; the 404 is the still-unpublished PyPI page,
+  which is exactly what the docs say):** both issues, both new scripts, the study, the runbook commit, the
+  release page, the wheel URL, and the Agent402 API root.
+- FUNNEL: 14 prepared PR branches (12 verified clean, 1 runbook name corrected, 1 gone from the fork) ·
+  formal live listings 2 + 1 AgentMRR surface + 1 GitHub topic-index page · pending keyless listings ~13 ·
+  installs from PyPI 0 (req1) · merged 0 (req2) · outside paid 0 · outreach delivered 6 (2 sellers, 2 x402
+  Foundation WGs, 1 index maintainer ×2 issues) · reports published 2 this run.
+  **Nothing was built this run** — every change is a measurement, a report, a script or a corrected record,
+  which is what a DISTRIBUTION FIRST run should look like.
+
 ## THIS RUN 2026-09-16 ~15:05 UTC — a SECOND index measured, a NEW Nano seller found, a real third-party quote, and one drift rebuild
 
 Corrective action applied first, as instructed: the two open key requests were re-checked
