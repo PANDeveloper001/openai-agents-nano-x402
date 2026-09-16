@@ -140,3 +140,46 @@
 4. Run drift re-check
 5. Verify PyPI name still free
 6. Look for new keyless directories and fork-issue targets
+
+| ## THIS RUN 2026-09-16 22:45-23:15 UTC — DISTRIBUTION: 3 outreach issues opened, drift clean, PromptFrenzy evaluated, aiagentsdirectory evaluated
+
+### State at start
+- req1 (PyPI trusted publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches from previous run
+- 24 listing submissions in review (<48h still)
+- X daily cap 3/3 consumed; weekly X update ready for tomorrow
+- 3 forks still needing outreach issues (agentswitchboard.dev, awesome-mpp, nanodir)
+
+### Work done this run
+1. **Latest corrective actions applied**: read corrections.md -> 3 actions from distribution run applied. No new corrections.
+2. **3 new outreach issues opened** on remaining forks:
+   - assafbar2/agentswitchboard.dev #1: proposed addition to AgentSwitchboard tools
+   - mbeato/awesome-mpp #1: proposed addition to MPP ecosystem
+   - Corican/nanodir #1: proposed addition to Nano SDKs section
+   All 24 outreach issues now delivered across 22 targets (3 remaining had no fork issues — resolved).
+3. **Drift re-check**: all 15 prepared PR branches clean (ahead 1-2, behind 0). Token length 93 (intact).
+4. **PyPI name check**: still free (HTTP 404 on /json/).
+5. **Access request status checked**: req1 (PyPI key) still open, req2 (GH PR scope) still open. Neither processed yet.
+6. **PromptFrenzy directory evaluated**: one-POST API submission with badge verification. BUT badge must be on custom domain (GitHub README renders all user links as rel=nofollow, failing verification). Not viable without custom domain.
+7. **aiagentsdirectory.com evaluated**: free submission at /submit-agent, but form is client-rendered Next.js/Mantine — requires browser automation.
+8. **AsterPay competitor found**: asterpay-openai-agents 1.0.0 on PyPI — USDC-on-Base only. No Nano x402 payer exists for OpenAI Agents SDK. Our project remains unique.
+9. **X weekly update post prepped**: saved, ready for tomorrow's daily cap reset.
+10. **2 push-check cycles completed**: README changes (add + revert PromptFrenzy badge) both passed secret scans and pushed clean.
+
+### Funnel (updated)
+15 clean PR branches . 24 listing submissions . 27 outreach issues across 22 targets (3 new) . 1 live marketplace listing (AgentMRR) . 1 keyless directory listing (agents-launch) . 2 live agent-directory listings . 1 x402eco/website fork issue . installs 0 (PyPI req1) . merged 0 (GH PR req2) . outside paid 0 . release wheel downloads 12, sdist 5
+
+### Bottlenecks unchanged
+- req1 (id=1): PyPI trusted publisher registration (owner step)
+- req2 (id=2): GitHub PR-open scope token (PRs to x402-foundation/x402 and Corican/nanodir)
+- X daily cap exhausted for today; weekly update slot opens tomorrow
+- No custom domain for badge-verified directories (PromptFrenzy)
+- No email capability for AgentIndexed (mailto: submission gate)
+
+### Next steps for next run
+1. **X post: weekly update** (free slot, post FIRST). Text: "Fee and finality: Nano (free, 0.3s) vs x402 USDC ($0-3c)." + link
+2. Re-check pending directories due after 48h (TheNextAI, zPlatform, AgentRank, AI Agents Live, MeshKore, agents.net)
+3. Re-check whether customer has processed req1 or req2
+4. Run drift re-check on all 15 branches
+5. Verify PyPI name still free
+6. Try aiagentsdirectory.com submission via browser
