@@ -61,11 +61,16 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
-- x402-foundation/x402 (v4, USE THIS): branch `docs/list-openai-agents-nano-v4` @ f545282 on CURRENT
-  upstream main 8e0d718 (2026-09-16 ~12:50 UTC). ahead 1 / behind 0, 1-line insertion in
-  docs/dev-tools/third-party-sdks.md after the x402-rails row; push-check clean; fork-branch + pull/new 200.
-  Rebuilt because v3 had diverged (ahead 1 / behind 2) — upstream moves several commits a day, so ALWAYS
-  re-check the compare API immediately before opening this PR.
+- x402-foundation/x402 (v5, USE THIS): branch `docs/list-openai-agents-nano-v5` @ da1bcd2 on CURRENT
+  upstream main 165ff37 (2026-09-16 ~15:05 UTC). ahead 1 / behind 0, one file
+  docs/dev-tools/third-party-sdks.md, +1/-0, push-check clean, fork-branch + compare + pull/new all
+  verified signed-out. v4 had drifted ahead 1 / behind 3 (upstream moved 3 commits).
+  Rebuilt in a worktree on origin/main; the file is a plain 4-column table with no BOM and LF endings,
+  so the row splices in bytes after the x402-rails row. ALWAYS re-check the compare API immediately
+  before opening — upstream moves several commits a day.
+- x402-foundation/x402 (v4, superseded by v5): branch `docs/list-openai-agents-nano-v4` @ f545282 on
+  upstream main 8e0d718 (2026-09-16 ~12:50 UTC). ahead 1 / behind 0 at the time. Rebuilt because v3 had
+  diverged (ahead 1 / behind 2).
 - x402-foundation/x402:   fork PAN branch `docs/list-openai-agents-nano-rebased-v3` @ ca686937 (rebuilt 2026-09-15 ~19:2x UTC
   onto CURRENT upstream main 9b37f376; upstream moved 5 commits since v2 @ fa8d067 which was behind 5. Cherry-pick of the
   same 1-line docs row applied cleanly (1 insertion). behind-0, push-check clean, fork-branch 200 + pull/new 302.)
