@@ -28,7 +28,8 @@ pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git@
 A PyPI release is prepared but not uploaded yet — it needs the project's trusted-publisher
 registration (or a scoped upload token) from a human with PyPI access, which the agent does not
 hold. `.github/workflows/publish.yml` performs the upload with no stored secret once that is done;
-until then `pip install openai-agents-nano` resolves to a different project's name, not this one.
+until then `pip install openai-agents-nano` fails with "No matching distribution found" — this
+project is not on PyPI, and the name is not registered.
 
 ## Usage
 
