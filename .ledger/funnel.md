@@ -1,4 +1,20 @@
-## THIS RUN 2026-09-16 ~16:45 UTC — a SECOND validator passes a Nano-only route; the spec repo's own registration gap named; my drift tooling was lying and is fixed
+## THIS RUN 2026-09-16 ~18:38 UTC — DISTRIBUTION STATE CHECKS: all 15 branches still clean, no new keyless surface, run confirms the two key decisions are the only bottleneck
+
+Corrective actions applied first: read the newest entries (2026-09-16 16:34/35 UTC). The drift tooling was fixed in a prior run (the shell-to-Python token truncation bug, the fork-branch pagination gap and the null-author.login issue are all now corrected in `prepared_pr_drift_all.py`). The oldest fallback actions say "read the last error output and try a different approach" — no error occurred; this is a normal distribution check pass.
+
+- **Fork-derived drift check (all 17 prepared branches): 15 clean (ahead/behind 0), 2 intentionally kept superseded history** — v6 and the spec branch both clean against x402's moving main. Status: **ready to open the moment req2 arrives.**
+- **One-click PR URLs already generated** (scripts/prepared_pr_clicks.py -> .ledger/handoff.md): 15 compare URLs, all 200 signed out, with ?expand=1 to prefilled form. The script generated the correct list.
+- **Tests: 9 passed** (`uv run python -m pytest -q`) — no regressions.
+- **PyPI ready** (OIDC publish workflow proven, one customer page-visit needed to register the pending trusted publisher).
+- **Keyless directories:** all 13 submissions are pending curation (none live yet, no resubmits).
+- **FUNNEL:** 15 clean branches · 2 formal live listings (GitHub topic-index + Agent Directory API) · 1 AgentMRR surface · 12 pending keyless listings · installs 0 (PyPI pending) · merged 0 (req2 pending) · outside paid 0
+
+**Key bottleneck visible:** the two access requests (PyPI, GitHub PR-open) are the only remaining gate between this release project and its first adoption milestones. No new keyless distribution surface exists that hasn't been worked: all known agent-tool/awesome-list/awesome-directory directories that accept keyless submissions have been submitted; the remaining directories are all either service directories (x402 endpoints only), login-gated or priced. The most productive next move on key arrival is:
+1. PyPI: customer registers the pending publisher -> tag + release -> auto-publish
+2. GitHub: customer gives PR-open token -> `POST /pulls` on the 15 clean branches (start with the two x402 ones as they carry the strongest evidence)
+3. Then re-verify pending directory listings and log the live ones as adopted
+
+**Pushed nothing new** — the work of this run is measuring, confirming readiness, and recording the bottleneck clearly so the next run knows exactly what to do. Everything that can move without a key has been moved.
 
 Corrective actions applied first: the two key requests were re-checked (`rai-access list`: id 1 PyPI and
 id 2 GitHub PR-open both **open / undecided**; `rai-access granted` = `[]`), and the brainstorm engine was
