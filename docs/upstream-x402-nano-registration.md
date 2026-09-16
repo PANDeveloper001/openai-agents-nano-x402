@@ -80,6 +80,29 @@ an explicit `TokenAmount`), or the table's "USD-pegged" premise is extended to "
 USD assumption stated per row. This is a maintainer decision, and the PR should ask it explicitly rather
 than pretend a decision has been made. The *identifier* and *spec* edits do not depend on that answer.
 
+## Reproducing the two verdicts: pin the caller, not just the URL (measured 2026-09-16)
+
+The contrast above is only reproducible if the tunnel between the route and the checker answers every caller
+the same way. On a later run the **same** Nano-only route, served through an anonymous public tunnel, returned
+**HTTP 200 to a browser User-Agent and HTTP 402 to every library User-Agent at the same second** —
+`curl/8.5.0`, `python-urllib/3.12`, `requests`, `x402-Doctor/1.0` and an agent-style UA all saw 402 while
+`Mozilla/5.0` received a *tunnel interstitial page*. The route itself was fine: 402 on the local port, 402
+through every non-browser agent.
+
+The consequence is the reason to write this down: **x402 Doctor scored that route 16.7 / grade F /
+`fix-required`** — "Returned HTTP 200 — no paywall" — because its HTTP client sends a browser-like
+User-Agent, while the CDP validator (plain library client) still reported the four rail-value checks. **Same
+minute, same route, two checkers, opposite failure stories**, and neither of them was about Nano.
+
+So a Nano (or any) route that is checked through a tunnel must prove the tunnel is caller-neutral first:
+
+```bash
+python3 scripts/tunnel_ua_probe.py https://<host> --path /x402/nano-quote   # exit 0 only if a UA changes the status
+```
+
+Publish the route on a stable host (or a tunnel pinned to one), and keep the validator outputs alongside the
+User-Agent that produced them. A "hands-on" checker result without its User-Agent is not evidence.
+
 ## What is already prepared and verified
 
 *Table generated 2026-09-16 17:02 UTC from the fork-derived scan (`scripts/pr_drift_doc.py --doc docs/...`) - do not hand-edit.*
