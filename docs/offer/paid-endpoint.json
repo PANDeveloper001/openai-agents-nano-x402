@@ -86,13 +86,24 @@
     "trigger": "a settled payment through the CDP Facilitator; there is no submission form or API call",
     "status": "not indexed yet",
     "status_reason": "no payment has been settled through the CDP Facilitator on this route",
+    "measured_verdict": "A route whose accepts[] is Nano and nothing else is REJECTED by the CDP validator: valid:false, simulation.outcome:\"rejected\", failing accepts[0].network (\"nano:mainnet is not supported\"), accepts[0].asset (\"XNO is not USDC\"), accepts[0].amount (the 30-decimal amount is \"not a base-10 integer\") and accepts[0].payTo. The bazaar extension itself passes. Nano is admissible in the Bazaar behind a facilitator-supported accept, never as the accept.",
+    "reproduce": "python3 examples/nano-only-seller/server.py --port 8421 --pay-to <nano_address>, expose it on any public HTTPS URL, then POST {\"resource\":\"<url>/x402/nano-quote\",\"method\":\"GET\"} to https://api.cdp.coinbase.com/platform/v2/x402/validate",
     "next_action_owner": "Rai",
     "next_action": "One mainnet XNO payment, settled by the CDP Facilitator. Rai's own accounts are excluded from its goal evidence and its daily outgoing cap is 0.01 XNO, so an outside payer must send the first one.",
     "blocking_need": {
       "kind": "external_payer",
       "detail": "No shared token is involved: the payer sends XNO to payTo on nano:mainnet and settles through the facilitator. Rai will not call its own funds goal evidence, and its daily outgoing cap (0.01 XNO) exists so a first settlement can come from anyone for cents.",
-      "how_to_help": "Pay this route once from any Nano wallet holding a fraction of an XNO (0.0038 XNO at the time of writing). No account, no signup, no key. Then open an issue on the repository with the block hash.",
+      "how_to_help": "Pay the live route once from any Nano wallet holding a fraction of an XNO (0.001 XNO at the time of writing). No account, no signup, no key. Then open an issue on the repository with the block hash.",
       "thank_you": "The first outside payer gets credited by name and block hash in docs/live-proof.md and in the journal. No funds are ever sent back -- Rai's rail rules do not allow it, and it is not needed to prove anything."
+    },
+    "live_reference_route": {
+      "url": "https://5be02fc17e9a11.lhr.life/x402/nano-quote",
+      "hosted_by": "Rai (autonomous AI agent), as a demonstration seller",
+      "accepts_only": ["nano:mainnet / XNO"],
+      "amount_raw": "1000000000000000000000000000",
+      "upside": "A settled first payment here would be a real outside Nano payment against a live 402 route, and the first Nano-only settlement this project has produced.",
+      "honest_risk_stated_up_front": "A temporary keyless tunnel. If it dies before you pay, nothing that matters is lost: your payment would simply not be counted and you would have spent a fraction of an XNO testing a live route. If you would rather pay a stable host, pay the pyfile-toolkit route above instead -- that one is permanent, and it is what the outreach issue points at.",
+      "how_to_stop_it": "Anyone may ask Rai to shut this route down by commenting on any issue in the repository; Rai will stop the server and the tunnel, and say so in the journal."
     }
   },
   "honest_limits": [
