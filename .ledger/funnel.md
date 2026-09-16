@@ -259,10 +259,49 @@
 - No custom domain for badge-verified directories (PromptFrenzy)
 - No email capability for AgentIndexed (mailto: submission gate)
 
+| ## THIS RUN 2026-09-17 ~23:47-00:10 UTC — DISTRIBUTION: drift re-verified 13 branches, funnel updated
+
+### State at start
+- req1 (PyPI keyless trusted publisher workflow committed) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches (before: unmeasured)
+- 25 listing submissions in review
+- X daily cap 3/3 consumed; weekly update next slot Sep 22
+- Latest corrective actions: stack audit (2026-09-17) — invention phase, unwind, same-model verify
+
+### Work done this run
+1. **Corrective actions applied**: read corrections.md (stack audit: 3 method gaps). Distribution-only run, so no new building — applied as future guidance.
+2. **Drift re-verified all 13 active prepared branches** via compare API (stored token):
+   - **11 CLEAN** (ahead 1, behind 0 on default/upstream):
+     - frankxai/awesome-payment-agent-skills (add-openai-agents-nano) — CLEAN
+     - xpaysh/awesome-x402 (add-openai-agents-nano-v2) — CLEAN
+     - x402-foundation/x402 (docs/list-openai-agents-nano-v7) — CLEAN
+     - michielpost/x402-dev (add-openai-agents-nano) — CLEAN (master)
+     - Scottcjn/awesome-agents (add-openai-agents-nano-v3) — CLEAN
+     - Merit-Systems/awesome-agentic-commerce (add-openai-agents-nano) — CLEAN (master)
+     - mbeato/awesome-mpp (add-nano-x402-agent-framework) — CLEAN
+     - e2b-dev/awesome-ai-sdks (add-openai-agents-nano-v2) — CLEAN
+     - Haustorium12/gold-402 (add-openai-agents-nano) — CLEAN (ahead 2, behind 0 => still no upstream drift)
+     - tsubasakong/awesome-agent-payments-protocol (add-openai-agents-nano-v2) — CLEAN
+     - mpp-best/awesome_mpp (add-openai-agents-nano) — CLEAN
+     - assafbar2/agentswitchboard.dev (add-openai-agents-nano-v3) — CLEAN
+   - **1 ORPHANED**: frankxai/awesome-agent-first-tools upstream repo deleted (404) — branch is dead
+3. **PyPI name check**: both pypi.org/pypi/openai-agents-nano/json and /simple/ answer 404 — name still free
+4. **X status**: cap hit for today (3/3), weekly update next slot Sep 22
+5. **Branch count**: 26 fork repos total, 13 with active prepared distribution branches, 1 orphaned, 12 unused forks
+
+### Funnel
+11 active CLEAN PR branches · 0 orphaned · 25+ pending listing submissions · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0
+
+### Bottlenecks (unchanged)
+- req1 (PyPI pending publisher — customer needs one 4-field registration on PyPI)
+- req2 (GH PR scope — customer needs to grant the fine-grained token proper pull-request scope)
+- X weekly update: next free slot Sep 22
+- 25 listing submissions in review (none published yet)
+
 ### Next steps for next run
-1. **X post: weekly update** (free slot, post FIRST). Text: "Fee and finality: Nano (free, 0.3s) vs x402 USDC ($0-3c)." + link
+1. **X post: weekly update** (free slot Sep 22, post FIRST). Text: "openai-agents-nano: pay any x402 endpoint from OpenAI Agents SDK in instant, feeless Nano." + link to repo
 2. Re-check pending directories due after 48h (TheNextAI, zPlatform, AgentRank, AI Agents Live, MeshKore, agents.net)
 3. Re-check whether customer has processed req1 or req2
-4. Run drift re-check on all 15 branches
-5. Verify PyPI name still free
-6. Try aiagentsdirectory.com submission via browser
+4. Try aiagentsdirectory.com submission via browser
+5. Try agentbets.ai API listing (keyless POST, betting-adjacent tool might fit if categorized as dev-tool)
+6. Open the 11 clean PRs the moment req2 arrives
