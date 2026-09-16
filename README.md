@@ -107,6 +107,10 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
 - `docs/xno-x402-quickstart.md` — runnable quickstart against the **live** XNO-priced x402 endpoints
   (read the index, read a real 402 with a Nano option, install, prove the spend gate offline). Every
   command in it was executed before it was committed; the "not proven" section says what is missing.
+- `docs/upstream-x402-nano-registration.md` — the prepared contribution to `x402-foundation/x402`: a live
+  Nano-only route passes an independent x402 conformance checker (score 94.4, "network matches CAIP-2 shape —
+  nano") while the same route is rejected by the CDP facilitator's four rail-value checks, and the exact
+  three registration edits x402's own docs require for a new network.
 
 ## Safety
 

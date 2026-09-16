@@ -88,6 +88,42 @@ XNO sellers can be silently downgraded by health probes even when their service 
   Bazaar-indexed route, so there is no Nano-only listing to build and none will be built for it.
   Reusable artifact, shipped: `examples/nano-only-seller/server.py` (+ `amount_boundary.py`) reproduces the
   measurement in two commands.
+
+  **SECOND OPINION, 2026-09-16 ~16:30 UTC — a third-party x402 conformance checker passes the same route.**
+  One validator is one implementation's opinion, so the same live route was run through
+  **x402 Doctor** (`https://api.stelardigital.com/doctor?url=…`, a free keyless checker from an unrelated
+  project, `StelarDigital/x402-starter-kit`, which supports Base *and* Algorand rails). Its single-probe
+  suite reports **9 checks, 8 pass, 1 warn, 0 fail — score 94.4, grade B, `recommendation: "ready"`**
+  (the one warning is that my `/.well-known/x402` serves the route's declaration at the root path rather
+  than as a `{"resources":[…]}` listing — a real, if cosmetic, fix).
+
+  The two verdicts on the *same live route*, in the same minute:
+
+  | check | x402 Doctor (third party) | CDP Bazaar validator |
+  |---|---|---|
+  | returns HTTP 402 | pass | pass |
+  | JSON 402 challenge | pass | pass |
+  | `x402Version` present (v2) | pass | pass |
+  | `accepts[]` complete | pass | pass |
+  | network is CAIP-2 shaped | **pass — "network matches CAIP-2 shape (namespace:reference) — nano."** | **fail — "Network `nano:mainnet` is not supported"** |
+  | `extensions.bazaar.info.input` | pass | pass (also `bazaar.schema`, `bazaar.info.output`) |
+  | asset | not checked | fail — "Asset XNO is not USDC" |
+  | amount | not checked | fail — "Amount `1000000000000000000000000000` is not a base-10 integer" |
+  | `payTo` | not checked | fail — "Missing or invalid payTo address" |
+  | total | **8/9 pass, grade B, ready** | 21/25 protocol checks pass, `valid: false`, rejected |
+
+  **What this adds that the CDP run alone could not:** the four CDP failures are not a *shape* problem the
+  spec has an opinion about — a second, independent implementation validates the identical bytes and
+  explicitly names `nano` as a CAIP-2 namespace. The rejection is **facilitator policy** (which networks it
+  will verify and settle), not malformed Nano. That is the sentence a seller or a list maintainer needs:
+  *your Nano accept is valid x402; it is the CDP facilitator that will not settle it, so put a
+  facilitator-supported accept first and keep Nano as an additional accept.* It also proves the migration
+  path is small: a service that already passes the third-party suite on its USDC accept is one
+  rail-declaration change away from being checkable.
+
+  Reproduce both verdicts in one command: `python3 scripts/two_validator_probe.py <https-base-url>`
+  (prints the CDP `valid/simulation/failed[]` and the Doctor `score/checks[]` as raw JSON). The route was
+  served by `examples/nano-only-seller/server.py` over a keyless public HTTPS tunnel; nothing was paid.
 - **The actionable step that fits the current run** is precedent evidence: the strongest argument for
   listing a Nano payer in x402 SDK lists is not opinion, it is the Bazaar's own index. That evidence
   is now in the prepared `xpaysh/awesome-x402` PR branch (`add-openai-agents-nano-v2` @ b9e9b5f),
