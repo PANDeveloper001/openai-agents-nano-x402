@@ -1166,3 +1166,38 @@ FE: funnel now: prepared PR branches 9 (was 8), pending keyless listings 9 uncha
 - Funnel unchanged: installs 0 (req1), merged PRs 0 (req2), outside paid 0, live listings 2 (formal) + 1 AgentMRR
   surface, prepared PR branches 10 (all CLEAN req2-gated), pending keyless listings ~13. req1 (PyPI) + req2 (GitHub
   PR-open) remain the 2 customer-gated adoption blockers (2 key requests still open, must keep working on everything else).
+
+## THIS RUN 2026-09-16 ~14:4x UTC — the XNO-only route experiment (a measured answer)
+
+Owner request earlier today: study the CDP "Get discovered (Bazaar)" doc and decide honestly whether the
+existing x402 work can be listed there. Done by measurement, keylessly.
+
+Measured (reproducible, no key):
+- Live index `GET /platform/v2/x402/discovery/resources` (paginated): total 15,768 resources; **8** accepts with
+  `network: "nano:mainnet"` + `asset: "XNO"`, all from ONE host (pyfile-agent.taile3ff35.ts.net). 0.05% of resources.
+- `POST /platform/v2/x402/validate` (keyless) on all 8 live Nano routes -> `valid: true`,
+  `simulation.outcome: "accepted"`, zero failed required checks. So a route that *also* offers USDC validates fine.
+- **The decisive experiment:** stood up a route whose `accepts[]` holds ONE entry, `nano:mainnet`/XNO, nothing else
+  (examples/nano-only-seller/server.py), exposed it over a keyless public tunnel, and pointed the validator at it.
+  21 checks pass (402, v2, PAYMENT-REQUIRED header, bazaar extension, schemas). 4 fail:
+    - `accepts[0].network`: "Network nano:mainnet is not supported" — expected "a facilitator-supported network
+      (Base, Solana, Polygon, Arbitrum, World)".
+    - `accepts[0].asset`: "Asset XNO is not USDC".
+    - `accepts[0].amount`: "not a base-10 integer" (the 30-decimal Nano amount; the USDC-only assumption).
+    - `accepts[0].payTo`: "Missing or invalid payTo address" (a `nano_...` address fails EVM validation).
+  `simulation.outcome: rejected`.
+- Conclusion (honest, and it replaces the earlier optimistic reading): **the CDP Bazaar is not open to Nano-only
+  routes.** An XNO route is discoverable there only as an *additional* accept beside a facilitator-supported
+  network (USDC on Base/Solana/Polygon/Arbitrum/World) — which is exactly why all 8 indexed Nano accepts come from
+  a seller whose route's `accepts[0]` is USDC-on-Base. Nano cannot be the money in a Bazaar listing by itself;
+  it can be a second rail on someone else's. Nothing of ours can be listed there today, and no new project is
+  started for it (owner rule).
+- Shipped instead (keyless, verifiable, our own ground): docs/offer/paid-endpoint.json (machine-readable XNO offer
+  naming its own blocker: an outside payer) + scripts/check_route.py (keyless route check with a Nano focus) +
+  scripts/verify_offer.py (fails unless the offer matches the live route; it caught one real inconsistency in my
+  own first draft) + tests/test_offer.py (5 offline tests, incl. a USDC-only negative control).
+- Funnel unchanged: installs 0 (req1 PyPI key), merged PRs 0 (req2 GitHub PR-open key), outside paid 0,
+  live listings 2 + 1 AgentMRR surface, prepared PR branches 10 (all CLEAN), pending keyless listings ~13.
+- Next keyless move identified: P1 to a live Nano-x402 counterparty who has publicly stated the same
+  distribution problem (pyfile-toolkit: 0★ repo, posts its own public log, already sells Nano-priced x402 APIs,
+  already complains of no buyers). Offer, not ask: we point them at the validator finding + a payer.
