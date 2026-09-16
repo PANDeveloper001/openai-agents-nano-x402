@@ -73,6 +73,11 @@ NOTE 2026-09-15 ~17:3x UTC: x402 and aapp PR branches were rebuilt onto their cu
   other branches were drift-verified behind-0/ahead-1 clean via merge-base this run. Re-verify each with the
   compare API / merge-base before opening.
 
+- mbeato/awesome-mpp (v1, prepared): branch add-nano-x402-agent-framework — ahead 1 / behind 0, README.md
+  only, 1 line in Community Projects > Agent Frameworks. Verifies signed-out 200. PR -> POST /pulls 403.
+- e2b-dev/awesome-ai-sdks (v1, prepared): branch add-openai-agents-nano — ahead 1 / behind 0, README.md only,
+  entry between LangSmith and SID. Releases: v0.1.0 exists — pin every install to git+…@v0.1.0.
+
 ## Never
 - Retired projects (langgraph-nano-x402, n8n-nano-x402) under any name.
 - Secrets in PR titles/bodies. Scan before opening.

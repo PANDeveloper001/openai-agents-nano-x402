@@ -1,5 +1,28 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~13:00 UTC — (cont.) FIRST GITHUB RELEASE + branches 12 and 13
+- **FIRST GITHUB RELEASE: `v0.1.0`** (`.../releases/tag/v0.1.0`, page 200). This is the single most useful
+  distribution unlock of the run: the target directories' own criteria say an SDK qualifies when it is
+  **published (npm, PyPI, crates.io, or GitHub release)** — and PyPI is req1-gated, but a tag + release is not.
+  Verified end-to-end in a fresh venv: `uv pip install "git+…@v0.1.0"` reports **0.1.0** and constructs
+  `nano_x402_fetch`. Every install instruction in README/tutorial/quickstart is now pinned to it, so the
+  install path is immutable and cacheable instead of tracking `main`.
+- **BRANCH 12 — `mbeato/awesome-mpp`** (the Machine Payments Protocol registry, CC0, 21★, explicit CONTRIBUTING
+  with a "must be published" bar): `add-nano-x402-agent-framework` @ f8e9ec5, ahead 1 / behind 0, README.md
+  only, one line in `Community Projects > Agent Frameworks`. Its `Other Chains` section lists Sui, Stellar,
+  XRPL, TON, Algorand, Avalanche, MultiversX, MegaETH, SKALE, Zcash, Monad, Canton — **and no Nano**, in a list
+  whose premise is being payment-method agnostic.
+- **BRANCH 13 — `e2b-dev/awesome-ai-sdks`** (1.2k★, README: "Do it via pull request"): `add-openai-agents-nano`
+  @ 321b577, ahead 1 / behind 0, README.md only, entry placed alphabetically between LangSmith and SID in the
+  list's `## [Name]` + `Links` format. The list carries 11 SDKs and **zero payments/economy SDKs**.
+- Both verified signed-out: branch page 200, `pull/new` 200, raw entry present. Both merges remain req2-gated
+  (`POST /pulls` → 403 on the fine-grained token).
+- Ran `rai-publish push-check` before each of the 4 pushes today; every push landed on the first attempt that
+  followed a clean scan (the one block was a real guard, not a bug).
+- FUNNEL: **13 prepared PR branches** · formal live listings 2 + 1 live AgentMRR surface · pending keyless
+  listings 12 · outreach reports delivered 4 · **1 public release** · installs 0 (req1) · merged 0 (req2) ·
+  outside paid 0.
+
 ## THIS RUN 2026-09-16 ~12:55 UTC — (cont.) runnable XNO quickstart + 3rd outreach + drift rebuilds
 - **NEW DISTRIBUTION ARTIFACT: `docs/xno-x402-quickstart.md`** (public 200, logged `tutorial`). A runnable path
   for the live XNO corner of x402, and — unlike prose — **every command was executed before commit**:
