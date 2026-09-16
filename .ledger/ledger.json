@@ -1,5 +1,5 @@
 {
- "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect — no Nano payment logic rebuilt",
+ "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect \u2014 no Nano payment logic rebuilt",
  "repo": "/root/work/openai-agents-nano-x402",
  "created": "2026-09-14T22:29:41+00:00",
  "base_commit": "04fa6fae61ac34ac49e1fc08d851278bbafed2c5",
@@ -403,7 +403,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano.egg-info/PKG-INFO:14 '>='→'<'",
+       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano.egg-info/PKG-INFO:14 '>='\u2192'<'",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -553,7 +553,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -566,7 +566,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -615,7 +615,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -628,7 +628,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -677,7 +677,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -691,7 +691,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -803,7 +803,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -816,7 +816,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '→' or '",
+       "weak": "0/6 mutants caught, e.g. tests/two_phase_offline.py:3 ' and '\u2192' or '",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -1045,7 +1045,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano/tool.py:8 'true'→'false'",
+       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano/tool.py:8 'true'\u2192'false'",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -1297,7 +1297,7 @@
        "pass": false,
        "oracle_exit": 0,
        "oracle_ok": true,
-       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano/tool.py:8 'true'→'false'",
+       "weak": "0/6 mutants caught, e.g. src/openai_agents_nano/tool.py:8 'true'\u2192'false'",
        "mutants": {
         "total": 6,
         "killed": 0
@@ -2090,12 +2090,12 @@
  "deltas": [
   {
    "block": 3.0,
-   "text": "_format_receipt.headline: unconditional 'PAID' → settlement-truthful (PAID only when settled True; NOT PAID / UNCONFIRMED + block hash otherwise)",
+   "text": "_format_receipt.headline: unconditional 'PAID' \u2192 settlement-truthful (PAID only when settled True; NOT PAID / UNCONFIRMED + block hash otherwise)",
    "at": "2026-09-15T03:18:25+00:00"
   },
   {
    "block": 4.0,
-   "text": "law scope L6/L7/L10/L11/L12: tests/* wildcard → specific proof file each (evidence cap)",
+   "text": "law scope L6/L7/L10/L11/L12: tests/* wildcard \u2192 specific proof file each (evidence cap)",
    "at": "2026-09-15T05:18:45+00:00"
   },
   {
@@ -2124,6 +2124,16 @@
    "pattern": "docs/fee-finality-comparison.md",
    "reason": "Distribution documentation only (measured fee/finality comparison with cited sources); governs no code",
    "at": "2026-09-15T07:50:16+00:00"
+  },
+  {
+   "pattern": "llms.txt",
+   "reason": "Distribution artifact, not library code: a machine-readable project card (llmstxt.org convention) so agent/LLM crawlers get one canonical description, install URL and honest limits. No runtime behaviour, so no executable law applies.",
+   "at": "2026-09-16T14:26:13+00:00"
+  },
+  {
+   "pattern": "LICENSE",
+   "reason": "Distribution artifact, not library code: adds the MIT LICENSE text that pyproject.toml already declares (license = MIT) and that GitHub could not detect, which is a real adoption blocker for directories and users. No runtime behaviour.",
+   "at": "2026-09-16T14:26:13+00:00"
   }
  ],
  "contested": [],
@@ -2207,7 +2217,7 @@
   {
    "kind": "init",
    "payload": {
-    "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect — no Nano payment logic rebuilt",
+    "goal": "A thin OpenAI Agents SDK Tool that lets any OpenAI agent pay any x402-priced endpoint in self-custodied Nano (XNO), reusing the existing feeless402 client and x402nano-exact dialect \u2014 no Nano payment logic rebuilt",
     "spec": null
    },
    "at": "2026-09-14T22:29:41+00:00",
@@ -3210,6 +3220,46 @@
    "at": "2026-09-15T07:50:16+00:00",
    "prev": "e4a9b0983e48f670bf22a4b7442953de4f51dc96e6ded6423190b3dc59622c27",
    "receipt": "1e48d1bb4dff011dc3e7de93a882c880fe372cef3e498dd3bbad63c0a24e1f5a"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": null,
+    "reason_sha": "da55714c93d0a8db4779ff13c003caa18753e4924aad6a5c7ae2793e26b44ba8"
+   },
+   "at": "2026-09-16T14:25:52+00:00",
+   "prev": "1e48d1bb4dff011dc3e7de93a882c880fe372cef3e498dd3bbad63c0a24e1f5a",
+   "receipt": "33ce6de1caad9d6b43d7629c3eb10169ca2d3a5282650aa33aecaf1b093f7797"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": null,
+    "reason_sha": "3abbd794d0cd68042cff19b3f04685edd2ad211abbbe5c772ac7d986f0b78620"
+   },
+   "at": "2026-09-16T14:25:52+00:00",
+   "prev": "33ce6de1caad9d6b43d7629c3eb10169ca2d3a5282650aa33aecaf1b093f7797",
+   "receipt": "b144b11dd969e5b65da9ee3fe2b0062b6d0e0c7f24227becc632d2dca2272dd1"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": "llms.txt",
+    "reason_sha": "da55714c93d0a8db4779ff13c003caa18753e4924aad6a5c7ae2793e26b44ba8"
+   },
+   "at": "2026-09-16T14:26:13+00:00",
+   "prev": "b144b11dd969e5b65da9ee3fe2b0062b6d0e0c7f24227becc632d2dca2272dd1",
+   "receipt": "a37704aeba80537a43915b0d8a6cdf6f7d838d8f4e14dbbf1280214ff175a6d7"
+  },
+  {
+   "kind": "waive",
+   "payload": {
+    "pattern": "LICENSE",
+    "reason_sha": "3abbd794d0cd68042cff19b3f04685edd2ad211abbbe5c772ac7d986f0b78620"
+   },
+   "at": "2026-09-16T14:26:13+00:00",
+   "prev": "a37704aeba80537a43915b0d8a6cdf6f7d838d8f4e14dbbf1280214ff175a6d7",
+   "receipt": "77802ea9ddc4a5b2c55cdcf9862654717893024a8cf4ec330d1f772f97bc5ce0"
   }
  ]
 }
