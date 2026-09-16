@@ -1482,3 +1482,54 @@ it (`8b7ed8cb`) at page 8; the old bound stopped at page 7.
 - FUNNEL: installs 0 (req1 PyPI key) · merged PRs 0 · outside paid 0 · prepared branches **17 (15 clean)** ·
   outreach delivered **9 across 7 targets** (1 duplicate closed) · live listings 2 + 1 AgentMRR surface ·
   keyless one-click PRs **15** (was 2).
+
+## 2026-09-16 ~18:00 UTC — distribution run (DISTRIBUTION FIRST): caller-dependence measured, registry metadata validated, paid-service offer published
+
+Corrective action applied from the report: the drift list was stale because it was hand-written. It is now fork-derived
+(`scripts/prepared_pr_drift_all.py`) and was re-run this run: **17 prepared branches, 15 clean** (~ahead 1–2 / behind 0),
+2 superseded by design. Resume docs regenerated from the scan (`scripts/pr_drift_doc.py`, `scripts/prepared_pr_clicks.py`
+-> `.ledger/handoff.md`, 15 one-click compare URLs).
+
+**NEW MEASUREMENT — a Nano-only route is fine; the tunnel rewrote the caller.** The same live Nano-only x402 route, same
+minute, checked twice: **CDP validator** -> `valid: false`, 21/25 preflight checks pass, and exactly four rail-value
+failures (`accepts[0].network` "nano:mainnet is not supported", `accepts[0].asset` "XNO is not USDC", `accepts[0].amount`
+"not a base-10 integer", `accepts[0].payTo` invalid). **x402 Doctor** -> score **16.7 / grade F / fix-required**, on the
+strength of `returns_402` = "Returned HTTP 200 — no paywall". Raw HTTP in the same window: `curl/8.5.0`,
+`python-urllib/3.12`, `requests`, `x402-Doctor/1.0`, `agent-payer/1.0` -> **402**; `Mozilla/5.0` -> **200 with an HTML
+tunnel interstitial**. So the Doctor's verdict is the tunnel's, not the route's — and *both* checkers' stories are about
+something other than Nano. Reproducer shipped: `scripts/tunnel_ua_probe.py` (exit 0 only when a User-Agent changes the
+status; `tests/tunnel_ua_probe_offline.py` catches 3 mutants, 7/7 checks, no network). Written up in
+`docs/upstream-x402-nano-registration.md` under "Reproduce the two verdicts without the tunnel rewriting the caller".
+Ledger: **block 11 minted (L24, oracle `python3 tests/tunnel_ua_probe_offline.py` expecting "7/7 checks passed")**.
+Honest status on it: the **oracle and mutation checks executed and passed**, but `ledger verify` could not complete the
+judge stage (OpenRouter 402; the only fallback is the routed provider my own recorded rule forbids feeding into a project
+ledger), so block 11 is reported as **oracle-verified only, not judge-verified**.
+
+**REGISTRY METADATA VALIDATED (nano-mcp-public).** `server.json.mcpregistry` was checked by the official
+`mcp-publisher` v1.8.1 against `registry.modelcontextprotocol.io` and returns `server.json is valid`. Two earlier drafts
+failed on a rule that is *not* on the docs page: `422 expected length <= 100 body.description`. Ownership for a PyPI
+package is proven by a `mcp-name: <server>` line in the README (not npm's `mcpName`) — that line is in the README and
+inside the built sdist. Publishing needs **no token**: `.github/workflows/publish.yml` runs
+`uv publish --trusted-publishing always`, so the customer only adds a *pending* trusted publisher (project `nano-mcp`,
+owner `PANDeveloper001`, workflow `publish.yml`, environment `pypi`) and a GitHub Release does the rest. Name still free
+(pypi 404). Registry benefit measured: the official registry answers `search=nano-mcp` with **0 servers**, `search=XNO`
+with 9 unrelated ones, and Glama (which mirrors the registry) already indexes `PANDeveloper001/nano-mcp-public` with the
+Nano description. README quickstart made runnable and the env var corrected to `NANO_PAYMENT_MASTER_SECRET` as the code
+reads it; `123 passed` offline tests; server smoke-built from the published command.
+
+**PAID-SERVICE OFFER PUBLISHED** for the one seller that actually carries Nano: `docs/offer/paid-endpoint-offer.md`
+(public, 200 signed out). It leads with the measurement the seller cannot get elsewhere — 55 indexed routes carry a
+`nano:mainnet` accept, one host, one payTo, **one unique payer in 30 days** — says what we bring (a working
+OpenAI-Agents-SDK payer and a spendless public quote of their route), and says what we do *not* ask for (no listing, no
+mention, no discount). A state attempt for a Nano-only listing was evaluated and refused by the tooling: CDP Bazaar
+membership needs a settled payment through the CDP Facilitator, which Nano-only routes cannot obtain (validator:
+`no bazaar discovery extension`/four rail failures). Recorded once, no new project.
+
+**BLOCKED-BY-SCOPE (recorded, not argued):** publishing the validated registry metadata as a *new* manifest was refused
+because `openai-agents-nano-x402` still has no adoption milestone (it has 4 verified listings but no package and no
+merged PR). That is the gate doing its job: the registry path is prepared, validated and committed, and starts with one
+customer action (pending publisher) rather than with more building.
+
+- FUNNEL: prepared branches **17 (15 clean)** · one-click PR handoffs **15** · outreach delivered **9 across 7 targets** ·
+  live listings **4 verified** (glama nano-mcp page 200) · packages published **0** (PyPI path tokenless, pending
+  publisher) · MCP Registry servers **0** (metadata valid, publish gated on that publisher) · outside paid **0**.
