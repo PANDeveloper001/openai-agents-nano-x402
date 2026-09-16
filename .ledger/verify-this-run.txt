@@ -1,5 +1,20 @@
-VERIFIED 2026-09-15 ~21:45 (curl -L signed-out): repo:200 README:200 tutorial:200 agentdir-API:200 agentlaunch:200 agents.net-dir:200 agentmrr-homepage:200(keyword-hit 4x) agentmrr-api:200 | fork branches all 200/302: x402-v3, nanodir-clean, aaf, awesome-x402, mpp, aac, saa, x402-dev, aapp-v2, agentswitchboard.dev(add-openai-agents-nano)
-DRIFT 2026-09-15 ~21:45: 9/9 git-mergeable prepared branches behind=0 ahead=1 CLEAN; agentswitchboard content branch verified on correct fork PANDeveloper001/agentswitchboard.dev (200)
-LISTINGS re-checked: agentrank/aiagentslive/dynamite = query-echo only (no card anchor); 4agent tool page 404; aiagents.directory search 404; madeWithStack pending; none live
-NEW not-fit eval: a2a-registry.org + a2alist.ai = agent/service registries (skip, recorded in skill)
-FUNNEL: installs 0 (req1) · merged PRs 0 (req2) · outside paid 0 · live listings 2 + 1 AgentMRR surface · prepared PR branches 10 (CLEAN, req2-gated) · req1+req2 customer-gated (2 key requests waiting)
+VERIFIED 2026-09-16 ~14:20 UTC (curl/urllib, signed-out, no session) — all 200, nothing 404:
+  repo, release page, WHEEL asset, SDIST asset, tutorial, x402 discovery study,
+  Agent Directory API (row d8cd7de3 names openai-agents-nano), agentlaunch page (names project),
+  AgentMRR home, gold-402 compare link, gold-402 branch blob, X post 2100226380768350479
+RUN TESTS (repo's own, on the committed HEAD 3267c8e):
+  pytest -q -> 4 passed in 3.92s
+  tests/fail_closed_offline.py -> FAIL_CLOSED_OK
+  tests/two_phase_offline.py -> TWO_PHASE_OK
+  tests/receipt_honesty_offline.py -> RECEIPT_HONESTY_OK
+  tests/payment_failure_honesty_offline.py -> PAYMENT_FAILURE_HONESTY_OK
+  tests/wallet_load_offline.py -> WALLET_LOAD_OK
+  tests/release_install_offline.py -> nano_x402_fetch with args [dry_run, json_body, max_xno, method, quote_token, url]
+PYPI GATE MEASURED: workflow_dispatch publish.yml -> run 35104816024: build success; publish fails ONLY with
+  invalid-publisher ("no corresponding publisher"). Missing object = the pending trusted publisher registration.
+DISTRIBUTION DONE THIS RUN: release assets published + verified (sha256 over public URL, fresh-venv install);
+  README/tutorial/release body updated; 14th target prepared (gold-402 @ 9a09d0d, ahead 2 / behind 0) with its
+  CI gate pre-flighted PASS; 3 pending listings re-checked render-aware (0 live); 1 target rejected on measured
+  merge rate; 1 topic-index surface verified; X result post (cap 2/3).
+FUNNEL: installs 0 (req1) | merged PRs 0 (req2) | outside paid 0 | formal live listings 2 (+1 AgentMRR surface,
+  +1 topic-index page) | prepared PR branches 14 | pending keyless listings 12.
