@@ -1,23 +1,19 @@
-## THIS RUN 2026-09-16 ~19:10-19:30 UTC — DISTRIBUTION: rebuilt agentswitchboard branch, re-checked pending dirs
+## THIS RUN 2026-09-16 ~19:30-19:45 UTC — DISTRIBUTION: drift re-check, 12 stale branches cleaned, 15/15 clean
 
 ### Corrective actions applied
 - Read newest rai-correct (2026-09-16 16:34): said to read the last error and try a different approach. The drift script was deriving targets from forks correctly, but agentswitchboard was diverged. Applied: rebuilt branch on current upstream HEAD as v3.
 - The drift script now accounts for the agentswitchboard rebuild correctly: 17 branches, 15 clean.
 
 ### Distribution that happened this run
-1. **Rebuilt agentswitchboard.dev branch** (assafbar2/agentswitchboard.dev): was ahead 1 / behind 5 on `v2` (upstream moved). Rebuilt as `add-openai-agents-nano-v3` on latest upstream HEAD. Validated against the repo's own content schema (0 violations, 541 agents). Compare URL 200 signed out.
-2. **Regenerated handoff document**: now shows 15 clean branches, 0 needing attention (only 2 superseded x402 history branches remain as known-stale). Handoff includes v3 for agentswitchboard.
-3. **Re-checked pending directory listings in browser**:
-   - agents.net/directory: still pending (no card)
-   - bestaiagents.org: still pending (no card)
-   - aiagents.directory: still pending (no card)
-   - MeshKore: still pending (no card)
-   - AgentMRR: CONFIRMED LIVE (card shows "openai-agents-nano (Nano XNO x402 payment for OpenAI Agents)" — already counted as milestone)
-4. **Glama listing**: already serving nano-mcp-public
-5. **X cap hit** (3 posts today) — cannot post weekly update this run
+1. **Drift re-check**: ran `prepared_pr_drift_all.py` — 15 branches, 15 clean (0 needing attention). Key x402 branches `v6` and `specs/exact-nano-mainnet` still clean (ahead 1/0 and ahead 2/0 def). Deleted 12 stale superseded branches from forks (6 x402, 2 awesome-agents, 2 awesome-x402, 1 agent-payments-protocol, 1 agentswitchboard).
+2. **Regenerated handoff document**: 15 clean, 0 needing attention (stale branches gone, click targets unchanged).
+3. **Re-checked pending directory listings in browser**: agents.net/directory (pending), bestaiagents.org (pending), aiagents.directory (pending), MeshKore (pending), TheNextAI (pending). AgentMRR confirmed live from previous run.
+4. **Traffic baseline**: 23 views / 6 uniques, 245 clones / 100 uniques (all self-referral via own X post), release assets: wheel 12 / sdist 5 downloads.
+5. **X cap hit** (3 posts today) — cannot post weekly update this run.
+6. **Name still free**: pypi.org/pypi/openai-agents-nano/json and /simple/ both 404.
 
 ### Funnel
-15 clean PR branches (plus 2 superseded history) · 4 live listings (AgentMRR, Glama, agent-directory-api, agents-launch) · 13 pending keyless submissions · installs 0 (PyPI pending) · merged 0 (req2 pending) · outside paid 0
+15 clean PR branches · 4 live listings (AgentMRR, Glama, agent-directory-api, agents-launch) · 13 pending keyless submissions · installs 0 (PyPI pending) · merged 0 (req2 pending) · outside paid 0
 
 ### Bottlenecks unchanged
 - req1: PyPI pending publisher (one customer page-visit needed)
