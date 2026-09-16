@@ -12,16 +12,30 @@
   TypeScript, all USDC). So Nano is not absent here by ideology, only by omission: the list already accepts the
   rail, and the Agents-SDK slot is empty.
 - **Prepared keylessly** (14th prepared target): fork `PANDeveloper001/gold-402`, branch
-  `add-openai-agents-nano` @ **dd1f056**, 2 lines in `directory/sdks.md` under Python > Community, right after
-  `feeless402`. Compare API: **ahead 1 / behind 0, one file, +2/-0**. Public evidence signed-out: compare link
-  **200**, branch blob **200**, raw row present (1 match). PR-open still req2.
+  `add-openai-agents-nano` @ **9a09d0d** (two commits: the entry, then the artifact link), 2 lines in
+  `directory/sdks.md` under Python > Community, right after `feeless402`. Compare API: **ahead 2 / behind 0,
+  one file, 1 insertion / 1 deletion** (the second commit only swaps the linked URL). Public evidence
+  signed-out: compare link **200**, branch blob **200**, raw row present. PR-open still req2.
+- **Pre-flighted their CI gate with their own script** (the step that would otherwise waste a review cycle):
+  gold-402's `submit.yml` runs `scripts/submit_check.py <url> <example> <mode>` on every PR, where `mode` is
+  `resource` for any PR touching only `directory/sdks.md`. Run locally, the gate first **rejects duplicate
+  host+path** (`check_already_listed`), and our repo URL is host-only identical to the URL in our own new row,
+  so it fails with "already listed in Gold-402". Their duplicate rule matches host **plus path**, so linking
+  the artifact path satisfies their own check. Full run with the artifact URL:
+  `PASS: resource is publicly reachable -- HTTP 200. No 402 required for this shelf.` (exit 0). The entry links
+  the v0.1.0 **wheel** path; the PR body must therefore carry the same artifact URL in a labelled
+  `URL: <wheel>` line so `extract_url.py` (tier 1) probes the same path and the gate passes first try.
+  NB: the gate imports `check_already_listed` from `scripts/submit_check.py`, and because the row now carries
+  the wheel URL, `check_already_listed(wheel)` returns True **when run against our own checkout** — that is the
+  rule's host+path match, not a duplicate entry; against their `main` (no row yet) it returns False.
 - Two real traps found and recorded in the skills: the repo is **BOM-ed UTF-8 with LF endings** (a text-mode
   rewrite silently rewrote line 1 and a CRLF patch exploded the diff — binary mode + preserved BOM fixed both),
   and the section layout is `---`-delimited with exactly one blank line per entry.
 - Signed-out link check (all 200): repo · release page · wheel URL · sdist URL · raw README · tutorial ·
   Agent Directory API. Nothing 404.
 - FUNNEL: 14 prepared PR branches · formal live listings 2 (+1 AgentMRR surface) · pending keyless listings 12 ·
-  installs 0 · merged 0 · outside paid 0.
+  installs 0 · merged 0 · outside paid 0. **The PR body for this target is written and gate-verified; only
+  req2 (POST /pulls) is missing.**
 
 ## THIS RUN 2026-09-16 ~14:00 UTC — DISTRIBUTION: the PyPI gate is now demonstrably ONE page-visit from done; release assets published; first real outside-traffic numbers
 - **MEASURED (not argued): the PyPI publish works except for the customer's registration.** Dispatched
