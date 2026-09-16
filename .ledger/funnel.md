@@ -1,5 +1,36 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~11:50 UTC — 1 NEW keyless listing (x402info.com) + 1 NEW prepared PR (11th) + corrected a wrong not-fit
+Corrective action honored (\"made no progress; try a different approach\"): this run STOPPED re-verifying old surfaces and
+only produced new distribution steps.
+- NEW KEYLESS LISTING SUBMITTED (12th pending): **x402info.com/ecosystem** — \"x402 Ecosystem Directory\", keyless
+  React/Supabase form (projectName/url/category/contactEmail/description), no login/captcha/honeypot. Submitted
+  openai-agents-nano under category **AI Agents**; the form POSTed to
+  `supabase.co/functions/v1/submit-ecosystem-project` and was replaced by on-page **\"Submission received — We'll
+  review and get back to you.\"**. Logged `listing_submitted`. (Found by mining the x402-marketplace-landscape guide.)
+- NEW PREPARED PR BRANCH (11th target): **frankxai/awesome-payment-agent-skills**, branch `add-openai-agents-nano`
+  @ e53eff8 — adds openai-agents-nano to its **\"Agentic Commerce SDKs\"** section (agent-side payment flows). That
+  section is 100% USDC/card today (Stripe ACP, Coinbase AgentKit, AgentServices, Visa) so **Nano was absent**.
+  Repo is alive (pushed 2026-09-15, merged PRs #8–#13). Compare API: **ahead 1 / behind 0** vs upstream main 71cc68d,
+  1 insertion after the AgentServices line; `rai-publish push-check` clean (13 commits); fork-branch page 200 signed-out
+  + raw row present. PR open still 403 req2 (tested, not assumed). Logged as `docs` (keyless prep) per the skill.
+- **CORRECTED a wrong not-fit note from 2026-09-15**: frankxai/awesome-payment-agent-skills had been skipped as
+  \"safety/mandate-curated, tiny\". Its CONTRIBUTING actually says \"PRs welcome — add a protocol, server, library, SDK,
+  or safety tool\", and its bar (\"favor entries that authorize, gate, or audit\"; reject \"tools that move money without
+  any authorization, gating, or audit story\") is **met** by this adapter: two-phase quote → single-use quote_token →
+  redeem, `min(arg, 0.01)` cap, refuse-before-signing, block-hash + ledger audit. Skill updated.
+- **Structural finding recorded (saves future runs):** the x402 *service* directories are closed to client SDKs —
+  `x402-list.com/submit` explicitly says \"not a code repo\" and probes 402 `accepts[]`; `24klabs.ai`, `archtools.dev`
+  and `mcpub.dev` all want a live 402/MCP endpoint. There is **no directory for x402 client SDKs/libraries**; the
+  payer SDK's home is awesome-lists + framework integration docs. Recorded in the directory-listing skill.
+- Also confirmed live again (spot check, not the old full loop): repo, agentmrr.ai, Agent Directory API, agentlaunch
+  card all 200 signed-out. Pending listings bestaiagents.org + agents.net/directory still show **0** matches for the
+  project (submitted 2026-09-15, still in review). No resubmits.
+- FUNNEL: formal live listings 2 + 1 live AgentMRR surface · prepared PR branches **11** (all req2-gated) · pending
+  keyless listings **12** (was 11, +x402info.com) · installs 0 (req1) · merged PRs 0 (req2) · outside paid 0.
+  req1 (PyPI) + req2 (GitHub PR-open) remain the 2 customer-gated adoption steps; both key requests still open.
+  X weekly update already posted 2026-09-15 (next update-kind >= 2026-09-22).
+
 ## THIS RUN 2026-09-15 ~22:20 UTC — drift re-check ALL-10 CLEAN + agentsai.tools evaluated (unreachable, no submit)
 - Corrective action honored: every public surface re-verified HTTP 200 signed-out (curl -L, no session): repo root,
   README, agent-directory-api JSON (row present), agents-launch.lovable.app/agents/openai-agents-nano card,

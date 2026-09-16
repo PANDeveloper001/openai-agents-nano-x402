@@ -40,6 +40,14 @@ their fork remotes 2026-09-15 ~15:22 UTC):
 - tsubasakong/awesome-agent-payments-protocol: branch `add-openai-agents-nano-v2` @ 297b9f8 (rebuilt 2026-09-15 ~17:3x
   UTC onto CURRENT upstream main 1e20c4d; upstream moved 1 commit (weekly scan) since `add-openai-agents-nano`
   @ 52d7c481 drifted behind-1/ahead-1, so open from v2. Push-check clean, fork-branch + pull/new 200.)
+- frankxai/awesome-payment-agent-skills: branch `add-openai-agents-nano` @ e53eff8 (NEW 11th target, prepared 2026-09-16
+  ~11:55 UTC; NOT-fit note from 2026-09-15 was a misread — its CONTRIBUTING explicitly invites "a protocol, server,
+  library, SDK, or safety tool", the "Agentic Commerce SDKs" section is agent-side payments and is 100% USDC/card
+  (Stripe ACP, Coinbase AgentKit, Visa), and its bar is "favor entries that authorize, gate, or audit"; the adapter meets
+  it with two-phase quote + single-use quote_token + min(arg, 0.01) cap + refuse-before-signing + block-hash/ledger
+  audit. Section row added after the AgentServices line. Compare API: ahead 1 / behind 0 vs upstream main 71cc68d;
+  push-check clean (13 commits); fork-branch 200 signed-out + raw row present. Opening still 403 req2 like the rest.
+  Repo is alive (pushed 2026-09-15, merged PRs #8-#13, now 2 stars).)
 
 NOTE 2026-09-15 ~17:3x UTC: x402 and aapp PR branches were rebuilt onto their current upstreams as NEW
   `-v2` branches (no force-push — old `-rebased`/`add-openai-agents-nano` branches stay as history). The six
