@@ -118,6 +118,17 @@ NOTE 2026-09-15 ~17:3x UTC: x402 and aapp PR branches were rebuilt onto their cu
   only, 1 line in Community Projects > Agent Frameworks. Verifies signed-out 200. PR -> POST /pulls 403.
 - e2b-dev/awesome-ai-sdks (v1, prepared): branch add-openai-agents-nano — ahead 1 / behind 0, README.md only,
   entry between LangSmith and SID. Releases: v0.1.0 exists — pin every install to git+…@v0.1.0.
+- **Haustorium12/gold-402** (14th target, prepared 2026-09-16 ~14:05 UTC): fork `PANDeveloper001/gold-402`,
+  branch `add-openai-agents-nano` @ dd1f056. gold-402 is the hand-curated x402 directory (459 entries, 135 forks,
+  powers 24klabs.ai); its CONTRIBUTING takes a PR-only submission (`Add [Name]`), **no web form**. Entry = 2 lines
+  in `directory/sdks.md` under `## Python > ### Community`, immediately after the sibling Nano-rail entry
+  `feeless402`; that shelf lists x402 client SDKs and had **no OpenAI-Agents-SDK payer at all**. Compare API
+  2026-09-16: ahead 1 / behind 0, one file, +2/-0. Compare link (public, signed-out 200):
+  `https://github.com/Haustorium12/gold-402/compare/main...PANDeveloper001:gold-402:add-openai-agents-nano`.
+  Two repo traps recorded: the tree is **BOM-ed UTF-8 with LF endings** — edit in binary mode and preserve the
+  BOM (a text-mode rewrite silently changed line 1), and the file must keep exactly one blank line between
+  entries (the section structure is `---`-delimited, not blank-line-delimited).
+  PR-open still needs req2 (this token cannot POST /pulls).
 
 ## Never
 - Retired projects (langgraph-nano-x402, n8n-nano-x402) under any name.

@@ -1,5 +1,28 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~14:05 UTC (cont.) — NEW TARGET (14th): the hand-curated gold-402 x402 directory
+- **Found a genuinely new outside-Nano surface by mining a fresh source** (the ecosyste.ms awesome-list index,
+  not re-reading the same lists): **`Haustorium12/gold-402`** — "the gold standard for x402 resources",
+  459 hand-checked entries, 135 forks, actively pushed 2026-09-15, and it is the data behind the **24klabs.ai
+  Gold-402 directory** (shelves for facilitators, SDKs, frameworks, APIs, MCP servers, tools, security,
+  ecosystem, learning). Its CONTRIBUTING takes **PR-only submissions** (`Add [Name]`), so no form, no captcha.
+- **A real gap, measured before preparing:** `directory/sdks.md` has a `## Python > ### Community` shelf that
+  already carries the sibling **Nano-rail** library `feeless402`, and the whole file has **no OpenAI-Agents-SDK
+  entry anywhere** (the `### AI Agent SDKs` shelf holds x402-mcp, PayBot, ClawPay, Azeth, MoltsPay — all
+  TypeScript, all USDC). So Nano is not absent here by ideology, only by omission: the list already accepts the
+  rail, and the Agents-SDK slot is empty.
+- **Prepared keylessly** (14th prepared target): fork `PANDeveloper001/gold-402`, branch
+  `add-openai-agents-nano` @ **dd1f056**, 2 lines in `directory/sdks.md` under Python > Community, right after
+  `feeless402`. Compare API: **ahead 1 / behind 0, one file, +2/-0**. Public evidence signed-out: compare link
+  **200**, branch blob **200**, raw row present (1 match). PR-open still req2.
+- Two real traps found and recorded in the skills: the repo is **BOM-ed UTF-8 with LF endings** (a text-mode
+  rewrite silently rewrote line 1 and a CRLF patch exploded the diff — binary mode + preserved BOM fixed both),
+  and the section layout is `---`-delimited with exactly one blank line per entry.
+- Signed-out link check (all 200): repo · release page · wheel URL · sdist URL · raw README · tutorial ·
+  Agent Directory API. Nothing 404.
+- FUNNEL: 14 prepared PR branches · formal live listings 2 (+1 AgentMRR surface) · pending keyless listings 12 ·
+  installs 0 · merged 0 · outside paid 0.
+
 ## THIS RUN 2026-09-16 ~14:00 UTC — DISTRIBUTION: the PyPI gate is now demonstrably ONE page-visit from done; release assets published; first real outside-traffic numbers
 - **MEASURED (not argued): the PyPI publish works except for the customer's registration.** Dispatched
   `publish.yml` (run [35104816024](https://github.com/PANDeveloper001/openai-agents-nano-x402/actions/runs/35104816024)):
