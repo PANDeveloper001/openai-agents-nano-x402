@@ -41,7 +41,15 @@ Corrective action applied first, as instructed: the two open key requests were r
   `ahead 1 / behind 0`, fork-branch 200, compare link 200, `pull/new` 302 — all signed out. No
   force-push; v4 kept as history. Runbook updated to v5.
 - **Public links re-verified 200 signed out this run:** repo, the two new doc commits' raw pages, the
-  Agent402 issue, the v5 branch + compare + pull/new. Nothing 404.
+  Agent402 issue, the v5 branch + compare + pull/new. Nothing 404. Full pass, 20 URLs, **all 200**:
+  repo, README, llms.txt, LICENSE, tutorial, discovery study, live-proof, quickstart, offer JSON, release
+  page, **wheel**, **sdist**, Agent Directory API, agentlaunch, AgentMRR, the Agent402 issue, the v5 branch,
+  the v5 compare link, and both live Nano routes' well-known/agent pages.
+- **LIVE SURFACES RE-CONFIRMED naming the project (rendered, signed out):** agentlaunch agent page
+  (623 chars, names it), Agent Directory API (8,828 chars, names it), AgentMRR home (13,031 chars, names it).
+- **Pending listings re-checked render-aware, no resubmits, none live:** meshkore (4,652 chars), aiagenttools
+  (8,861), bestaiagents (12,028), x402info.com/ecosystem (3,543), agents.net/directory (15,680) — all 0
+  mentions. Nothing counted as adopted.
 - **Tests:** `python -m pytest -q` → **9 passed** on every commit (canonical `f0fb93a`).
 - **X:** daily cap already **3/3** and the weekly `update` slot stays closed until 2026-09-22, so no post
   this run (checked, not assumed).
