@@ -154,3 +154,10 @@ python tests/release_install_offline.py # builds the wheel, installs it into a b
 
 MIT. Reuses [feeless402](https://github.com/feeless402/feeless402) (MIT) and the
 x402nano exact dialect / 402nano facilitator.
+
+<a href="https://www.promptfrenzy.com/directory" rel="noopener"
+   target="_blank" title="Featured on PromptFrenzy AI Directory">
+  <img src="https://www.promptfrenzy.com/badges/directory-mono-dark.svg"
+       alt="Featured on PromptFrenzy AI Directory"
+       width="220" height="44" loading="lazy" />
+</a>
