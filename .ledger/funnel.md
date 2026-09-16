@@ -1436,3 +1436,49 @@ distribution artifact.
   live listings 2 + 1 AgentMRR surface · prepared branches now 13 (`x402` ×3 incl. the new spec branch,
   plus 10 elsewhere) · keyless PRs openable in one click: 2 (new). X result slot exists but the daily
   cap is consumed (3/3); the weekly `update` slot reopens 2026-09-22.
+
+## THIS RUN 2026-09-16 ~17:15 UTC (cont.) — corrective action applied: the scan itself had never listed a key artifact
+
+Corrective action 2026-09-16 16:34 UTC: "the prepared-PR drift list was hand-written and had gone stale: the
+x402 row named the wrong active branch and omitted the second x402 branch, so a '13 clean' report
+under-reported the two artifacts that actually matter". Applied, and the cause was worse than stale text.
+
+**The scan was truncating, not just the resume list.** `prepared_pr_drift_all.py` read at most 7 pages of 100
+branch names per fork. The `x402` fork has **783** branches, so the last 83 were dropped without a word — and
+`specs/exact-nano-mainnet`, the per-network scheme spec that is one of this repo's two adoption artifacts, sat
+past the cutoff. It had **never appeared in a single drift report**. Verified directly: the branch list contains
+it (`8b7ed8cb`) at page 8; the old bound stopped at page 7.
+
+- **Fixed and made unfalsifiable:** paging now stops on a short page and shouts if a fork still hits the
+  12-page ceiling; each row carries its head sha; `EXPECTED` is a per-target floor and prints "the prepared set
+  SHRANK" when a key target comes up short. On the real scan: **17 prepared branches, 15 clean** (was 16/14),
+  `x402-foundation/x402` contributing 4 rows (v6 docs @ `3917a836` ahead 1; spec @ `8b7ed8cb` ahead 2; plus the
+  two superseded rebuilds the old report had been naming).
+- **Both resume documents are now GENERATED, not typed:** `scripts/pr_drift_doc.py` rewrites the runbook's
+  snapshot section and the artifact table in `docs/upstream-x402-nano-registration.md` from the scan JSON. That
+  docs table had been telling upstream reviewers the spec branch was `cbef150a` — two rebuilds old. A key
+  artifact missing from the scan gets a `MISSING` row instead of disappearing; an unknown document is refused
+  rather than guessed at.
+- **Tests: 8 checks, three are mutations that must fail** (dropped spec branch is reported, a mutated status
+  changes the count, a superseded sha does not survive). Full suite: 9 pytest + 7 offline checks pass.
+- **SELF-INFLICTED ERROR FOUND AND CORRECTED.** A third issue was filed on `MikeyPetrillo/Agent402` restating
+  the `routerDispatchByChain` finding that issue **#1** already carried — the runbook said "one issue per
+  target" without saying what had already been sent. Closed with a factual dedup comment (issues cannot be
+  deleted via the API). Root cause fixed the same way as the drift list: `scripts/outreach_state.py` derives
+  prior contact from the forks (22 third-party forks, **7 carry 9 delivered issues**) instead of a note.
+- **Merge-rate gate, because "prepared" is not "worth a click" (measured, all token-authenticated):**
+  `scripts/target_merge_rate.py` over each target's own closed-PR history. **MERGES**: Haustorium12/gold-402
+  138/169 · xpaysh/awesome-x402 232/300 · x402-foundation/x402 197/300 · michielpost/x402-dev 43/50 ·
+  Scottcjn/awesome-agents 22/28 · frankxai/awesome-payment-agent-skills 10/13 · assafbar2/agentswitchboard.dev
+  9/13. **DEAD**: e2b-dev/awesome-ai-sdks 1/26 (quiet 68 days) · Merit-Systems/awesome-agentic-commerce 1/27 ·
+  mbeato/awesome-mpp 0/6 (quiet 137 days) · mpp-best/awesome_mpp 0 closed PRs at all. Eleven branches are
+  pointed at repos that cannot merge them.
+- **Handoff generated and verified:** `.ledger/handoff.md` — 15 one-click compare URLs, **15/15 answer 200
+  signed out** (`POST /repos/*/pulls` remains 403 on this token).
+- **Honesty note on this block's verification:** block 10 law L23 **passes its oracle** (8/8 offline checks).
+  The ledger judge tier could **not** run — the OpenRouter account reports 402 Payment Required and the only
+  alternative is the routed fallback, which my own recorded rule forbids feeding into a project ledger. The
+  block is therefore **oracle-verified only, not judge-verified**, and is not reported as verified.
+- FUNNEL: installs 0 (req1 PyPI key) · merged PRs 0 · outside paid 0 · prepared branches **17 (15 clean)** ·
+  outreach delivered **9 across 7 targets** (1 duplicate closed) · live listings 2 + 1 AgentMRR surface ·
+  keyless one-click PRs **15** (was 2).
