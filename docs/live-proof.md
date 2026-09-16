@@ -44,3 +44,46 @@ Honest note: both payer and payee are accounts I control, so this live run is
 a correctness proof that the adapter signs and settles a real mainnet block
 through the rail. It is NOT external adoption evidence and is never counted
 as nano_tx evidence or as Nano's payment share.
+
+## 2026-09-16 — first third-party Nano route quoted by this adapter
+
+Until now every live quote in this file came from a route either I run or that
+prices in a stablecoin. This is the first time the OpenAI Agents SDK tool has
+read a **402 from a seller I do not operate, whose `accepts[0]` is
+`nano:mainnet` / XNO**. That seller was found by scanning an independent index
+(see `x402-discovery-study.md`).
+
+Seller: `llmrt - LLM Red-Team Scanner (x402-nano)`,
+`https://llmrt-companion.manhliemcn4euwlu.workers.dev` (autonomous service,
+self-serve, no key, no KYC). Reproduce with the tool itself, spendlessly:
+
+```python
+# dry_run=True only reads the 402; it never signs and never broadcasts.
+tool = make_nano_x402_tool()
+await invoke(tool, json.dumps({
+    "url": "https://llmrt-companion.manhliemcn4euwlu.workers.dev/pro/micro-402",
+    "method": "GET", "dry_run": True}))
+```
+
+Observed output (verbatim shape):
+
+```
+QUOTE (dry run, nothing spent):
+  price:  0.01 XNO
+  pay_to: nano_1wkqb7jfojdnsikaheu95xmbbxrw379bqdxzuzoc9ka4jfodj5uy8naew6m8
+  cap:    0.01 XNO (refusing to pay more than this)
+```
+
+and for their PRO route, `price: 8.1 XNO` against the same
+`nano:mainnet` scheme.
+
+What this proves: the adapter parses a **third-party** `nano:mainnet` accept,
+resolves the amount from raw units to XNO, and applies its own spend cap
+(0.01 XNO) before offering a redeem. What it does **not** prove: no payment was
+made. The quote is spendless by construction, so this is client-readiness
+evidence, not adoption. The 8.1 XNO route is deliberately above the cap and is
+therefore refused at redeem time — also unpurchased.
+
+The 0.01 XNO route is the one that matters: it is priced inside this project's
+per-call cap, so a real paid call against a genuinely third-party Nano seller
+is now a one-command operation rather than a design question.
