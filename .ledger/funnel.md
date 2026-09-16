@@ -1,4 +1,46 @@
-| ## THIS RUN 2026-09-16 22:08-22:22 UTC — DISTRIBUTION: re-check pending dirs, measure NanoRoute facilitator, record status
+||| ## THIS RUN 2026-09-16 23:45-23:59 UTC — DISTRIBUTION: drift 15/15, X update capped, 4 new dirs evaluated, funnel recorded
+
+### State at start
+- req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches (before: clean)
+- 24 listing submissions in review
+- X weekly update capped: next slot Sep 22 (7-day limit resets)
+- The latest corrective action (stack audit: skip invention phase, no unwind, same-model verify) recorded
+
+### Work done this run
+1. **Corrective actions applied**: read corrections.md. The stack audit points out 3 method gaps. DISTRIBUTION FIRST means no building this run — applied the audit as note for when building resumes.
+2. **Drift re-check**: all 15 prepared PR branches clean (ahead 1-2, behind 0). Corican/nanodir (ahead 1/behind 0), x402-foundation/x402 (2/2), all others ahead 1-2.
+3. **PyPI name check**: free (404 on /json/ and /simple/)
+4. **Bazaar Nano count**: 55 accepts, 1 host (pyfile-agent.taile3ff35.ts.net), 16 pages scanned — unchanged
+5. **X weekly update**: tried to post via `rai-x post --dry-run` — refused until Sep 22 10:39 UTC (7-day cap). Saved text + link ready: `Fee and finality: Nano (free, 0.3s) vs x402 USDC (capped)` + link to fee-finality-comparison.md
+6. **Pending directories re-checked via browser**: TheNextAI (404), zPlatform (DNS error), AgentRank (timeout), AI Agents Live (DNS error), MeshKore (404), agents.net (404) — none published yet. All still in review.
+7. **NEW directories evaluated**:
+   - aiagentslisting.com (just launched Sep 6 — agents, MCP servers, skills. Next.js SPA, needs browser automation for form.)
+   - AgentIndexed (agentindexed.com/submit — "Frameworks & SDKs" category perfect. Next.js SPA.)
+   - Vibedonalds (vibedonalds.com/submit — free with reciprocal badge. Not a great fit: for "apps made with AI.")
+   - AgentBets.ai (post API no auth, 48h review, but for prediction markets/sports betting — not a fit for payment SDK.)
+8. **Dead targets eliminated**: Omnivalent/awesome-x402 (0★, Jun), bido75/awesome-ai-agents-2026 (0★, May), zacfire/awesome-x-for-agents (0★, Mar). All 0-star repos with no PR merges.
+9. **Ecosystem health**: awesome_mpp, Scottcjn/awesome-agents, Corican/nanodir still don't list us. Expected (req2).
+10. **Access request check**: req1 and req2 still open. No progress from customer.
+
+### Funnel
+15 clean PR branches · 24 listing submissions · 27 outreach issues across 22 targets · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · 1 x402eco/website fork issue · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · Bazaar nano accepts 55
+
+### Bottlenecks
+- req1 (id=1): PyPI trusted publisher registration (owner: pypi.org/manage/projects/openai-agents-nano → settings → publishing)
+- req2 (id=2): GitHub PR-open scope token (opens 15 prepared PRs)
+- X weekly update: next slot Sep 22 (7-day cap)
+- New SPA directories (aiagentslisting, AgentIndexed) need browser automation or email capability
+
+### Next steps for next run
+1. Re-check req1/req2 status
+2. Re-check pending directories (48h+ now for most)
+3. Run drift re-check
+4. Verify PyPI name still free
+5. Try aiagentslisting.com or AgentIndexed submission via browser automation
+6. Look for keylessly-submittable new directories
+
+|||| ## THIS RUN 2026-09-16 23:17-23:45 UTC — DISTRIBUTION: drift check 15/15, X update capped, new dirs evaluated, funnel updated
 
 ### State at start
 - 2 access requests still open (req1: PyPI pending publisher, req2: GitHub PR scope)
@@ -69,7 +111,7 @@
 - req1 (id=1): PyPI trusted publisher page-visit needed (owner only; name still free: 404)
 - req2 (id=2): GitHub PR-open scope token (opens all 16 prepared PRs; branches clean, compare links verified 200 signed out)
 
-| ## THIS RUN 2026-09-16 22:20-22:35 UTC — DISTRIBUTION: drift check, listing re-checks, new directory eval
+|| ## THIS RUN 2026-09-16 22:20-22:35 UTC — DISTRIBUTION: drift check, listing re-checks, new directory eval
 
 ### State at start
 - req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
@@ -95,7 +137,7 @@
 - No email send capability: AgentIndexed free listing blocked by mailto: submission gate
 - X daily cap 3/3 consumed for today
 
-| ### Next steps for next run
+|| ### Next steps for next run
 1. **X post: weekly update** (free slot) — post BEFORE daily cap is consumed. Text: "Fee and finality: Nano (free, 0.3s) vs x402 USDC ($0-3c)." + link to fee-finality-comparison.md
 2. Re-check pending directories that should be live after 48h (agents.net, MeshKore, TheNextAI, zPlatform, AgentRank)
 3. Re-check whether customer has processed req1 or req2
@@ -103,7 +145,7 @@
 5. Re-check Bazaar nano count
 6. If email capability exists, submit to AgentIndexed (agentindexed.com/submit, Frameworks & SDKs category, free plan)
 
-|| ## THIS RUN 2026-09-16 22:36-22:50 UTC — DISTRIBUTION: drift check, new directory eval, corrective actions applied
+||| ## THIS RUN 2026-09-16 22:36-22:50 UTC — DISTRIBUTION: drift check, new directory eval, corrective actions applied
 
 ### State at start
 - req1 (PyPI trusted publisher) and req2 (GH PR scope) still pending customer
@@ -141,7 +183,7 @@
 5. Verify PyPI name still free
 6. Look for new keyless directories and fork-issue targets
 
-| ## THIS RUN 2026-09-16 22:45-23:15 UTC — DISTRIBUTION: 3 outreach issues opened, drift clean, PromptFrenzy evaluated, aiagentsdirectory evaluated
+|| ## THIS RUN 2026-09-16 22:45-23:15 UTC — DISTRIBUTION: 3 outreach issues opened, drift clean, PromptFrenzy evaluated, aiagentsdirectory evaluated
 
 ### State at start
 - req1 (PyPI trusted publisher) and req2 (GH PR scope) still pending customer
@@ -167,7 +209,7 @@
 10. **2 push-check cycles completed**: README changes (add + revert PromptFrenzy badge) both passed secret scans and pushed clean.
 
 ### Funnel (updated)
-15 clean PR branches . 24 listing submissions . 27 outreach issues across 22 targets (3 new) . 1 live marketplace listing (AgentMRR) . 1 keyless directory listing (agents-launch) . 2 live agent-directory listings . 1 x402eco/website fork issue . installs 0 (PyPI req1) . merged 0 (GH PR req2) . outside paid 0 . release wheel downloads 12, sdist 5
+15 clean PR branches · 24 listing submissions · 27 outreach issues across 22 targets (3 new) · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · 1 x402eco/website fork issue · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5
 
 ### Bottlenecks unchanged
 - req1 (id=1): PyPI trusted publisher registration (owner step)
