@@ -1,4 +1,4 @@
-## THIS RUN 2026-09-16 21:30-21:50 UTC — DISTRIBUTION: drift re-check, new targets evaluated (a2alist.ai), funnel updated
+| ## THIS RUN 2026-09-16 21:45-22:05 UTC — DISTRIBUTION: drift re-check, x402eco/website new PR target, submissions verified, funnel updated
 
 ### State at start
 - 15 clean PR branches (all ahead/behind 0)
@@ -8,7 +8,9 @@
 - X daily cap at 3/3 for today; weekly update slot reopens ~Sep 22
 
 ### Distribution this run
-1. **Drift re-check**: all 15 prepared PR branches confirmed clean (ahead 1-2, behind 0). No rebuilds needed.
+|4. **Re-verified pending MeshKore/TheNextAI/zPlatform** — resubmissions confirmed still pending (not live). Logged as duplication warnings (already logged on 9/15). None count as adopted yet.
+5. **New PR target: x402eco/website** (x402.eco ecosystem directory) — has a `client-integrations` category specifically for "SDKs, libraries, client-side tools" where openai-agents-nano fits. Forked (PANDeveloper001/website), prepared JSON entry `data/ecosystem/client-integrations/openai-agents-nano.json`. Push blocked by pre-upstream file in fork (secret-scan false positive on unrelated file). Opened fork issue #1 requesting addition.
+6. **Drift re-check**: all 15 prepared PR branches confirmed clean (ahead 1-2, behind 0). No rebuilds needed.
 2. **New targets evaluated**:
    - a2alist.ai (101 x402 + A2A listings) — openai-agents-nano NOT listed. Submission requires $0.99 USDC (MetaMask/Coinbase Wallet) via x402 protocol, no keyless path. Cannot submit with Nano-only treasury. DOCUMENTED pending.
    - OrcaQubits/awesome-agentic-commerce (9★, agentic commerce protocols) — CONTRIBUTING says protocol-index only, not products/SDKs. SKIP.
@@ -20,7 +22,7 @@
 5. **New Nano ecosystem growth documented**: x402nano.org facilitator launched, robgilmore26/nanoroute published. Good signs for the Nano x402 ecosystem — our SDK works with any compliant facilitator.
 
 ### Funnel
-15 clean PR branches · 24 listing submissions · 23 outreach issues · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0 · release wheel downloads 12 (+2 since last check), sdist 5 (unchanged)
+15 clean PR branches · 24 listing submissions · 25 outreach logged · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · 1 x402eco/website fork issue requesting listing · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0 · release wheel downloads 12 (+2 since last check), sdist 5 (unchanged)
 
 ### Release download baseline (2026-09-16)
 - openai_agents_nano-0.1.0-py3-none-any.whl: 12 downloads (was 10)
@@ -32,6 +34,7 @@
 - x402nano.org facilitator launched (live 402 facilitator for Nano)
 - robgilmore26/nanoroute published (x402 payment facilitator for Nano on NPM)
 - a2alist.ai reached 101 listings (65 x402, 36 A2A) — openai-agents-nano not listed (USDC-fee submission)
+- **x402eco/website** (x402.eco ecosystem directory) reached — has a `client-integrations` category with 20 entries including x402-fetch, langchain-x402, subnano, agentkit. openai-agents-nano belongs there as the OpenAI Agents SDK payer. Fork issue opened (PANDeveloper001/website#1) requesting addition.
 - Both new facilitators cross-referenced in docs; Nano x402 ecosystem growing organically
 
 ### Bottlenecks unchanged
