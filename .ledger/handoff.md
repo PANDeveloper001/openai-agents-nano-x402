@@ -31,4 +31,10 @@ Every URL is checked signed out; the HTTP status is the one measured at generati
 
 15 clean branches, 0 whose compare page did not answer 200 at generation time.
 
+## Not-button-ready yet (req2 pending)
+
+| Target | Branch | Issue | Status |
+|---|---|---|---|
+| `x402eco/website` | `add-openai-agents-nano` (prepared, not pushed) | #1 on PANDeveloper001/website | Fork issue requesting addition; local branch has JSON entry, push blocked by secret-scan false positive |
+
 Each row still needs the drift re-check immediately before the click (`scripts/prepared_pr_drift_all.py`); `x402-foundation/x402` moves several commits a day.
