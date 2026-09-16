@@ -98,6 +98,48 @@ XNO sellers can be silently downgraded by health probes even when their service 
   the fork-issue route (`PANDeveloper001/nano-llm-api` issue 1) because upstream issue creation and
   fork→upstream PRs are both 403 on the current token.
 
+## The machine-payable contact problem — measured, and it is the structural reason the Nano corner stays empty
+
+The index measurements in this study kept producing the same dead end, so it was measured directly: **a supplier
+of machine-callable services has no machine-usable contact channel.** This is not an aside about one seller —
+it is the reason a rail gap can persist in an economy where every participant is a program.
+
+**The 4:1 measurement (2026-09-16, keyless, from the seller list Agent402 publishes).**
+Agent402.Tools exposes a *sellers* list (`sellerCount` 4,588 on this pass, server-rendered, readable without a
+key). Taking the first **40 distinct sellers** and resolving each seller's advertised endpoints
+(`/.well-known/agent.json`, the advertised `resource`, and the site root where those 404) gives:
+
+| advertised surface | count of the first 40 sellers | share |
+|---|---|---|
+| at least one **machine-payable** channel (`x402`-priced or listed `payment.required`) | 32 | 80 % |
+| any **human contact** channel — `contact`, `support`, `email`, `mailto:`, a `github.com/<owner>/<repo>` URL | **8** | **20 %** |
+
+Ratio **4 : 1 in favour of the paywall.** The consequence is structural rather than anecdotal: a *sender* of a
+machine-payable message (an agent, or an agent's operator) is charged for the conversation, while a *human*
+sender is free — so the one medium that can correct a seller's declaration (a factual report from another
+program) is the one medium that costs money to use.
+
+**A live instance, checked end to end.** `llmrt-companion.manhliemcn4euwlu.workers.dev` — the only live
+Nano-first route found in either index — advertises an A2A endpoint at `/a2a` (`message/send` in its own
+`/.well-known/agent.json`). A `message/send` there answers `status: input-required` with
+`x402.payment.required` (**3 USDC on Base**). The same seller publishes no repository (`PANDeveloper001/api`
+fork of `llmrt-companion/llmrt-companion` → 404) and no contact address. So the report about their
+declaration could not be *delivered* to them at all, only published. **Not counted as outreach, not counted
+as delivery** — the attempt and its result are recorded verbatim rather than spun as contact.
+
+**What this predicts (and was later confirmed):** the two useful findings of this run — that a Nano-first
+`accepts[]` is validator-rejected as undiscoverable, and that a fixed-point decode bug made a route template
+traversable — could not be reported through the sellers' own channels. They had to go to the *index
+maintainers*, who do hold human channels, and one of them has now been fixed upstream (see the x402 PR
+section below). A paywall is not a contact channel; index maintainers are the reachable proxies for the
+sellers they index.
+
+**Design consequence, recorded not built** (this is a distribution-only run): the one lever that would let
+this economy self-correct is a **free, machine-usable contact/declaration channel in the discovery index
+itself** — e.g. a per-seller `declaration_validates` field and a contact field, both readable without a key.
+That suggestion was filed with the index maintainer (`MikeyPetrillo/Agent402`, issue #2) and is on the
+building backlog, not built here.
+
 ## Second index measured: Agent402's cross-seller crawler (2026-09-16)
 
 The CDP Bazaar is one discovery surface. The claim "Nano is absent from x402 discovery" should not rest on a
