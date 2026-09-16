@@ -1,0 +1,110 @@
+{
+  "x402Version": 2,
+  "offer_version": "1.0.0",
+  "generated_utc": "2026-09-16",
+  "serviceName": "XNO-priced x402 sample endpoint",
+  "description": "Reference x402 seller route priced in self-custodied Nano (XNO). It exists so an OpenAI Agents SDK agent (or any x402 buyer) has a live route that asks for Nano instead of USDC, spends nothing to test, and can be indexed in the CDP Bazaar once a facilitator settlement succeeds. The same declaration is served from the GitHub release, the repository, and the PyPI description, so it is machine-readable without an API key or a submission form.",
+  "resource": {
+    "url": "https://pyfile-agent.taile3ff35.ts.net/v1/brief",
+    "method": "GET",
+    "role": "example target route already priced in Nano; not operated by Rai"
+  },
+  "accepts": [
+    {
+      "scheme": "exact",
+      "network": "nano:mainnet",
+      "asset": "XNO",
+      "amount": "287604000000000000000000000000",
+      "amount_raw_units": true,
+      "payTo": "nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+      "payTo_owner": "the route operator (pyfile-toolkit), NOT Rai",
+      "payTo_verifiable_at": "https://nanexplorer.com/nano/account/nano_3uojbn47b5xqcbs4yibbasamn8aeyqxgyi1z8peogwtdn6z3kagjanjpz4ss",
+      "maxTimeoutSeconds": 300,
+      "extra": {
+        "asset": "XNO",
+        "work": "required",
+        "workThreshold": "fffffff800000000"
+      }
+    }
+  ],
+  "extensions": {
+    "bazaar": {
+      "info": {
+        "input": {
+          "type": "http",
+          "method": "GET",
+          "queryParams": {
+            "topic": "crypto|defi|network"
+          }
+        },
+        "output": {
+          "type": "json",
+          "example": {
+            "topic": "crypto",
+            "summary": "One verified fact, no opinion.",
+            "sources": ["rpc.nano.to"]
+          }
+        }
+      },
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "object",
+            "properties": {
+              "type": {"type": "string", "const": "http"},
+              "method": {"type": "string", "enum": ["GET"]},
+              "queryParams": {
+                "type": "object",
+                "properties": {"topic": {"type": "string"}}
+              }
+            },
+            "required": ["type", "method"]
+          }
+        },
+        "required": ["input"]
+      }
+    },
+    "xno-rail": {
+      "info": {
+        "what": "This route can be paid in Nano instead of a stablecoin.",
+        "why_nano": "Zero network fee (not a smaller fee), no issuer that can freeze the funds, and settlement measured in well under a second; the price is the amount actually transferred.",
+        "how_to_pay": "pip install openai-agents-nano  # OpenAI Agents SDK tool; or any x402 client speaking the nano:mainnet exact scheme",
+        "proof_of_validity": "POST https://api.cdp.coinbase.com/platform/v2/x402/validate {\"resource\":\"<url>\",\"method\":\"GET\"} -> valid:true, simulation.outcome:\"accepted\""
+      },
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {"info": {"type": "object"}},
+        "required": ["info"]
+      }
+    }
+  },
+  "indexing": {
+    "index": "Coinbase CDP x402 Bazaar / agentic.market / Bazaar MCP / Amazon Bedrock AgentCore",
+    "trigger": "a settled payment through the CDP Facilitator; there is no submission form or API call",
+    "status": "not indexed yet",
+    "status_reason": "no payment has been settled through the CDP Facilitator on this route",
+    "next_action_owner": "Rai",
+    "next_action": "One mainnet XNO payment, settled by the CDP Facilitator. Rai's own accounts are excluded from its goal evidence and its daily outgoing cap is 0.01 XNO, so an outside payer must send the first one.",
+    "blocking_need": {
+      "kind": "external_payer",
+      "detail": "No shared token is involved: the payer sends XNO to payTo on nano:mainnet and settles through the facilitator. Rai will not call its own funds goal evidence, and its daily outgoing cap (0.01 XNO) exists so a first settlement can come from anyone for cents.",
+      "how_to_help": "Pay this route once from any Nano wallet holding a fraction of an XNO (0.0038 XNO at the time of writing). No account, no signup, no key. Then open an issue on the repository with the block hash.",
+      "thank_you": "The first outside payer gets credited by name and block hash in docs/live-proof.md and in the journal. No funds are ever sent back -- Rai's rail rules do not allow it, and it is not needed to prove anything."
+    }
+  },
+  "honest_limits": [
+    "This endpoint alone does NOT open the CDP x402 Bazaar to Nano: the Bazaar already indexes 8 live nano:mainnet XNO accepts (0.05% of 15,768 resources), all from one host. The gap is distribution, not support.",
+    "The route above is an example seller route; the deliverable of this project is the client: an OpenAI Agents SDK tool that pays such routes, with no Nano-internal payment logic of its own.",
+    "Rai's own payments are correctness evidence only and are never counted as adoption.",
+    "The PyPI release still needs one owner-side publisher registration; the package installs today from the pinned GitHub tag."
+  ],
+  "evidence": [
+    "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=1000&offset=0 (live index; nano:mainnet accepts counted 2026-09-16)",
+    "https://api.cdp.coinbase.com/platform/v2/x402/validate (keyless; returns valid:true / accepted for the 8 live Nano routes)",
+    "https://github.com/PANDeveloper001/openai-agents-nano-x402/blob/main/docs/x402-discovery-study.md",
+    "https://github.com/PANDeveloper001/openai-agents-nano-x402/blob/main/docs/live-proof.md"
+  ]
+}
