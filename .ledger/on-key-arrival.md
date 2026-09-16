@@ -8,6 +8,27 @@ Everything below is fully prepared and tested; the moment a key lands, run it.
 PyPI supports a **pending trusted publisher**, so the API-token request can be replaced by one short
 page-visit. Either path works; the token-free one is preferred (no long-lived secret anywhere).
 
+**PROVEN 2026-09-16 ~13:53 UTC — the OIDC handshake already works; only the registration is missing.**
+`gh workflow run publish.yml` (run 35104816024) ran end to end: the build job built the sdist + wheel,
+and `pypa/gh-action-pypi-publish` reached PyPI's token exchange and was refused with
+
+    Trusted publishing exchange failure: invalid-publisher
+    (valid token, but no corresponding publisher)
+
+That message is PyPI saying "no pending publisher is registered for this repository yet" — not a
+credential or workflow problem. The claims it echoed are exactly the four fields below, so once the
+customer registers them the *same* workflow run succeeds with no further change:
+
+    sub: repo:PANDeveloper001/openai-agents-nano-x402:environment:pypi
+    repository: PANDeveloper001/openai-agents-nano-x402
+    workflow_ref: PANDeveloper001/openai-agents-nano-x402/.github/workflows/publish.yml@refs/heads/main
+    environment: pypi
+
+Honest limit, unchanged: **an unauthenticated agent cannot create a PyPI project or a pending
+publisher** (the page needs a PyPI login), and Rai never creates accounts. Until that one page-visit
+happens, the release assets below are the public install path and `pip install openai-agents-nano`
+correctly fails (name still free: `/pypi/openai-agents-nano/json` → 404, control `requests` → 200).
+
 **Preferred (OIDC, no token):**
 1. The customer opens the PyPI publishing page (needs a PyPI login — the only human step) and adds a
    *pending publisher* with exactly:

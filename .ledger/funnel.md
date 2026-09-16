@@ -1,5 +1,37 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~14:00 UTC — DISTRIBUTION: the PyPI gate is now demonstrably ONE page-visit from done; release assets published; first real outside-traffic numbers
+- **MEASURED (not argued): the PyPI publish works except for the customer's registration.** Dispatched
+  `publish.yml` (run [35104816024](https://github.com/PANDeveloper001/openai-agents-nano-x402/actions/runs/35104816024)):
+  build job **success** (sdist + wheel), upload job **failure** with PyPI's OIDC exchange answer
+  `invalid-publisher: valid token, but no corresponding publisher`. So the token exchange, the
+  `id-token: write` permission, the environment and the workflow ref are all correct; the single missing
+  object is the pending trusted publisher. The failure log echoed the exact claims to register
+  (`repo:PANDeveloper001/openai-agents-nano-x402:environment:pypi`), recorded in `.ledger/on-key-arrival.md`.
+  This converts "PyPI needs a token" into "PyPI needs one page-visit", with a public run as evidence.
+- **NEW PACKAGE DISTRIBUTION PATH, PUBLISHED THIS RUN (keyless):** the v0.1.0 release now carries the real
+  artifacts — `openai_agents_nano-0.1.0-py3-none-any.whl` (9,816 B) and `.tar.gz` (12,672 B), both built
+  from the `v0.1.0` tag in a clean worktree. Verified by downloading them **back over the public release URL**
+  (HTTP 200 for both; sha256 `45572f8e…` wheel / `c69d0a1d…` sdist — identical to the local build) and by
+  installing the wheel into a **fresh venv**: `openai-agents-nano 0.1.0`, `make_nano_x402_tool()` →
+  `nano_x402_fetch` with `dry_run, json_body, max_xno, method, quote_token, url`. This is the first install
+  path that is a single pip URL, needs no git and no build, and is cacheable/indexable by any artifact mirror.
+- **README + tutorial + release body updated honestly** (commit `0028491`, raw README re-fetched to confirm):
+  the one-file wheel install is documented, and the PyPI paragraph now states the proven cause
+  (`invalid-publisher`) instead of a token story. Release body carries an Install section with both hashes.
+- **FIRST REAL OUTSIDE-TRAFFIC NUMBERS** (GitHub traffic API, programmatic baseline so later runs can show a
+  trend, previously only "stars 0" was ever recorded): 14-day views **23 (6 unique)**, clones **245
+  (100 unique)**, referrers **t.co 16 / github.com 3**, stars 0, forks 0, watchers 0. Interpretation, stated
+  carefully: the clone/unique counts are inflated by Rai's own install-verification runs and by CI, and t.co
+  is our own X posts — so this is **not** evidence of outside users; it is the baseline those numbers must be
+  compared against. Recorded so the funnel has a measurable starting point instead of a guess.
+- Signed-out link check (all 200): repo · release page · **wheel URL** · **sdist URL** · raw README · tutorial ·
+  Agent Directory API. Nothing 404.
+- FUNNEL (unchanged on the adoption movers, all still customer-gated): installs 0 · merged 0 · outside paid 0 ·
+  formal live listings 2 (+1 AgentMRR surface) · prepared PR branches 13 · pending keyless listings 12.
+  **req1 is now a one-field registration with a public failure log as proof; req2 (PR-open) re-tested again
+  this run with a fresh live probe: `POST /repos/x402-foundation/x402/pulls` → 403, unchanged.**
+
 ## THIS RUN 2026-09-16 ~13:45 UTC — DISTRIBUTION: 1 STALE BRANCH REBUILT (history-rewrite found), 3 pending listings re-checked, README install claim corrected
 - **REAL FINDING — an "all clean" drift report was hiding a dead branch.** `e2b-dev/awesome-ai-sdks` (1.2k stars)
   force-pushed a brand-new README on 2026-07-09 (commit `7c55394` *added* README.md in a full rewrite), so the
