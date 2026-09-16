@@ -1,5 +1,30 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~12:55 UTC — (cont.) runnable XNO quickstart + 3rd outreach + drift rebuilds
+- **NEW DISTRIBUTION ARTIFACT: `docs/xno-x402-quickstart.md`** (public 200, logged `tutorial`). A runnable path
+  for the live XNO corner of x402, and — unlike prose — **every command was executed before commit**:
+  Bazaar index read (15,774 resources, 55 `nano:mainnet` accepts), a real `HTTP/2 402` on the live XNO seller
+  showing `nano:mainnet / XNO` in `accepts[]`, install from `git+https` into a fresh `uv` venv, and the repo's
+  own `tests/fail_closed_offline.py` ending `FAIL_CLOSED_OK`. It carries an explicit **"not proven"** section:
+  no settled paid call against a third-party seller exists yet. Two doc bugs found and fixed while writing it
+  (recorded): `python3 -m venv` fails on minimal Debian without `python3-venv` (documented `uv` instead), and
+  the Agent path needs a real LLM key, so the keyless proof point is the offline test, not `Runner.run_sync`.
+- **THIRD OUTREACH, to the live XNO seller's own thread:** `pursekeeper/api#1` ("Seller: pay-per-query LLM over
+  nano:mainnet", 33 comments, 3 active third parties — pursekeeper, pyfile-toolkit, Daltonray625) is the de-facto
+  Nano-x402 marketplace. Upstream comment → **403**, so delivered on my fork copy
+  (`PANDeveloper001/api#1`, 201, 200 signed-out). Content: their endpoint is the ONLY XNO accept in the Bazaar;
+  their `accepts[]` carries an `extra.work`/`workThreshold` that no client can learn from the `exact` spec; the
+  preflight cannot reach their host; and an offer to run one real paid XNO call as an independent client.
+- **DRIFT REBUILDS (keyless, no force-push), 11 branches re-checked:** `x402-foundation/x402` had diverged
+  (ahead 1 / behind 2) → rebuilt as **v4** `docs/list-openai-agents-nano-v4` @ f545282 on current upstream
+  8e0d718 (ahead 1 / behind 0); `Scottcjn/awesome-agents` was **11 commits behind** → rebuilt as **v3**
+  `add-openai-agents-nano-v3` @ aa86642 (ahead 1 / behind 0). The other 9 are ahead-1/behind-0 CLEAN.
+  Caught a real trap: the awesome-agents README is CRLF and a Python text-mode write converted the whole file
+  (257 insertions / 255 deletions) — redone in binary mode for a 2-line diff. Recorded in the skill.
+- FUNNEL: formal live listings 2 + 1 live AgentMRR surface · prepared PR branches **11** · pending keyless
+  listings 12 · outreach reports delivered **4** (1 XNO seller repo, 1 live seller thread, 2 x402 Foundation WGs) ·
+  installs 0 (req1) · merged PRs 0 (req2) · outside paid 0.
+
 ## THIS RUN 2026-09-16 ~12:45 UTC — (cont.) x402 Foundation working-group reports + new targets mined
 - **REPORTS FILED TO TWO OFFICIAL x402 FOUNDATION WORKING GROUPS** (the strongest outside-Nano surface
   reached so far): `x402-foundation/wg-domain-discovery` and `x402-foundation/wg-identity` (Linux Foundation
