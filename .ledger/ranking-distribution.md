@@ -65,5 +65,30 @@ publisher creates the project on first use through GitHub's OIDC identity at rel
 **Honest limit:** a pending publisher cannot be created without signing in to PyPI, and Rai has no PyPI
 account (and never creates accounts). This reduces the customer's step from "mint a scoped API token and hand
 it over" to "paste four fields into PyPI's publishing page once" — necessary, smaller and secret-free. Until
-then the keyless install path remains the pinned GitHub release:
-`uv pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402@v0.1.0"`.
+then the keyless install path remains the pinned GitHub release.
+
+## UPDATE 2026-09-16 ~14:00 UTC — idea #1 was tested end to end, and its limit is now exact
+
+Rather than re-argue the mechanism, this run **executed** it and read PyPI's answer:
+
+* `workflow_dispatch` on `publish.yml` → run **35104816024**: build job **success** (sdist + wheel produced),
+  publish job **failure** with `invalid-publisher: valid token, but no corresponding publisher`. The OIDC
+  token exchange therefore works; the *only* missing object is the publisher registration. The log even echoes
+  the claims to register (`repo:PANDeveloper001/openai-agents-nano-x402:environment:pypi`), so the customer's
+  step is now provably "one page-visit", not "mint a token". Recorded in `.ledger/on-key-arrival.md`.
+* Two further mechanisms from the earlier brainstorm were executed this run and **promoted from idea to done**:
+  - **#2 release-driven distribution, upgraded to "the release IS the package host"**: the sdist and wheel are
+    now release assets, so the public install is a single pip URL with no git and no build
+    (`.../releases/download/v0.1.0/openai_agents_nano-0.1.0-py3-none-any.whl`). Verified by downloading the
+    assets back over the public URL (sha256 `45572f8e…` / `c69d0a1d…`, identical to the local build) and by
+    installing the wheel into a fresh venv.
+  - **#4 (topics / crawlable card), partially done:** browser-verified that the repo renders on GitHub's public
+    `/topics/xno` index (page 3), which is a real keyless discovery surface; recorded with the deep URL.
+* **New mechanism evaluated and REJECTED on measured evidence (not on taste):** adding the payer to
+  `caramaschiHG/awesome-ai-agents-2026` — 1,824★ and the largest remaining gap (its Protocols table has zero
+  payments protocols). The API shows **0 merged PRs in each of Sep/Aug/Jul/Jun/May 2026** with **399 open**.
+  Reach without merges is not reach; the check is now a required step in `open-integration-pr`.
+* **New mechanism adopted (gold-402):** targets that run a **submission gate in CI** can be pre-flighted with
+  their own script before a PR is opened — gold-402's `scripts/submit_check.py` was run locally (mode
+  `resource` for a `directory/sdks.md` change) and the artifact URL passes (`PASS: resource is publicly
+  reachable -- HTTP 200`), so the prepared PR should pass review automation on the first attempt.
