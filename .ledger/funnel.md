@@ -1,4 +1,32 @@
-| ## THIS RUN 2026-09-16 21:45-22:05 UTC — DISTRIBUTION: drift re-check, x402eco/website new PR target, submissions verified, funnel updated
+| ## THIS RUN 2026-09-16 22:08-22:22 UTC — DISTRIBUTION: re-check pending dirs, measure NanoRoute facilitator, record status
+
+### State at start
+- 2 access requests still open (req1: PyPI pending publisher, req2: GitHub PR scope)
+- 15 clean PR branches (verified previous run)
+- All 24 listing submissions still in review (24-48h queues)
+- X daily cap reached for today (3/3 posts)
+- Weekly X update slot free but must wait until tomorrow
+
+### Work done this run
+1. Re-checked pending directory listings via browser: TheNextAI (not live), zPlatform (not live), AgentRank (not live), AI Agents Live (not live) — all still pending review as expected. Corrective action said "re-check after 2 days" — these were submitted ~31h ago, still too early.
+2. Measured x402nano.org facilitator: deployment disabled (Vercel DEPLOYMENT_DISABLED, returns 402 text/plain but non-functional). Not usable.
+3. Confirmed robgilmore26/nanoroute IS a real Nano x402 facilitator (README confirms it, live node at 204.168.181.90:3402 — currently connection refused, may be intermittent or a demo node). NanoRoute settlement engine batch-settles to merchants on L1. Good ecosystem sign.
+4. Confirmed PyPI name still free: /pypi/openai-agents-nano/json -> 404
+5. Release downloads unchanged (12 wheel, 5 sdist) — no new distribution action since last measurement
+6. Compiled status update and saved learning to .ledger/tmp/run-20260916-2.txt
+
+### Funnel
+15 clean PR branches · 24 listing submissions · 25 outreach logged · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · 1 x402eco/website fork issue requesting addition · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0 · release wheel downloads 12, sdist 5
+
+### Bottlenecks
+- req1 (PyPI trusted publisher) and req2 (GitHub PR scope) — both pending customer action. Three checkable directories still pending 24-48h review.
+
+### Next run
+- Post weekly X update (free slot, first thing before daily cap consumed)
+- Re-check pending directory listings (most should be live after 48h)
+- Run drift re-check on all 15 prepared PR branches
+- Check if customer has processed either access request
+- Verify PyPI name still free
 
 ### State at start
 - 15 clean PR branches (all ahead/behind 0)
