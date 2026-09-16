@@ -97,8 +97,76 @@ XNO sellers can be silently downgraded by health probes even when their service 
   the fork-issue route (`PANDeveloper001/nano-llm-api` issue 1) because upstream issue creation and
   fork→upstream PRs are both 403 on the current token.
 
+## Second index measured: Agent402's cross-seller crawler (2026-09-16)
+
+The CDP Bazaar is one discovery surface. The claim "Nano is absent from x402 discovery" should not rest on a
+single index, so the same question was asked of a **different, independent** crawler: Agent402.Tools, which
+publishes a cross-seller index at `GET https://agent402.tools/api/index`. It is a useful control because it
+crawls **four** facilitators (Coinbase CDP Bazaar, GoPlausible, PayAI, and one more) rather than one, so it
+aggregates sellers the Bazaar alone never sees.
+
+Measured, keyless, paginated over every page:
+
+| Quantity | Value |
+| --- | --- |
+| Sellers crawled (`sellerCount`) | **4,550** |
+| Sellers actually scanned (all 46 pages) | **4,451** |
+| Indexed tools | 118,387 (109,583 paid) |
+| Sellers carrying **any** `nano:mainnet` rail | **2** |
+| Share | **0.045 %** |
+
+The two, with their Nano `payTo` as the index publishes it:
+
+1. `https://pyfile-agent.taile3ff35.ts.net` — `pyfile-llm-base`, 60 tools, health 1, routable.
+   Nano is **one of five** networks (`eip155:8453`, `eip155:137`, `eip155:42161`, `nano:mainnet`,
+   `eip155:196`); its `accepts[0]` is USDC-on-Base.
+2. `https://llmrt-companion.manhliemcn4euwlu.workers.dev` — "llmrt - LLM Red-Team Scanner (x402-nano)",
+   2 tools, health 1, routable. Its `accepts[0]` is **`nano:mainnet` / XNO itself** — a genuine Nano-first
+   route, and a seller the Bazaar-only scan never surfaced.
+
+### Why this matters more than the Bazaar number
+
+The first seller was already known; the **second was not**, and it changes one sentence in this study. The
+earlier finding was "all indexed Nano accepts come from one host, as a secondary rail". The corrected finding
+is:
+
+> Nano appears on **two** independent hosts across **4,451** indexed sellers, and on one of them it is the
+> *first* accept — so a Nano-first x402 route is not merely tolerated by the ecosystem, it is live and
+> routable today. The gap is not protocol support. It is payer supply and discovery: 0.045 % of sellers carry
+> Nano, and the buyer side that can pay those routes is what is missing.
+
+Both sellers are `routable: true` in this index, and `POST /api/index/register` is keyless (it resolves the
+origin and re-crawls — verified live: a resolvable origin answers `{"listed": true, ...}` with its networks,
+a dead one answers `{"listed": false, ... "Could not resolve host"}`). So a Nano-priced resource *can* be
+registered into a cross-seller router that other agents already query; what the router still cannot do is pay
+one, because nothing in it speaks the `nano:mainnet` exact scheme as a buyer.
+
+That is the client side of this project. The distribution consequence is concrete: the index is a place where
+a Nano payer is a *missing component of a live system*, not an opinion about a coin.
+
+### Reproduce
+
+```bash
+# count Nano sellers across every page of the independent index
+python3 - <<'PY'
+import json, urllib.request
+nano, total = [], 0
+for p in range(1, 47):
+    with urllib.request.urlopen(
+        f"https://agent402.tools/api/index?perPage=100&page={p}", timeout=45) as r:
+        d = json.load(r)
+    for s in d.get("sellers", []):
+        total += 1
+        if any("nano" in n.lower() for n in (s.get("networks") or [])):
+            nano.append(s["origin"])
+print(total, len(nano), nano)
+PY
+```
+
 ## Raw data
 
 - `/root/work/openai-agents-nano-x402/.ledger/tmp/bazaar_scan2.json` — full scan: counts, networks,
   every Nano accept entry (resource, asset, scheme, amount, payTo).
 - validator responses are reproducible with the curl in the table above.
+- `/tmp/agent402_nano_scan.json` — this section's scan: all 4,451 sellers checked, the 2 Nano ones with
+  their networks, tool counts, health, routable flag and Nano `payTo`.
