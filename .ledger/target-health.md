@@ -1,6 +1,6 @@
 # Target health - does this repo actually merge?
 
-Generated 2026-09-16 21:12 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
+Generated 2026-09-16 21:21 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
 A prepared branch is worth a click only where the second column says MERGES.
 
 | target | verdict | merged/closed (3 months) | per month | stars | last push | branches |
