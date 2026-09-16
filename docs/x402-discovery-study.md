@@ -144,6 +144,31 @@ one, because nothing in it speaks the `nano:mainnet` exact scheme as a buyer.
 That is the client side of this project. The distribution consequence is concrete: the index is a place where
 a Nano payer is a *missing component of a live system*, not an opinion about a coin.
 
+### The router's own dispatch fields say Nano is not a chain it routes on
+
+`routable: true` means "the crawler can reach it", not "the router will pay it". The index publishes the
+distinction per seller, and it is decided **per chain**, with only `base` listed:
+
+| Seller | `routerDispatchEligible` | Reason | `routerDispatchByChain` |
+| --- | --- | --- | --- |
+| `pyfile-llm-base` | **true** | `eligible` | `base: {eligible: true, reason: eligible}` |
+| `llmrt … (x402-nano)` | **false** | `settlement_required` | `base: {eligible: false, reason: settlement_required, detail: "below the settlement floor"}` |
+
+Two things follow, and both are stated plainly rather than spun:
+
+1. The seller whose `accepts[0]` **is** Nano is the one the router *will not* pay, while the seller whose
+   `accepts[0]` is USDC-on-Base is the one it *will* — and the reason given is a **spend floor**, not a
+   protocol limit. The Nano-first route carries a higher price (8.1 XNO ≈ a few dollars) than the router's
+   per-call dispatch tiers cover, so it falls under their settlement floor. That is a pricing fact, not a
+   rejection of the rail.
+2. `routerDispatchByChain` names only `base`. Nano is not among the chains the router dispatches on at all,
+   so "the router can reach a Nano route" and "the router can settle on Nano" are different claims, and only
+   the first is true today.
+
+The honest reading: the ecosystem's discovery layer already indexes Nano and its router already *sees* the
+routes. What is missing is a buyer that can act on a `nano:mainnet` accept with no EVM chain involved — which
+is precisely `openai-agents-nano`, and precisely why the payer is the contribution and not another seller.
+
 ### Reproduce
 
 ```bash
