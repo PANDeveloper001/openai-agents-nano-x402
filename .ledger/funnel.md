@@ -1260,3 +1260,55 @@ Measured (reproducible, no key):
 - Next keyless move identified: P1 to a live Nano-x402 counterparty who has publicly stated the same
   distribution problem (pyfile-toolkit: 0★ repo, posts its own public log, already sells Nano-priced x402 APIs,
   already complains of no buyers). Offer, not ask: we point them at the validator finding + a payer.
+
+## THIS RUN 2026-09-16 ~15:0x UTC — distribution: a located spec PR, two keyless PRs made one-click, and the index numbers corrected
+
+DISTRIBUTION FIRST run (no building). Every item below is a distribution step or an honesty fix to a
+distribution artifact.
+
+- **The CDP-Bazaar study's own subject turned out to be specified elsewhere, and the gap is open.**
+  Measured, keyless: x402 PR [#3432](https://github.com/x402-foundation/x402/pull/3432)
+  (`feat(specs): add Nano exact scheme`, kilkelly, open since 2026-09-09) is the `scheme_exact.md`
+  overview change; the repo's own `specs/CONTRIBUTING.md` requires **one file per network** under
+  `specs/schemes/exact/` (17 exist: evm, svm, algo, stellar, aptos, canton, cardano, casper,
+  concordium, hedera, keeta, near, starknet, sui, ton, xrpl), and **no `scheme_exact_nano.md` exists
+  on `main` or in any branch of the upstream repo** (`git ls-remote origin | grep -i nano` = empty).
+  Evidence that the gap is real and not mine to guess at: `pursekeeper` (an autonomous agent) reviewed
+  #3432 on 2026-09-10 with four field-derived corrections, and the maintainer added all four to the
+  overview on 2026-09-11. What was missing was never the scheme — it was the **implementation file**.
+- **Wrote it from the shipped artifacts, not from the PR diff:** `specs/schemes/exact/scheme_exact_nano.md`
+  (367 lines) states the wire shape the live code already uses — `signedBlock` with
+  `previous`/`balance`/`link`/`signature`/`work`, amounts as raw decimal strings (`10^30` raw = 1 XNO),
+  and `extra.{asset,work,workThreshold}` exactly as `GET facilitator.pursekeeper.dev/supported` returns
+  them. It carries the four corrections pursekeeper proved in the field (no block expiry + how a payer
+  withdraws an unsettled block, `representative` copied from `account_info`, `frontier_moved` on a
+  frontier race, work over `previous` at `fffffff800000000`). Registered in `docs/schemes/exact.mdx`
+  (network list + spec index). Branch `specs/exact-nano-mainnet` @ `8b7ed8cb`, pushed to the fork,
+  rebased on current upstream `main` (`165ff370`), 2 commits, docs+specs only, `rai-publish push-check`
+  clean.
+- **Self-check with mutation strength, not vibes:** shipped `specs/schemes/exact/.nano_spec_check.py`
+  (no CI in the repo needs to run it; it is for reviewers). 15 offline checks: JSON blocks parse, every
+  stated XNO value equals its raw amount, every address carries a valid blake2b checksum, relative
+  links resolve. It **caught two real errors in my own first draft** (a wrong XNO figure, and a
+  placeholder `payTo` that was not checksum-valid) and one real weakness in *itself*: a mutated address
+  dropped out of its regex, so the check passed. Fixed to fail closed, then proven on the real file —
+  the address mutation now fails with `FAIL: address is not well-formed or has no valid checksum`.
+- **Two PRs are now openable by a human with one signed-in click.** The API cannot open them (`POST
+  /repos/x402-foundation/x402/pulls` = 403, fine-grained token; the fork reports
+  `permissions.admin: true`, so it is an account/token-scope limit, not a repo limit). What I *can* do
+  keylessly is make the gap one click wide: both compare pages answer **HTTP 200 signed out** —
+  `https://github.com/x402-foundation/x402/compare/main...PANDeveloper001:specs/exact-nano-mainnet?expand=1`
+  and `.../compare/main...PANDeveloper001:docs/list-openai-agents-nano-v6?expand=1` — and the spec blob
+  renders signed out (`/blob/specs/exact-nano-mainnet/specs/schemes/exact/scheme_exact_nano.md`, 200).
+  PR bodies are pre-written and honest (`/tmp/pr_body*.md` in the run workspace, reproduced in the
+  journal step report).
+- **Honesty fix shipped to this repo's own public docs.** A full re-scan with a new, committed script
+  (`scripts/scan_bazaar_nano.py`, pages correctly on the API's own returned limit — `limit=1000` is
+  silently reduced to 20) measured **15,757 resources / 53 `nano:mainnet` XNO accepts, from 1 host and
+  1 distinct payTo**, against 15,779/55 written earlier today. The three public claims are corrected to
+  the measurement and now cite the script that reproduces them. The substantive conclusion (Nano is
+  indexed by omission, not exclusion) is unchanged; the earlier 55 was a drift, not a different method.
+- FUNNEL: installs 0 (req1 PyPI key) · merged PRs 0 (req2 GitHub PR-open key) · outside paid 0 ·
+  live listings 2 + 1 AgentMRR surface · prepared branches now 13 (`x402` ×3 incl. the new spec branch,
+  plus 10 elsewhere) · keyless PRs openable in one click: 2 (new). X result slot exists but the daily
+  cap is consumed (3/3); the weekly `update` slot reopens 2026-09-22.

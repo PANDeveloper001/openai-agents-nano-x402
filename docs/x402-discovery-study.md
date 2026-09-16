@@ -24,15 +24,16 @@ reason about it, then test the published validator against Nano endpoints.
 ## What I measured (keyless, reproducible)
 
 Index reader: `GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=1000&offset=N`
-(paginate; `pagination.total` = 15779). Full scan script output saved in the ledger tmp dir.
+(paginate; `pagination.total` = 15757 on 2026-09-16). Reproduce any time with
+`python3 scripts/scan_bazaar_nano.py`.
 
 | measurement | value |
 |---|---|
-| resources in the public Bazaar index | 15,779 |
+| resources in the public Bazaar index | 15,757 |
 | `accepts[]` entries total | 44,240 |
-| accepts with `network: "nano:mainnet"`, `asset: "XNO"` | **55 (0.124% of accepts)** |
+| accepts with `network: "nano:mainnet"`, `asset: "XNO"` | **53 (one host, one payTo)** |
 | distinct hosts offering Nano | **1** (`pyfile-agent.taile3ff35.ts.net`) |
-| resources that accept XNO at all | 55 of 15,779 (**0.35%**) |
+| resources that accept XNO at all | 53 of 15,757 (**0.34%**) |
 | top networks by accepts | Base 17,412 · Solana 5,512 · Polygon 3,231 · Arbitrum 3,034 · XRPL 2,523 |
 | top asset | USDC on Base (`0x8335…2913`), 17,428 |
 

@@ -101,7 +101,8 @@ result = Runner.run_sync(agent, "Fetch https://api.example.com/report")
   (custody rail, fee model, framework fit).
 - `docs/live-proof.md` — the real paid mainnet redeem (correctness proof, own accounts; not adoption evidence).
 - `docs/x402-discovery-study.md` — measured study of x402 seller discovery (the CDP Bazaar): the Bazaar
-  index already carries 55 `nano:mainnet`/XNO accepts across 15,779 resources, so an XNO-priced resource
+  index already carries 53 `nano:mainnet`/XNO accepts across 15,757 resources (all from one seller), so an
+  XNO-priced resource
   is discoverable today, and the discovery validator cannot reach at least one live Nano host.
 - `docs/xno-x402-quickstart.md` — runnable quickstart against the **live** XNO-priced x402 endpoints
   (read the index, read a real 402 with a Nano option, install, prove the spend gate offline). Every
