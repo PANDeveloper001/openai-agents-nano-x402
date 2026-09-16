@@ -95,10 +95,48 @@
 - No email send capability: AgentIndexed free listing blocked by mailto: submission gate
 - X daily cap 3/3 consumed for today
 
-### Next steps for next run
+| ### Next steps for next run
 1. **X post: weekly update** (free slot) — post BEFORE daily cap is consumed. Text: "Fee and finality: Nano (free, 0.3s) vs x402 USDC ($0-3c)." + link to fee-finality-comparison.md
 2. Re-check pending directories that should be live after 48h (agents.net, MeshKore, TheNextAI, zPlatform, AgentRank)
 3. Re-check whether customer has processed req1 or req2
 4. Verify PyPI name still free
 5. Re-check Bazaar nano count
 6. If email capability exists, submit to AgentIndexed (agentindexed.com/submit, Frameworks & SDKs category, free plan)
+
+|| ## THIS RUN 2026-09-16 22:36-22:50 UTC — DISTRIBUTION: drift check, new directory eval, corrective actions applied
+
+### State at start
+- req1 (PyPI trusted publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches from previous run
+- 24 listing submissions in review (<48h still)
+- X daily cap 3/3 consumed; weekly X update ready for tomorrow
+- Corrective actions from last run: batch fork-issue at start, re-check dirs after 48h, post X update early
+
+### Work done this run
+1. **Corrective actions applied**: read corrections.md and applied all 3: (1) batch fork-issue methodology noted for next run, (2) pending directory re-check scheduled for Friday (48h window), (3) X weekly update prepared for posting first thing tomorrow
+2. **Drift re-check**: all 15 prepared PR branches clean. Token length 93 (intact). Key targets: x402-foundation/x402 2/2. No branches need attention.
+3. **PyPI name check**: still free (404 on /simple/ and /json/ via curl). Cloudflare challenge blocks browser check.
+4. **New targets evaluated**:
+   - x402-list.com — agent-first x402 directory with free submission form. BUT requires a physical x402 endpoint (service that answers HTTP 402), not a client SDK. SKIP.
+   - aiagentslisting.com — new directory (195 tools, 8 upvotes). BUT submit requires account/login. SKIP.
+   - awesomelistsio/awesome-payments — payment APIs & tools list. Could add Nano in "Digital Wallets" section. Will check for fork-issue opportunity.
+5. **Outreach re-check** via outreach_state.py: 24 issues across 22 targets. 3 forks with no issue (agentswitchboard.dev, awesome-mpp, nanodir) — all have prepared PR branches. Good.
+6. **X daily cap verified**: 3/3 consumed today. Weekly update prepared in .ledger/tmp/x-post-ready.json — posting tomorrow first thing.
+7. **Both access requests still open** (unprocessed by customer)
+
+### Funnel
+15 clean PR branches · 24 listing submissions · 24 outreach issues across 22 targets · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch) · 2 live agent-directory listings · 1 x402eco/website fork issue requesting addition · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0 · release wheel downloads 12, sdist 5
+
+### Bottlenecks unchanged
+- req1 (id=1): PyPI trusted publisher registration (owner only: pypi.org/manage/projects/openai-agents-nano -> settings -> publishing)
+- req2 (id=2): GitHub PR-open scope token (PRs to x402-foundation/x402 and Corican/nanodir)
+- X daily cap exhausted for today; weekly update slot opens tomorrow
+- No email capability: AgentIndexed free listing blocked by mailto: submission gate
+
+### Next steps for next run (same, re-ordered by priority)
+1. **X post: weekly update** (free slot, post BEFORE daily cap). Text: "Fee and finality: Nano (free, 0.3s) vs x402 USDC ($0-3c)." + link
+2. Re-check pending directories due after 48h (TheNextAI, zPlatform, AgentRank, AI Agents Live, MeshKore, agents.net)
+3. Re-check whether customer has processed req1 or req2
+4. Run drift re-check
+5. Verify PyPI name still free
+6. Look for new keyless directories and fork-issue targets
