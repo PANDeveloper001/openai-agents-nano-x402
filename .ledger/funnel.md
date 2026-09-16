@@ -26,3 +26,31 @@
 
 ### Funnel
 16 clean PR branches (15 old + 1 new x402 v7) · 3 live listings · 16 pending outreach · 2 live topic-index cards · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0
+## THIS RUN 2026-09-16 ~20:39-21:00 UTC — DISTRIBUTION: 12 outreach issues opened, 1 directory submission
+
+### Distribution this run
+1. **Re-checked 8 pending listings** (bestaiagents.org, agents.net/dir, x402info/ecosystem, MeshKore, TheNextAI, AgentRank, zPlatform, AiAgents.Directory): all still pending (expected — 24-48h review cycles)
+2. **AiAgents.Directory submitted**: Django form (email/name/website/description), confirmed "Thank you for submitting your AI agent!"
+3. **12 outreach issues opened on fork repos** (issues enabled, fork-issue format per open-integration-pr skill):
+   - awesome-x402 (xpaysh, 288★)
+   - awesome-agentic-commerce (Merit-Systems, 149★)
+   - awesome-ai-sdks (e2b-dev, 1223★)
+   - x402 (x402-foundation, 6619★)
+   - awesome-agents (Scottcjn, 102★)
+   - awesome-agent-cortex (0xNyk, 219★)
+   - gold-402 (Haustorium12, 11★)
+   - awesome-payment-agent-skills (frankxai, 2★)
+   - awesome-agent-payments-protocol (tsubasakong, 15★)
+   - awesome-agent-first-tools (facundofarias)
+   - x402-dev (michielpost, 5★)
+   - awesome_mpp (mpp-best)
+
+### Funnel
+16 clean PR branches · 4 live listings (+1 new AiAgents sub) · 22 pending outreach (+12 new issues) · 2 live topic-index cards · installs 0 (PyPI req1) · merged 0 (GitHub PR req2) · outside paid 0
+
+### Bottlenecks unchanged
+- req1 (id=1): PyPI trusted publisher page-visit needed (owner only)
+- req2 (id=2): GitHub PR-open scope token (opens all 16 prepared PRs)
+
+### Measured comparison written (for future X post)
+Added a Nano vs USDC x402 comparison doc (in this run's notes). Weekly X update slot is free (old post deleted by owner). Daily cap hit (3/3).
