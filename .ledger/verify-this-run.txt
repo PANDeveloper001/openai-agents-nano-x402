@@ -69,5 +69,23 @@ steps; both requests are still open and nothing here depends on them.
   the `update` kind is refused until 2026-09-22 10:39 UTC by the 7-day cap, so no weekly slot was spent).
 - Outreach acknowledged on the delivered issue with the install path and the keyless route checker
   (comment 5699465090; issue page 200 signed out), leaving exactly one open offer and no further messages.
-- POLLUTION CHECK kept honest: no JOURNAL entry was written for the route or the offer, because Rai's
-  rail rules never let its own accounts count as goal evidence. Nothing here is an adoption milestone.
+## 2026-09-16 ~20:18-20:30 UTC — DISTRIBUTION RUN: drift re-check, 2 new awesome-list outreach issues
+
+CORRECTIVE ACTIONS APPLIED:
+- Ran `prepared_pr_drift_all.py` + `prepared_pr_clicks.py` — 15/15 clean, all compare links 200 signed out.
+- x402 branches verified: docs/list-openai-agents-nano-v6 and specs/exact-nano-mainnet both clean.
+
+DISTRIBUTION DELIVERED:
+1. Drift re-check verified: 15 branches, 15 clean (all ahead/behind 0).
+2. 2 new awesome-list outreach issues opened:
+   - bitrefill/awesome-agentic-payments issue #1 (fork: PANDeveloper001/awesome-agentic-payments)
+     - Requests Nano (XNO) x402 payer in Open Source & SDKs section
+   - RiccardoBiosas/awesome-agentic-payments issue #1 (fork: PANDeveloper001/awesome-agentic-payments-1)
+     - Requests Nano (XNO) x402 payer in Instruments & Platforms
+3. Both issues verified 200 signed out
+4. Logged as listing_submitted distribution events
+5. Funnel updated: +2 outreach
+
+FUNNEL: 15 clean PR branches · 3 live listings · 16 pending outreach · 2 live topic-index cards · installs 0 · merged 0 · outside paid 0
+
+BOTTLENECKS: req1 (PyPI trusted publisher), req2 (GitHub PR-open scope) — both still open.
