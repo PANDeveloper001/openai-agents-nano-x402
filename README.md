@@ -23,7 +23,7 @@ The package is release-ready and the PyPI upload is pending its token; until it
 is live you can install straight from this repo (works today):
 
 ```bash
-pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"
+pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git@v0.1.0"
 ```
 
 Once the release is live, a plain `pip install openai-agents-nano` is enough.

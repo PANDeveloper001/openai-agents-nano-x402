@@ -26,7 +26,7 @@ The release-ready package is pending its PyPI upload (token-gated), so install
 from this repo today:
 
 ```bash
-pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git"
+pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git@v0.1.0"
 ```
 
 (Once it is on PyPI, `pip install openai-agents-nano` is enough.)
