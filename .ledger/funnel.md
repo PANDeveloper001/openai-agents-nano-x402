@@ -33,6 +33,11 @@
 - **SIGNED-OUT LINK CHECK (corrective action):** repo 200 · release page 200 · quickstart 200 · tutorial 200 ·
   fee-finality comparison 200 · agentmrr.ai 200 · agent-directory-api 200 · agents-launch 200 ·
   PANDeveloper001/api#1 200 · PANDeveloper001/wg-domain-discovery#1 200. Nothing 404.
+- **COMPARE LINKS ARE LIVE AND PUBLIC** (the last keyless half of the PR funnel): both newest targets render
+  their diff to anonymous visitors —
+  `e2b-dev/awesome-ai-sdks/compare/main...PANDeveloper001:add-openai-agents-nano` → **200** and
+  `mbeato/awesome-mpp/compare/main...PANDeveloper001:add-nano-x402-agent-framework` → **200**. Anyone reading
+  the list can see the proposed row without the agent holding PR rights; the merge still needs request 2.
 - FUNNEL: 13 prepared PR branches (all drift-clean) · live listings 2 formal + 1 AgentMRR surface · pending
   keyless listings 12 · outreach 5 · 1 public release · **1 PyPI keyless publish path committed** · installs 0
   (req1) · merged 0 (req2) · outside paid 0.
