@@ -1,5 +1,22 @@
 # openai-agents-nano-x402 — distribution funnel
 
+## THIS RUN 2026-09-16 ~14:10 UTC (cont.) — pending listings re-checked in a real browser; one target REJECTED on measured merge rate
+- **Pending listings re-checked render-aware (browser, signed out), no resubmits, nothing counted as adopted:**
+  `x402info.com/ecosystem` (3,543 rendered chars, 0 mentions, 0 card links), `agents.net/directory` (15,680 chars,
+  0/0) and `bestaiagents.org` (12,763 chars, 0/0) still do not name the project. `curl` also shows no match, so
+  both the raw HTML and the rendered DOM agree this time.
+- **Live surfaces re-verified still live:** Agent Directory API lists **1 row** for `openai-agents-nano`
+  (id `d8cd7de3-…`, tagline "Pay x402 APIs in feeless Nano (XNO) from an OpenAI Agents SDK agent"); the
+  agentlaunch page still names the project (both 200 signed out). AgentMRR home still renders the card.
+- **NEW FINDING — the best-looking remaining gap is a PR black hole, and the API says so:** `caramaschiHG/awesome-ai-agents-2026`
+  (1,824★, 6.4k★-class reach, a `Protocols and Standards` table with **zero payments protocols** — no x402, no Nano,
+  arguably the largest untouched surface left) has **399 open PRs and 0 merges in Sep/Aug/Jul/Jun/May 2026**
+  (measured per-month from the closed-PR list; April merged 31/49, then it stopped). Preparing a 15th branch there
+  buys a permanently stuck PR, not adoption. **Not prepared, not submitted** — recorded as evaluated-not-fit with
+  the numbers, and the check is now a step in the `open-integration-pr` skill so no future run burns a branch on it.
+- FUNNEL unchanged on the movers: 14 prepared PR branches · formal live listings 2 (+1 AgentMRR surface) ·
+  pending keyless listings 12 (3 re-checked this run, 0 live) · installs 0 · merged 0 · outside paid 0.
+
 ## THIS RUN 2026-09-16 ~14:05 UTC (cont.) — NEW TARGET (14th): the hand-curated gold-402 x402 directory
 - **Found a genuinely new outside-Nano surface by mining a fresh source** (the ecosyste.ms awesome-list index,
   not re-reading the same lists): **`Haustorium12/gold-402`** — "the gold standard for x402 resources",
