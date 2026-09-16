@@ -1,6 +1,6 @@
 # Target health - does this repo actually merge?
 
-Generated 2026-09-16 17:10 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
+Generated 2026-09-16 21:12 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
 A prepared branch is worth a click only where the second column says MERGES.
 
 | target | verdict | merged/closed (3 months) | per month | stars | last push | branches |
@@ -12,10 +12,10 @@ A prepared branch is worth a click only where the second column says MERGES.
 | `Scottcjn/awesome-agents` | MERGES - worth a click | 22/28 | 2026-09 12/15, 2026-08 6/7, 2026-07 4/6 | 102 | 2026-09-16 | 1 |
 | `xpaysh/awesome-x402` | MERGES - worth a click | 232/300 | 2026-09 1/24, 2026-08 3/23, 2026-07 228/253 | 288 | 2026-07-28 | 1 |
 | `frankxai/awesome-payment-agent-skills` | MERGES - worth a click | 10/13 | 2026-09 7/10, 2026-08 1/1, 2026-06 2/2 | 2 | 2026-09-15 | 1 |
-| `assafbar2/agentswitchboard.dev` | MERGES - worth a click | 9/13 | 2026-09 3/5, 2026-08 4/6, 2026-07 2/2 | 0 | 2026-09-13 | 1 |
-| `x402-foundation/x402` | MERGES - worth a click | 197/300 | 2026-09 70/102, 2026-08 112/167, 2026-07 15/31 | 6618 | 2026-09-16 | 2 |
+| `x402-foundation/x402` | MERGES - worth a click | 197/300 | 2026-09 70/102, 2026-08 112/167, 2026-07 15/31 | 6619 | 2026-09-16 | 2 |
+| `assafbar2/agentswitchboard.dev` | SOMETIMES - keep if the fit is exact | 12/27 | 2026-09 6/19, 2026-08 4/6, 2026-07 2/2 | 0 | 2026-09-16 | 1 |
 | `tsubasakong/awesome-agent-payments-protocol` | SOMETIMES - keep if the fit is exact | 1/6 | 2026-09 0/2, 2026-08 1/2, 2026-07 0/2 | 15 | 2026-09-15 | 1 |
-| `e2b-dev/awesome-ai-sdks` | DEAD - no push in 68 days and merges stopped | 1/26 | 2026-09 0/4, 2026-08 0/13, 2026-07 1/9 | 1223 | 2026-07-09 | 1 |
+| `e2b-dev/awesome-ai-sdks` | DEAD - no push in 69 days and merges stopped | 1/26 | 2026-09 0/4, 2026-08 0/13, 2026-07 1/9 | 1223 | 2026-07-09 | 1 |
 | `Merit-Systems/awesome-agentic-commerce` | BLACK HOLE - merges have stopped; a branch here stays open | 1/27 | 2026-09 0/3, 2026-08 0/12, 2026-07 1/12 | 149 | 2026-07-29 | 1 |
 | `mbeato/awesome-mpp` | DEAD - no push in 137 days and merges stopped | 0/6 | 2026-08 0/2, 2026-07 0/2, 2026-06 0/2 | 21 | 2026-05-02 | 1 |
 | `mpp-best/awesome_mpp` | UNMEASURED - API calls failed; do NOT read this as 'no merges' | 0/0 |  | 0 | 2026-09-01 | 1 |
