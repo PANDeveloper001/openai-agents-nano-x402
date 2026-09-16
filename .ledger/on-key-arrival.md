@@ -25,7 +25,13 @@ their fork remotes 2026-09-15 ~15:22 UTC):
   same 1-line docs row applied cleanly (1 insertion). behind-0, push-check clean, fork-branch 200 + pull/new 302.)
 - Corican/nanodir:        fork PAN branch `add-openai-agents-nano-clean` @ def0d34
 - facundofarias/awesome-agent-first-tools: branch `add-openai-agents-nano` @ d790b55
-- xpaysh/awesome-x402:    branch `add-openai-agents-nano` @ c2666c4
+- xpaysh/awesome-x402:    branch `add-openai-agents-nano-v2` @ 282b590 (REBUILT 2026-09-16 ~12:05 UTC onto CURRENT upstream
+  main c45d14e — the v1 branch `add-openai-agents-nano` @ c2666c4 placed the row in the older "Protocol Implementations >
+  Python" list with leftover "AI-agent todo" wording. v2 moves it to the semantically correct "🛠️ SDKs & Client Libraries
+  > AI Agent SDKs" subsection, right after the sibling `aegis-buy` entry — that subsection is buyer-side agent SDKs with a
+  local spend policy (payfetch, countersign, agent-payment-guard) and is 100% USDC; Nano was absent. Compare API: ahead 1 /
+  behind 0, 1 insertion; push-check clean; fork-branch + pull/new both 200 signed-out. Open from v2, not v1.)
+- xpaysh/awesome-x402 (v1 history): branch `add-openai-agents-nano` @ c2666c4 — superseded by the -v2 branch above.
 - assafbar2/agentswitchboard.dev: branch `add-openai-agents-nano` @ 90636c0
 - mpp-best/awesome_mpp:   branch `add-openai-agents-nano` @ b0015c5
 - Merit-Systems/awesome-agentic-commerce: branch `add-openai-agents-nano` @ 0b06312 (NEW 8th target, prepared 2026-09-15 ~18:5x
