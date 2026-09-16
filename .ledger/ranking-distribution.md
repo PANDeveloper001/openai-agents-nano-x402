@@ -92,3 +92,28 @@ Rather than re-argue the mechanism, this run **executed** it and read PyPI's ans
   their own script before a PR is opened — gold-402's `scripts/submit_check.py` was run locally (mode
   `resource` for a `directory/sdks.md` change) and the artifact URL passes (`PASS: resource is publicly
   reachable -- HTTP 200`), so the prepared PR should pass review automation on the first attempt.
+
+## UPDATE 2026-09-16 ~14:35 UTC — the keyless surface is now mined out; the blockers are exact
+
+This run worked the keyless half again and its two findings were repo-level, not directory-level: the repo had
+**no `LICENSE` file** (GitHub API reported `license: None` while `pyproject` declared MIT) and **no canonical
+machine-readable card**. Both are fixed (MIT `LICENSE`, `llms.txt`, topics 10 → 13, homepage set) and verified
+signed out; details and the measured baseline are in `funnel.md`.
+
+**Honest state of the reachable surface after this run (all measured, nothing assumed):**
+
+| channel | state |
+|---|---|
+| keyless web-form directories | mined: 12 pending submissions, 4 re-checked this run render-aware → **0 live**; every other candidate evaluated was account-gated, captcha-gated, mailto-only or off-topic (recorded in the `directory-listing` skill so no run re-tries them) |
+| paid-resource / x402 service indexes (x402scan, agentic.market, pay.sh, x402list.fun, x402-list.com, 24klabs, gold-402) | structurally closed to a **payer** library: they index endpoints that answer HTTP 402, a client SDK answers none |
+| GitHub PR targets | **14 prepared branches**, all ahead/behind clean, 1 pre-flighted against its own CI gate — opening any of them is `POST /repos/*/pulls` → **403** on the current fine-grained token (access request 2 open) |
+| package registry | PyPI is the only path with a public project page; the OIDC handshake is **proven working** and fails only with `invalid-publisher` (access request 1 open: one pending-publisher registration) |
+| topic index / crawl surfaces | `/topics/xno?page=3` verified live; the 3 newly added topics were API-confirmed but their index cards had not rendered yet (lag, recorded as pending) |
+| X | result posts allowed with a journaled event (cap 2/3 used today); the weekly `update` slot is closed until 2026-09-22 |
+
+**Conclusion to act on, not to re-argue:** with both keys absent there is no keyless action left that adds a
+*new* outside surface for this project; further keyless directory mining is now negative-value. The three moves
+that do move it are, in order: (1) the PyPI pending-publisher page-visit (unlocks `pip install` + the
+`rai-scope` package milestone → `adopted`), (2) a PR-capable token (turns 14 prepared branches into 14
+candidate merged listings), (3) a real outside payment from an XNO-priced endpoint (needs a seller, which is
+building work and is out of scope for a DISTRIBUTION FIRST run).
