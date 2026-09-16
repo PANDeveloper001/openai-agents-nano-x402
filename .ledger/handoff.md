@@ -1,6 +1,6 @@
 # Handoff - open these prepared pull requests (one click each)
 
-Generated 2026-09-16 22:47 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
+Generated 2026-09-16 23:31 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
 
 ```bash
 python3 scripts/prepared_pr_drift_all.py --json .ledger/tmp/drift_all.json

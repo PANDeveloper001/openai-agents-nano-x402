@@ -1,3 +1,44 @@
+|| ## THIS RUN 2026-09-17 ~00:00-00:30 UTC — DISTRIBUTION: aiagentcensus submission, bestaiagents re-submit, drift clean, new directory scan
+
+### State at start
+- req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches
+- 24 listing submissions in review (mostly <48h from previous runs)
+- X daily cap 3/3 consumed; weekly update capped through Sep 22
+
+### Work done this run
+1. **Corrective actions applied**: read corrections.md (3 rules). Applied the stack audit as future note.
+2. **Drift re-check**: all 15 branches clean (prepared_pr_drift_all.py confirms)
+3. **PyPI name check**: 404 — still free
+4. **Access request check**: none granted yet
+5. **NEW directory submission: AI Agent Census** (aiagentcensus.com) — free web form, "Submission Received" confirmation, under review
+6. **Resubmitted: bestaiagents.org** — re-confirmed the form works (posts to Google Sheets via Unicorn Platform), "The form has been successfully submitted" — already in our submission count but verified still functional
+7. **Pending directories re-checked**: TheNextAI (DNS dead), zPlatform (DNS dead), AgentRank (200), aiagents.directory (200), bestaiagents.org (200), agents.net (200), MeshKore (200), 4agent.dev (200) — none list openai-agents-nano yet, all still in review queues
+8. **Evaluated new directories**:
+   - aiagentcensus.com — submitted!
+   - theaiagentindex.com — Next.js SPA with form that doesn't render in automation, free tier available but needs manual submission
+   - agentbrisk.com — mailto: email only, needs email capability
+   - aigent.dev — 404 on /submit
+   - agentry.com — Nostr/Bitcoin-focused, not a Nano fit
+9. **Distribution logged**: 1 new listing submitted (aiagentcensus.com)
+10. **No weekly X update posted** — still capped through Sep 22
+
+### Funnel
+15 clean PR branches · 24+1 listing submissions (25 total) · 27 outreach issues · 1 live marketplace listing (AgentMRR) · 1 keyless directory listing (agents-launch, DNS dead) · 2 live agent-directory listings · 1 x402eco/website fork issue · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · Bazaar nano accepts 55
+
+### Bottlenecks
+- req1 (PyPI publisher) and req2 (GH PR scope) — still pending
+- X weekly update: next slot Sep 22
+- 25 listing submissions in review (no new live listings this run)
+- TheNextAI and zPlatform DNS have gone dead since submission
+
+### Next steps for next run
+1. Re-check pending directories that may have been published
+2. Try browser-based submission to aiagentslisting.com (requires account creation)
+3. Search for new keyless directories
+4. Re-check req1/req2 status
+5. Post X weekly update as soon as cap resets (Sep 22)
+
 ||| ## THIS RUN 2026-09-16 23:45-23:59 UTC — DISTRIBUTION: drift 15/15, X update capped, 4 new dirs evaluated, funnel recorded
 
 ### State at start
