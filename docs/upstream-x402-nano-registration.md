@@ -82,15 +82,19 @@ than pretend a decision has been made. The *identifier* and *spec* edits do not 
 
 ## What is already prepared and verified
 
-| artifact | where | state |
-|---|---|---|
-| missing per-network scheme spec + offline checker | fork branch `specs/exact-nano-mainnet` @ `cbef150a` | ahead 1 / behind 0 vs current `main`; compare page 200 signed out |
-| docs row: `openai-agents-nano` in `docs/dev-tools/third-party-sdks.md` | fork branch `docs/list-openai-agents-nano-v6` @ `3917a836` | ahead 1 / behind 0 vs current `main`; compare page 200 signed out |
-| two-validator measurement | this repo, `docs/x402-discovery-study.md` + `scripts/two_validator_probe.py` | published on `main` |
+*Table generated 2026-09-16 17:02 UTC from the fork-derived scan (`scripts/pr_drift_doc.py --doc docs/...`) - do not hand-edit.*
 
-Both x402 branches were re-checked against upstream `main` on 2026-09-16 with the compare API
-(`scripts/prepared_pr_drift.py`); `x402-foundation/x402` moves several commits a day, so **re-check
-immediately before opening**.
+| artifact | branch | head | state vs upstream `main` |
+|---|---|---|---|
+| docs row: `openai-agents-nano` in `docs/dev-tools/third-party-sdks.md` | `docs/list-openai-agents-nano-v6` | `3917a836` | ahead 1 / behind 0 vs current `main` — compare page 200 signed out |
+| missing per-network scheme spec + offline checker | `specs/exact-nano-mainnet` | `8b7ed8cb` | ahead 2 / behind 0 vs current `main` — compare page 200 signed out |
+| _(superseded name)_ | `docs/list-openai-agents-nano-clean` | `5554860b` | ahead 1 / behind 18 vs current `main` — do not open this one |
+| _(superseded name)_ | `docs/list-openai-agents-nano-rebased-v3` | `ca686937` | ahead 1 / behind 5 vs current `main` — do not open this one |
+| the two-validator measurement | this repo, `docs/x402-discovery-study.md` + `scripts/two_validator_probe.py` | — | published on `main` |
+
+Re-check every row against upstream `main` immediately before opening (`scripts/prepared_pr_drift_all.py`); `x402-foundation/x402` moves several commits a day.
+
+<!-- RA_DOCS_TABLE_END -->
 
 ## Deliberately not done
 

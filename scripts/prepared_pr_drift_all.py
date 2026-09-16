@@ -31,7 +31,13 @@ SKIP_REPOS = {"openai-agents-nano-x402", "nano-mcp", "nano-mcp-public", "rai-new
 # Only branches this agent prepared. A fork inherits every branch of its parent, and a plain name
 # pattern also catches upstream's own branches; unchecked, that reports "6 needing attention" for
 # branches nobody here ever prepared. Ask the API which branches the fork's OWNER authored.
+# `specs/exact-nano-` is in the list on purpose: it is a separate contribution from the docs row and
+# was the artifact a hand-written resume list silently dropped (corrective action 2026-09-16 16:34).
 MY_PATTERNS = (r"^add-[a-z0-9]", r"^docs/list-", r"^specs/exact-nano", r"^add-nano-x402")
+# Targets whose prepared set must never silently shrink again; a run that finds fewer is reported loudly.
+EXPECTED = {
+    "x402-foundation/x402": 2,  # docs/list-openai-agents-nano-* and specs/exact-nano-mainnet
+}
 
 
 def is_mine(repo: str, branch: str, tok: str) -> bool:
@@ -78,11 +84,22 @@ def fork_branches(tok: str) -> dict[str, list[str]]:
             if not r.get("fork"):
                 continue
             branches: list[str] = []
-            for page2 in range(1, 8):  # the fork's x402 has 300 branches: one page silently truncates
+            # The fork has 783 branches. The old bound was range(1, 8) = 700, so the LAST 83 were
+            # dropped silently - and specs/exact-nano-mainnet, one of the two artifacts that carry
+            # this repo's adoption argument, sat past the cutoff and never appeared in a single
+            # drift report (corrective action 2026-09-16 16:34). A full final page is now reported
+            # instead of trusted.
+            max_pages = 12
+            for page2 in range(1, max_pages + 1):
                 st2, d2 = api(f"/repos/{FORK_OWNER}/{name}/branches?per_page=100&page={page2}", tok)
                 if st2 != 200 or not isinstance(d2, list) or not d2:
                     break
                 branches += [b["name"] for b in d2 if isinstance(b, dict) and b.get("name")]
+                if len(d2) < 100:
+                    break  # short page = last page, regardless of the bound
+            else:
+                print(f"!! {name}: hit the {max_pages}-page ceiling with full pages ({len(branches)} "
+                      f"branches read); the list may be truncated - raise the bound before trusting it")
             if branches:
                 out[name] = branches
     return out
@@ -117,8 +134,11 @@ def upstream_of(fork_name: str, tok: str) -> str | None:
 def compare(upstream: str, branch: str, tok: str) -> dict:
     st, d = api(f"/repos/{upstream}/compare/HEAD...{FORK_OWNER}:{branch}", tok)
     if st == 200 and isinstance(d, dict):
+        # the head sha goes in the report so the runbook can name the exact commit without a second call
+        commits = d.get("commits") or []
+        head = (commits[-1] or {}).get("sha") if commits else None
         return {"status": d.get("status"), "ahead_by": d.get("ahead_by"), "behind_by": d.get("behind_by"),
-                "files": len(d.get("files") or [])}
+                "files": len(d.get("files") or []), "head": (head or "")[:8]}
     return {"status": f"API {st}"}
 
 
@@ -148,6 +168,19 @@ def main() -> int:
               f"ahead {r.get('ahead_by')} / behind {r.get('behind_by')} files {r.get('files')}")
     print(f"\n{len(rows)} prepared branches, {len(clean)} clean (ahead / behind 0), "
           f"{len(rows) - len(clean)} needing attention")
+
+    # A hand-written resume list is what let this list go stale (corrective 2026-09-16 16:34): it named
+    # an older x402 docs branch and dropped the spec branch entirely. Count key targets and shout.
+    have: dict[str, int] = {}
+    for r in rows:
+        have[r["upstream"]] = have.get(r["upstream"], 0) + 1
+    missing = {k: (v, have.get(k, 0)) for k, v in EXPECTED.items() if have.get(k, 0) < v}
+    if missing:
+        for k, (want, got) in sorted(missing.items()):
+            print(f"!! {k}: expected {want} prepared branches, found {got} - the prepared set SHRANK; "
+                  f"check the fork's branch names before opening anything")
+    else:
+        print(f"key targets complete: " + ", ".join(f"{k} {have[k]}/{v}" for k, v in sorted(EXPECTED.items())))
     if a.json:
         json.dump(rows, open(a.json, "w"), indent=1)
     return 0

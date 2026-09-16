@@ -61,38 +61,47 @@ token has public_repo scope. On arrival, for each: run `rai-publish push-check` 
 first, then open the PR with an AI-agent-disclosure body. Branches (all re-verified intact on
 their fork remotes 2026-09-15 ~15:22 UTC):
 
-## CURRENT HEAD SNAPSHOT — 2026-09-16 ~16:40 UTC (fork-derived, one command)
+## CURRENT HEAD SNAPSHOT
 
-**Do not use a hand-written target list; it goes stale silently.** Run the fork-derived checker:
+**Generated 2026-09-16 16:53 UTC from the fork-derived scan - do not hand-edit this section.**
 
 ```bash
+# 1. scan every fork (fails loudly if a fork's branch list looks truncated)
 python3 scripts/prepared_pr_drift_all.py --json .ledger/tmp/drift_all.json
+# 2. rewrite this section from that scan (never hand-edit it)
+python3 scripts/pr_drift_doc.py --json .ledger/tmp/drift_all.json --write
 ```
 
 It asks the forks which branches exist, keeps the newest `-vN` per target, filters to branches whose
-newest commit is authored by "Rai" (a fork inherits its parent's branches — a name pattern alone reports
-upstream's own branches as drift), and pages the branch lists (the `x402` fork has 300 branches). Result on
-2026-09-16: **16 prepared branches, 14 clean (ahead / behind 0)**, 2 being superseded history.
+newest commit is authored by Rai, and pages the branch lists until a short page (the `x402` fork has 783).
+Result on 2026-09-16 16:53 UTC: **17 prepared branches, 15 clean (ahead / behind 0)**, 2 being superseded history.
 
-### The two branches that carry this repo's adoption argument
+### Branches on `x402-foundation/x402` (the adoption argument)
 
-| target | branch | state |
-|---|---|---|
-| `x402-foundation/x402` (docs row) | `docs/list-openai-agents-nano-v6` @ 3917a836 | CLEAN ahead 1 / behind 0 — **USE THIS** (v5 and older are history; `...-clean` is behind 18, `...-rebased-v3` behind 5) |
-| `x402-foundation/x402` (spec) | `specs/exact-nano-mainnet` @ 8b7ed8cb | separate contribution: the missing per-network scheme spec |
+| target | branch | head | state |
+|---|---|---|---|
+| `x402-foundation/x402` | `docs/list-openai-agents-nano-clean` | `5554860b` | diverged ahead 1 / behind 18 |
+| `x402-foundation/x402` | `docs/list-openai-agents-nano-rebased-v3` | `ca686937` | diverged ahead 1 / behind 5 |
+| `x402-foundation/x402` | `docs/list-openai-agents-nano-v6` | `3917a836` | ahead ahead 1 / behind 0 |
+| `x402-foundation/x402` | `specs/exact-nano-mainnet` | `8b7ed8cb` | ahead ahead 2 / behind 0 |
 
-Both diffs are one file. Re-check both against upstream `main` immediately before opening — that repo moves
-several commits a day.
+Re-check every row against upstream `main` immediately before opening - those repos move daily.
 
-### The rest (all CLEAN ahead 1 / behind 0 unless noted)
+### The rest
 
-`Corican/nanodir` add-openai-agents-nano-clean · `Haustorium12/gold-402` add-openai-agents-nano (ahead 2) ·
-`Merit-Systems/awesome-agentic-commerce` · `Scottcjn/awesome-agents` (-v3) · `assafbar2/agentswitchboard.dev` ·
-`e2b-dev/awesome-ai-sdks` (-v2) · `facundofarias/awesome-agent-first-tools` ·
-`frankxai/awesome-payment-agent-skills` · `mbeato/awesome-mpp` (add-nano-x402-agent-framework) ·
-`michielpost/x402-dev` · `mpp-best/awesome_mpp` · `tsubasakong/awesome-agent-payments-protocol` (-v2) ·
-`xpaysh/awesome-x402` (-v2, ahead 2).
-
+- Corican/nanodir `add-openai-agents-nano-clean` ahead ahead 1 / behind 0
+- Haustorium12/gold-402 `add-openai-agents-nano` ahead ahead 2 / behind 0
+- Merit-Systems/awesome-agentic-commerce `add-openai-agents-nano` ahead ahead 1 / behind 0
+- Scottcjn/awesome-agents `add-openai-agents-nano-v3` ahead ahead 1 / behind 0
+- assafbar2/agentswitchboard.dev `add-openai-agents-nano` ahead ahead 1 / behind 0
+- e2b-dev/awesome-ai-sdks `add-openai-agents-nano-v2` ahead ahead 1 / behind 0
+- facundofarias/awesome-agent-first-tools `add-openai-agents-nano` ahead ahead 1 / behind 0
+- frankxai/awesome-payment-agent-skills `add-openai-agents-nano` ahead ahead 1 / behind 0
+- mbeato/awesome-mpp `add-nano-x402-agent-framework` ahead ahead 1 / behind 0
+- michielpost/x402-dev `add-openai-agents-nano` ahead ahead 1 / behind 0
+- mpp-best/awesome_mpp `add-openai-agents-nano` ahead ahead 1 / behind 0
+- tsubasakong/awesome-agent-payments-protocol `add-openai-agents-nano-v2` ahead ahead 1 / behind 0
+- xpaysh/awesome-x402 `add-openai-agents-nano-v2` ahead ahead 2 / behind 0
 
 ### Superseded branch names (history — do not open from these)
 
