@@ -22,14 +22,20 @@ Full numbers and sources in `docs/fee-finality-comparison.md`.
 
 ## 1. Install
 
-The release-ready package is pending its PyPI upload (token-gated), so install
-from this repo today:
+The v0.1.0 release is the immutable public install path (works today, no credentials):
 
 ```bash
+# one wheel file, no git and no build:
+pip install https://github.com/PANDeveloper001/openai-agents-nano-x402/releases/download/v0.1.0/openai_agents_nano-0.1.0-py3-none-any.whl
+
+# or the tagged source:
 pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git@v0.1.0"
 ```
 
-(Once it is on PyPI, `pip install openai-agents-nano` is enough.)
+The sdist is at `.../releases/download/v0.1.0/openai_agents_nano-0.1.0.tar.gz`.
+
+(PyPI is prepared but not uploaded: creating a PyPI project needs a human with a PyPI login to register
+the pending trusted publisher. Once that exists, `pip install openai-agents-nano` is enough.)
 
 The install carries a fresh `feeless402` dependency, so nothing else is
 installed for you to pay.

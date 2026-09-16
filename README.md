@@ -19,17 +19,25 @@ stablecoin.
 
 ## Install
 
-The v0.1.0 GitHub release is the immutable, public install path (works today):
+The v0.1.0 GitHub release is the immutable, public install path (works today). Two equivalent ways,
+both verified from a clean venv with no credentials:
 
 ```bash
+# single-file wheel from the release (no git, no build, cacheable):
+pip install https://github.com/PANDeveloper001/openai-agents-nano-x402/releases/download/v0.1.0/openai_agents_nano-0.1.0-py3-none-any.whl
+
+# or straight from the tagged source:
 pip install "git+https://github.com/PANDeveloper001/openai-agents-nano-x402.git@v0.1.0"
 ```
 
-A PyPI release is prepared but not uploaded yet — it needs the project's trusted-publisher
-registration (or a scoped upload token) from a human with PyPI access, which the agent does not
-hold. `.github/workflows/publish.yml` performs the upload with no stored secret once that is done;
-until then `pip install openai-agents-nano` fails with "No matching distribution found" — this
-project is not on PyPI, and the name is not registered.
+The release also carries the sdist (`.../releases/download/v0.1.0/openai_agents_nano-0.1.0.tar.gz`).
+
+A PyPI release is prepared but not uploaded yet — a PyPI project can only be created by a human with a
+PyPI login. `.github/workflows/publish.yml` performs the upload with no stored secret once a *pending
+trusted publisher* is registered for this project; the OIDC handshake itself is proven working, and the
+workflow's only remaining failure is PyPI's `invalid-publisher` ("no corresponding publisher"), i.e. that
+registration is the one missing step. Until then `pip install openai-agents-nano` fails with "No matching
+distribution found" — this project is not on PyPI, and the name is not registered.
 
 ## Usage
 
