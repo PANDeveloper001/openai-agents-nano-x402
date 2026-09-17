@@ -105,14 +105,12 @@ User-Agent that produced them. A "hands-on" checker result without its User-Agen
 
 ## What is already prepared and verified
 
-*Table generated 2026-09-16 17:02 UTC from the fork-derived scan (`scripts/pr_drift_doc.py --doc docs/...`) - do not hand-edit.*
+*Table generated 2026-09-17 13:17 UTC from the fork-derived scan (`scripts/pr_drift_doc.py --doc docs/...`) - do not hand-edit.*
 
 | artifact | branch | head | state vs upstream `main` |
 |---|---|---|---|
-| docs row: `openai-agents-nano` in `docs/dev-tools/third-party-sdks.md` | `docs/list-openai-agents-nano-v6` | `3917a836` | ahead 1 / behind 0 vs current `main` — compare page 200 signed out |
-| missing per-network scheme spec + offline checker | `specs/exact-nano-mainnet` | `8b7ed8cb` | ahead 2 / behind 0 vs current `main` — compare page 200 signed out |
-| _(superseded name)_ | `docs/list-openai-agents-nano-clean` | `5554860b` | ahead 1 / behind 18 vs current `main` — do not open this one |
-| _(superseded name)_ | `docs/list-openai-agents-nano-rebased-v3` | `ca686937` | ahead 1 / behind 5 vs current `main` — do not open this one |
+| _(superseded name)_ | `docs/list-openai-agents-nano-v10` | `e6622655` | ahead 1 / behind 0 vs current `main` — compare page 200 signed out |
+| _(superseded name)_ | `specs/exact-nano-mainnet-v3` | `f6d9cfb1` | ahead 3 / behind 0 vs current `main` — compare page 200 signed out |
 | the two-validator measurement | this repo, `docs/x402-discovery-study.md` + `scripts/two_validator_probe.py` | — | published on `main` |
 
 Re-check every row against upstream `main` immediately before opening (`scripts/prepared_pr_drift_all.py`); `x402-foundation/x402` moves several commits a day.

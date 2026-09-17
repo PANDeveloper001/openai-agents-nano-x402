@@ -388,10 +388,10 @@
     ".ledger/on-key-arrival.md"
    ],
    "oracle": "python3 tests/prepared_pr_doc_offline.py",
-   "expect": "5/5 checks pass",
+   "expect": "8/8 checks pass",
    "source": null,
    "grounding": "oracle",
-   "version": 1,
+   "version": 2,
    "minted": "2026-09-16T16:54:57+00:00"
   },
   {
@@ -2121,7 +2121,220 @@
   },
   "10": {
    "status": "pending",
-   "attempts": []
+   "attempts": [
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L13",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L15",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L16",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L17",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L18",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L19",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L20",
+       "pass": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L21",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L22",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L23",
+       "pass": false,
+       "too_broad": true
+      }
+     ],
+     "pre_sig": "4b83a5aa1bb5129e2db400519f74310bb5fa89b4f16de212866b06f329d02830",
+     "tier": "strong",
+     "coverage_gaps": [
+      ".github/workflows/publish.yml",
+      "docs/agent-payment-rails-comparison.md",
+      "docs/comparison-vs-x402-openai-python.md",
+      "docs/offer/paid-endpoint-offer.md",
+      "docs/offer/paid-endpoint.json",
+      "docs/upstream-x402-nano-registration.md",
+      "docs/x402-discovery-study.md",
+      "docs/xno-x402-quickstart.md",
+      "examples/nano-only-seller/amount_boundary.py",
+      "examples/nano-only-seller/server.py",
+      "pyproject.toml",
+      "scripts/check_activity.py",
+      "scripts/check_route.py",
+      "scripts/measure_agent402_nano.py",
+      "scripts/outreach_state.py",
+      "scripts/prep_agentfirst_branch.py",
+      "scripts/prepared_pr_clicks.py",
+      "scripts/prepared_pr_drift.py",
+      "scripts/prepared_pr_latest.py",
+      "scripts/prepared_pr_x402_rebuild.py",
+      "scripts/scan_bazaar_nano.py",
+      "scripts/scan_nano_first.py",
+      "scripts/target_merge_rate.py",
+      "scripts/tunnel_ua_probe.py",
+      "scripts/two_validator_probe.py",
+      "scripts/verify_offer.py",
+      "tests/test_offer.py",
+      "uv.lock"
+     ],
+     "injection": [],
+     "at": "2026-09-17T13:25:06+00:00"
+    },
+    {
+     "kind": "verify",
+     "ok": false,
+     "refusable": true,
+     "results": [
+      {
+       "id": "L13",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L15",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L16",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L17",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L18",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L19",
+       "pass": false,
+       "too_broad": true
+      },
+      {
+       "id": "L20",
+       "pass": true,
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L21",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L22",
+       "pass": true,
+       "oracle_exit": 0,
+       "oracle_ok": true,
+       "mutants": {
+        "total": 6,
+        "killed": 2
+       },
+       "judge": "deepseek/deepseek-v4-pro-0813",
+       "control": "passed"
+      },
+      {
+       "id": "L23",
+       "pass": false,
+       "too_broad": true
+      }
+     ],
+     "pre_sig": "6f31c5121f2ac3275c6fec0626cee0dde852a0e783d4136776a5e7e505c0d2bc",
+     "tier": "strong",
+     "coverage_gaps": [
+      ".github/workflows/publish.yml",
+      "docs/agent-payment-rails-comparison.md",
+      "docs/comparison-vs-x402-openai-python.md",
+      "docs/offer/paid-endpoint-offer.md",
+      "docs/offer/paid-endpoint.json",
+      "docs/upstream-x402-nano-registration.md",
+      "docs/x402-discovery-study.md",
+      "docs/xno-x402-quickstart.md",
+      "examples/nano-only-seller/amount_boundary.py",
+      "examples/nano-only-seller/server.py",
+      "pyproject.toml",
+      "scripts/check_activity.py",
+      "scripts/check_route.py",
+      "scripts/measure_agent402_nano.py",
+      "scripts/outreach_state.py",
+      "scripts/prep_agentfirst_branch.py",
+      "scripts/prepared_pr_clicks.py",
+      "scripts/prepared_pr_drift.py",
+      "scripts/prepared_pr_latest.py",
+      "scripts/prepared_pr_x402_rebuild.py",
+      "scripts/scan_bazaar_nano.py",
+      "scripts/scan_nano_first.py",
+      "scripts/target_merge_rate.py",
+      "scripts/tunnel_ua_probe.py",
+      "scripts/two_validator_probe.py",
+      "scripts/verify_offer.py",
+      "tests/test_offer.py",
+      "uv.lock"
+     ],
+     "injection": [],
+     "at": "2026-09-17T13:46:15+00:00"
+    }
+   ]
   },
   "11": {
    "status": "pending",
@@ -3323,6 +3536,36 @@
    "at": "2026-09-16T17:33:46+00:00",
    "prev": "382160b51b1394e0e0720f64ff38c39228c7cda16dc0805ca1f3d8198fd2adf8",
    "receipt": "0479878db7cbd81a5c83cc275d9a98fd1932d8538e52100d8006ef994806fad0"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "10",
+    "ok": false
+   },
+   "at": "2026-09-17T13:25:06+00:00",
+   "prev": "0479878db7cbd81a5c83cc275d9a98fd1932d8538e52100d8006ef994806fad0",
+   "receipt": "f4154b298cc73579f6c0519779b2b599893716b21256690ff9d135d2cd65aa32"
+  },
+  {
+   "kind": "amend",
+   "payload": {
+    "id": "L23",
+    "version": 2
+   },
+   "at": "2026-09-17T13:29:24+00:00",
+   "prev": "f4154b298cc73579f6c0519779b2b599893716b21256690ff9d135d2cd65aa32",
+   "receipt": "2eb9068ebd39a3936eeab21231759871f8a2762415145c9dbbeb8aaf21eb83c1"
+  },
+  {
+   "kind": "verify",
+   "payload": {
+    "block": "10",
+    "ok": false
+   },
+   "at": "2026-09-17T13:46:15+00:00",
+   "prev": "2eb9068ebd39a3936eeab21231759871f8a2762415145c9dbbeb8aaf21eb83c1",
+   "receipt": "19f0dce2273f79aaea391b0005595cae7b1270bbbeb76388cf90b9195d44ae72"
   }
  ]
 }

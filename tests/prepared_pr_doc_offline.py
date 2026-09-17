@@ -29,7 +29,11 @@ def run(args: list[str]) -> str:
 
 def main() -> int:
     if not REAL.exists():
-        raise SystemExit("no scan report; run scripts/prepared_pr_drift_all.py first")
+        # Generate the scan inline so this test works even in a sandbox
+        subprocess.run([sys.executable, str(ROOT / "scripts" / "prepared_pr_drift_all.py"),
+                        "--json", str(REAL)], capture_output=True, text=True, cwd=ROOT)
+        if not REAL.exists():
+            raise SystemExit("no scan report and could not generate one")
     real = json.loads(REAL.read_text())
     checks: list[tuple[str, bool, str]] = []
 
@@ -44,7 +48,7 @@ def main() -> int:
     # 3. MUTATION: remove the spec branch -> the hole must be named, not silently dropped
     mut = ROOT / ".ledger" / "tmp" / "mut_spec.json"
     mut.write_text(json.dumps([r for r in real if "exact-nano" not in r["branch"]]))
-    out_mut = run(["--json", str(mut.relative_to(ROOT))])
+    out_mut = run(["--json", str(mut)])
     checks.append(("dropping the spec branch is reported",
                    "MISSING" in out_mut and "specs/exact-nano-mainnet" in out_mut,
                    "a dropped artifact vanished silently - the original bug"))
@@ -53,7 +57,7 @@ def main() -> int:
     mut2 = ROOT / ".ledger" / "tmp" / "mut_status.json"
     bad = [dict(r, status="diverged", behind_by=3) for r in real]
     mut2.write_text(json.dumps(bad))
-    out_bad = run(["--json", str(mut2.relative_to(ROOT))])
+    out_bad = run(["--json", str(mut2)])
     checks.append(("clean count is computed, not written",
                    "0 clean" in out_bad.splitlines()[0] or "clean (ahead / behind 0)**" in out_bad
                    and "15 clean" not in out_bad,
@@ -69,7 +73,7 @@ def main() -> int:
 
     # 6. the docs page's artifact table is generated from the same scan, and names the CURRENT head
     out_docs = run(["--doc", "docs/upstream-x402-nano-registration.md"])
-    head_spec = next((r["head"] for r in real if r["branch"] == "specs/exact-nano-mainnet"), None)
+    head_spec = next((r["head"] for r in real if "exact-nano" in r.get("branch","")), None)
     checks.append(("docs table carries the scan's head for the spec branch",
                    head_spec is not None and f"`{head_spec}`" in out_docs,
                    "the upstream-facing table is still hand-typed"))

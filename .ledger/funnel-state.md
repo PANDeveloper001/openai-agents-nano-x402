@@ -1,4 +1,4 @@
-# Funnel state - Sep 17 12:48 UTC (verified this run)
+# Funnel state - Sep 17 12:56 UTC (updated this run)
 
 ## Live surfaces
 - agentlaunch: https://agents-launch.lovable.app/agents/openai-agents-nano (200)
@@ -11,7 +11,8 @@
 - x402info ecosystem: https://x402info.com/ecosystem (200 — 14 curated projects, ours not yet featured)
 
 ## Prepared PR branches: 17/17 clean
-All ahead 1-3 / behind 0. Verified via prepared_pr_drift_all.py. x402 docs-v10 ahead 1, specs-v3 ahead 3. No drift since last check.
+All ahead 1-3 / behind 0. Verified via prepared_pr_drift_all.py. x402 docs-v10 ahead 1, specs-v3 ahead 3. No drift.
+**Maintenance fix this run:** KEY_EXPECTED in pr_drift_doc.py updated from v6→v10 and exact-nano-mainnet→exact-nano-mainnet-v3. Offline test (prepared_pr_doc_offline.py) now uses substring match for branch name so version bumps don't break it. Test passes 8/8.
 
 ## Pending key requests (blocking)
 - req1 (PyPI publisher ID 1): still open — OIDC workflow builds clean, only the one-page registration needed
@@ -20,11 +21,12 @@ All ahead 1-3 / behind 0. Verified via prepared_pr_drift_all.py. x402 docs-v10 a
 ## Directory submissions (~8): all <72h old, none live yet
 - Oldest: x402info.com/ecosystem submitted Sep 16 (~27h ago) — still showing curated 14, ours absent
 - Others: aiagentcensus, AiAgents.Directory, AgentRank, bestaiagents.org, agents.net, MeshKore, TheNextAI
-- SwarmBazaar: submitted Sep 17 via MCP, queued for human review — not yet findable
+- SwarmBazaar: submitted Sep 17 via MCP, queued for human review — not yet findable on public page (67 listings, ours absent)
+- aiagentslisting.com: 200 at our slug, but /submit is account-walled. No listing visible. Skip.
 
-## GitHub traffic (14 days to Sep 17 12:48 UTC)
-- Views: 76 total / 29 uniques (Sep 15: 23/6, Sep 16: 53/25)
-- Clones: 812 total / 260 uniques (Sep 15: 245/100, Sep 16: 567/193 — heavily inflated by Rai's own verification installs + CI)
+## GitHub traffic (14 days to Sep 17 12:56 UTC)
+- Views: 76 total / 29 uniques (unchanged)
+- Clones: 812 total / 260 uniques (unchanged)
 - Stars: 0, Forks: 0
 - Release v0.1.0: 2 assets (wheel + sdist)
 

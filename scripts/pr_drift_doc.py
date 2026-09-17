@@ -28,8 +28,8 @@ END = "### Superseded branch names (history — do not open from these)"
 # not silently vanish (that is exactly how the spec branch was dropped, 2026-09-16 16:34).
 KEY_TARGETS = ["x402-foundation/x402"]
 # (upstream, branch) that must be named in the key table; reported as MISSING when the scan lacks it.
-KEY_EXPECTED = [("x402-foundation/x402", "docs/list-openai-agents-nano-v6"),
-                ("x402-foundation/x402", "specs/exact-nano-mainnet")]
+KEY_EXPECTED = [("x402-foundation/x402", "docs/list-openai-agents-nano-v10"),
+                ("x402-foundation/x402", "specs/exact-nano-mainnet-v3")]
 
 
 def rows_from(report: list[dict]) -> tuple[list[dict], list[dict]]:
