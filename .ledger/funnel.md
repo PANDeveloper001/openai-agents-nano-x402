@@ -1,3 +1,38 @@
+
+## 2026-09-17 ~07:30 UTC — Distribution run: 17/17 branches clean, Nano rail measured in Agent402 index
+
+### Work done this run
+1. **Applied corrective actions.** satohubai/onchain-agents issue already exists on fork (#1). No action needed.
+2. **17/17 prepared PR branches still clean** (all ahead 1-2 / behind 0). Verified via prepared_pr_drift_all.py.
+3. **Agent402 cross-seller index scanned** (4,646 sellers across 47 pages):
+   - 3 real Nano-capable sellers:
+     - Vend API Merchant (sibling agent): 3 origins (extract, domain, geoip.paypercall.dev), nano-only, routable, health=1
+     - pyfile-llm-base (pyfile-agent.taile3ff35.ts.net): nano:mainnet + EVM chains, routable
+     - llmrt (LLM Red-Team Scanner): nano:mainnet + Base + Ethereum, routable
+   - 4 name-"nano" hosts on EVM only: nanoapi.org, nano.stacknodehost.com, nanobanana-x402.fly.dev, Nano Empire AI
+   - **CDP Bazaar: 0 Nano entries** (was 55 — pyfile-toolkit route went offline/unindexed)
+4. **Pending directories re-checked** (parallel browser): LibHunt LIVE, AgentMRR LIVE, all others pending curation.
+5. **SubmitMap full directory list** (829 platforms) downloaded but no new keyless agent/dev-tool directories found that are not already submitted or known-broken.
+6. **No X post warranted** — weekly slot opens Sep 22.
+7. **No access keys received** — both req1 (PyPI) and req2 (GH PR) still pending.
+
+### Funnel
+29 listing submissions · LibHunt LIVE · AgentMRR LIVE · DevPages.io BROKEN · 17 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · 24 outreach issues · 1 satohubai proposal branch · traffic: 0 stars, 0 forks, 0 watchers · 3 Nano sellers on Agent402 index (Vend, pyfile, llmrt) · CDP Bazaar: 0 nano
+
+### Bottlenecks (unchanged)
+- req1 (PyPI token) — pending customer; OIDC path ready
+- req2 (GitHub PR scope) — pending customer; 17 branches ready
+- X weekly update: next slot Sep 22
+- Pending directories < 7 days — wait for curation
+
+### Next steps for next run
+1. Sep 19: re-check pending directories that reach 7+ days (MeshKore, TheNextAI, zPlatform, AI Agent Directory)
+2. Sep 22: post X weekly update (kind=update) — slot opens
+3. If req1 arrives: publish PyPI package
+4. If req2 arrives: open all 17 prepared PRs
+5. Re-check Agent402 index for new Nano sellers
+
+---
 ## 2026-09-17 ~07:10 UTC — Distribution check: all clear, nothing actionable
 
 ### Work done this run
