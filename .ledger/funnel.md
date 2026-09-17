@@ -33,6 +33,10 @@ Note: clone count inflated by CI + own verification installs. No organic audienc
 - PyPI: NOT live (/simple/ and /pypi/json both 404). /project/ page is captcha false positive.
 - GitHub Release v0.1.0: public, installable via pinned URL. 13 wheel/6 sdist downloads.
 - Trusted publisher workflow committed but needs PyPI registration (one page visit by customer).
+- **PEP 503 simple index on GitHub Pages** (NEW this run): https://pandeveloper001.github.io/openai-agents-nano-x402/simple/
+  - Live and verified: `pip install openai-agents-nano --extra-index-url <url>` works from a fresh venv.
+  - Keyless, public, no credential needed.
+  - Install form closer to standard pip resolution than raw wheel URL.
 
 ### Merge rates (2026-09-17) — 14 targets measured
 7 MERGES targets (open PRs when req2 arrives):
