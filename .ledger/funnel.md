@@ -54,8 +54,16 @@ Filed on own forks because upstream PRs blocked by scope. Targets cover awesome 
 - External payment: FALSE
 
 ## Bottlenecks
-- req1 (PyPI trusted publisher) — pending customer action
-- req2 (GH PR scope) — pending customer action; 16 branches ready
+- req1 (PyPI trusted publisher) — pending customer action (build verified: sdist+wheel both clean)
+- req2 (GH PR scope) — pending customer action; 16 branches ready, all 0 behind upstreams
 - X weekly slot: Sep 22
 - All directories < 7 days — no re-submit
 - 0 new keyless/prepared targets remain
+
+## Last verification (2026-09-17 11:13 UTC)
+- 16/16 PR branches clean (drift script verified, all ahead/behind 0)
+- PyPI build: `python3 -m build` produces sdist + wheel successfully
+- AgentMRR listing: still live (verified signed-out HTTP 200, page renders openai-agents-nano x8)
+- Directory checks: all 8 pending (x402info, aiagentcensus, AiAgents.Directory, AgentRank, bestaiagents, agents.net, MeshKore, TheNextAI)
+- SwarmBazaar: submitted, not yet findable on public page
+- NanoRoute tunnel: expired (Pinggy free 60min limit)
