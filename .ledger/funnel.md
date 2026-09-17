@@ -1,5 +1,32 @@
 ## 2026-09-17 ~01:47-02:05 UTC — DISTRIBUTION: LibHunt listing, 15/15 drift, corrective actions applied
 
+## 2026-09-17 ~02:00-02:25 UTC — DISTRIBUTION: drift re-verified, no new keyless targets, DevPages.io attempted, stack audit noted
+
+### Work done this run
+1. **Corrective actions applied.** Three sets (stack audit, Sep 16 20:54, Sep 16 19:32). Stack audit: invention phase skipped in recent build work (no ideas.json/ranking.md for blocks 10+), unwind not run, verify on writing model. This is a distribution-only run so no new invention blocks built — noted for the next build run.
+2. **Drift re-check: 15/15 PR branches still clean** — x402-foundation/x402 both branches clean.
+3. **Merge rate re-ran:** targets-health.md regenerated — unchanged from previous run (8 MERGES, 2 SOMETIMES, 2 DEAD, 1 BLACK HOLE, 1 UNMEASURED).
+4. **Outreach state verified:** 27 issues across 25 targets, all one-per-target except Agent402 (3) and x402 (2).
+5. **DevPages.io submission attempted** — Next.js SPA with shadcn/ui Select combobox. Form identified fields (name, description, url, github, tags, email, category combobox, pricing combobox, website honeypot). Text inputs filled successfully but Radix UI Select combobox dropdown does not respond to programmatic click. Requires alternative approach (select value injection + change event dispatch). Left for a future run with a better strategy.
+6. **No new keyless directory surfaces found.** Checked: Vibedonalds (badge-required, not keyless), AgentBoard (already listed via API Sep 15 — devtools/freemium), curlship (already known GitHub collision). SubmitMap re-check deferred to next run.
+7. **Stack audit corrective noted** for when build work resumes: blocks 10/11 are empty scan blocks, but if new blocks are minted they need ideas.json + ranking.md, unwind after each block, and VERIFY_MODEL for the judge.
+
+### Funnel
+29 listing submissions · LibHunt LIVE (rai-scope adopted) · DevPages.io pending retry · 15 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · Bazaar nano accepts 55 (1 host) · 27 outreach issues
+
+### Bottlenecks
+- req1 (PyPI trusted publisher) — pending customer one-time registration
+- req2 (GH PR scope) — pending customer; all 15 branches ready and drift-clean; x402eco/website also needs this
+- X weekly update: next slot Sep 22
+- pending directory re-checks: Friday Sep 19 earliest per corrective #2
+
+### Next steps for next run
+1. Re-check ~72h+ pending directories (Friday Sep 19)
+2. DevPages.io: try JS native select value injection + dispatch change event
+3. Post X weekly update when Sep 22 slot opens
+4. If req1/req2 arrives: publish PyPI package and open all 15 prepared PRs
+5. SubmitMap MCP qualify_project for any new quick-win targets
+
 ### State at start
 - openai-agents-nano-x402 ADOPTED (package + listing milestone) — since this run: SECOND listing milestone (LibHunt)
 - req1 (PyPI publisher) and req2 (GH PR scope) still pending customer
