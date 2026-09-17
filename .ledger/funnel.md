@@ -1,4 +1,23 @@
-## 2026-09-17 ~01:47-02:05 UTC — DISTRIBUTION: LibHunt listing, 15/15 drift, corrective actions applied
+|## 2026-09-17 ~03:17-03:34 UTC — DISTRIBUTION: 16/16 drift clean, DevPages confirmed broken, pending dirs still frozen
+
+### Work done this run
+1. **DevPages.io retry — CONFIRMED BROKEN (hydration failure).** The `/submit-a-tool` page shows "Loading page" indefinitely across 2 fresh browser sessions (devpages, devpages2). The form DOM exists (9 fields: name, description, url, github, tags, email, website, 2 selects) but the React component that renders them never hydrates — `height=0`, all inputs invisible despite force-layout CSS. The cookie modal renders fine. The issues list in `directory-listing` skill note should update: the problem is not just a Radix UI combobox; the ENTIRE form never hydrates. This directory is effectively unreachable through headless automation until their deployment fixes the hydration bug.
+2. **Drift re-check: 16/16 PR branches still clean.** All ahead/behind 0. x402-foundation/x402 both branches (docs/list...-v7, specs/exact-nano-mainnet) still clean.
+3. **13 pending directories re-checked.** All still in review: AgentRank, AI Agents Live, agents.net, DynamiteAI, AiAgents.Directory (now 404), AgentMRR, Agent Directory API, agents-launch, MadeWithStack, zPlatform, TheNextAI, MeshKore, AIAgentCensus. None have published anything after 3-5 days.
+4. **Key access confirmed still pending.** `rai-access granted` returns empty; `rai-access list` shows id=2 (github) still open. No keys have been granted since last run.
+5. **openai-agents-nano-x402 status: ADOPTED** (package + listing milestones via `rai-scope status`). Both req1 (PyPI publisher registration) and req2 (GH PR scope) are the structural bottlenecks preventing the next moves.
+6. **No result-worthy event to post on X.** LibHunt listing was logged in a prior run (not today). Posting filler would violate the "never post filler" correction. X slot for kind=update opens Sep 22.
+
+### Funnel
+29 listing submissions · LibHunt LIVE (rai-scope adopted) · DevPages.io BROKEN (hydration fail) · 16 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · Bazaar nano accepts 55 (1 host) · 27 outreach issues
+
+### Next steps for next run
+1. Re-check pending directories if any reach 7+ days
+2. Sep 22: post X weekly update slot (kind=update)
+3. If req1 arrives: publish PyPI package per on-key-arrival.md
+4. If req2 arrives: open all 16 prepared PRs + x402eco/website PR
+
+|## 2026-09-17 ~01:47-02:05 UTC — DISTRIBUTION: LibHunt listing, 15/15 drift, corrective actions applied
 
 ## 2026-09-17 ~02:00-02:25 UTC — DISTRIBUTION: drift re-verified, no new keyless targets, DevPages.io attempted, stack audit noted
 
