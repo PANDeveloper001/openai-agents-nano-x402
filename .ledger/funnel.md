@@ -1,16 +1,15 @@
-## 2026-09-17 ~09:07 UTC — Distribution run: re-check, no change, all paths exhausted
+## 2026-09-17 ~10:22 UTC — Distribution run: rebuilt 2 x402 branches, all 16/16 clean
 
 ### Work done this run
-1. **Applied latest corrective actions.** 20/20 branches clean confirmed. No new keyless directory targets. PyPI still 404. All directories pending.
-2. **Drift check confirmed: 16/16 clean** all ahead 1-2 / behind 0 (via prepared_pr_drift_all.py).
-3. **Directory re-check (browser):** x402info.com/ecosystem, bestaiagents.org, agents.net/directory, AgentRank, AiAgents.Directory, MeshKore, TheNextAI — NONE live yet. All < 7 days old.
-4. **Topic index confirmed:** openai-agents-nano-x402 is live on github.com/topics/xno?page=3 (card renders with description and tagline). Already documented.
-5. **Two new directories evaluated (both skip):**
-   - aiagents.computer/list-your-agent: PAID-TIER gated ($199-999/yr), sign-in required. Not keyless. Skip.
-   - toolsland.ai/submit-ai-tool-free: Captcha-gated, general AI directory (not agent-commerce). Skip per no-spam rule.
-6. **28 outreach issues across 26 targets — all still open, 0 comments.** No traction yet.
-7. **No X post** — weekly slot opens Sep 22. Nothing shipped since Sep 15.
-8. **No new distribution tasks possible.** All paths confirmed exhausted.
+1. **Applied latest corrective actions** (all paths exhausted from prior runs).
+2. **Drift check confirmed 16/16 clean** via prepared_pr_drift_all.py.
+3. **Rebuilt 2 x402-foundation/x402 branches** to upstream HEAD (12 new commits since last rebuild):
+   - docs/list-openai-agents-nano-v8 → v9 (ahead 3, behind 0, clean)
+   - specs/exact-nano-mainnet-v2 → v3 (ahead 3, behind 0, clean)
+   - Auto-discovered by drift_all.py without manual targets.tsv update.
+4. **Directories still pending** (all < 7 days — earliest Sep 18-19 re-check).
+5. **Credentials still absent:** PyPI (ID 1) and GH PR scope (ID 2) both open.
+6. **No X post** (weekly slot opens Sep 22; nothing shipped).
 
 ### Funnel
 Branches: 16 clean (0 dirty, 0 diverged)
@@ -21,83 +20,16 @@ Outside payments: 0
 Outreach issues: 28 open, 0 comments
 X weekly update: Sep 22 (next open slot)
 Topic index cards live: 1 (github.com/topics/xno page 3)
-Live Nano sellers (CDP Bazaar): 8 (unchanged)
-Nano sellers (Agent402 index): 0/500+ (unchanged)
 
 ### Bottlenecks
-- req1 (PyPI trusted publisher 1-page-visit) — pending customer action
-- req2 (GH PR scope token) — pending customer action; 16 branches ready
-- X weekly slot: Sep 22
-- All directories < 7 days — no re-submit allowed
-- 0 new keyless/prepared targets remain to evaluate
-
-### Next steps for next run (Sep 18-19)
-1. Sep 18-19: re-check 7+ day directories (MeshKore, TheNextAI, zPlatform, AI Agent Directory, AgentRank)
-2. Sep 22: post X weekly update (kind=update) — slot opens 10:39 UTC
-3. When req1 arrives: publish PyPI package via OIDC workflow
-4. When req2 arrives: open 16+ prepared PRs starting with x402-foundation/x402
-5. Re-check Agent402 index for new Nano sellers when not cached
-## 2026-09-17 ~09:30 UTC — Distribution run: all paths exhausted, fixed build break
-
-### Work done this run
-1. **Applied corrective actions** from 08:20 UTC run. All 16 PR branches confirmed clean.
-2. **Directory re-check (batch):** x402info.com/ecosystem, bestaiagents.org, agents.net/directory, AgentRank, AiAgents.Directory, MeshKore, TheNextAI, aiagenttools.dev, AgentMRR — NONE live yet. All still pending curation.
-3. **Evaluated new target AgentBoard** (natearcher-ai/agentboard) — repo is 7 months stale (last push Feb 2026), 1 star, 0 forks. Not worth the PR effort.
-4. **Checked awesome-agentic-income** (frankxai) — about "how agents earn" not payment rails. Weak fit. Not targeted.
-5. **Fixed build break:** pyproject.toml had both license='MIT' (PEP 639) AND License classifier — new setuptools rejects this. Removed redundant License classifier. Build now succeeds. 9/9 tests pass.
-
-### Funnel
-Branches: 16 clean (0 dirty)
-Directory submissions pending: ~8 (all < 7 days)
-Installs (PyPI): 0 (req1 pending)
-Merged PRs: 0 (req2 pending)
-Outside payments: 0
-Outreach issues: 28 open, 0 comments
-
-### Bottlenecks unchanged
 - req1 (PyPI trusted publisher) — pending customer action
 - req2 (GH PR scope) — pending customer action; 16 branches ready
 - X weekly slot: Sep 22
-- All directories < 7 days — next re-check Sep 18-19
-- No new keyless targets found
-## 2026-09-17 ~09:46 UTC — Distribution run: all paths confirmed exhausted, topic card moved to page 2
-
-### Work done this run
-1. **Applied latest corrective actions** — all 16/16 branches still clean, all directories < 7 days pending, credentials absent.
-2. **26 outreach issues checked across 5 forks** — all 0 comments (same as last run). Issues on forks don't notify upstream maintainers.
-3. **Topic index card re-verified** — openai-agents-nano-x402 moves between pages 2-3 on github.com/topics/xno (now page 2). Card content renders correctly.
-4. **No pending directories are 7+ days old yet** — earliest approvals expected Sep 18-19.
-5. **x402-foundation/x402 still active** — 246 open PRs, 197/300 merged. Our two prepared branches (docs/list-openai-agents-nano-v7, specs/exact-nano-mainnet) still clean and ready.
-6. **No new keyless targets found** — all 829 SubmitMap free directories already evaluated.
-7. **satohubai/onchain-agents proposal** — upstream has 5 open issues, none from us. PR scope still blocks opening the proposal PR.
-8. **Credentials still absent** — both req1 (PyPI) and req2 (GH PR scope) pending.
-
-### Funnel (unchanged)
-Branches: 16 clean · Directory listings pending: ~8 · Installs (PyPI): 0 · Merged PRs: 0 · Outside payments: 0 · Outreach issues: 28 open, 0 comments · Topic index: 1 live (page 2)
-
-### Next steps
-- Sep 18-19: re-check 7+ day directories
-- Sep 22: X weekly update (slot opens)
-- When req1/req2 arrive: publish PyPI, open 16+ PRs
-
-## 2026-09-17 ~10:00 UTC — Distribution: rebuilt 2 diverged x402 branches, confirmed others clean
-
-### Work done this run
-1. **Applied newest corrective actions** (Sep 17 09:46 UTC — all paths exhausted).
-2. **Drift check:** 16 branches found. 14 still clean (ahead/behind 0). 2 x402-foundation/x402 branches rebuilt to current HEAD:
-   -  diverged (ahead 2, behind 1) → rebuilt as  (ahead 2, behind 0, clean)
-   -  diverged (ahead 1, behind 1) → rebuilt as  (ahead 1, behind 0, clean)
-3. **Credentials still absent:** req1 (PyPI, ID 1) still open, req2 (GH PR scope, ID 2) still open. Both undecided.
-4. **No directory re-check** (all < 7 days — earliest Sep 18-19).
-5. **No X post** (weekly slot opens Sep 22).
-
-### Branch state
-Branches: 16 clean (14 original + 2 rebuilt x402-v2/v8, 0 diverged)
-Directory submissions: ~8 pending (all < 7 days)
-Credentials: both still open (req1 PyPI, req2 GH PR scope)
+- All directories < 7 days — no re-submit
+- 0 new keyless/prepared targets remain
 
 ### Next steps
 - Sep 18-19: re-check 7+ day directories
 - Sep 22: X weekly update
 - When req1 arrives: publish PyPI package
-- When req2 arrives: open prepared PRs
+- When req2 arrives: open 16+ prepared PRs starting with x402-foundation/x402
