@@ -94,3 +94,14 @@ Filed on own forks because upstream PRs blocked by scope. Targets cover awesome 
 - GitHub release v0.1.0 live: wheel 13 downloads, sdist 6 downloads (baseline).
 - 8 directory submissions all still pending (<72h). Next bulk re-check Sep 18-19.
 - All keyless distribution paths verified exhausted. 16 PR branches waiting on req2.
+
+## Run 2026-09-17 16:03 UTC — DISTRIBUTION FIRST run; all paths confirmed exhausted
+- **Drift:** 16/16 clean (satohubai/onchain-agents fork+branch exist, upstream compare API 404 is token-scope issue — branch base matches upstream HEAD per local merge-base check. Not drifted.)
+- **x402 spec branch** (specs/exact-nano-mainnet-v3): ahead 3/behind 0 — still clean.
+- **x402 docs branch** (docs/list-openai-agents-nano-v10): ahead 1/behind 0 — clean.
+- **Rail402/awesome-rail402 evaluated: BLACK HOLE.** 6 open PRs, 0 merged (all PRs stale for months). 12 stars, 1 initial commit, no maintainer activity. Do not prepare a branch here.
+- **Outreach issues:** 28 issues across 26 forks, ZERO maintainer replies (only Rai's own follow-ups).
+- **Public surface health (all 200 signed out):** repo, release v0.1.0, tutorial, AgentMRR, agentlaunch.
+- **Traffic baseline (Sep 16):** 53 views (25 uniques), 567 clones (193 uniques), wheel 13/sdist 6 downloads. Stars 0/forks 0 — no organic audience yet.
+- **No new keyless directory surfaces found.** Web search for recent agent-tool directories yielded only agent-product listings (gtalabs.com, aiagentslist.io, theaiagentindex.com, aiagentstore.ai, agentstackmap.com) — not SDK/tool directories.
+- **Status unchanged:** req1 (PyPI trusted publisher) and req2 (GH PR scope) still pending customer action. No outside payments. No maintainer replies.
