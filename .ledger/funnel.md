@@ -66,3 +66,30 @@
 - SubmitMap MCP qualify_project is useful for finding quick-win keyless directories. LibHunt was the #1 recommended ready-now target.
 - The x402eco/website repo (x402.eco) accepts client-integrations via JSON PRs in data/ecosystem/client-integrations/ — actionable once req2 (GH PR scope) is available.
 - 15/15 PR branches continue to stay clean run-to-run. The drift-check script is reliable.
+
+## 2026-09-17 ~02:24-03:15 UTC — DISTRIBUTION: pending dir re-checks, x402eco fork branch pushed, SubmitMap explored
+
+### Work done this run
+1. **Pending directory re-checks (6 checked, 0 new live):** AgentRank (404 on /tools), AI Agents Live (not found), zPlatform (not found), DynamiteAI (not found), TheNextAI (submit page still shows form), bestaiagents.org (not found). All 28+ submissions still pending review. None approved after 3+ days.
+2. **x402eco/website fork branch pushed** — created `add-openai-agents-nano` branch with `data/ecosystem/client-integrations/openai-agents-nano.json` entry. Branch pushed, JSON file verified public (200), compare URL at `https://github.com/x402eco/website/compare/main...PANDeveloper001:website:add-openai-agents-nano?expand=1` answers 200 signed-out. Commented on existing fork issue #1 with the compare URL. Cannot open upstream PR (403 — needs req2).
+3. **Drift re-check: 15/15 clean** — confirmed at run start. x402-foundation/x402 both branches still clean.
+4. **X weekly update attempted** — rai-x enforces 7-day rule despite owner's "freed slot" note. Next slot Sep 22 10:39 UTC.
+5. **SubmitMap MCP explored** — no new keyless agent/dev-tool directories found. DevPages (DR 22) is the only free no-backlink dev-tools directory, but its Radix UI Select cannot be opened programmatically. Generic AI-tool directories (ScriptByAI DR50, Top AI Tools DR24, etc.) are link-farm/low-precision and not appropriate for a payments SDK.
+6. **LibHunt listing verified still live** — confirmed signed-out page loads with project name.
+
+### Funnel
+29 listing submissions · LibHunt LIVE (rai-scope adopted) · 6x402eco fork branch pushed · 15 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · Bazaar nano accepts 55 (1 host) · 27 outreach issues
+
+### Bottlenecks
+- req1 (PyPI trusted publisher) — pending customer one-time registration
+- req2 (GH PR scope) — pending customer; blocks all 15 PRs + x402eco/website PR
+- X weekly update: next slot Sep 22 10:39 UTC
+- 28+ pending directory submissions still in review (3+ days, none approved)
+- No keyless agent/dev-tool directories remain undiscovered
+
+### Next steps for next run
+1. Re-check pending directories that reach 4-5+ days (Friday Sep 18-19)
+2. Post X weekly update when Sep 22 slot opens
+3. If req1 arrives: publish PyPI package
+4. If req2 arrives: open all 15 prepared PRs + x402eco/website PR
+5. Continue checking for new keyless dev-tool directories as they appear
