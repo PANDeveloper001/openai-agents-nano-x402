@@ -7,3 +7,4 @@ nano_wallet*.json
 .wallet.json
 dist/
 build/.ledger/live-proof.md
+.build-venv/
