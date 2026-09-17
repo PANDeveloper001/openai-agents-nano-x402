@@ -1,0 +1,122 @@
+[
+ {
+  "feature": "B10: prepared-PR drift checker",
+  "angle": 0,
+  "answer": "A Python script that uses git fetch + merge-base to compare each fork branch against its upstream default branch, reporting ahead/behind counts. Runs git fetch --all, then for each (fork, upstream) pair does merge-base --is-ancestor to detect drift. Outputs a table of all branches with status.",
+  "methodology": "Most people run git remote status manually; instead automate the per-branch ancestor check so every run knows which branches are clean without manual clicks.",
+  "baseline": "Manual `git fetch upstream && git log fork..upstream/main --oneline` per branch.",
+  "error": null,
+  "source": "engine",
+  "admissible": true,
+  "gate": {
+   "observable": "Given a set of fork branches each with its upstream, the script outputs for each branch its ahead count (commits on fork not in upstream) and behind count (commits on upstream not in fork).",
+   "falsifier": "The script reports any branch as behind 0 when the upstream has commits not in the fork."
+  },
+  "n": 1
+ },
+ {
+  "feature": "B10: prepared-PR drift checker",
+  "angle": 1,
+  "answer": "A Python script that queries the GitHub REST API for each fork's parent repo and compares branch SHAs via the compare API. Uses /repos/{owner}/{repo}/compare/{base}...{head} and returns the status (ahead, behind, diverged, identical) and the commit counts. Works without a local clone.",
+  "methodology": "Most people work with local git; instead use the GitHub API so the check runs anywhere with network access, including CI, and reports the exact numbers the GitHub UI would show when opening a PR.",
+  "baseline": "Manually visiting each compare URL in a browser.",
+  "error": null,
+  "source": "model:deepseek/deepseek-v4.1-flash",
+  "admissible": true,
+  "gate": {
+   "observable": "The script uses the GitHub compare API for each fork branch and outputs the ahead_by/behind_by numbers from the API response.",
+   "falsifier": "The script reports a comparison status that disagrees with the actual compare URL response for that fork branch."
+  },
+  "n": 2
+ },
+ {
+  "feature": "B10: prepared-PR drift checker with complete coverage",
+  "angle": 2,
+  "answer": "A script that lists EVERY branch on the PANDeveloper001 account whose name starts with 'add-' or 'docs/' or 'specs/', excluding owned repos (not forks), and runs the compare API on each one. Paginates through all branches (not just the first page). Reports any branch that was never listed in the handoff document and any whose behind count is non-zero.",
+  "methodology": "Most people maintain a hand-written list of branches; instead derive the list from the actual forks, so a branch created by a script or a manual push is never silently omitted.",
+  "baseline": "A hand-written table of branch names and upstream repos, checked individually.",
+  "error": null,
+  "source": "model:deepseek/deepseek-v4.1-flash",
+  "admissible": true,
+  "gate": {
+   "observable": "The script discovers and reports ALL fork branches matching the name pattern, including ones added after the handoff document was written. The output lists each branch, its upstream, and its compare status.",
+   "falsifier": "The script misses a branch that exists on PANDeveloper001's fork because the script only checked one page of branches or excluded a pattern."
+  },
+  "n": 3
+ },
+ {
+  "feature": "B10: prepared-PR drift checker with handoff document",
+  "angle": 3,
+  "answer": "Two scripts: (1) `prepared_pr_drift_all.py` scans all forks, runs compare API, and writes JSON output. (2) `prepared_pr_clicks.py` reads that JSON, filters to clean branches (ahead >= 1, behind = 0), generates the clickable compare URLs with ?expand=1, and writes a handoff markdown document the maintainer can open to submit each PR. Skips any branch with behind > 0.",
+  "methodology": "Most people produce one report; instead produce two - a machine-readable scan and a human-clickable handoff doc - because the scan feeds CI decisions while the handoff lets a human open all PRs in one session.",
+  "baseline": "A single script that prints drift status to stdout.",
+  "error": null,
+  "source": "engine",
+  "admissible": true,
+  "gate": {
+   "observable": "`drift_all.py` outputs JSON with every branch and its status; `clicks.py` reads that JSON and produces a markdown table with signed-out verified compare URLs only for clean branches.",
+   "falsifier": "A clean branch (ahead >= 1, behind = 0) is missing from the handoff table, or a dirty branch (behind > 0) appears in the handoff table."
+  },
+  "n": 4
+ },
+ {
+  "feature": "B11: call-dependent route probe",
+  "angle": 0,
+  "answer": "A Python script that fetches the same URL twice - once with a browser User-Agent (Mozilla/5.0 ...) and once with a library User-Agent (python-requests/2.31) - and compares the HTTP status codes. Reports the route as caller-dependent when the codes differ, and as stable when they match. Handles 402 vs 200, 403 vs 200, and all other status mismatches.",
+  "methodology": "Most people test a route once and assume the result is intrinsic; instead test with both a browser and a non-browser agent because public tunnels (pinggy, localhost.run, serveo) rewrite caller headers and route requests differently.",
+  "baseline": "Testing the route once with `curl` and copying the result into the tunnel.",
+  "error": null,
+  "source": "engine",
+  "admissible": true,
+  "gate": {
+   "observable": "The script fetches the same URL with two different User-Agent strings and reports a boolean: 'caller-dependent' when status codes differ, 'stable' when they match. The URLs and both status codes are shown.",
+   "falsifier": "The script reports 'stable' when the two status codes actually differ, or vice versa."
+  },
+  "n": 5
+ },
+ {
+  "feature": "B11: call-dependent route probe with offline test",
+  "angle": 1,
+  "answer": "A Python script that reads a JSON config of (url, expected_browser_status, expected_lib_status, expected_verdict) test cases, executes the two-UA fetch for each, and compares the results. Reports each test as PASS/FAIL with the actual vs expected statuses and verdict. Runs entirely offline when configured with known cases. The test config includes a known caller-dependent route (e.g. pinggy tunnel that 200s browsers and 402s libraries) and a known stable route (e.g. a direct endpoint).",
+  "methodology": "Most people build the probe as a living diagnostic; instead build it with an offline test harness because the diagnostic must confirm its own logic works before it probes live routes.",
+  "baseline": "Running the probe on a live tunnel and making manual judgement calls.",
+  "error": null,
+  "source": "model:deepseek/deepseek-v4.1-flash",
+  "admissible": true,
+  "gate": {
+   "observable": "Running the script with the test config produces PASS for all expected test cases: the caller-dependent route is reported as dependent; the stable route is reported as stable. Exit code is 0. Running with a deliberately wrong config produces FAIL.",
+   "falsifier": "A test case with an expected verdict of 'caller-dependent' produces 'stable' from the script, or the script exits 0 when at least one expected case fails."
+  },
+  "n": 6
+ },
+ {
+  "feature": "B11: mutation-tested offline probe",
+  "angle": 2,
+  "answer": "A Python script with a core function that takes a status pair (browser_st, lib_st) and returns the verdict. The offline test explicitly mutates the verdict function: broken versions of the function (always 'dependent', always 'stable', wrong threshold) must produce FAIL. Only the correct implementation passes all 7 tests (matching 200s, matching 402s, browser 200 vs lib 402, browser 402 vs lib 200, browser 403 vs lib 200, browser 200 vs lib 403, httperror variants).",
+  "methodology": "Most people test with one correct implementation; instead include mutation tests because a probe that cannot fail on broken code proves nothing.",
+  "baseline": "A single offline test checking just the happy path (matching 200s).",
+  "error": null,
+  "source": "model:deepseek/deepseek-v4.1-flash",
+  "admissible": true,
+  "gate": {
+   "observable": "The offline test file contains 7 test cases including 2 with mutated verdict functions. All 7 must pass for exit code 0. A mutated verdict that always returns 'stable' must cause some tests to fail.",
+   "falsifier": "A mutated verdict function that always returns 'caller-dependent' passes all 7 tests."
+  },
+  "n": 7
+ },
+ {
+  "feature": "B11: tunnel User-Agent probe",
+  "angle": 3,
+  "answer": "A Python script that probes a pinggy or similar public tunnel: fetches its public URL with a browser User-Agent (expecting 200 because the tunnel gateway answers browser requests), then with a library User-Agent (expecting 402 because the tunnel proxies to the backend x402 server for non-browser clients). Exports the probe as a runnable diagnostic with clear output lines: 'ROUTE <url>: browser=200 library=402 -> caller-dependent'. The tunnel's frontend answers browser requests with its own landing page, while library requests are proxied to the backend which returns 402.",
+  "methodology": "Most people assume a tunnel URL behaves identically for all callers; instead probe with both browser and library User-Agents because Pinggy's brother-gateway answers browser requests directly (UI page, 200) while proxying non-browser requests to the backend (which may return 402).",
+  "baseline": "Testing with curl and reading the response body manually.",
+  "error": null,
+  "source": "model:deepseek/deepseek-v4.1-flash",
+  "admissible": true,
+  "gate": {
+   "observable": "The script runs against a known pinggy tunnel URL, fetches it with MOZILLA_UA and PYTHON_REQUESTS_UA, and prints both status codes and the verdict. For a pinggy tunnel proxied to an x402 server, browser=200 and lib=402.",
+   "falsifier": "The script reports both fetches as the same status when they actually differ, or uses the same User-Agent string for both fetches."
+  },
+  "n": 8
+ }
+]
