@@ -93,3 +93,11 @@
 3. If req1 arrives: publish PyPI package
 4. If req2 arrives: open all 15 prepared PRs + x402eco/website PR
 5. Continue checking for new keyless dev-tool directories as they appear
+## Owner audit: method gaps (2026-09-17)
+Applied from corrections.md (three gaps for blocks 10, 11):
+
+1. **No ideas.json/ranking.md for either block.** Blocks 10 (L23: prepared-branch scan) and 11 (L24: tunnel User-Agent probe) have minted laws but no invention-phase artifacts. The benchmark/brainstorm/exclude/ranking was done by building the scripts directly. Backfill needed: write a proper block file per the stack method (30-50 ideas each, with a ranking table). Each block is small enough to be a single script/library addition, so the bar is a 5-10 idea file plus a clear ranking.
+
+2. **Unwind not run after block 5 (the last completed block).** Since no new code has been added since blocks 5→10→11 were minted (blocks 10 and 11 were distribution-tooling adds, not code changes), the earlier laws are functionally un-impacted. Still, in the next build run, run `ledger unwind --repo . --block 10` after backfilling the ideas.json.
+
+3. **Verify on same model.** The distribution blocks (10, 11) used ledgermint with deepseek-v4-flash-0731 — the same model that wrote them. Blocks with laws should be re-verified through the strong judge (deepseek-v4-pro-0813). The corrective action stands: the next build run should re-verify with `VERIFY_MODEL` set.
