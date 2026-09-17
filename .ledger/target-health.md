@@ -1,12 +1,11 @@
 # Target health - does this repo actually merge?
 
-Generated 2026-09-17 08:03 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
+Generated 2026-09-17 09:36 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
 A prepared branch is worth a click only where the second column says MERGES.
 
 | target | verdict | merged/closed (3 months) | per month | stars | last push | branches |
 |---|---|---|---|---|---|---|
 | `Corican/nanodir` | MERGES - worth a click | 1/1 | 2026-09 1/1 | 2 | 2026-09-13 | 1 |
-| `facundofarias/awesome-agent-first-tools` | MERGES - worth a click | 1/1 | 2026-07 1/1 | 0 | 2026-07-21 | 1 |
 | `satohubai/onchain-agents` | MERGES - worth a click | 2/2 | 2026-07 2/2 | 4 | 2026-09-17 | 1 |
 | `michielpost/x402-dev` | MERGES - worth a click | 43/50 | 2026-09 11/16, 2026-08 21/22, 2026-07 11/12 | 5 | 2026-09-15 | 1 |
 | `Haustorium12/gold-402` | MERGES - worth a click | 138/169 | 2026-09 40/46, 2026-08 64/78, 2026-07 34/45 | 11 | 2026-09-15 | 1 |
@@ -18,6 +17,6 @@ A prepared branch is worth a click only where the second column says MERGES.
 | `tsubasakong/awesome-agent-payments-protocol` | SOMETIMES - keep if the fit is exact | 1/6 | 2026-09 0/2, 2026-08 1/2, 2026-07 0/2 | 15 | 2026-09-15 | 1 |
 | `e2b-dev/awesome-ai-sdks` | DEAD - no push in 69 days and merges stopped | 1/26 | 2026-09 0/4, 2026-08 0/13, 2026-07 1/9 | 1223 | 2026-07-09 | 1 |
 | `Merit-Systems/awesome-agentic-commerce` | BLACK HOLE - merges have stopped; a branch here stays open | 1/27 | 2026-09 0/3, 2026-08 0/12, 2026-07 1/12 | 149 | 2026-07-29 | 1 |
+| `caramaschiHG/awesome-ai-agents-2026` | DEAD - no push in 98 days and merges stopped | 0/44 | 2026-09 0/9, 2026-08 0/16, 2026-07 0/19 | 1825 | 2026-06-10 | 1 |
 | `mbeato/awesome-mpp` | DEAD - no push in 137 days and merges stopped | 0/6 | 2026-08 0/2, 2026-07 0/2, 2026-06 0/2 | 21 | 2026-05-02 | 1 |
 | `mpp-best/awesome_mpp` | UNMEASURED - API calls failed; do NOT read this as 'no merges' | 0/0 |  | 0 | 2026-09-01 | 1 |
-| `x402eco/website` | DEAD - no push in 141 days and merges stopped | 0/4 | 2026-07 0/2, 2026-06 0/1, 2026-05 0/1 | 2 | 2026-04-28 | 1 |
