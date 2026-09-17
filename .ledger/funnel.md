@@ -106,8 +106,38 @@ Takeaway: all keyless directory submissions still in human review (<72h). Earlie
   checks pending listings for live status + searches for NEW keyless directories, appends to
   funnel.md. Local delivery (CLI session), state persists for future runs. First run 2026-09-18.
 
+### Re-verification 2026-09-17 18:00 UTC (this run)
+#### Re-checks (browser, all still PENDING — none live)
+- agents.net/directory — 82 agents, ours NOT listed (submitted Sep 15 ~51h)
+- bestaiagents.org — homepage cards, ours absent (submitted Sep 15 ~51h)
+- theagentrank.com — 160 agents, ours absent (submitted Sep 15 ~51h)
+- x402info.com/ecosystem — still 14 featured projects, ours absent (submitted Sep 16 ~27h)
+- aiagentcensus.com, MeshKore, SwarmBazaar, others submitted Sep 17 — <12h, not checked again
+Takeaway: all 12 directory submissions still pending human review. Earliest hit 72h+ Sep 18.
+
+#### New surfaces searched, none found
+- AgentBoard (agentboard.xyz, agent directory via PR to src/data/agents.js): domain parked on Afternic (not a live directory). Not viable.
+- Coinyak/onchainai: MCP endpoint directory, not a client-SDK fit. Out of scope.
+- minia2a guide crawled (ai-agent-directories-guide-august-2026): confirms Agent Directory API + agentlaunch already known/auto-crawled. No new keyless fit.
+
+#### Newsletter 2026-09-17 retry (unfinished from prior run)
+- Attempted dry-run (3 attempts): verifier model (deepseek/deepseek-v4-pro-0813) timed out on all attempts — same OpenRouter timeout as before.
+- Newsletter remains unpublished. Needs fallback provider routing per provider-fallbacks.md, or retry when model provider recovers.
+
+#### Distributions confirmed live
+- GitHub Pages status page: 200
+- PEP 503 simple index: 200
+- GitHub release v0.1.0: 200
+- GitHub repo: 200
+- README raw: 200
+
+#### Drift check
+- 17/18 prepared PR branches clean (ahead/behind 0). satohubai/onchain-agents still API 404 (known).
+- Traffic unchanged: 76 views / 29 uniques.
+
 ### Next useful actions
 - Sep 18: earliest directory submissions (agents.net, bestaiagents, theagentrank) hit 72h+ — browser re-check for live cards
-- Sep 18: nightly crawler first run — read funnel.md for discoveries
+- Sep 18: nightly crawler first run (d2c74abaaee4, 8am) — read funnel.md for discoveries
+- Sep 18: retry newsletter 2026-09-17 with fallback provider (see provider-fallbacks.md) or after verifier model recovers
 - Sep 22: weekly X technical update slot opens
 - When req1 (PyPI) / req2 (GH PR scope) arrive: publish package + open 17 PRs in one run
