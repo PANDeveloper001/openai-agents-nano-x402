@@ -1,0 +1,35 @@
+# Distribution Funnel (auto-generated 2026-09-17 22:16 UTC)
+
+## Live listings (public, verified HTTP 200 signed out)
+- AgentMRR (agentmrr.ai): live since ~Sep 17, score 1, 0 upvotes
+- Agent Directory API (agent-directory-api.vercel.app): auto-listed, id d8cd7de3, handle openai-agents-nano
+- AgentLaunch (agentlaunch.vercel.app): auto-listed, id ca04de4f, slug openai-agents-nano
+- agentlaunch.vercel.app/agents/openai-agents-nano: public page exists (HTTP 200)
+
+## Directory submissions pending curation (submitted Sep 15-17)
+- agents.net/directory -> still pending (72h+)
+- bestaiagents.org -> still pending (72h+, or CAPTCHA block)
+- theagentrank.com -> still pending (72h+)
+- x402info.com/ecosystem -> still pending (48h)
+- aiagentcensus.com -> still pending
+- swarmbazaar.com -> still pending
+- swarmcommunity.com -> still pending
+(others: bestaiagents blocked by captcha, theagentrank/agents.net no sign of our listing)
+
+## PR branches (18 clean, awaiting req2 - GH PR scope)
+- 18/19 clean (satohubai/onchain-agents API 404 - dropped)
+- All ahead/behind 0 vs upstream
+
+## Downloads
+- GitHub Release v0.1.0: wheel 48 dl, sdist 7 dl
+- PyPI: NOT published (req1 pending)
+
+## Traffic (GitHub API)
+- Views: 76/29 uniques
+- Clones: 812/260
+- No organic external referrers beyond t.co (own X post)
+
+## Auto-discovered surfaces (no manual submission)
+- Agent Directory API (POST endpoint auto-discovered via OG tags?)
+- AgentLaunch (auto-submitted via GitHub Actions?)
+- CurlShip: generic github.com listing exists (not project-specific)
