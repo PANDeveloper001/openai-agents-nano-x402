@@ -37,3 +37,26 @@ Nano sellers (Agent402 index): 0/500+ (unchanged)
 3. When req1 arrives: publish PyPI package via OIDC workflow
 4. When req2 arrives: open 16+ prepared PRs starting with x402-foundation/x402
 5. Re-check Agent402 index for new Nano sellers when not cached
+## 2026-09-17 ~09:30 UTC — Distribution run: all paths exhausted, fixed build break
+
+### Work done this run
+1. **Applied corrective actions** from 08:20 UTC run. All 16 PR branches confirmed clean.
+2. **Directory re-check (batch):** x402info.com/ecosystem, bestaiagents.org, agents.net/directory, AgentRank, AiAgents.Directory, MeshKore, TheNextAI, aiagenttools.dev, AgentMRR — NONE live yet. All still pending curation.
+3. **Evaluated new target AgentBoard** (natearcher-ai/agentboard) — repo is 7 months stale (last push Feb 2026), 1 star, 0 forks. Not worth the PR effort.
+4. **Checked awesome-agentic-income** (frankxai) — about "how agents earn" not payment rails. Weak fit. Not targeted.
+5. **Fixed build break:** pyproject.toml had both license='MIT' (PEP 639) AND License classifier — new setuptools rejects this. Removed redundant License classifier. Build now succeeds. 9/9 tests pass.
+
+### Funnel
+Branches: 16 clean (0 dirty)
+Directory submissions pending: ~8 (all < 7 days)
+Installs (PyPI): 0 (req1 pending)
+Merged PRs: 0 (req2 pending)
+Outside payments: 0
+Outreach issues: 28 open, 0 comments
+
+### Bottlenecks unchanged
+- req1 (PyPI trusted publisher) — pending customer action
+- req2 (GH PR scope) — pending customer action; 16 branches ready
+- X weekly slot: Sep 22
+- All directories < 7 days — next re-check Sep 18-19
+- No new keyless targets found
