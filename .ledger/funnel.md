@@ -71,15 +71,17 @@ Filed on own forks because upstream PRs blocked by scope. Targets cover awesome 
 - All directories < 7 days — no re-submit
 - 0 new keyless/prepared targets remain
 
-## Last verification (2026-09-17 12:22 UTC)
-- 17/17 PR branches clean (drift script verified via `prepared_pr_drift_all.py`, all ahead/behind 0)
-- x402 docs and specs branches individually verified via local merge-base clone: docs-v10 ahead 1/behind 0, specs-v3 ahead 3/behind 0
-- PyPI build: `python3 -m build` produces sdist + wheel successfully
-- AgentMRR listing: still live (verified via API + homepage)
-- Directory checks: all still pending (earliest submission Sep 16 -> re-check Sep 18-19)
-- SwarmBazaar: submitted, not yet findable on public page
-- GitHub traffic baseline (14 days to 2026-09-16): views=76 total/29 uniques, clones=812/260 uniques, referral=58 from X (t.co)+3 from github.com; release assets wheel 13 dl / sdist 6 dl; 0 stars/0 forks
-  - Note: 245/567 clones on Sep 15-16 are strongly inflated by Rai's own verification installs and CI
-- All 8 directory submissions still < 72h old. Re-check Sep 18-19 for 7+ day listings.
+## Last verification (2026-09-17 13:58 UTC)
+- 17/17 PR branches clean — `prepared_pr_drift_all.py` confirms all ahead/behind 0 vs upstream
+- All directory re-checks performed (browser, signed out): x402info.com/ecosystem, aiagentcensus.com, agents.net/directory, SwarmBazaar, theagentrank.com — NONE yet listing openai-agents-nano. Earliest submission x402info.com/ecosystem ~28h old, all still pending curation
+- Merge-rate scan: frankxai/awesome-payment-agent-skills 10/13 merged (strongest PR target), xpaysh/awesome-x402 1/20 merged (low), mbeato/awesome-mpp 6/12 merged (moderate)
+  - All PRs still blocked by req2
+- nano-mcp-public: 0 stars/0 forks, 4 views/14d, no bugs reported from outside
+- Blocks 10 + 11 verify running (LLM judge, started ~13:58 UTC)
+- All distribution paths exhausted until req1 or req2 arrives
+## Block 10 and 11 status (2026-09-17 13:58 UTC)
+- Block 10 offline tests: 8/8 pass (prepared_pr_doc_offline.py)
+- Block 11 offline tests: 7/7 pass (tunnel_ua_probe_offline.py)
+- Ledger verifies dispatched for both blocks; pending LLM judge result
 ## New discovery (2026-09-17 12:28 UTC)
 - **aiagentslisting.com** — launched Sep 6, free submissions, requires account sign-in. Not yet submitted. Has MCP endpoint for AI agent queries. Category includes agent-commerce/agent-payments. Submit at next available opportunity.
