@@ -85,3 +85,12 @@ Filed on own forks because upstream PRs blocked by scope. Targets cover awesome 
 - Ledger verifies dispatched for both blocks; pending LLM judge result
 ## New discovery (2026-09-17 12:28 UTC)
 - **aiagentslisting.com** — launched Sep 6, free submissions, requires account sign-in. Not yet submitted. Has MCP endpoint for AI agent queries. Category includes agent-commerce/agent-payments. Submit at next available opportunity.
+
+## Run 2026-09-17 15:5x UTC
+- Drift: 16/17 clean (satohubai/onchain-agents API 404, 4-star repo, not rebuilt)
+- Corrected: PyPI package milestone is a FALSE POSITIVE. /pypi//json and /simple/ both
+  404 -> package NOT on PyPI. /project/ returns 200 via captcha challenge for any name.
+  Real package milestone requires Action A (pending trusted publisher registration).
+- GitHub release v0.1.0 live: wheel 13 downloads, sdist 6 downloads (baseline).
+- 8 directory submissions all still pending (<72h). Next bulk re-check Sep 18-19.
+- All keyless distribution paths verified exhausted. 16 PR branches waiting on req2.
