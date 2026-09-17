@@ -49,3 +49,36 @@ All ahead 0-3 / behind 0. Clean as of 2026-09-17 21:02 UTC. satohubai/onchain-ag
 - Sep 22: weekly X post slot
 - When req1 arrives: publish to PyPI
 - When req2 arrives: open all 17 PRs
+## 2026-09-18 21:58 UTC — Distribution check
+
+**State:** Distribution-first run. All corrective actions reviewed.
+
+**Surfaces checked:**
+- GitHub repos (openai-agents-nano-x402, nano-mcp-public): 200 signed-out
+- PyPI: NOT live (/pypi/json + /simple/ both 404) — req1 still pending
+- Release v0.1.0: wheel 42 dl, sdist 7 dl (up from 32/6)
+
+**Directory re-checks (72h+):**
+- agents.net/directory: 47 agents listed, ours NOT visible — still pending
+- x402info.com/ecosystem: 14 featured projects, ours not shown — still pending
+- bestaiagents.org: landing-only page, no browseable listing
+- theagentrank.com: 160 agents, ours not visible
+- All 8+ pending — human curated, ~3-7 day cycles
+
+**New surfaces evaluated (all skipped):**
+- AgentBoard (natearcher-ai/agentboard): DEV challenge project, 15 static agents — skip
+- Agent Directory API: 404 (domain changed) — skip
+- curlship.io: DNS fails — skip
+
+**PR fork drift (15 repos):** 4 clean / 11 ahead-by-1 (our commits unmerged) — expected while req2 pending
+- x402-foundation/x402 forks: 1,240+ behind upstream (active repo, expected)
+- All branches still saveable; no merge conflicts detected
+- Only req2 unblocks the PRs
+
+**Tests run (journal data for newsletter):**
+- openai-agents-nano-x402: 9 passed
+- nano-mcp-public: 129 passed
+
+**Blockers:** req1 (PyPI key) and req2 (GH PR scope) both still open. No new grants.
+
+**Next:** Sep 22 weekly X post slot; newsletter cron; when req1/2 land, publish PyPI + open 18 PRs.
