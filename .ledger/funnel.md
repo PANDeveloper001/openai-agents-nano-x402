@@ -5,7 +5,15 @@
 - release wheel 10 / sdist 5 downloads
 - stars 0 / forks 0
 
-## Last updated: 2026-09-17 16:25 UTC
+## Last updated: 2026-09-17 16:55 UTC
+
+### Re-verification 2026-09-17 16:55 (this run)
+- 17/18 prepared PR branches CLEAN (ahead/behind 0). satohubai/onchain-agents API 404 (4★ repo lost upstream, not rebuilt) — only "needing attention".
+- All existing distribution surfaces still HTTP 200: GitHub repo, release v0.1.0, AgentMRR product, goodmeta compare URL.
+- PyPI still NOT live (404 on /simple/ and /pypi/json) — package milestone correctly stays pending on req1.
+- x402info ecosystem re-checked 16:55 — still showing 14 featured projects, ours absent (curated list, <72h).
+- No new keyless directory or awesome-list target found via fresh search — all keyless paths VERIFIED EXHAUSTED.
+- req1 (PyPI) + req2 (GH PR scope) both still open, waiting on customer. Nothing else keyless remains.
 
 ### Traffic
 - views: 76 (from 23) / uniques: 29 (from 6)
