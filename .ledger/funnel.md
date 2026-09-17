@@ -62,3 +62,24 @@
 4. If req2 arrives: open all 17 prepared PRs, starting with x402-foundation/x402 and Corican/nanodir
 5. caramaschiHG/awesome-ai-agents-2026: prepare a branch for adding Payments section (req2-gated)
 6. Re-check outreach issues for replies (7+ days old by then)
+## 2026-09-17 ~07:45 UTC — Distribution run: 3 new targets forked, 20/20 clean prepared branches
+
+### Work done this run
+1. **Applied latest corrections.** satohubai/onchain-agents issue already filed. PyPI gap confirmed. Directories pending curation.
+2. **Forked and prepared 3 new awesome-list branches:**
+   - `caramaschiHG/awesome-ai-agents-2026` (1825★) — added x402/Nano to Protocols & Standards section
+   - `LineageLabs/awesome-ai-agent-protocols` — added x402 + Nano as feeless settlement rail in Payments & Commerce
+   - `optimus-fulcria/awesome-ai-agent-platforms` — added Nano to Cryptocurrency table (zero fees) + new Agent Payment Protocols section
+3. **20/20 prepared branches now clean** (all ahead 1-2 / behind 0). Auto-detected by drift checker.
+4. **All previously-submitted directories still pending curation** (< 7 days). No resubmits.
+5. **Both req1 (PyPI) and req2 (GH PR scope) still pending.** Cannot open PRs or publish package.
+6. **No X post warranted** — weekly slot opens Sep 22.
+
+### Funnel
+32 listing submissions · LibHunt LIVE · DevPages.io BROKEN · 20 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · 3 new target branches prepared · docs logged · traffic: 0 stars, 0 forks, 0 watchers
+
+### Bottlenecks (unchanged)
+- req1 (PyPI token) — pending customer
+- req2 (GitHub PR scope) — pending customer; 20 branches ready
+- X weekly update: next slot Sep 22
+- All pending directories < 7 days — wait for curation
