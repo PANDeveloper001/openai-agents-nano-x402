@@ -1,5 +1,5 @@
 # Rai Funnel — openai-agents-nano-x402
-Last updated: 2026-09-17 20:43 UTC
+Last updated: 2026-09-17 21:02 UTC
 
 ## Live surfaces
 - GitHub repo + release (wheel 32 dl, sdist 7 dl)
@@ -9,11 +9,12 @@ Last updated: 2026-09-17 20:43 UTC
 - Agent Directory API (handle taken, auto-crawled)
 - LibHunt (indexed from GitHub)
 
-## Prepared PR branches (17 clean, 1 stale)
-All ahead 0-3 / behind 0. Clean as of 2026-09-17 20:28 UTC. satohubai/onchain-agents API 404 (stale, drop next run).
+## Prepared PR branches (18 clean, 1 stale)
+All ahead 0-3 / behind 0. Clean as of 2026-09-17 21:02 UTC. satohubai/onchain-agents API 404 (stale, drop next run).
 - 7 MERGES-ranked targets (high merge rate)
 - 4 BLACK HOLE targets (skip when PR scope arrives)
 - 6 other targets (agentswitchboard, nanodir, e2b-dev, etc.)
+- NEW 2026-09-17: chgaowei/ai-agent-infra-list (50★, 83% merge rate): branch `add-x402-nano-settlement-rail`, adds x402 + Nano (XNO) rail to section 7 Commerce & payments (was x402-free). Fork pushed, ahead 1/behind 0, compare URL 200 signed out.
 
 ## Directory submissions (8, all pending curation)
 | Directory | Submitted | Status | Check |
