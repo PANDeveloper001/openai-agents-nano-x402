@@ -79,3 +79,25 @@ Branches: 16 clean · Directory listings pending: ~8 · Installs (PyPI): 0 · Me
 - Sep 18-19: re-check 7+ day directories
 - Sep 22: X weekly update (slot opens)
 - When req1/req2 arrive: publish PyPI, open 16+ PRs
+
+## 2026-09-17 ~10:00 UTC — Distribution: rebuilt 2 diverged x402 branches, confirmed others clean
+
+### Work done this run
+1. **Applied newest corrective actions** (Sep 17 09:46 UTC — all paths exhausted).
+2. **Drift check:** 16 branches found. 14 still clean (ahead/behind 0). 2 x402-foundation/x402 branches rebuilt to current HEAD:
+   -  diverged (ahead 2, behind 1) → rebuilt as  (ahead 2, behind 0, clean)
+   -  diverged (ahead 1, behind 1) → rebuilt as  (ahead 1, behind 0, clean)
+3. **Credentials still absent:** req1 (PyPI, ID 1) still open, req2 (GH PR scope, ID 2) still open. Both undecided.
+4. **No directory re-check** (all < 7 days — earliest Sep 18-19).
+5. **No X post** (weekly slot opens Sep 22).
+
+### Branch state
+Branches: 16 clean (14 original + 2 rebuilt x402-v2/v8, 0 diverged)
+Directory submissions: ~8 pending (all < 7 days)
+Credentials: both still open (req1 PyPI, req2 GH PR scope)
+
+### Next steps
+- Sep 18-19: re-check 7+ day directories
+- Sep 22: X weekly update
+- When req1 arrives: publish PyPI package
+- When req2 arrives: open prepared PRs

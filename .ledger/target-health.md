@@ -12,7 +12,8 @@ A prepared branch is worth a click only where the second column says MERGES.
 | `Scottcjn/awesome-agents` | MERGES - worth a click | 22/28 | 2026-09 12/15, 2026-08 6/7, 2026-07 4/6 | 102 | 2026-09-16 | 1 |
 | `xpaysh/awesome-x402` | MERGES - worth a click | 232/300 | 2026-09 1/25, 2026-08 3/23, 2026-07 228/252 | 288 | 2026-07-28 | 1 |
 | `frankxai/awesome-payment-agent-skills` | MERGES - worth a click | 10/13 | 2026-09 7/10, 2026-08 1/1, 2026-06 2/2 | 2 | 2026-09-15 | 1 |
-| `x402-foundation/x402` | MERGES - worth a click | 197/300 | 2026-09 70/102, 2026-08 112/167, 2026-07 15/31 | 6619 | 2026-09-16 | 2 |
+| `x402-foundation/x402` | MERGES - worth a click | 197/300 | 2026-09 70/102, 2026-08 112/167, 2026-07 15/31 | 6619 | 2026-09-17 | 2 |
+(prepared: specs/exact-nano-mainnet-v2 ahead 2/behind 0, docs/list-openai-agents-nano-v8 ahead 1/behind 0)
 | `assafbar2/agentswitchboard.dev` | SOMETIMES - keep if the fit is exact | 12/27 | 2026-09 6/19, 2026-08 4/6, 2026-07 2/2 | 0 | 2026-09-16 | 1 |
 | `tsubasakong/awesome-agent-payments-protocol` | SOMETIMES - keep if the fit is exact | 1/6 | 2026-09 0/2, 2026-08 1/2, 2026-07 0/2 | 15 | 2026-09-15 | 1 |
 | `e2b-dev/awesome-ai-sdks` | DEAD - no push in 69 days and merges stopped | 1/26 | 2026-09 0/4, 2026-08 0/13, 2026-07 1/9 | 1223 | 2026-07-09 | 1 |
