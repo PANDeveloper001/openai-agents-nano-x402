@@ -12,7 +12,13 @@
 - github.com/topics/xno page 3 — card live (verified 2026-09-17)
 - Topics set: x402, nano, xno, payments, micropayments, ai-payments, openai-agents-sdk, openai-agents
 
-## Prepared PR branches (16, all clean as of 2026-09-17 10:22 UTC)
+## Keyless directory discoveries (verified live via no-auth API)
+- **Agent Directory API** (agent-directory-api.vercel.app) — listing exists (handle `openai-agents-nano` taken, indicating auto-crawl)
+- **agentlaunch** (agents-launch.lovable.app) — LIVE (verified Sep 17, slug `openai-agents-nano`, crawled Sep 15 with full description from README)
+  - ID: ca04de4f-1293-4567-97c6-2fec3f919635
+  - Category: devtools, pricing: freemium
+
+## Prepared PR branches (17, all clean as of 2026-09-17 11:40 UTC)
 | Upstream | Branch | Status |
 |---|---|---|
 | Corican/nanodir | add-openai-agents-nano-clean | ahead 1 / behind 0 |
@@ -30,9 +36,14 @@
 | tsubasakong/awesome-agent-payments-protocol | add-openai-agents-nano-v2 | ahead 1 / behind 0 |
 | x402-foundation/x402 | docs/list-openai-agents-nano-v9 | ahead 3 / behind 0 |
 | x402-foundation/x402 | specs/exact-nano-mainnet-v3 | ahead 3 / behind 0 |
-| xpaysh/awesome-x402 | add-openai-agents-nano-v2 | ahead 2 / behind 0 |
+| xpaysh/awesome-x402                           | add-openai-agents-nano-v2                  | ahead 2 / behind 0 |
+| facundofarias/awesome-agent-first-tools | add-openai-agents-nano | prepared Sep 17 (branch pushed, PR blocked by req2) |
 
-All branches need req2 (GH PR scope) to open PRs.
+All 16 original branches need req2 (GH PR scope) to open PRs.
+17th branch (awesome-agent-first-tools) prepared today — new target found.
+- Payments & Commerce section: entry added under Stripe, Skyfire, Payman
+- Fork created: PANDeveloper001/awesome-agent-first-tools
+- Branch pushed: add-openai-agents-nano
 
 ## Outreach issues (28, all open with 0 comments)
 Filed on own forks because upstream PRs blocked by scope. Targets cover awesome lists, directories, and x402 ecosystem repos.
