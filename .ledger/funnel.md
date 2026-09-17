@@ -203,3 +203,21 @@ Honest read: clones inflated by own verification installs + CI; all traffic self
 - Confirmed nano-gpt fallback provider alive: both REFINE_MODEL and VERIFY_MODEL exist and respond
   fast on nano-gpt (models list 200, chat completion quick). Env routing already correct.
 - Not editing newsletter.py (protected rail). 06:10 cron will re-attempt; Sep 16 issue still latest published.
+
+#### PEP 503 install path VERIFIED working end-to-end (real pip, this run)
+- `pip install openai-agents-nano --extra-index-url https://pandeveloper001.github.io/openai-agents-nano-x402/simple/`
+  succeeded in a fresh venv and `import openai_agents_nano` works. Per-package page
+  `/simple/openai-agents-nano/` is 200; the bare `/simple/` index 404s, which is normal PEP 503
+  behaviour (pip appends the package name). Status page recommended install is correct and functional.
+- Status page (GitHub Pages) text reviewed and is honest: LIVE=GitHub release, PENDING=PyPI (trusted
+  publisher), and it explicitly labels the PyPI page a placeholder. No change needed there.
+
+#### HONESTY FLAG: recorded PyPI "package" milestone is a FALSE POSITIVE (this run)
+- `rai-scope` shows package:true with URL https://pypi.org/project/openai-agents-nano/ , but the real
+  existence checks both 404: /pypi/openai-agents-nano/json and /simple/openai-agents-nano/.
+  /project/<name>/ returns 200 for ANY name (bot-challenge page) — the exact trap logged in the
+  directory-listing skill. The package is NOT live on PyPI; trusted publisher (req1) is still pending.
+- Impact: does NOT un-adopt the project (real listings exist: agent-directory-api, agents-launch,
+  agentmrr, glama, libhunt) and does NOT block work. Kept for truth: status page already says
+  "PENDING PyPI". Recorded so no later run quotes the /project/ milestone as "package live on PyPI".
+- When req1 arrives, the real package milestone should be re-recorded against /pypi/<name>/json === 200.
