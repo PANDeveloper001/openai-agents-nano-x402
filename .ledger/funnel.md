@@ -135,9 +135,38 @@ Takeaway: all 12 directory submissions still pending human review. Earliest hit 
 - 17/18 prepared PR branches clean (ahead/behind 0). satohubai/onchain-agents still API 404 (known).
 - Traffic unchanged: 76 views / 29 uniques.
 
+### Re-verification 2026-09-17 18:45 UTC (this run)
+#### Re-checks (browser, all still PENDING — none live)
+- agents.net/directory — 82 agents, ours NOT listed
+- bestaiagents.org — homepage cards, ours absent
+- theagentrank.com — ours absent (160 agents)
+- x402info.com/ecosystem — still only 14 featured projects (a curated short list)
+- aiagentcensus.com — landing page only, no directory view; ours absent
+Takeaway: all directory submissions still pending human review. Earliest hit 72h+ Sep 18.
+
+#### Traffic (re-measured this run, GitHub API)
+- views 76 / uniques 29 (unchanged); clones 812 / uniques 260 (up from 245/100 baseline)
+- referrers: t.co 58 / 29 uniques (own X post), github 3 / 1 — no organic external audience yet.
+  Honest read per skill: clones inflated by own verification installs + CI; t.co is our own post.
+
+#### Newsletter 2026-09-17
+- env is already routed to fallback provider (nano-gpt): OPENROUTER_API_BASE=https://nano-gpt.com/api/v1.
+  Both REFINE_MODEL (deepseek-v4-flash-0731) and VERIFY_MODEL (deepseek-v4-pro-0813) exist on nano-gpt.
+- Background dry-run attempt (--date 2026-09-17 --dry-run) still running at 0% CPU — likely model-call
+  timeout through nano-gpt, same symptom as before. Newsletter remains unpublished for Sep 17.
+- Next: let the cron (10:06) or a routed manual run with fallback-model env complete it.
+
+#### Drift check
+- 17/18 prepared PR branches clean (ahead/behind 0 vs upstreams). satohubai/onchain-agents still API 404 (known).
+
+#### New surfaces searched, none fit for a client SDK
+- SubmitMap qualify_project recommended only generic dirs (launchlog); not an agent/dev-tool fit.
+- Web-mined: KnowYourAgent/agent-directory (2★, stale Jan 2025), AI-Agent-Hub/ai-agent-marketplace (1★,
+  generic), man0l/ai-directories (a submission-pipeline tool, not a listing) — none worth a branch (no-spam).
+- 28-29 outreach issues delivered across third-party forks; 0 maintainer comments yet.
+
 ### Next useful actions
-- Sep 18: earliest directory submissions (agents.net, bestaiagents, theagentrank) hit 72h+ — browser re-check for live cards
-- Sep 18: nightly crawler first run (d2c74abaaee4, 8am) — read funnel.md for discoveries
-- Sep 18: retry newsletter 2026-09-17 with fallback provider (see provider-fallbacks.md) or after verifier model recovers
+- Sep 18: earliest directory submissions (agents.net, bestaiagents, theagentrank) hit 72h+ — browser re-check for live cards; nightly crawler first run (d2c74abaaee4, 8am)
+- Retry newsletter 2026-09-17 via cron or a fallback-model routed manual run
 - Sep 22: weekly X technical update slot opens
 - When req1 (PyPI) / req2 (GH PR scope) arrive: publish package + open 17 PRs in one run
