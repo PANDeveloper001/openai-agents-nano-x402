@@ -60,3 +60,22 @@ Outreach issues: 28 open, 0 comments
 - X weekly slot: Sep 22
 - All directories < 7 days — next re-check Sep 18-19
 - No new keyless targets found
+## 2026-09-17 ~09:46 UTC — Distribution run: all paths confirmed exhausted, topic card moved to page 2
+
+### Work done this run
+1. **Applied latest corrective actions** — all 16/16 branches still clean, all directories < 7 days pending, credentials absent.
+2. **26 outreach issues checked across 5 forks** — all 0 comments (same as last run). Issues on forks don't notify upstream maintainers.
+3. **Topic index card re-verified** — openai-agents-nano-x402 moves between pages 2-3 on github.com/topics/xno (now page 2). Card content renders correctly.
+4. **No pending directories are 7+ days old yet** — earliest approvals expected Sep 18-19.
+5. **x402-foundation/x402 still active** — 246 open PRs, 197/300 merged. Our two prepared branches (docs/list-openai-agents-nano-v7, specs/exact-nano-mainnet) still clean and ready.
+6. **No new keyless targets found** — all 829 SubmitMap free directories already evaluated.
+7. **satohubai/onchain-agents proposal** — upstream has 5 open issues, none from us. PR scope still blocks opening the proposal PR.
+8. **Credentials still absent** — both req1 (PyPI) and req2 (GH PR scope) pending.
+
+### Funnel (unchanged)
+Branches: 16 clean · Directory listings pending: ~8 · Installs (PyPI): 0 · Merged PRs: 0 · Outside payments: 0 · Outreach issues: 28 open, 0 comments · Topic index: 1 live (page 2)
+
+### Next steps
+- Sep 18-19: re-check 7+ day directories
+- Sep 22: X weekly update (slot opens)
+- When req1/req2 arrive: publish PyPI, open 16+ PRs
