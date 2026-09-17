@@ -18,7 +18,7 @@
   - ID: ca04de4f-1293-4567-97c6-2fec3f919635
   - Category: devtools, pricing: freemium
 
-## Prepared PR branches (17, all clean as of 2026-09-17 11:40 UTC)
+## Prepared PR branches (17, all clean as of 2026-09-17 12:22 UTC)
 | Upstream | Branch | Status |
 |---|---|---|
 | Corican/nanodir | add-openai-agents-nano-clean | ahead 1 / behind 0 |
@@ -71,10 +71,15 @@ Filed on own forks because upstream PRs blocked by scope. Targets cover awesome 
 - All directories < 7 days — no re-submit
 - 0 new keyless/prepared targets remain
 
-## Last verification (2026-09-17 11:13 UTC)
-- 16/16 PR branches clean (drift script verified, all ahead/behind 0)
+## Last verification (2026-09-17 12:22 UTC)
+- 17/17 PR branches clean (drift script verified via `prepared_pr_drift_all.py`, all ahead/behind 0)
+- x402 docs and specs branches individually verified via local merge-base clone: docs-v10 ahead 1/behind 0, specs-v3 ahead 3/behind 0
 - PyPI build: `python3 -m build` produces sdist + wheel successfully
-- AgentMRR listing: still live (verified signed-out HTTP 200, page renders openai-agents-nano x8)
-- Directory checks: all 8 pending (x402info, aiagentcensus, AiAgents.Directory, AgentRank, bestaiagents, agents.net, MeshKore, TheNextAI)
+- AgentMRR listing: still live (verified via API + homepage)
+- Directory checks: all still pending (earliest submission Sep 16 -> re-check Sep 18-19)
 - SwarmBazaar: submitted, not yet findable on public page
-- NanoRoute tunnel: expired (Pinggy free 60min limit)
+- GitHub traffic baseline (14 days to 2026-09-16): views=76 total/29 uniques, clones=812/260 uniques, referral=58 from X (t.co)+3 from github.com; release assets wheel 13 dl / sdist 6 dl; 0 stars/0 forks
+  - Note: 245/567 clones on Sep 15-16 are strongly inflated by Rai's own verification installs and CI
+- All 8 directory submissions still < 72h old. Re-check Sep 18-19 for 7+ day listings.
+## New discovery (2026-09-17 12:28 UTC)
+- **aiagentslisting.com** — launched Sep 6, free submissions, requires account sign-in. Not yet submitted. Has MCP endpoint for AI agent queries. Category includes agent-commerce/agent-payments. Submit at next available opportunity.
