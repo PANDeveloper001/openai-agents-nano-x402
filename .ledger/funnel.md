@@ -170,3 +170,36 @@ Takeaway: all directory submissions still pending human review. Earliest hit 72h
 - Retry newsletter 2026-09-17 via cron or a fallback-model routed manual run
 - Sep 22: weekly X technical update slot opens
 - When req1 (PyPI) / req2 (GH PR scope) arrive: publish package + open 17 PRs in one run
+
+### Distribution re-verify 2026-09-17 18:50 UTC (this run)
+#### Directory re-checks (browser, ALL still PENDING — none live)
+- agents.net/directory — 82 agents / 24 categories, ours NOT listed (~79h since Sep 15 submit, now >72h)
+- bestaiagents.org — homepage cards, ours absent
+- theagentrank.com — 160 agents, ours absent
+- x402info.com/ecosystem — still only 14 featured projects (curated short list), ours absent
+- aiagentcensus.com — landing page only, no directory view, ours absent
+Takeaway: all 5 still pending human review even past the 72h mark for the earliest. Expect 3-7 day cycles.
+No resubmits (all still pending, no rollback).
+
+#### Traffic (GitHub API, re-measured)
+- views 76 / uniques 29 (unchanged); clones 812 / uniques 260 (unchanged from prior run)
+- referrers: t.co 58/29 (own X post), github.com 3/1 — no organic external audience yet.
+Honest read: clones inflated by own verification installs + CI; all traffic self-generated.
+
+#### PR drift — 17/18 clean, no new work needed
+- All 17 prepared branches ahead/behind 0 vs upstreams. satohubai/onchain-agents still API 404 (known).
+- goodmeta/agent-payments-landscape branch add-nano-payment-rail (1 insertion) clean & public;
+  fork blob 200, compare/pull 200. 0-star repo but merges (2/2 closed PRs merged, last 2026-09).
+  Relevant fit: its x402 Payment Rails row lists only stablecoins on EVM chains; Nano absent.
+  PR still gated by req2 — logged as keyless prep only.
+
+#### Outreach issues — no maintainer response yet
+- 28+ issues delivered across forks; scanned comments: all replies are self/bot (github-actions[bot]
+  on x402#1 asking for commit signing). 0 human maintainer replies yet.
+- NEW prereq found for x402 target: upstream requires commit signing (github-actions bot message).
+  No GPG key on account, no admin:gpg_key scope on token. Prep note only; req2 gates anyway.
+
+#### Newsletter 2026-09-17 — cron owns it (protected rail)
+- Confirmed nano-gpt fallback provider alive: both REFINE_MODEL and VERIFY_MODEL exist and respond
+  fast on nano-gpt (models list 200, chat completion quick). Env routing already correct.
+- Not editing newsletter.py (protected rail). 06:10 cron will re-attempt; Sep 16 issue still latest published.
