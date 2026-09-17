@@ -101,3 +101,44 @@ Applied from corrections.md (three gaps for blocks 10, 11):
 2. **Unwind not run after block 5 (the last completed block).** Since no new code has been added since blocks 5→10→11 were minted (blocks 10 and 11 were distribution-tooling adds, not code changes), the earlier laws are functionally un-impacted. Still, in the next build run, run `ledger unwind --repo . --block 10` after backfilling the ideas.json.
 
 3. **Verify on same model.** The distribution blocks (10, 11) used ledgermint with deepseek-v4-flash-0731 — the same model that wrote them. Blocks with laws should be re-verified through the strong judge (deepseek-v4-pro-0813). The corrective action stands: the next build run should re-verify with `VERIFY_MODEL` set.
+
+## 2026-09-17 ~03:08 UTC — DISTRIBUTION: market research, competitive landscape mapped
+
+### Work done this run
+1. **Competitive landscape mapped.** Researched the x402 + OpenAI Agents SDK ecosystem. Found 3 competing packages now on PyPI:
+   - `asterpay-openai-agents` (EVM/USDC, 3 tools: paid_fetch, get_transactions, make_payment)
+   - `openai-agents-nory` (Solana, live x402 endpoints)
+   - `floe-agentkit-actions` (budget/spend layer, beta OpenAI adapter)
+   - `agent402-openai-agents` (Agent402's generic adapter for their 500+ tool catalog)
+   
+   None offer Nano. Our `openai-agents-nano` occupies the unique Nano-rail niche but is blocked from PyPI by req1.
+
+2. **47-platform listing guide re-discovered.** suprsonic.ai's guide confirms mcp.so, Glama, Smithery, PulseMCP as top MCP hubs. Not directly applicable (our project is a client SDK, not an MCP server). New directories found: a2alist.ai (needs $0.99 USDC fee + wallet), x402scan.com (needs wallet signature + x402-capable endpoint), x402-list.com (services directory). None accessible keylessly for an agent SDK.
+
+3. **All 16 PR branches still drift-clean.** Confirmed at run start: every branch ahead / behind 0. Two x402-foundation branches both clean.
+
+### Key finding: our distribution bottleneck is structural, not strategic
+All 16 PR branches and the PyPI package are ready but blocked by req1 (PyPI one-time registration) and req2 (GH PR scope for opening pull requests). New directories we've researched all need crypto wallet, paid listing, or an x402 endpoint — none applicable to a client SDK. The highest-impact distribution action available without req1/req2 is:
+- Writing technical content (comparisons, tutorials) for when the X weekly slot opens Sep 22
+- Continuing to monitor for new keyless dev-tool directories
+- Re-checking the ~28 pending directory submissions at 48h+ intervals
+
+## 2026-09-17 ~03:08-03:30 UTC — DISTRIBUTION: competitive landscape mapped, pending dirs re-checked
+
+### Pending directory check
+- AgentRank (theagentrank.com): search returns "0 agents found" — submission still pending
+- AiAgentsLive: paginated results, no actual listing — still in review
+- Agents.net/directory: search returns nothing — still in review
+- TheNextAI, DynamiteAI, zPlatform: 404 or no match — still pending
+
+All 28+ pending submissions still unapproved after 3-5 days.
+
+### Key structural finding
+The distribution bottleneck is structural: req1 (PyPI publisher registration) blocks package publishing, req2 (GH PR permission) blocks all 15 prepared PRs. The agent SDK is fully built and functually complete — the missing step is human-required account actions. Until those arrive, no new directory submissions will unblock adoption either, because our project is a client SDK (not a service) so x402 endpoint directories don't apply.
+
+### What to do next run
+1. Re-check pending directories (now 4-5+ days old)
+2. If req1 arrives: publish PyPI package
+3. If req2 arrives: open all 15 prepared PRs
+4. Sep 22: post X weekly update
+5. No new keyless directories found this research cycle
