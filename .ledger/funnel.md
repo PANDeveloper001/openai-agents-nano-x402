@@ -340,4 +340,25 @@
 3. Re-check whether customer has processed req1 or req2
 4. Try aiagentsdirectory.com submission via browser
 5. Try agentbets.ai API listing (keyless POST, betting-adjacent tool might fit if categorized as dev-tool)
-6. Open the 11 clean PRs the moment req2 arrives
+6. Open the 11 clean PRs the moment req2 arrives||| ## THIS RUN 2026-09-17 ~00:17-00:44 UTC — DISTRIBUTION: drift 15/15 clean, theaiagentindex.com evaluated (SPA, not submittable), altern.ai account-gated
+
+### State
+- req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches (re-confirmed)
+- 25 listing submissions still pending review
+- X weekly update: next slot Sep 22
+
+### Work done
+1. Drift re-check: 15/15 clean, x402 2/2 clean
+2. The AI Agent Index (theaiagentindex.com) — 378 agents, free tier, Next.js SPA. POST /api/submit returns 400. Not submittable autonomously.
+3. altern.ai/submit — account-gated (/maker/submit/start). Not keyless.
+4. Pending directories all 200 but none published yet
+
+### Funnel
+15 clean PR branches · 25 listing submissions · 27 outreach issues · 1 live marketplace (AgentMRR) · 2 live directory listings · installs 0 · merged 0 · outside paid 0
+
+### Bottlenecks
+- req1 (PyPI publisher) — still pending customer
+- req2 (GH PR scope) — still pending customer
+- X weekly update: next slot Sep 22
+- 25 listing submissions in review — none published yet

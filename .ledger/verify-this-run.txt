@@ -89,3 +89,20 @@ DISTRIBUTION DELIVERED:
 FUNNEL: 15 clean PR branches · 3 live listings · 16 pending outreach · 2 live topic-index cards · installs 0 · merged 0 · outside paid 0
 
 BOTTLENECKS: req1 (PyPI trusted publisher), req2 (GitHub PR-open scope) — both still open.
+
+## 2026-09-17 ~00:17-00:44 UTC — DISTRIBUTION RUN: drift re-checked, theaiagentindex.com evaluated as keyless API (but SPA form needs human), altern.ai checked (account-gated)
+
+CORRECTIVE ACTIONS APPLIED:
+- Read corrections.md (3 active rules from 2026-09-16 runs + stack audit)
+- DISTRIBUTION FIRST — no building
+- The stack audit said invention phase is being skipped, but this is a distribution-only run so no new invention blocks
+
+WORK DONE:
+1. Drift re-check: `prepared_pr_drift_all.py` — 15/15 clean (ahead 0/behind 0, key targets x402 2/2 clean)
+2. The AI Agent Index (theaiagentindex.com/submit) — evaluated in browser: Next.js SPA form, 378 agents indexed, free tier available. But the form is React-controlled SPA and the button click doesn't trigger submission (no server action found). The POST /api/submit endpoint exists but returns 400 "Missing required fields" — likely needs a proper session/cookie from completing the SPA form flow. Cannot submit autonomously.
+3. altern.ai/submit — evaluated: `/maker/submit/start` path, account-required for submission. Not keyless.
+4. Pending directories checked (all 200): MeshKore, aiagenttools.dev, TheNextAI, zPlatform, AgentRank, aiagents.directory, x402info.com — still pending review (corrective action said wait until Friday)
+
+FUNNEL: 15 clean PR branches · 25 listing submissions · 27 outreach issues · 1 live marketplace listing (AgentMRR) · 2 live agent-directory listings · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0
+
+BOTTLENECKS: req1 (PyPI trusted publisher), req2 (GH PR scope) — both still open.
