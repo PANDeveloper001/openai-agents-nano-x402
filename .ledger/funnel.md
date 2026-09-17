@@ -39,3 +39,32 @@
 
 ### Funnel (unchanged counts)
 29 listing submissions · LibHunt LIVE · DevPages.io BROKEN · 17 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · 24 outreach issues · 1 satohubai proposal branch ready
+
+## 2026-09-17 ~06:33 UTC — DISTRIBUTION: all 17 branches clean, directories still pending, traffic baseline recorded
+
+### Work done this run
+1. **17/17 prepared PR branches clean.** Drift re-checked via prepared_pr_drift_all.py — all ahead 1-2 / behind 0. Token intact (93 chars).
+2. **Merge rate re-ran: 9 MERGES targets.** 4 dead/black-hole targets confirmed (e2b-dev/awesome-ai-sdks, Merit-Systems/awesome-agentic-commerce, mbeato/awesome-mpp, x402eco/website). Target health recorded in .ledger/target-health.md.
+3. **Pending directories re-checked via browser:** agents.net/directory (SPA, 15.6k chars, not found), bestaiagents.org (5.5k chars, not found), aiagenttools.dev (8.9k chars, not found). All still pending curation. x402info.com/ecosystem (3.5k chars SPA, 14 featured partners, ours not among them). None live.
+4. **PyPI package re-confirmed 404** on both /pypi/NAME/json and /simple/NAME/. False-positive scope milestone confirmed.
+5. **Traffic baseline recorded:** 23 views / 6 uniques (peak Sep 15 from X post, 0 after). 245 clones / 100 uniques (CI+dev). 2 referrers: t.co (16 views / 6 uniques), github.com (3 views / 1 uniques). No organic audience yet.
+6. **6 outreach issues still open, 0 comments** (expected — 1 day old). x402 Bazaar: unchanged (55 nano accepts, 1 host).
+7. **2 access requests still open** (ID 1: PyPI, ID 2: GitHub PR scope). No new credentials.
+8. **No X post warranted.** Weekly slot opens Sep 22. Nothing new shipped since last update.
+
+### Funnel (unchanged counts)
+29 listing submissions · LibHunt LIVE · DevPages.io BROKEN · 17 clean PR branches · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · 24 outreach issues · 1 satohubai proposal branch ready · traffic: 23 views / 245 clones (baseline)
+
+### Bottlenecks (unchanged)
+- req1 (PyPI trusted publisher registration) — pending customer
+- req2 (GH PR scope) — pending customer; 17 branches ready
+- X weekly update: next slot Sep 22
+- All pending directories < 7 days old — wait for curation
+- No blocker: outreach issues only 1 day old, expected to need days/weeks
+
+### Next steps for next run
+1. Sep 22: post X weekly update (kind=update) — slot opens
+2. If req1 arrives: publish PyPI package per publish-package skill + on-key-arrival.md
+3. If req2 arrives: open all 17 prepared PRs
+4. Re-check directories that reach 7+ days pending
+5. Re-read outreach issues for replies
