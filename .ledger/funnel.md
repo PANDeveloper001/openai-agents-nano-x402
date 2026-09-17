@@ -61,3 +61,36 @@ All on own fork (blocked by req2). 0 external human comments — normal for 3 da
 - Sep 22: weekly X post slot (link to GitHub Pages status page + release assets)
 - When req1 arrives: publish to PyPI (build + rai-publish + upload)
 - When req2 arrives: open 16+ PRs across all MERGES targets in one run
+## 2026-09-17 23:54 UTC — Distribution run re-check
+
+### Directory re-check (8 pending)
+All 8 still pending (earliest submitted Sep 12 = 5 days, most Sep 15-17):
+- agents.net/directory — Sep 15 (3d): 82 agents, ours absent
+- bestaiagents.org — Sep 15 (3d): Homepage, ours absent
+- theagentrank.com — Sep 15 (3d): 160 agents, ours absent
+- x402info.com/ecosystem — Sep 16 (28h): 14 featured curated list, ours absent
+- aiagentcensus.com — Sep 17 (today): Landing page only, no directory view
+- MeshKore — Sep 15 (3d): Still not findable
+- SwarmBazaar — Sep 17 (today): ours not findable
+- AiAgents.Directory — Sep 12 (5d): 496 agents, ours absent
+
+### PR drift (18/19 clean)
+satohubai/onchain-agents: API 404 (dropped from drift set)
+All other 18 branches: ahead 1-3 / behind 0 — CLEAN
+
+### Package status
+PyPI: 404 on both /pypi/json and /simple/ (still not live)
+Wheel downloads: 74 (up from 67)
+Traffic (14d): 76 views/29 uniques, 812 clones/260 uniques
+
+### AgentMRR
+Product silently removed. Re-registered: agent 8bfea8f1, product 2e1d157d. Card live on homepage.
+
+### New distribution surface: x402eco/website
+Prepared branch add-openai-agents-nano-x402eco for x402.eco ecosystem directory (client-integrations category).
+Compare URL: https://github.com/x402eco/website/compare/main...PANDeveloper001:add-openai-agents-nano-x402eco?expand=1
+PR blocked by req2 (no public_repo scope). Open alongside x402-foundation spec PR when req2 arrives.
+
+### Next
+- Sep 22: directory re-check + weekly X post (2 open slots)
+- When req1/2 arrive: PyPI publish + open 17+ PRs across MERGES targets + x402eco PR
