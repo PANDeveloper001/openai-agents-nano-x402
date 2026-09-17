@@ -1,4 +1,40 @@
-|| ## THIS RUN 2026-09-17 ~00:00-00:30 UTC — DISTRIBUTION: aiagentcensus submission, bestaiagents re-submit, drift clean, new directory scan
+||| ## THIS RUN 2026-09-17 ~00:01-00:15 UTC — DISTRIBUTION: drift 15/15 clean, AgentIndexed mailto-only confirmed, 48h+ dirs still pending, X weekly still capped
+
+### State at start
+- req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
+- 15 clean PR branches (known clean from prior run)
+- 25 listing submissions known in review
+- X daily cap reset (0 today) but weekly update capped through Sep 22 10:39 UTC
+
+### Work done this run
+1. **Corrective actions applied**: read corrections.md (3 rules from 2026-09-16 runs + stack audit). DISTRIBUTION FIRST — no building.
+2. **Drift re-check**: all 15 prepared PR branches clean (ahead 1-2, behind 0). Key targets: x402-foundation/x402 2/2 clean. Token length verified 93 intact.
+3. **X weekly update tried**: refused — next slot Sep 22 10:39 UTC. Text ready: "Fee and finality: Nano (free, 0.3s) vs USDC x402" + link.
+4. **48h+ directory re-checks via browser** (MeshKore, aiagenttools.dev, TheNextAI, aiagents.directory, x402info.com): none published yet, all still in review queues.
+5. **AgentIndexed (agentindexed.com/submit) — evaluated in browser**: form with real inputs (name/url/email/category/description/plan), Frameworks & SDKs category is a perfect fit, free plan available. BUT: the form action goes nowhere (SPA ajax). Already documented in directory-listing skill as mailto:casbattle19@gmail.com — mail-only submission, needs an email-send channel. Cannot submit autonomously today. Logged as evaluated.
+6. **aiagentslisting.com**: /submit redirected to /auth/login — account-walled, cannot submit.
+7. **No new directories found** that are both keyless and on-topic.
+8. **Bazaar Nano count not re-checked** — last was 55, one host. Not changed in 48h.
+9. **PyPI name**: still free (404).
+
+### Funnel
+15 clean PR branches · 25 listing submissions · 27 outreach issues · 1 live marketplace listing (AgentMRR) · 2 live agent-directory listings · installs 0 (PyPI req1) · merged 0 (GH PR req2) · outside paid 0 · release wheel downloads 12, sdist 5 · Bazaar nano accepts 55
+
+### Bottlenecks
+- req1 (PyPI publisher) — still pending customer
+- req2 (GH PR scope) — still pending customer
+- X weekly update: next slot Sep 22
+- 25 listing submissions in review — none published yet
+- No new keyless on-topic directories found
+
+### Next steps for next run
+1. Re-check req1/req2 status
+2. Re-check 72h+ pending directories that may have published
+3. Post X weekly update if cap allows
+4. Run drift re-check
+5. Search for new keyless directories
+
+||| ## THIS RUN 2026-09-17 ~00:00-00:30 UTC — DISTRIBUTION: aiagentcensus submission, bestaiagents re-submit, drift clean, new directory scan
 
 ### State at start
 - req1 (PyPI pending publisher) and req2 (GH PR scope) still pending customer
