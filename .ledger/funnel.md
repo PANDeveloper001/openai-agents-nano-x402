@@ -1,35 +1,61 @@
-## 2026-09-17 ~10:22 UTC — Distribution run: rebuilt 2 x402 branches, all 16/16 clean
+# openai-agents-nano-x402 — Distribution Funnel
 
-### Work done this run
-1. **Applied latest corrective actions** (all paths exhausted from prior runs).
-2. **Drift check confirmed 16/16 clean** via prepared_pr_drift_all.py.
-3. **Rebuilt 2 x402-foundation/x402 branches** to upstream HEAD (12 new commits since last rebuild):
-   - docs/list-openai-agents-nano-v8 → v9 (ahead 3, behind 0, clean)
-   - specs/exact-nano-mainnet-v2 → v3 (ahead 3, behind 0, clean)
-   - Auto-discovered by drift_all.py without manual targets.tsv update.
-4. **Directories still pending** (all < 7 days — earliest Sep 18-19 re-check).
-5. **Credentials still absent:** PyPI (ID 1) and GH PR scope (ID 2) both open.
-6. **No X post** (weekly slot opens Sep 22; nothing shipped).
+## Directories
+- **AgentMRR** (agentmrr.ai) — LIVE (verified 2026-09-17, 10:49 UTC)
+  - Product #57: "openai-agents-nano (Nano XNO x402 payment for OpenAI Agents)" — library/agent-commerce, free
+  - Product #60: "openai-agents-nano" — library/agent-commerce, free
+  - Confirmed: public homepage renders both entries (browser, signed out)
+  - Direct API (GET /api/products/{id}) returns full product data
+  - Logged as listing (not adoption yet — needs second milestone like merged PR or external payment)
 
-### Funnel
-Branches: 16 clean (0 dirty, 0 diverged)
-Directory submissions pending: ~8 (all < 7 days)
-Installs (PyPI): 0 (req1 pending)
-Merged PRs: 0 (req2 pending)
-Outside payments: 0
-Outreach issues: 28 open, 0 comments
-X weekly update: Sep 22 (next open slot)
-Topic index cards live: 1 (github.com/topics/xno page 3)
+## GitHub topics
+- github.com/topics/xno page 3 — card live (verified 2026-09-17)
+- Topics set: x402, nano, xno, payments, micropayments, ai-payments, openai-agents-sdk, openai-agents
 
-### Bottlenecks
+## Prepared PR branches (16, all clean as of 2026-09-17 10:22 UTC)
+| Upstream | Branch | Status |
+|---|---|---|
+| Corican/nanodir | add-openai-agents-nano-clean | ahead 1 / behind 0 |
+| Haustorium12/gold-402 | add-openai-agents-nano | ahead 2 / behind 0 |
+| Merit-Systems/awesome-agentic-commerce | add-openai-agents-nano | ahead 1 / behind 0 |
+| Scottcjn/awesome-agents | add-openai-agents-nano-v3 | ahead 1 / behind 0 |
+| assafbar2/agentswitchboard.dev | add-openai-agents-nano-v3 | ahead 1 / behind 0 |
+| caramaschiHG/awesome-ai-agents-2026 | add-openai-agents-nano | ahead 1 / behind 0 |
+| e2b-dev/awesome-ai-sdks | add-openai-agents-nano-v2 | ahead 1 / behind 0 |
+| frankxai/awesome-payment-agent-skills | add-openai-agents-nano | ahead 1 / behind 0 |
+| mbeato/awesome-mpp | add-nano-x402-agent-framework | ahead 1 / behind 0 |
+| michielpost/x402-dev | add-openai-agents-nano | ahead 1 / behind 0 |
+| mpp-best/awesome_mpp | add-openai-agents-nano | ahead 1 / behind 0 |
+| satohubai/onchain-agents | add-openai-agents-nano | ahead 2 / behind 0 |
+| tsubasakong/awesome-agent-payments-protocol | add-openai-agents-nano-v2 | ahead 1 / behind 0 |
+| x402-foundation/x402 | docs/list-openai-agents-nano-v9 | ahead 3 / behind 0 |
+| x402-foundation/x402 | specs/exact-nano-mainnet-v3 | ahead 3 / behind 0 |
+| xpaysh/awesome-x402 | add-openai-agents-nano-v2 | ahead 2 / behind 0 |
+
+All branches need req2 (GH PR scope) to open PRs.
+
+## Outreach issues (28, all open with 0 comments)
+Filed on own forks because upstream PRs blocked by scope. Targets cover awesome lists, directories, and x402 ecosystem repos.
+
+## Keyless directory submissions (pending curation)
+- x402info.com/ecosystem — submitted 2026-09-16
+- aiagentcensus.com — submitted 2026-09-17
+- AiAgents.Directory — submitted
+- AgentRank — submitted
+- bestaiagents.org — submitted
+- agents.net/directory — submitted
+- MeshKore — submitted
+- TheNextAI — submitted
+
+## Adoption milestones
+- Package published (PyPI): FALSE — req1 pending
+- Merged PR (third-party): FALSE — req2 pending
+- Third-party listing: AgentMRR (agentmrr.ai) — LIVE but not a formal per-product page
+- External payment: FALSE
+
+## Bottlenecks
 - req1 (PyPI trusted publisher) — pending customer action
 - req2 (GH PR scope) — pending customer action; 16 branches ready
 - X weekly slot: Sep 22
 - All directories < 7 days — no re-submit
 - 0 new keyless/prepared targets remain
-
-### Next steps
-- Sep 18-19: re-check 7+ day directories
-- Sep 22: X weekly update
-- When req1 arrives: publish PyPI package
-- When req2 arrives: open 16+ prepared PRs starting with x402-foundation/x402
