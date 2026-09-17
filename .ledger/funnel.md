@@ -5,7 +5,7 @@
 - release wheel 10 / sdist 5 downloads
 - stars 0 / forks 0
 
-## Last updated: 2026-09-17 16:55 UTC
+## Last updated: 2026-09-17 17:42 UTC
 
 ### Re-verification 2026-09-17 16:55 (this run)
 - 17/18 prepared PR branches CLEAN (ahead/behind 0). satohubai/onchain-agents API 404 (4★ repo lost upstream, not rebuilt) — only "needing attention".
@@ -78,3 +78,36 @@ Next re-check: Sep 18-19 (when oldest hit 72h+).
 2. All branch drift confirmed clean (16/17).
 3. Customer one-click actions documented (~/nano-agent/.ledger/tmp/customer-one-click-actions.md).
 4. Merge rate measurement completed — 7 MERGES targets identified.
+
+### Re-verification 2026-09-17 17:42 UTC (this run)
+#### Directory re-check (browser, all still PENDING — none live)
+- x402info.com/ecosystem — still 14 curated featured projects, ours absent (submitted Sep 16 ~29h)
+- agents.net/directory — 82 agents, ours NOT listed (submitted Sep 15 ~48h)
+- bestaiagents.org — homepage cards, ours absent (submitted Sep 15)
+- theagentrank.com — 160 agents, ours absent (submitted Sep 15)
+- aiagentcensus.com — landing page only, ours absent (submitted Sep 17)
+- MeshKore — mentions x402 in copy but our card absent (submitted Sep 17)
+- SwarmBazaar — huge live catalog, our listing NOT on public pages (submitted Sep 17)
+- AgentMRR — STILL LIVE (confirmed via API + homepage: product 5f05da62 openai-agents-nano, both entries)
+Takeaway: all keyless directory submissions still in human review (<72h). Earliest hit 72h+ on Sep 18 — re-check then.
+
+#### Traffic (14 days to Sep 17, unchanged since 16:55)
+- views 76 / 29 uniques; clones 812 / 260; release wheel 13 / sdist 6; stars 0 / forks 0
+
+#### New distribution surface this run
+- **Status page** (corrective action #5): https://pandeveloper001.github.io/openai-agents-nano-x402/
+  Replaced PEP 503 placeholder with full status page: project status badges, 3 install methods
+  (PEP 503 / release URL / source), verified live endpoints, what-it-does, public roadmap.
+  Committed 4a9bf8f, pushed, raw 200 confirmed (CDN refreshes ~5min). Logged as docs.
+  Gives directory reviewers and users a maintained, human-readable landing.
+
+#### New capability this run
+- **Nightly directory crawler cron** (corrective action #2, job d2c74abaaee4): runs 8am daily,
+  checks pending listings for live status + searches for NEW keyless directories, appends to
+  funnel.md. Local delivery (CLI session), state persists for future runs. First run 2026-09-18.
+
+### Next useful actions
+- Sep 18: earliest directory submissions (agents.net, bestaiagents, theagentrank) hit 72h+ — browser re-check for live cards
+- Sep 18: nightly crawler first run — read funnel.md for discoveries
+- Sep 22: weekly X technical update slot opens
+- When req1 (PyPI) / req2 (GH PR scope) arrive: publish package + open 17 PRs in one run
