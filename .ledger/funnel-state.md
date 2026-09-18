@@ -1,4 +1,4 @@
-# Funnel state — openai-agents-nano-x402 (Sep 18 05:35 UTC)
+# Funnel state — openai-agents-nano-x402 (Sep 18 05:52 UTC)
 
 ## Package
 - PyPI: NOT live (/pypi/json=404, /simple/=404 — raw.githubusercontent 200, README + wheel install paths verified)
@@ -11,10 +11,14 @@
 - Views: 76 total, 29 uniques; Clones: 812/260
 
 ## Directory listings (confirmed live)
-- AgentMRR (agentmrr.ai) — re-registered Sep 18 05:20 (7th time), LIVE on rendered homepage, product 0873ffd5, agent 917a3a37
+- AgentMRR (agentmrr.ai) — LIVE on homepage this run (confirmed 05:46 UTC, no re-reg needed). Product removed ~daily, re-check every run.
 - AgentLaunch (agents-launch.lovable.app) — auto-listed, 200
 - LibHunt — auto-indexed, 200
-- Agent Directory API (agent-directory-api.vercel.app) — NOW 500 "Failed to fetch agent" (handle may have rotated) — DEGRADED, re-check
+- Agent Directory API (agent-directory-api.vercel.app) — single-agent endpoint returns 500 for ALL agents (universal third-party bug confirmed 05:46 UTC), but listing IS present in /api/agents list (handle 'openai-agents-nano'). NOT a handle rotation — live distribution surface retained.
+
+## New surfaces evaluated this run (Sep 18)
+- SubmitMap MCP qualify_project: recommends only pre-launch boards (WIP/LaunchLog) for GitHub-hosted project. 800+ "fixable" need live URL different from GitHub. No new keyless agent-tool directories found.
+- ai-agents-directory.com: login-gated, not keyless. Skip.
 
 ## Directory submissions (pending review — checked Sep 18 05:25 UTC, all within 3-7d window, do NOT resubmit)
 - agents.net — submitted Sep 15, NOT listed yet (was "Nano Banana" match, not ours)
@@ -50,7 +54,7 @@
 ## Blockers (unchanged, both customer-gated)
 - req1 (PyPI OIDC, ID 1): still open — needs pending trusted publisher registration
 - req2 (GH PR scope, ID 2): still open — token lacks public_repo scope (verified 403 again this run)
-- Both filed Sep 15, both pending. Everything else in this run was distribution work around them.
+- Both filed Sep 15, both pending.
 
 ## AgentMRR note
 - Product removed ~7x since Sep 17 (daily). Re-register every run.

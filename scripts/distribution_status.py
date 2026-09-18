@@ -29,7 +29,7 @@ REPO_URL = "https://github.com/PANDeveloper001/openai-agents-nano-x402"
 #   pr         - prepared on a fork branch; real PR gated on req2
 SURFACES = [
     # live / auto
-    {"name": "Agent Directory API", "url": "https://agent-directory-api.vercel.app/api/agents/openai-agents-nano", "method": "auto", "note": "auto-crawled (API 500 on re-check — handle may have rotated)"},
+    {"name": "Agent Directory API", "url": "https://agent-directory-api.vercel.app/api/agents/openai-agents-nano", "method": "auto", "note": "single-agent endpoint returns 500 for ALL agents (universal bug). Listing present in /api/agents list."},
     {"name": "AgentLaunch", "url": "https://agents-launch.lovable.app/agents/openai-agents-nano", "method": "auto", "note": "auto-listed"},
     {"name": "AgentMRR", "url": "https://agentmrr.ai", "method": "api", "note": "re-register every run (removed ~daily)"},
     {"name": "LibHunt", "url": "https://www.libhunt.com/r/PANDeveloper001%2Fopenai-agents-nano-x402", "method": "auto", "note": "auto-indexed"},
