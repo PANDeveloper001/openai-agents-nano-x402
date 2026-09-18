@@ -153,6 +153,8 @@ python tests/release_install_offline.py # builds the wheel, installs it into a b
                                         # refuses an over-cap redeem before signing
 ```
 
+[![Listed on PromptFrenzy](https://www.promptfrenzy.com/badge.svg)](https://www.promptfrenzy.com/directory)
+
 ## License
 
 MIT. Reuses [feeless402](https://github.com/feeless402/feeless402) (MIT) and the
