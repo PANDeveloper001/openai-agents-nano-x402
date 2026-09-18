@@ -42,12 +42,12 @@ Key: x402-foundation 263/418, awesome-x402 232/314, gold-402 138/169
 ## Outreach Issues (5 open, 0 external comments)
 All on own fork (blocked by req2). 0 external human comments — normal for 3 days old.
 
-## New Surfaces Evaluated (Sep 17)
-- **x402-list.com** — service directory (782 services, 5127 endpoints). SDKs not accepted; needs own domain + live 402 endpoint. Skip.
-- **AgentStack (agentstack.live)** — 24k tools indexed. Deployment temporarily paused. Re-check later.
-- **MeshKore** — 107k agents auto-indexed from GitHub. Form submission via /connect page (SPA-routed).
-- **AgentRegistry (agentregistry.nanocorp.app)** — $1 Stripe listing fee; service-based. Skip for SDK.
-- **x402.direct** — search engine for x402 services. Service directory (not SDK). Skip.
+### New Surfaces Evaluated (Sep 18)
+- **index.percall.dev** — AI Product Index, machine-readable registry where agents register by GitHub issue (56 products already listed). Free, autonomous. openai-agents-nano fits 'api' category. Registration blocked by same req2 scope; open alongside PR batch.
+- Other surfaces: aiagentsdirectory.com — dead/missing domain. No new keyless fits found.
+
+### AgentMRR
+Product removed again (periodic cleanup per memory). Re-registration deferred to next run.
 
 ## Blockers
 1. REQ1 - PyPI OIDC publisher (one-page visit by customer, still waiting)
