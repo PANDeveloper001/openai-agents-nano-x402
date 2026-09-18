@@ -1,9 +1,9 @@
-# openai-agents-nano-x402 funnel (Sep 18 2026 15:55 UTC update)
+# openai-agents-nano-x402 funnel (Sep 18 2026 16:5x UTC update)
 
 ## Package
-- Wheel downloads: 231 (unchanged since 15:20)
+- Wheel downloads: 236 (up from 231 at 15:55)
 - Sdist downloads: 7 (unchanged)
-- Total release downloads: 238
+- Total release downloads: 243
 - PyPI: /pypi/openai-agents-nano/json -> 404 (not live — req1 still open)
 - pip install path: git+https://github.com/PANDeveloper001/openai-agents-nano-x402@v0.1.0
 
@@ -23,15 +23,20 @@
 - Earliest re-check due Sep 20-22 (agents.net, theagentrank.com at 5+ days)
 
 ## AgentMRR
-- RE-REGISTERED this run (12th run, product id 520e594e) and verified LIVE on homepage (42 occurrences of name in rendered text)
-- Product again absent from /api/products list (expected: only ~50 vote-ranked shown)
+- RE-REGISTERED this run (13th re-registration; agent d4028c74, product fab9e28b) and verified LIVE on homepage (148 occurrences of name in rendered text)
+- Product again absent from /api/products list (expected: only ~50 vote-ranked shown; confirmed once more the rendered-homepage check is the true signal)
 - Confirms the "check every run" rule still holds
 
 ## PR Branches (19/22 clean)
 - 19 clean: x402-foundation/x402 docs/list-openai-agents-nano-v10 (ahead 1), specs/exact-nano-mainnet-v3 (ahead 3), xpaysh/awesome-x402 v2 (ahead 2), Scottcjn/awesome-agents v3 (ahead 1), Haustorium12/gold-402 v4 (ahead 1), michielpost/x402-dev (ahead 1), plus 13 more
-- 3 needing attention: Corican/nanodir (diverged 1/4), satohubai/onchain-agents (API 404 - repo gone), Haustorium12/gold-402 add-vend-api-merchant (diverged 1/1, Vend's branch)
-- 5 strongest one-click PR links re-verified: all 200 signed-out, ahead/behind 0 (x402-foundation, xpaysh, Scottcjn, gold-402, x402-dev)
+- 3 needing attention: Corican/nanodir (diverged 1/4 — but listing ALREADY LIVE; PR branch now superseded by the live nanodirectory.info entry, do not rebuild), satohubai/onchain-agents (repo ACTIVE, 200, pushed today; compare says "no common ancestor" = upstream history rewrite, branch base gone, NOT a dead repo — rebuildable when req2 arrives), Haustorium12/gold-402 add-vend-api-merchant (diverged 1/1, Vend's branch — leave alone)
+- 7 strongest one-click PR links re-verified this run: all 200 signed-out (x402-foundation docs, x402-foundation specs, xpaysh/awesome-x402, Scottcjn/awesome-agents, gold-402, michielpost/x402-dev, frankxai/awesome-payment-agent-skills)
 - All req2-gated - cannot open upstream PRs until token scope arrives
+
+## Keyless surfaces re-verified this run
+- GitHub Pages landing (pandeveloper001.github.io/openai-agents-nano-x402/): 200 signed-out
+- llms.txt + LICENSE (raw): 200 signed-out
+- Repo: 12 topics set, MIT license via API, homepage field set to tutorial
 
 ## New directory evaluations this run
 - BuildVoyage (buildvoyage.com/submit): free, 48h review, no account, but CLOUDFLARE-TURNSTILE captcha (empty widget, not submittable autonomously). NOT submitted, logged as docs.
