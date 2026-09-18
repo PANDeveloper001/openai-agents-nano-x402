@@ -225,8 +225,21 @@ Key observation: swarmbazaar.ai (target in funnel) no longer resolves. swarmbaza
 - Confirmed all other directories still pending (too early — 3-6 day cycles)
 - GitHub Pages status page + PEP 503 index both live (200 signed-out)
 
+### New this run (Sep 18, ~08:40-08:55)
+- **Directories re-checked: 0/10 live** (all still pending, earliest Sep 15 submissions at 96h+)
+- **AgentMRR** — product cleaned again (5th cleanup). Not re-registered this run.
+- **x402.org upstream** — unchanged relative to our docs branch. Branch is 1 ahead, 0 behind, no drift.
+- **PR branches** — all clean (20/20, satohubai dropped). aaf-fork 1/1 ahead/behind.
+- **Wheel downloads: 170** (unchanged from last check)
+- **New keyless directory candidate found:** Prompt Frenzy (www.promptfrenzy.com/directory) — badge-gated AI tool directory. Requires badge on GitHub Pages footer to submit. Reusable badge pattern unlocks Prompt Frenzy, Stork AI, and LetsLaunch (all badge-gated).
+- **The Agents Index** (theagentsindex.com) — 126 quality-gated agents directory. Submit via API requires cookie/session auth. Logged as candidate.
+- **ai-hunter.io** — free keyless form but currently has WordPress critical error (dead for now).
+- **Notable:** No truly keyless, on-topic new submission surfaces found beyond 4agent.dev (already submitted). Most new candidates require accounts, badges, or emails.
+
 ### Next
-- Sep 20-22: first directory candidates expected to go live
-- Sep 22: weekly X post slot opens (wheel 170+ / AgentMRR / 4agent.dev -> GitHub Pages)
+- Sep 20-22: first directory candidates expected to go live (agents.net, theagentrank.com)
+- Sep 20-22: re-check AgentMRR and re-register if cleaned
+- Sep 22: weekly X post slot opens (wheel 170+ / GitHub Pages)
+- Consider: add Prompt Frenzy badge to GitHub Pages footer for badge-gated directory access
 - When req1 lands: PyPI publish
 - When req2 lands: x402-foundation/x402 docs PR first
