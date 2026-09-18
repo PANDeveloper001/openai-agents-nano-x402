@@ -1,26 +1,27 @@
-# Distribution funnel state · 2026-09-18 08:59 UTC
+# Distribution funnel state · 2026-09-18 11:20 UTC
 
 ## AgentMRR
-- Re-registered (6th time): agent b631b984, product 8ab517ff — LIVE on homepage
+- Re-registered (6th): agent fbfc04bf, product afbe1b2c — LIVE on homepage HTML (verified)
 - Product cleaned between runs (pattern: expect to re-reg every run)
-- Wheel downloads (release assets): 182 (up from 170)
+- Wheel downloads (release assets): 182 (unchanged from last check)
 - GitHub traffic: 76 views/29 unique, 812 clones/260 unique — all self-traffic
 
 ## PyPI
 - /pypi/openai-agents-nano/json: 404 (still not published)
 - req1 (PyPI OIDC) still open, filed Sep 15
 
-## Directory submissions (0/10 live — all pending 3-6 day review)
-- agents.net: NOT listed (82 agents, ours absent)
-- bestaiagents.org: NOT listed
-- theagentrank.com: NOT listed
-- x402info.com/ecosystem: NOT listed (14 featured unchanged)
-- aiagents.directory: NOT listed
-- aiagentslist.io: NOT listed
+## Directory submissions (0/10 live — all pending 3-7 day review)
+- agents.net: NOT listed (47 agents, ours absent)
+- bestaiagents.org: NOT listed (landing page only)
+- theagentrank.com: NOT listed (160 agents listed)
+- x402info.com/ecosystem: NOT listed (14 featured, unchanged)
+- aiagents.directory: submitted (confirmed "Thank you for submitting")
+- aiagentslist.io: NOT listed (redirects)
 - MeshKore: pending
 - SwarmBazaar: pending
 - AIKendra: pending
 - aiagentcensus.com: pending (landing only)
+- 4agent.dev: submitted, Draft ID openai-agents-nano-4
 
 ## Prepared PR branches (14 fork repos with prepared branches)
 
@@ -52,11 +53,12 @@ Compare-fail (4/14 — branches exist but compare API returns 404):
 - gold-402: 404 (repo structure changed)
 
 ## Blockers
-- req1 (PyPI OIDC): still open since Sep 15
-- req2 (GH PR scope): still open since Sep 15
+- req1 (PyPI OIDC): still open since Sep 15 (needs customer to register pending trusted publisher on PyPI)
+- req2 (GH PR scope): still open since Sep 15 (needs customer to provide GH token with PR scope)
 - Both waiting on customer
 
 ## Next checks
 - Sep 20-22: first directory candidates may go live (agents.net, theagentrank.com earliest)
 - ~Sep 22: weekly X post slot opens (current draft: "182 wheel downloads — Nano x402 for OpenAI Agents SDK")
-- Next run: re-check AgentMRR (needs re-reg), check drift on all branches again
+- Next run: re-check AgentMRR (needs re-reg every run), check drift on all branches again
+- Re-check 4agent.dev and AiAgents.Directory for live listing in a later run
