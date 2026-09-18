@@ -53,6 +53,9 @@
 - Release sdist downloads: 7 (unchanged)
 - Star count: 0, Fork count: 0
 
+## Discoveries this run (Sep 18 ~07:40)
+- SubmitMap qualify_project (free keyless MCP API): openai-agents-nano-x402 reaches 825/829 directories, 0 blocked. Recommended quick-wins all fail the agent-tool fit or the free rule: PromptZone (instant dofollow DR20 but needs a community account + a written article, no listing card), PluginMarketplace.ai (Claude-code-plugin specific), LaunchLog (indie roast site), WIP (DR56 but $29/mo paid). Pattern: SubmitMap's generic qualify feeds a dev SDK to indie/community/roast platforms, not agent-tool directories; and the truly high-value fast-approval dofollow platforms (ProductHunt, MCP Registry, Toolify, DevHunt) all need a badge/backlink or a published package that GitHub-hosted projects cannot yet provide. Recorded as docs, do not spend a run chasing these.
+
 ## Discoveries this run (Sep 18)
 - Vibedonalds.com: NEW listing submitted SUCCESSFULLY this run (07:15) — Next.js form via form.requestSubmit(), MCP Servers category, confirmed "We'll email you within 3-7 days". Free listing requires a badge on site, reviewed 3-7d. Pending live.
 - MeshKore: re-confirmed submission (07:20, category Crypto & DeFi, OpenAI Agents framework) — reviewed within 24h. Already in keyless proven list from Sep 15.
