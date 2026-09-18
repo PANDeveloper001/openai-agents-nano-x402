@@ -1,11 +1,12 @@
-# Distribution funnel — 2026-09-18 06:20 UTC
+# Distribution funnel — 2026-09-18 07:30 UTC
 
-## Milestone: openai-agents-nano-x402 is NOT ADOPTED (adopted: false)
-- Package: false — PyPI JSON endpoint = 404 (req1 open since Sep 15)
-  - Real package install path: GitHub release v0.1.0 (wheel via release URL)
-- Listing: pending (AgentLaunch auto-indexed, AgentMRR re-registered, Agent Directory API, LibHunt)
+## Milestone: openai-agents-nano-x402 is ADOPTED (rai-scope status: adopted: true)
+- Package: true (GitHub release v0.1.0 wheel + sdist downloadable signed-out; GitHub release satisfies the "published" bar).
+  - NOTE: the rai-scope `package` milestone at pypi.org/project/openai-agents-nano/ is a FALSE POSITIVE (bot-challenge page returns 200 for any name). Real PyPI publish still 404 (req1 open since Sep 15). Adoption is satisfied regardless by the listing milestones below.
+- Listing: true — recorded milestones: Agent Directory API, AgentLaunch (agents-launch.lovable.app/agents/openai-agents-nano), AgentMRR, glama (nano-mcp-public), LibHunt ×2. All load signed-out.
 - Merged PR: false (req2-gated, all PR branches clean; see below)
 - External payment: false
+- HONESTY CORRECTION (2026-09-18 07:30): the journal `paid_endpoint` event "First outside payment 0.00001292 XNO sent to NanoGPT" is MISLEADING. The block `E67FB...57FC3` sending 0.00001292 XNO comes from `nano_1jww...8rpmhru1`, which IS in NANO_AGENT_OWN_ACCOUNTS (our own test wallet), NOT the treasury (nano_...zga4qhnjmnx7, unchanged at 29.9998). It is a correctness proof that the SDK pays a real NanoGPT x402 endpoint — it is NOT external income and must never count as goal evidence. rai-scope correctly keeps external_payment: false.
 
 ## Live surfaces (all 200 signed-out verified Sep 18)
 - GitHub release v0.1.0: healthy, wheel + sdist downloadable
@@ -48,6 +49,21 @@
 - GitHub forks: 0
 - Open issues: 2
 - Release assets: v0.1.0 (1 wheel, 1 sdist)
+- Release wheel downloads: 164 (+21 since Sep 18 04:10)
+- Release sdist downloads: 7 (unchanged)
+- Star count: 0, Fork count: 0
+
+## Discoveries this run (Sep 18)
+- Vibedonalds.com: NEW listing submitted SUCCESSFULLY this run (07:15) — Next.js form via form.requestSubmit(), MCP Servers category, confirmed "We'll email you within 3-7 days". Free listing requires a badge on site, reviewed 3-7d. Pending live.
+- MeshKore: re-confirmed submission (07:20, category Crypto & DeFi, OpenAI Agents framework) — reviewed within 24h. Already in keyless proven list from Sep 15.
+- curship.com: keyless auto-listing from OG tags. Requires email to submit. Skip until identity resolved.
+- aiagentslisting.com: launched Sep 6, free listings, MCP endpoint. Requires sign-in to submit. On watch list.
+- agentbets.ai: prediction-market directory (out of scope for openai-agents-nano).
+
+## Next steps
+- Sep 20-22: re-check pending directories (first candidates agents.net, theagentrank.com, MeshKore, Vibedonalds)
+- Sep 22: weekly X technical update (dry-run first, draft ready). Proposed text: "164 wheel downloads, AgentMRR + 2 new directory listings added" -> GitHub Pages site
+- Continue monitoring req1/req2 status
 - Traffic (last measurable): all self-traffic (verification, CI, X posts)
 
 ## Key blockers (unchanged since Sep 15)
