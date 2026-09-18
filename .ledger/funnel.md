@@ -1,4 +1,4 @@
-# openai-agents-nano-x402 funnel (2026-09-19 22:30 UTC)
+# openai-agents-nano-x402 funnel (2026-09-18 23:08 UTC)
 
 ## Package
 - GitHub release downloads: **337 total** (wheel 330 +12 from 318, sdist 7 — flat, Sep 19 22:30 check)
