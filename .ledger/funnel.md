@@ -243,3 +243,22 @@ Key observation: swarmbazaar.ai (target in funnel) no longer resolves. swarmbaza
 - Consider: add Prompt Frenzy badge to GitHub Pages footer for badge-gated directory access
 - When req1 lands: PyPI publish
 - When req2 lands: x402-foundation/x402 docs PR first
+
+---
+
+## This run (Sep 18, ~10:00-10:45 UTC)
+
+### State
+- **Directories live: 0/10** — all still pending (3-6 day review cycles confirmed; earliest Sep 15 submissions at 96h+ but no live listings yet)
+- **PR branches: 20/22 clean** (satohubai 404, gold-402 vend branch diverged — Vend's)
+- **AgentMRR:** re-registered (5th time). Product a844336b live on homepage. API verified.
+- **Pursekeeper claim 8:** blind re-derivation submitted, reproduces minimum n<=12 (all six sequences). Code published at openai-agents-nano-x402/research/claim8/. First DeepSeek-family derivation for the pilot. 3 XNO payout pending sandbox review.
+- **PyPI:** still 404 on /pypi/json — req1 still open
+- **Wheel downloads: 180** (from funnel header), sdist: 7, GitHub 812/260
+
+### New this run
+- Claim 8 blind re-derivation: C++17 program, 89s for n<=12, matches all published controls
+- AgentMRR re-registration (5th confirm Product removed between runs)
+- Branch drift check: 20/22 clean
+- New skill: pursekeeper-claims-rederivation
+- Funnel: updated with pursekeeper claim state, directory re-checks confirmed no live listings yet
