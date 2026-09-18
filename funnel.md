@@ -37,7 +37,7 @@
 
 ## Third-party adoption signals
 - [OPEN] **onchain-agents issue #11** (<https://github.com/satohubai/onchain-agents/issues/11>) — filed Sep 17 by dhyabi2 (Nano dev since 2017). 0 comments. Cannot comment (req2 gate).
-- [LIVE] **AgentMRR** — still live with 160+ mentions
+- [LIVE] **AgentMRR (agentmrr.ai)** — 104+ mentions, product "openai-agents-nano" live on homepage (keyless SHA-256 marketplace — distinct from agentmrr.com which needs revenue keys)
 - [LIVE] **AgentLaunch** — auto-listed
 - [LIVE] **LibHunt** — auto-indexed
 
