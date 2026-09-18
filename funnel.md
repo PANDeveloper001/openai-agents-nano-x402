@@ -19,21 +19,30 @@
   3. `specs/exact-nano-mainnet-v3`: adds exact-nano-mainnet payment scheme spec
   All ready to open as PRs when req2 arrives.
 
-## PR Branches (14 fork branches confirmed alive on GitHub)
-- [✓] awesome-agentic-payments/add-openai-agents-nano-x402 (bf2e5f4e7cfa) — https://github.com/PANDeveloper001/awesome-agentic-payments/tree/add-openai-agents-nano-x402
-- [✓] awesome-ai-agents-2026/add-openai-agents-nano (36fa5f2bbf31) — https://github.com/PANDeveloper001/awesome-ai-agents-2026/tree/add-openai-agents-nano
-- [✓] x402/docs/list-openai-agents-nano-v10 (010d105fd405) — https://github.com/PANDeveloper001/x402/tree/docs/list-openai-agents-nano-v10
-- [✓] x402/docs/list-openai-agents-nano-extension-v1 (4ae404537d78) — https://github.com/PANDeveloper001/x402/tree/docs/list-openai-agents-nano-extension-v1
-- [✓] x402/specs/exact-nano-mainnet-v3 (72bde0262ce0) — https://github.com/PANDeveloper001/x402/tree/specs/exact-nano-mainnet-v3
-- [✓] x402-dev/add-openai-agents-nano (274b626edaaa) — https://github.com/PANDeveloper001/x402-dev/tree/add-openai-agents-nano
-- [✓] awesome-mpp/add-nano-x402-agent-framework (d960867f0fc6) — https://github.com/PANDeveloper001/awesome-mpp/tree/add-nano-x402-agent-framework
-- [✓] awesome-agent-payments-protocol/add-openai-agents-nano-v2 (297b9f81cfc9) — https://github.com/PANDeveloper001/awesome-agent-payments-protocol/tree/add-openai-agents-nano-v2
-- [✓] awesome_mpp/add-openai-agents-nano (b0015c556f8c) — https://github.com/PANDeveloper001/awesome_mpp/tree/add-openai-agents-nano
-- [✓] awesome-agentic-commerce/add-openai-agents-nano (0b063121ca34) — https://github.com/PANDeveloper001/awesome-agentic-commerce/tree/add-openai-agents-nano
-- [✓] awesome-agents/add-openai-agents-nano-v3 (aa86642fbeff) — https://github.com/PANDeveloper001/awesome-agents/tree/add-openai-agents-nano-v3
-- [✓] ai-agent-infra-list/add-x402-nano-settlement-rail (e3f5ede92adf) — https://github.com/PANDeveloper001/ai-agent-infra-list/tree/add-x402-nano-settlement-rail
-- [✓] awesome-agent-first-tools/add-openai-agents-nano (fcfad910f59f) — https://github.com/PANDeveloper001/awesome-agent-first-tools/tree/add-openai-agents-nano
-- [✓] nanodir/add-openai-agents-nano-clean (def0d3447e96) — https://github.com/PANDeveloper001/nanodir/tree/add-openai-agents-nano-clean
+## PR Branches (16 verified ready — drift checked Sep 18 19:00 UTC)
+
+Fork-derived branch list, checked via compare API for every branch:
+
+| Upstream | Branch on fork | Drift |
+|---|---|---|
+| xpaysh/awesome-x402 | add-openai-agents-nano-v2 | clean (ahead 2/behind 0) |
+| caramaschiHG/awesome-ai-agents-2026 | add-openai-agents-nano | clean (ahead 1/behind 0) |
+| x402-foundation/x402 | docs/list-openai-agents-nano-v10 | clean (ahead 1/behind 0) |
+| x402-foundation/x402 | docs/list-openai-agents-nano-extension-v1 | clean (ahead 1/behind 0) |
+| x402-foundation/x402 | specs/exact-nano-mainnet-v3 | clean (ahead 1/behind 0) |
+| michielpost/x402-dev | add-openai-agents-nano | clean (ahead 1/behind 0) |
+| mpp-best/awesome_mpp | add-openai-agents-nano | clean (ahead 1/behind 0) |
+| tsubasakong/awesome-agent-payments-protocol | add-openai-agents-nano-v2 | clean (ahead 1/behind 0) |
+| Merit-Systems/awesome-agentic-commerce | add-openai-agents-nano | clean (ahead 1/behind 0) |
+| Scottcjn/awesome-agents | add-openai-agents-nano-v3 | clean (ahead 1/behind 0) |
+| chgaowei/ai-agent-infra-list | add-x402-nano-settlement-rail | clean (ahead 1/behind 0) |
+| frankxai/awesome-payment-agent-skills | add-openai-agents-nano | clean (ahead 1/behind 0) |
+| facundofarias/awesome-agent-first-tools | add-openai-agents-nano | clean (ahead 1/behind 0) |
+| Haustorium12/gold-402 | add-openai-agents-nano-v4 | clean (ahead 1/behind 0) |
+| x402eco/website | add-openai-agents-nano-x402eco-v2 | clean (ahead 1/behind 0) |
+| mpp-best/awesome_mpp | add-nano-x402-agent-framework | superseded by add-openai-agents-nano |
+
+**Upstream renames discovered Sep 18:** nate-uc/ai-agent-infra-list -> chgaowei/ai-agent-infra-list, wobsoriano/awesome-agent-first-tools -> facundofarias/awesome-agent-first-tools. Both branches still clean against the renamed upstreams.
 
 ## Third-party adoption signals
 - [OPEN] **onchain-agents issue #11** (<https://github.com/satohubai/onchain-agents/issues/11>) — filed Sep 17 by dhyabi2 (Nano dev since 2017). 0 comments. Cannot comment (req2 gate).
