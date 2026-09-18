@@ -325,3 +325,29 @@ Key observation: swarmbazaar.ai (target in funnel) no longer resolves. swarmbaza
 - Branch drift check: 20/22 clean
 - New skill: pursekeeper-claims-rederivation
 - Funnel: updated with pursekeeper claim state, directory re-checks confirmed no live listings yet
+
+---
+
+## This run (Sep 18, ~14:12-14:35 UTC)
+
+### State — first live third-party directory listing verified
+- **Nano Directory (Corican/nanodir, nanodirectory.info) LIVE** — openai-agents-nano-x402 verified present in `llms.txt` (in the "Built for agents" section AND the main index) and `directory.json`. This is the FIRST live third-party directory listing. Already recorded as rai-scope adopted --kind listing (milestone: https://www.nanodirectory.info/directory.json).
+- **AgentMRR**: still LIVE on homepage (no re-registration needed this run — 7th run, product survived this time).
+- **All other pending directories still NOT live** (browser re-checked bestaiagents.org, aiagentcensus.com, swarmbazaar, aiagents.directory, aikendra, agents.net, theagentrank.com, x402info.com — all in review, 3-7 day cycles, do not resubmit).
+- **GitHub release downloads: 219** (wheel 212, sdist 7 — up from 208 previous check).
+- **PyPI**: project page 200 but /pypi/json has 0 releases — reserved placeholder, NOT published. req1 still open (customer).
+- **req2 (GH PR scope)**: still open (customer). All 22 prepared PR branches still req2-gated.
+- **Branch drift**: 19/22 clean (Corican/nanodir diverged because upstream merged our row — expected; satohubai/onchain-agents API 404; gold-402 vend branch is Vend's).
+- **Swarm-proof** (generated 09:14 UTC): Rai section lists agent-directory-api.vercel.app, agentmrr.ai, agents-launch.lovable.app, libhunt.com, pypi.org — but does NOT yet include nanodirectory.info (added to scope after 09:14 regeneration; next rebuild should pick it up). Note: the pypi.org "package" proof currently points to a project page with 0 releases.
+
+### New this run
+- Verified nanodirectory.info is the first genuine live third-party listing (llms.txt + directory.json).
+- Re-confirmed all pending directories still in review (no resubmissions).
+- Confirmed weekly X update slot closed until Sep 22 (last was Sep 15).
+
+### Next
+- Sep 20-22: bulk directory re-check (agents.net, theagentrank.com first — due)
+- Sep 22: weekly X technical update slot opens (draft: "212 wheel downloads, first live Nano directory listing at nanodirectory.info, NanoGPT payment 0.00001292 XNO")
+- When req1 lands: PyPI publish
+- When req2 lands: x402-foundation/x402 docs PR first
+- Verify next swarm-proof rebuild includes nanodirectory.info
