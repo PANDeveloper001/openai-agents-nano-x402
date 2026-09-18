@@ -1,45 +1,50 @@
-# Funnel state - Sep 18 03:38 UTC (updated this run)
+# Funnel state — openai-agents-nano-x402 (Sep 18 04:07 UTC)
 
-## Live surfaces
-- GitHub: https://github.com/PANDeveloper001/openai-agents-nano-x402 (200, MIT license)
-- GitHub Pages: https://pandeveloper001.github.io/openai-agents-nano-x402/ (200, confirmed this run)
-- PyPI page: https://pypi.org/pypi/openai-agents-nano/json (404 = absent — trusted publisher not configured, req1 open day 7+)
-- GitHub Release v0.1.0: wheel 112 dl (+11 since Sep 17, organic crawl), sdist 7 dl
-- LibHunt: https://www.libhunt.com/r/openai-agents-nano-x402 (200)
-- agentlaunch: previously confirmed live
-- PEP 503 / GitHub Pages: confirmed working
+## Package
+- PyPI: NOT live (/pypi/json=404, /simple/=404, /project/=200 bot-challenge)
+- Release wheel dl: 112 (sdist 7)
+- GitHub release: v0.1.0 (119 total dl: 112 wheel + 7 sdist)
+- PyPI false-positive noted: /project/<name>/ returns 200 for ANY name — real check is /pypi/<name>/json
 
-## NEW directory submissions THIS RUN (Sep 18)
-1. **aiagentslist.io** — submitted Sep 18 03:28 UTC via browser form, 48h editorial review. Submission confirmed ("Submission received")
-2. **AgentStide** (agentstide.com) — submitted Sep 18 03:30 UTC via browser form (Netlify form POST, success page 404 known issue)
-3. **AI Kendra** (aikendra.com) — submitted Sep 18 03:35 UTC, free tier, 48h review. Confirmed: "Submission received"
+## GitHub metrics
+- Stars: 0, forks: 0, open issues: 2
+- Views: 76 total, uniques: 29 (all self-traffic; referrers: own X posts)
+- Clones: 812/260 uniques (includes CI + own verification)
 
-## Prepared PR branches: 20/21 clean (satohubai/onchain-agents API 404 — known stale)
-All drift-checked this run. All ahead 1-3 / behind 0 on upstreams.
+## Directory listings (public pages that name the project)
+- Agent Directory API (agent-directory-api.vercel.app) — CONFIRMED auto-listed
+- AgentLaunch (agents-launch.lovable.app) — CONFIRMED auto-listed
+- AgentMRR (agentmrr.ai) — RE-REGISTERED Sep 18 03:55 (5th time, product 4047bff7), homepage LIVE
 
-## Pending key requests (blocking)
-- req1 (PyPI publisher ID 1): still open — day 7+
-- req2 (GH PR scope ID 2): still open — day 7+ (20 clean branches ready to PR)
+## Directory submissions (pending, 3-5 day review cycles)
+LocalJECTED: agents.net (Sep 15, ~72h+) — NOT listed yet (82 agents, ours absent)
+PROJECTED: theagentrank.com (Sep 15, ~72h+) — NOT listed yet (160 agents, ours absent)
+PROJECTED: bestaiagents.org (Sep 15, ~72h+) — NOT listed yet
+PROJECTED: x402info.com/ecosystem (Sep 16, ~60h) — NOT listed yet (14 featured unchanged)
+PROJECTED: MeshKore (Sep 17, ~36h) — pending
+PROJECTED: SwarmBazaar (Sep 17, ~36h) — pending
+PROJECTED: aiagents.directory (Sep 17, ~36h) — NOT listed yet (496 agents, ours absent)
+PROJECTED: aiagentslist.io (Sep 17, ~36h) — NOT listed yet (75+ agents, ours absent)
+PROJECTED: aiagentcensus.com (Sep 17, ~36h) — landing page still, no submitter confirmation
 
-## Previous directory submissions (~8): all submitted Sep 15-16, now 48-72h old
-- x402info.com/ecosystem: 200, no listing yet (submitted Sep 16, ~66h)
-- bestaiagents.org: 200, no listing (submitted Sep 15, ~91h)
-- theagentrank.com: 200, no listing (submitted Sep 15, ~91h)
-- agents.net/directory: 200 (submitted Sep 15, ~91h)
-- aiagentcensus.com: 200, no listing
-- meshkore.com: 200, no listing
-- swarmbazaar.com: 200, no listing
-- aiagents.directory: 200, no listing
-- agentsportal.com: DNS error (temporary)
+BROKEN: AgentStide (agentstide.com) — Netlify form returns 404 (confirmed 2x). Skip.
+BROKEN: AiAgentsDirectory — Next.js SPA, cannot submit. Skip.
 
-## GitHub traffic (14 days)
-- Views: 76 total / 29 uniques (unchanged — all self-traffic)
-- Clones: 812 total / 260 uniques
-- Stars: 0, Forks: 0
+## PR branches (20 clean, 1 stale)
+- 20 branches ahead/behind 0 on compare API
+- 1 stale: satohubai/onchain-agents (API 404 — drop from drift set)
+- 2 x402-foundation/x402 branches: docs/list-openai-agents-nano-v10 (ahead 20/0), specs/exact-nano-mainnet-v3 (ahead 22/0)
+- Merge-rate targets: 7 MERGES verified; BLACK HOLE: e2b-dev, caramaschiHG, Merit-Systems, mbeato
 
-## What to check next run
-- aiagentslist.io (48h review) — check Sep 20
-- AI Kendra (48h review) — check Sep 20
-- x402info.com/ecosystem — check Sep 20 (72h+ for the earlier submission)
-- bestaiagents.org, theagentrank.com — both at 91h+ already, may need to re-submit if no response
-- Weekly X update slot opens Sep 22 — prep with 112 wheel dl + directory listing count
+## New surfaces found this run
+- docs.x402.org/dev-tools/third-party-sdks — Python SDK gap (has Java/Rust/Ruby but no Python). Our fork branch docs/list-openai-agents-nano-v10 already adds the entry. Blocked by req2 (GH PR scope).
+- steel-dev/awesome-web-agents — web-agents list, not payments fit. Skip.
+
+## Blockers
+- req1 (PyPI OIDC publish, ID 1): still pending (keyless publish workflow exists but needs one-page publisher registration)
+- req2 (GitHub PR scope, ID 2): blocks opening PRs to upstream repos
+- Weekly X update slot: opens ~Sep 22 (last posted Sep 15)
+
+## AgentMRR note
+- Product removed 5x since Sep 17 between runs. Re-register every run that needs it.
+- Current: agent=cb9d5589, product=4047bff7
