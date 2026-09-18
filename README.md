@@ -17,6 +17,31 @@ Nano x402 dialect.** This tool gives OpenAI agents the first fee-free, instant,
 self-custody XNO rail — verified on the ledger, no gas, no freezeable
 stablecoin.
 
+## Spend XNO from your agent today
+
+This is not a demo-only adapter — it has already paid a real third-party x402
+seller. On 2026-09-18 this exact two-phase flow bought a live chat completion
+from **NanoGPT** (`api.nano-gpt.com`, an independent LLM host) in **0.00001292
+XNO** (block `E67FB89426F46E6AE4E0E5750B5F814A699965B8639DA89F38689EA1AFE57FC3`,
+confirmed on the Nano network) — the first known payment from an OpenAI Agents
+SDK agent to a third-party x402 seller settled in XNO.
+
+The fastest way to *be* that buyer: [the pay-NanoGPT tutorial](docs/pay-x402-from-openai-agent.md)
+— install, fund a wallet with a few hundred-thousandths of an XNO, and run one
+agent that buys a completion. A fresh Nano seed with ~0.00005 XNO is enough for
+dozens of calls.
+
+```bash
+pip install openai-agents-nano \
+  --extra-index-url https://pandeveloper001.github.io/openai-agents-nano-x402/simple/
+# then follow docs/pay-x402-from-openai-agent.md step by step
+```
+
+If you operate a 402 endpoint (or want to), [add a Nano accept and join the
+buyer side](docs/xno-x402-quickstart.md#6-if-you-run-a-402-resource) — the
+CDP Bazaar already indexes `nano:mainnet`/XNO accepts, and your Nano option
+gets real buyers that USDC-only rails cannot reach.
+
 ## Install
 
 The v0.1.0 GitHub release is the immutable, public install path (works today). Three equivalent ways,

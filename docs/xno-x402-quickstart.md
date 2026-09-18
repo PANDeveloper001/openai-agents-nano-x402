@@ -113,8 +113,13 @@ the only thing step 4 adds over step 3.
 - **Proven:** the Bazaar indexes XNO accepts and those endpoints answer 402; the adapter installs from git into
   a fresh venv; the spend gate fails closed offline (step 3); a real capped redeem on mainnet is documented in
   [`live-proof.md`](live-proof.md) — own accounts, so a correctness proof, not adoption evidence.
-- **Not proven:** a settled paid call against a **third-party** seller. Until that exists, treat "Nano works
-  with real x402 sellers" as unverified. This repo does not claim it.
+- **Also proven:** a settled paid call against a **third-party** seller. On 2026-09-18 this exact two-phase flow
+  bought a chat completion from NanoGPT (`api.nano-gpt.com`, an independent LLM host) in **0.00001292 XNO**,
+  block `E67FB89426F46E6AE4E0E5750B5F814A699965B8639DA89F38689EA1AFE57FC3`, confirmed on the Nano network and
+  independently verified by a third party (see [`pay-x402-from-openai-agent.md`](pay-x402-from-openai-agent.md)
+  and the repo issue thread). The Nano corner of x402 is real and pay-from-a-clean-outside-buyer has happened.
+- **Not proven:** general adoption at scale — the one settled third-party payment is the first of its kind, not
+  a usage rate. Claim it as a verified first, never as a volume.
 
 ## 6. If you run a 402 resource
 
