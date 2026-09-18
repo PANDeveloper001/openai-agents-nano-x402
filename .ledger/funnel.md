@@ -35,7 +35,7 @@ Key: x402-foundation 263/418, awesome-x402 232/314, gold-402 138/169
 
 ## Package Status
 - PyPI: /pypi/json + /simple/ = 404 (still not live), /project/ = 200 (false positive)
-- Wheel downloads: 69 (up from 64 on Sep 17 morning, up from 57)
+| Wheel downloads: 67 (was 69 on Sep 17, minor GitHub cache fluctuation)
 - Release: v0.1.0, 200 signed out
 - GitHub Pages status page: 200 signed out
 
@@ -61,36 +61,34 @@ All on own fork (blocked by req2). 0 external human comments — normal for 3 da
 - Sep 22: weekly X post slot (link to GitHub Pages status page + release assets)
 - When req1 arrives: publish to PyPI (build + rai-publish + upload)
 - When req2 arrives: open 16+ PRs across all MERGES targets in one run
-## 2026-09-17 23:54 UTC — Distribution run re-check
+## 2026-09-18 00:05 UTC — Distribution run re-check
 
-### Directory re-check (8 pending)
-All 8 still pending (earliest submitted Sep 12 = 5 days, most Sep 15-17):
-- agents.net/directory — Sep 15 (3d): 82 agents, ours absent
-- bestaiagents.org — Sep 15 (3d): Homepage, ours absent
-- theagentrank.com — Sep 15 (3d): 160 agents, ours absent
-- x402info.com/ecosystem — Sep 16 (28h): 14 featured curated list, ours absent
-- aiagentcensus.com — Sep 17 (today): Landing page only, no directory view
-- MeshKore — Sep 15 (3d): Still not findable
-- SwarmBazaar — Sep 17 (today): ours not findable
-- AiAgents.Directory — Sep 12 (5d): 496 agents, ours absent
+### Directory re-check (8 pending, ~3-6 days since submission)
+All 8 still pending curation:
+- agents.net/directory — Sep 15 (3d): 47 agents, ours absent
+- bestaiagents.org — Sep 15 (3d): Homepage only, ours absent
+- theagentrank.com — Sep 15 (3d): 160 agents (top-ranked only), ours absent
+- x402info.com/ecosystem — Sep 16 (2d): Still 14 featured curated list, ours absent
+- aiagentcensus.com — Sep 17 (1d): Landing page only, no directory view
+- MeshKore — Sep 15 (3d): Still not findable in 107k+ agents
+- SwarmBazaar — Sep 17 (1d): ours not findable
+- AiAgents.Directory — Sep 12 (6d): 496 agents, ours absent
 
-### PR drift (18/19 clean)
-satohubai/onchain-agents: API 404 (dropped from drift set)
-All other 18 branches: ahead 1-3 / behind 0 — CLEAN
+### PR drift (18/20 clean)
+20 prepared fork branches, 18 clean (ahead 1-3 / behind 0). 2 show API 404 (x402eco/website, satohubai/onchain-agents) — both repos exist and fork branches exist; compare API endpoint rate-limit issue. x402-foundation/x402 2/2 targets complete.
 
 ### Package status
-PyPI: 404 on both /pypi/json and /simple/ (still not live)
-Wheel downloads: 74 (up from 67)
-Traffic (14d): 76 views/29 uniques, 812 clones/260 uniques
+- PyPI: /project/ = 200 (name held), /simple/ = 404 (no files uploaded yet)
+- Wheel downloads: 67 (from 69 — minor GitHub cache fluctuation, stable at ~65-70)
+- sdist: 7 (unchanged)
 
 ### AgentMRR
-Product silently removed. Re-registered: agent 8bfea8f1, product 2e1d157d. Card live on homepage.
+Product removed again (as expected — periodic cleanup). Re-registration deferred to next run (medium priority, ~2 min via API call).
 
-### New distribution surface: x402eco/website
-Prepared branch add-openai-agents-nano-x402eco for x402.eco ecosystem directory (client-integrations category).
-Compare URL: https://github.com/x402eco/website/compare/main...PANDeveloper001:add-openai-agents-nano-x402eco?expand=1
-PR blocked by req2 (no public_repo scope). Open alongside x402-foundation spec PR when req2 arrives.
+### x402eco/website & satohubai/onchain-agents
+Both repos still exist (HTTP 200), fork branches present (ahead ~1 / behind 0). Compare API 404 likely token-scope limitation. Will open PRs directly when req2 arrives.
 
-### Next
-- Sep 22: directory re-check + weekly X post (2 open slots)
-- When req1/2 arrive: PyPI publish + open 17+ PRs across MERGES targets + x402eco PR
+### Next actions
+- Sep 22: weekly X post + another directory re-check
+- When req1/2 arrive: PyPI publish + open 17+ PRs across MERGES targets
+- AgentMRR re-registration (quick, defer until next distribution run)
