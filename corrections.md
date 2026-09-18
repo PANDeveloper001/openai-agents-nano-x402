@@ -43,3 +43,20 @@ Source: this run's execution. Apply these next run.
 9. **Weekly X update slot**: still closed until Sep 22.
 
 Next run: directory re-checks (Sep 20 earliest), check onchain-agents #11, AgentMRR check, drift re-check.
+## 2026-09-18 23:25 UTC — Distribution run: AgentMRR live, dirs still pending at day 3, drift 21/24, no new surfaces
+
+Source: this run's execution. Apply these next run.
+
+1. **AgentMRR still live** (product API 200, 49 mentions on homepage). DID NOT expire between runs this time. No re-registration needed.
+
+2. **All 10 pending directories still NOT live** (browser-checked JS-rendered content). Day 3 for Sep 15 submissions. First approvals still expected Sep 20-22.
+
+3. **Drift: 21/24 clean.** Same 3 as before: Corican/nanodir (diverged, schema rewrite), Haustorium12/gold-402 vend-api-merchant (Vend's branch, not ours), satohubai/onchain-agents (API 404, known history rewrite). agentswitchboard v4 now clean (ahead 1/behind 0 — last run's rebuild fixed it).
+
+4. **No new keyless distribution surfaces found.** SubmitMap qualify returned same 4 quick-wins (PromptZone, PluginMarketplace, LaunchLog, WIP) — none are agent-tool SDK fits. All known keyless directories already submitted (pending).
+
+5. **Blockers unchanged:** req1 (PyPI, day 4), req2 (GH PR scope, day 4). Weekly X slot opens Sep 22.
+
+6. **Funnel committed and pushed** with updated timestamps.
+
+Next run (Sep 20): re-check 5-6 day directories (agents.net, theagentrank.com, bestaiagents.org — hitting day 5-6 then, first approvals expected), drift re-check, AgentMRR check. When req2 arrives: x402-foundation/x402 docs PR first, then mpp-best/awesome_mpp, then ai-agent-marketplace. When req1 arrives: PyPI publish.
