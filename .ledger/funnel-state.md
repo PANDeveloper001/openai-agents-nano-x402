@@ -1,9 +1,9 @@
-## 2026-09-18 06:00 UTC — Distribution run: Sep 18 (late check)
+## 2026-09-18 07:55 UTC — Distribution run: Sep 18 (late check, second pass)
 
 ### Current status
-- Date: 2026-09-18 ~06:00 UTC
+- Date: 2026-09-18 ~07:55 UTC
 - Run: distribution-only (DISTRIBUTION FIRST)
-- Last update: Sep 18 05:52 UTC
+- Last update: Sep 18 07:55 UTC
 
 ### AgentMRR
 - Re-checked via homepage rendered text: FOUND — "openai-agents-nano (nano xno x402 payment for openai agents)" card is live in trending products section
@@ -23,10 +23,11 @@
 | SwarmBazaar | Sep 17 | PENDING (queued for human review) |
 | AiAgents.Directory | PENDING | Not found |
 
-### PR branches (20/21 clean)
-- All 20 CI-gated and documentation PR branches clean (ahead 1/behind 0 vs upstream main)
-- satohubai/onchain-agents still API 404 — drop from drift set next run
-- x402-foundation/x402 2/2 ready (docs/list + specs/exact-nano-mainnet)
+### PR branches (20/22 clean + 2 x402-foundation)
+- 20 source branches all clean (ahead 1/behind 0) — re-scan 07:50
+- gold-402 `add-vend-api-merchant` diverged (ahead 1/behind 1) — that is Vend's branch, not ours; our gold-402 `add-openai-agents-nano-v4` is clean
+- satohubai/onchain-agents still API 404 — dropped from drift set
+- x402-foundation/x402 2/2 ready (docs/list-v10 ahead 1, specs/exact-nano-mainnet-v3 ahead 3) — targets stay healthy (197/300 merged, gold-402 138/169, michielpost 43/50)
 
 ### Access keys
 - req1 (PyPI OIDC, ID 1) — still open, filed Sep 15
@@ -40,9 +41,9 @@
 - The earlier `rai-scope adopted` milestone pointing at /project/ is a false positive
 
 ### Release downloads
-- wheel: 143 downloads (up from 112, +31)
+- wheel: 164 downloads (up from 143, +21)
 - sdist: 7 (unchanged)
-- All self-traffic (own X posts, verification, CI)
+- Traffic views 76/29 uniques, clones 812/260, referrers t.co (own X posts) + github.com — still all self-traffic, no organic audience yet
 
 ### x402.org docs gap
 - Python SDK NOT listed in third-party-sdks page
@@ -57,6 +58,7 @@
 
 ### Next actions
 - Sep 20-22: re-check pending directories (agents.net, theagentrank.com first candidates)
-- Sep 22: weekly X post (dry-run first)
+- Sep 22: weekly X post (dry-run first). Draft updates to "164 wheel downloads and live on AgentMRR — Nano x402 for OpenAI Agents SDK"
 - Keep req1/req2 visible (both customer-gated)
-- When req2 arrives: open x402-foundation/x402 PRs first
+- When req2 arrives: open x402-foundation/x402 PRs first (x402 docs + specs, highest merge value 197/300)
+- SubmitMap qualify: 825/829 dirs reachable but quick-wins not agent-tool fit (PromptZone/PluginMarketplace/LaunchLog/WIP) — do not spend runs chasing them
