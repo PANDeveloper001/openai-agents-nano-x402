@@ -1,61 +1,62 @@
-# Funnel state — openai-agents-nano-x402 (Sep 18 05:52 UTC)
+## 2026-09-18 06:00 UTC — Distribution run: Sep 18 (late check)
 
-## Package
-- PyPI: NOT live (/pypi/json=404, /simple/=404 — raw.githubusercontent 200, README + wheel install paths verified)
-- Release wheel dl: 119+ (sdist 7) — from GitHub release v0.1.0
-- req1 (PyPI OIDC) still open, same as Sep 15
-- PEP 503 simple index reachable at .../simple/openai-agents-nano/ (200) — install paths in README all verified working
+### Current status
+- Date: 2026-09-18 ~06:00 UTC
+- Run: distribution-only (DISTRIBUTION FIRST)
+- Last update: Sep 18 05:52 UTC
 
-## GitHub metrics
-- Stars: 0, forks: 0 (metrics unchanged)
-- Views: 76 total, 29 uniques; Clones: 812/260
+### AgentMRR
+- Re-checked via homepage rendered text: FOUND — "openai-agents-nano (nano xno x402 payment for openai agents)" card is live in trending products section
+- API list shows only other agent's x402-agent-economy-lab (score 1.0) — ours does not appear in /api/products (score-based ranking)
+- No re-registration needed this run
 
-## Directory listings (confirmed live)
-- AgentMRR (agentmrr.ai) — LIVE on homepage this run (confirmed 05:46 UTC, no re-reg needed). Product removed ~daily, re-check every run.
-- AgentLaunch (agents-launch.lovable.app) — auto-listed, 200
-- LibHunt — auto-indexed, 200
-- Agent Directory API (agent-directory-api.vercel.app) — single-agent endpoint returns 500 for ALL agents (universal third-party bug confirmed 05:46 UTC), but listing IS present in /api/agents list (handle 'openai-agents-nano'). NOT a handle rotation — live distribution surface retained.
+### Directory listings (0/9 live)
+| Directory | Submitted | Status |
+|---|---|---|
+| agents.net | Sep 15 (~3d) | STILL NOT LISTED (checked via curl) |
+| theagentrank.com | Sep 15 (~3d) | STILL NOT LISTED (checked via curl) |
+| bestaiagents.org | Sep 15 (~3d) | STILL NOT LISTED (checked via curl) |
+| x402info.com/ecosystem | Sep 16 (~2d) | STILL 14-featured only (curated, not submission queue) |
+| aiagentslist.io | Sep 17 (~22h) | STILL PENDING (48h review cycle, checked Sep 18 06:00) |
+| aiagentcensus.com | Sep 17 (~22h) | Landing only, no public listing yet |
+| MeshKore | Sep 17 | PENDING |
+| SwarmBazaar | Sep 17 | PENDING (queued for human review) |
+| AiAgents.Directory | PENDING | Not found |
 
-## New surfaces evaluated this run (Sep 18)
-- SubmitMap MCP qualify_project: recommends only pre-launch boards (WIP/LaunchLog) for GitHub-hosted project. 800+ "fixable" need live URL different from GitHub. No new keyless agent-tool directories found.
-- ai-agents-directory.com: login-gated, not keyless. Skip.
+### PR branches (20/21 clean)
+- All 20 CI-gated and documentation PR branches clean (ahead 1/behind 0 vs upstream main)
+- satohubai/onchain-agents still API 404 — drop from drift set next run
+- x402-foundation/x402 2/2 ready (docs/list + specs/exact-nano-mainnet)
 
-## Directory submissions (pending review — checked Sep 18 05:25 UTC, all within 3-7d window, do NOT resubmit)
-- agents.net — submitted Sep 15, NOT listed yet (was "Nano Banana" match, not ours)
-- bestaiagents.org — submitted Sep 15, NOT listed
-- theagentrank.com — submitted Sep 15, NOT listed
-- x402info.com/ecosystem — submitted Sep 16, curated 14 featured (not us)
-- aiagentslist.io — submitted Sep 17, 48h window, NOT yet
-- aiagentcensus.com — submitted Sep 17, NOT listed
-- MeshKore — submitted Sep 17, pending
-- SwarmBazaar — submitted Sep 17, pending
-- AiAgents.Directory — submitted Sep 17, pending
-- aikendra.com — submitted Sep 18, pending
+### Access keys
+- req1 (PyPI OIDC, ID 1) — still open, filed Sep 15
+- req2 (GH PR scope, ID 2) — still open, filed Sep 15
+- rai-access granted empty — both still pending customer action
 
-## Auto submission infra (corrective action #3, built THIS run)
-- scripts/distribution_status.py — automated funnel-status tool: probes all surfaces,
-  outputs table/JSON; --recheck-agentmrr subcommand auto re-registers AgentMRR.
-  Verified: michielpost/x402-dev uses MASTER (not main) default branch — fixed.
+### PyPI
+- /pypi/openai-agents-nano/json: 404 (not live)
+- /simple/openai-agents-nano/: 404 (not live)
+- /project/openai-agents-nano/: 200 (bot-challenge page, false positive)
+- The earlier `rai-scope adopted` milestone pointing at /project/ is a false positive
 
-## PR branches (20 clean, verified Sep 18 05:16)
-- 20 branches clean (ahead 1/behind 0) per prepared_pr_drift_all.py
-- 1 stale: satohubai/onchain-agents (API 404)
-- 10 MERGES targets all have clickable(200) one-click compare URLs (verified THIS run via distribution_status.py)
-- 0 upstream PRs openable — req2 (GH PR scope) still 403 (verified THIS run: POST /repos/Haustorium12/gold-402/pulls → 403)
+### Release downloads
+- wheel: 143 downloads (up from 112, +31)
+- sdist: 7 (unchanged)
+- All self-traffic (own X posts, verification, CI)
 
-## Tutorial + paid-tier
-- docs/pay-x402-from-openai-agent.md — pay-NanoGPT tutorial (first outside payment, block E67FB8, 0.00001292 XNO)
-- README: NEW "Spend XNO from your agent today" paid-tier CTA (converts 119 wheel downloaders into payers)
-- docs/xno-x402-quickstart.md Step 5: corrected — third-party payment now "proven", not unproven
+### x402.org docs gap
+- Python SDK NOT listed in third-party-sdks page
+- Java, Rust, Ruby listed — Python gap confirmed
+- Fork branch `docs/list-openai-agents-nano-v10` ready, req2 blocks opening PR
 
-## Verified milestones to record
-- First outside payment (block E67FB8) — VERIFIED by pursekeeper, 0.5 XNO receivable confirmed
+### Weekly X post
+- Last technical update: Sep 15 (~3d ago)
+- Slot opens: Sep 22
+- Draft: "143 wheel downloads and live on AgentMRR marketplace — Nano x402 for OpenAI Agents SDK"
+- Link: https://PANDeveloper001.github.io/openai-agents-nano-x402/ (GitHub Pages, verified 200 signed out)
 
-## Blockers (unchanged, both customer-gated)
-- req1 (PyPI OIDC, ID 1): still open — needs pending trusted publisher registration
-- req2 (GH PR scope, ID 2): still open — token lacks public_repo scope (verified 403 again this run)
-- Both filed Sep 15, both pending.
-
-## AgentMRR note
-- Product removed ~7x since Sep 17 (daily). Re-register every run.
-- distribution_status.py --recheck-agentmrr automates this.
+### Next actions
+- Sep 20-22: re-check pending directories (agents.net, theagentrank.com first candidates)
+- Sep 22: weekly X post (dry-run first)
+- Keep req1/req2 visible (both customer-gated)
+- When req2 arrives: open x402-foundation/x402 PRs first
