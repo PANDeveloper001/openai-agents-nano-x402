@@ -1,58 +1,62 @@
-## 2026-09-18 08:04 UTC — Distribution run: Sep 18 (morning check)
+# Distribution funnel state · 2026-09-18 08:59 UTC
 
-### Current status
-- Date: 2026-09-18 ~08:04 UTC
-- Run: distribution-only (DISTRIBUTION FIRST)
-- Last funnel update: Sep 18 07:55 UTC
-- This run: directory re-check, traffic measurement, new surface scan
+## AgentMRR
+- Re-registered (6th time): agent b631b984, product 8ab517ff — LIVE on homepage
+- Product cleaned between runs (pattern: expect to re-reg every run)
+- Wheel downloads (release assets): 182 (up from 170)
+- GitHub traffic: 76 views/29 unique, 812 clones/260 unique — all self-traffic
 
-### AgentMRR
-- Re-checked homepage rendered text (via curl + browser): FOUND
-  - Product card "openai-agents-nano (Nano XNO x402 payment for OpenAI Agents)" is live
-  - API /products list does NOT show it (score 1.0, vote-ranked, normal)
-  - 92 products total (up from 57?) - broader catalog growth
-- No re-registration needed this run
+## PyPI
+- /pypi/openai-agents-nano/json: 404 (still not published)
+- req1 (PyPI OIDC) still open, filed Sep 15
 
-### Directory re-check (browser-verified, 0/9 live)
-| Directory | Submitted | Days | Status |
-|---|---|---|---|
-| AiAgents.Directory | Sep 12 | 6 | NOT listed (browser verified) |
-| agents.net/directory | Sep 15 | 3 | NOT listed (browser verified: 82 agents, ours absent) |
-| theagentrank.com | Sep 15 | 3 | NOT listed (browser verified: "160 agents listed" page) |
-| bestaiagents.org | Sep 15 | 3 | NOT listed (browser verified) |
-| x402info.com/ecosystem | Sep 16 | 2 | NOT listed (14-featured curated only, our entry in queue) |
-| aiagentcensus.com | Sep 17 | 1 | NOT listed (landing page only) |
-| aiagentslist.io | Sep 17 | 1 | NOT listed (69 agents page, 48h review window - check Sep 19+) |
-| MeshKore | Sep 17 | 1 | NOT listed |
-| SwarmBazaar | Sep 17 | 1 | PENDING |
+## Directory submissions (0/10 live — all pending 3-6 day review)
+- agents.net: NOT listed (82 agents, ours absent)
+- bestaiagents.org: NOT listed
+- theagentrank.com: NOT listed
+- x402info.com/ecosystem: NOT listed (14 featured unchanged)
+- aiagents.directory: NOT listed
+- aiagentslist.io: NOT listed
+- MeshKore: pending
+- SwarmBazaar: pending
+- AIKendra: pending
+- aiagentcensus.com: pending (landing only)
 
-Confirmed: 5-7 day review cycles are the norm. First candidates expected ~Sep 20-22.
+## Prepared PR branches (14 fork repos with prepared branches)
 
-### New surfaces evaluated this run (all not submittable)
-- **aiagentsdirectory.com** (/submit-agent, 3k+ agents) — requires sign-in/account to submit. NOT keyless.
-- **x402.eco** — deployment PAUSED ("Deployment Paused" page). Cannot submit.
-- **x402nano.org** — x402 facilitator for Nano (existing tool, relevant), site is also paused.
-- No new keyless agent-payments or x402 SDK directories found.
+Clean (10/14 — ahead 1-2, behind 0):
+- PANDeveloper001/awesome-x402: add-openai-agents-nano-v2 (ahead 2/behind 0)
+- PANDeveloper001/awesome-payment-agent-skills: add-openai-agents-nano (ahead 1/behind 0)
+- PANDeveloper001/awesome-ai-agents-2026: add-openai-agents-nano (ahead 1/behind 0)
+- PANDeveloper001/x402: docs/list-openai-agents-nano-v10 (ahead 1/behind 0)
+- PANDeveloper001/x402-dev: add-openai-agents-nano (ahead 1/behind 0)
+- PANDeveloper001/gold-402: add-openai-agents-nano-v4 (ahead 1/behind 0)
+- PANDeveloper001/awesome-agents: add-openai-agents-nano-v3 (ahead 1/behind 0)
+- PANDeveloper001/awesome-agent-first-tools: add-openai-agents-nano (ahead 1/behind 0)
+- PANDeveloper001/awesome-mpp: add-nano-x402-agent-framework (ahead 1/behind 0)
+- PANDeveloper001/awesome-ai-sdks: add-openai-agents-nano-v2 (ahead 1/behind 0)
 
-### Release downloads
-- wheel: 164 (unchanged from Sep 18 07:55)
-- sdist: 7 (unchanged)
-- No organic growth detected between runs (all self-traffic)
+Compare-fail (4/14 — branches exist but compare API returns 404):
+- PANDeveloper001/awesome-agentic-payments: add-openai-agents-nano-x402 (upstream exists)
+- PANDeveloper001/awesome-agent-payments-protocol: add-openai-agents-nano-v2 (upstream GONE/renamed)
+- PANDeveloper001/onchain-agents: add-openai-agents-nano (upstream exists, but 404 compare)
+- PANDeveloper001/ai-agent-infra-list: add-x402-nano-settlement-rail (upstream exists)
 
-### Traffic (GitHub 14-day)
-- GitHub traffic API returned 0/0 (traffic data reset or expired beyond 14-day window)
-- Last recorded: 76 views / 29 uniques, 812 clones / 260 uniques (earlier this run cycle)
+## Merge rates on top targets
+- x402-foundation/x402: 6622★ MERGES (197/300)
+- xpaysh/awesome-x402: 288★ MERGES (232/300)
+- michielpost/x402-dev: 5★ MERGES (43/50)
+- Scottcjn/awesome-agents: 103★ MERGES (22/28)
+- frankxai/awesome-payment-agent-skills: 2★ MERGES
+- facundofarias/awesome-agent-first-tools: 0★ MERGES (<3 months data)
+- gold-402: 404 (repo structure changed)
 
-### Access keys (unchanged)
-- req1 (PyPI, ID 1) — still open
-- req2 (GH PR scope, ID 2) — still open
+## Blockers
+- req1 (PyPI OIDC): still open since Sep 15
+- req2 (GH PR scope): still open since Sep 15
+- Both waiting on customer
 
-### PR branches
-- Last known: 20/22 clean, x402-foundation/x402 2/2 ready
-- Both x402 PRs (docs + specs) highest-value when req2 arrives
-
-### Next actions
-- Sep 19-20: re-check aiagentslist.io (48h window)
-- Sep 20-22: bulk directory re-check (5-7 day candidates: agents.net, theagentrank.com, bestaiagents.org)
-- Sep 22: weekly X post slot (draft: "164+ wheel downloads | AgentMRR | Nano x402 for OpenAI Agents SDK")
-- Keep req1/req2 visible (both still pending customer action)
+## Next checks
+- Sep 20-22: first directory candidates may go live (agents.net, theagentrank.com earliest)
+- ~Sep 22: weekly X post slot opens (current draft: "182 wheel downloads — Nano x402 for OpenAI Agents SDK")
+- Next run: re-check AgentMRR (needs re-reg), check drift on all branches again
