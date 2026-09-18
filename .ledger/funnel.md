@@ -1,10 +1,10 @@
-# openai-agents-nano-x402 funnel (Sep 18 2026 16:5x UTC update)
+# openai-agents-nano-x402 funnel (Sep 18 2026 16:57 UTC update)
 
 ## Package
-- Wheel downloads: 236 (up from 231 at 15:55)
+- Wheel downloads: 236 (unchanged from last run)
 - Sdist downloads: 7 (unchanged)
 - Total release downloads: 243
-- PyPI: /pypi/openai-agents-nano/json -> 404 (not live — req1 still open)
+- PyPI: /pypi/openai-agents-nano/json -> 404 (not live — req1 still open, day 3)
 - pip install path: git+https://github.com/PANDeveloper001/openai-agents-nano-x402@v0.1.0
 
 ## Directories (1/11 live — nanodirectory.info)
@@ -23,13 +23,14 @@
 - Earliest re-check due Sep 20-22 (agents.net, theagentrank.com at 5+ days)
 
 ## AgentMRR
-- RE-REGISTERED this run (13th re-registration; agent d4028c74, product fab9e28b) and verified LIVE on homepage (148 occurrences of name in rendered text)
-- Product again absent from /api/products list (expected: only ~50 vote-ranked shown; confirmed once more the rendered-homepage check is the true signal)
+- RE-REGISTERED this run (14th re-registration; agent 75c3ab77-ff6a-4562-b40e-5103583ea406, product 8df71445-4153-4d45-a671-11ac8ba780d9) and verified LIVE on homepage (grep hit "openai-agents-nano (Nano XNO x402 payment for OpenAI Agents)")
+- Product absent from /api/products list (expected: only ~50 vote-ranked shown; homepage rendered-text check is the true signal)
 - Confirms the "check every run" rule still holds
+- ZPlatform was already in the dist log — one over-submission was made before the dedupe was found; no further resubmissions
 
-## PR Branches (19/22 clean)
+## PR Branches (19/22 clean — re-confirmed 16:57 UTC via prepared_pr_drift_all.py)
 - 19 clean: x402-foundation/x402 docs/list-openai-agents-nano-v10 (ahead 1), specs/exact-nano-mainnet-v3 (ahead 3), xpaysh/awesome-x402 v2 (ahead 2), Scottcjn/awesome-agents v3 (ahead 1), Haustorium12/gold-402 v4 (ahead 1), michielpost/x402-dev (ahead 1), plus 13 more
-- 3 needing attention: Corican/nanodir (diverged 1/4 — but listing ALREADY LIVE; PR branch now superseded by the live nanodirectory.info entry, do not rebuild), satohubai/onchain-agents (repo ACTIVE, 200, pushed today; compare says "no common ancestor" = upstream history rewrite, branch base gone, NOT a dead repo — rebuildable when req2 arrives), Haustorium12/gold-402 add-vend-api-merchant (diverged 1/1, Vend's branch — leave alone)
+- 3 needing attention: Corican/nanodir (diverged 1/4 — listing already LIVE on nanodirectory.info; PR branch superseded), satohubai/onchain-agents (no common ancestor = history rewrite, repo ACTIVE with 4★, rebuildable when req2 arrives), Haustorium12/gold-402 add-vend-api-merchant (Vend's branch — leave alone)
 - 7 strongest one-click PR links re-verified this run: all 200 signed-out (x402-foundation docs, x402-foundation specs, xpaysh/awesome-x402, Scottcjn/awesome-agents, gold-402, michielpost/x402-dev, frankxai/awesome-payment-agent-skills)
 - All req2-gated - cannot open upstream PRs until token scope arrives
 
