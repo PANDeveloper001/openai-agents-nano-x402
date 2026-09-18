@@ -1,15 +1,18 @@
 # Rai Funnel — openai-agents-nano-x402
-Last updated: 2026-09-17 23:06 UTC
+Last updated: 2026-09-18 00:36 UTC
 
-## Live surfaces
-- GitHub repo + release (wheel 69 dl, up from 64 on Sep 17 morning)
+## Live surfaces (what loads signed out)
+- GitHub repo + release (wheel 73 dl, up from 69)
 - GitHub Pages (PEP 503 static index) — 200 signed out
 - agentlaunch (auto-crawled)
-- AgentMRR (2 product entries, API confirms live)
-- Agent Directory API (handle taken, auto-crawled)
 - LibHunt (indexed from GitHub, both URLs 200)
+- Agent Directory API (handle taken, auto-crawled)
+- AgentMRR: REMOVED again (re-registered Sep 17 23:33 UTC, already gone by Sep 18 00:35)
 
-## Prepared PR branches (18 clean, 1 stale)
+## New surface added this run
+- :x index.percall.dev (56 products, GitHub-issue registration, blocked by token scopes — needs public_repo scope for issue creation)
+
+## Prepared PR branches (19 clean, 1 stale)
 All ahead 1/behind 0 as of 2026-09-17 23:06 UTC. satohubai/onchain-agents API 404 (stale, drop from drift set).
 - **MERGES (open when PR scope arrives):** x402-foundation/x402 (6621★, 263/418), xpaysh/awesome-x402 (288★, 232/314), Haustorium12/gold-402 (11★, 138/169), michielpost/x402-dev (5★, 43/50), Scottcjn/awesome-agents (103★, 22/29), frankxai/awesome-payment-agent-skills (2★, 10/13), facundofarias/awesome-agent-first-tools (0★, 1/1), Corican/nanodir (2★, 1/1)
 - **SOMETIMES:** assafbar2/agentswitchboard.dev (0★, 12/27)
@@ -17,25 +20,33 @@ All ahead 1/behind 0 as of 2026-09-17 23:06 UTC. satohubai/onchain-agents API 40
 - **QUIET:** mpp-best/awesome_mpp (0★, 0 closed PRs in 3 months)
 - **Other clean:** chgaowei/ai-agent-infra-list, goodmeta/agent-payments-landscape, tsubasakong/awesome-agent-payments-protocol
 
-## Directory submissions (8, all still pending curation)
-| Directory | Submitted | Status | Checked |
-|-----------|-----------|--------|---------|
-| x402info.com/ecosystem | Sep 16 (~28h) | Still 14 featured curated list | Sep 17 |
-| bestaiagents.org | Sep 15 (~50h) | Landing page only, our agent absent | Sep 17 |
-| theagentrank.com | Sep 15 (~50h) | 160 agents listed, ours absent | Sep 17 |
-| agents.net/directory | Sep 15 (~50h) | 82 agents/24 categories, ours absent | Sep 17 |
-| aiagentcensus.com | Sep 17 | Landing page only, no directory view | Sep 17 |
-| MeshKore | Sep 15 (~50h, auto-index) | 107k agents, not found via search | Sep 17 |
-| SwarmBazaar | Sep 17 | Homepage shows live sellers, ours not findable | Sep 17 |
-| AiAgents.Directory | Sep 12 (~5d) | 496 agents (Developer Tools 74), ours absent | Sep 17 |
+## Directory submissions (8 pending before, now 10 total)
 
-## Merge Rates (re-checked Sep 17)
-All MERGES-ranked targets still healthy. No changes from Sep 16 measurement.
+Status notes:
+| Directory | Status this run |
+|-----------|----------------|
+| x402info.com/ecosystem | Still 14 featured curated list |
+| bestaiagents.org | Still absent |
+| theagentrank.com | Still absent |
+| agents.net/directory | 82 agents (was 47 Sep 18), ours still absent |
+| aiagentcensus.com | Landing page, no dir view |
+| AiAgents.Directory | Still absent |
+| meshcore.org | Connection refused (DOWN) |
+| swarmbazaar.ai | DNS fails (GONE) |
+
+**New this run:**
+| Surface | Status |
+|---------|--------|
+| aiagentslist.io | SUBMITTED (free, editorial review 48h), awaiting listing |
+| index.percall.dev | Blocked by req2 token scope (needs public_repo for issue creation) |
+
+## Merge Rates (re-checked Sep 18)
+All MERGES-ranked targets still healthy. No changes from Sep 17 measurement.
 Key: x402-foundation 263/418, awesome-x402 232/314, gold-402 138/169
 
 ## Package Status
-- PyPI: /pypi/json + /simple/ = 404 (still not live), /project/ = 200 (false positive)
-| Wheel downloads: 67 (was 69 on Sep 17, minor GitHub cache fluctuation)
+- PyPI: /pypi/json + /simple/ = 404 (still not live — req1 blocks)
+- Wheel downloads: 73 (release tracking, GitHub Pages static index)
 - Release: v0.1.0, 200 signed out
 - GitHub Pages status page: 200 signed out
 
