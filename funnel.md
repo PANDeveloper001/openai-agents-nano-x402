@@ -34,7 +34,7 @@
 
 ## PR Branches (24 — drift re-checked Sep 19 22:30)
 - 20 clean (ahead / behind 0)
-- 4 needing attention: Corican/nanodir (diverged, upstream schema rewrite), assafbar2/agentswitchboard.dev (diverged behind 4, needs rebuild), Haustorium12/gold-402 add-vend-api-merchant (Vend's branch), satohubai/onchain-agents (API 404, history rewritten)
+- 4 needing attention: Corican/nanodir (diverged, upstream schema rewrite), assafbar2/agentswitchboard.dev — REBUILT Sep 19 as add-openai-agents-nano-v4 (validators 0 violations, compare URL 200, req2-gated), Haustorium12/gold-402 add-vend-api-merchant (Vend's branch), satohubai/onchain-agents (API 404, history rewritten)
 - 3 strong ready PR branches still req2-gated: x402-foundation/x402 docs, mpp-best/awesome_mpp, ai-agent-marketplace
 
 ## New surface evaluation (Sep 19)
