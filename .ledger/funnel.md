@@ -103,3 +103,23 @@ Both repos still exist (HTTP 200), fork branches present (ahead ~1 / behind 0). 
 - Sep 22: weekly X post + another directory re-check
 - When req1/2 arrive: PyPI publish + open 17+ PRs across MERGES targets
 - AgentMRR re-registration (quick, defer until next distribution run)
+
+### Sep 18 01:5x — milestone verification (browser + API, this run)
+Key correction to recorded adoption milestones for openai-agents-nano-x402:
+- PyPI package milestone is a FALSE POSITIVE: /pypi/openai-agents-nano/json = 404, /simple/ = 404.
+  The recorded /project/<name>/ answers 200 for ANY name (bot-challenge page).
+  REAL package publish is NOT done. req1 must land first.
+- glama.ai/mcp/servers/PANDeveloper001/nano-mcp-public is WRONGLY attributed to this project —
+  it names nano-mcp-public, a DIFFERENT project. Remove/re-fi-attribute: not a listing for openai-agents-nano.
+- VERIFIED REAL: agents-launch (200, names project), agent-directory-api (/api/agents 200, contains
+  openai-agents-nano), agentmrr.ai (rendered: 16 matches for our project — re-registered product live),
+  libhunt x2 (200, 3 matches each).
+- PromptFrenzy (promptfrenzy.com/directory) evaluated: agent-friendly one-call API but badge must be a
+  non-nofollow anchor on the SAME domain as the url. GitHub README links get rel=nofollow automatically
+  and badge_url must == url domain, so a GitHub-hosted repo that also lists pypi.org cannot pass.
+  NOT submittable for GitHub-hosted projects without a self-owned web domain. Do not retry.
+- theaiagentindex.com/submit: free tier exists but routes through a billing/checkout flow even at $0.
+  Not autonomously submittable. Do not count as submitted.
+- 9 field directories still pending curation (agents.net 82 agents now, bestaiagents, theagentrank,
+  x402info 14-featured unchanged, aiagentcensus landing-only, MeshKore, SwarmBazaar, AiAgents.Directory,
+  aiagentslist.io inside 48h window — re-check next run).
