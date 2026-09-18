@@ -130,3 +130,103 @@ Confirmed: 5-7 day review cycles. First candidates ~Sep 20-22.
 3. AgentMRR re-registration — retry when rate limit clears
 4. Directory curation — earliest Sep 15 submissions at 72h+, check Sep 20-22
 5. Next: retry AgentMRR registration with new API shape
+## Nightly crawler — 2026-09-19 02:00 UTC
+
+### Pending directory re-check
+
+All 9 pending directories re-checked with headless Playwright (chromium 1.63.0, 4s wait + full DOM render). None show openai-agents-nano live:
+
+| Directory | Expected URL | Status | openai-agents-nano found? |
+|---|---|---|---|
+| x402info.com/ecosystem | https://x402info.com/ecosystem | 200 (14 featured) | No — still curated featured list |
+| agents.net/directory | https://agents.net/directory | 200 (82 agents) | No — not in catalog |
+| bestaiagents.org | https://bestaiagents.org | 200 (168 agents) | No |
+| swarmbazaar.ai | https://swarmbazaar.ai | ERR_NAME_NOT_RESOLVED | Dead/offline since last check |
+| swarmbazaar.com | https://swarmbazaar.com | 200 | No — not in x402/agent listings |
+| theagentrank.com | https://theagentrank.com | 200 (160+ agents) | No |
+| aiagentcensus.com | https://aiagentcensus.com | 200 (landing page) | No — still no directory view |
+| meshkore.com | https://meshkore.com | 200 (SPA) | No — no match in rendered body |
+| aiagents.directory | https://aiagents.directory | 200 | No |
+| aiagentslist.io | https://aiagentslist.io | 200 (75+ agents) | No — still in 48h review window |
+| AiAgents.Directory | https://www.aiagents.directory | 200 | No |
+
+Key observation: swarmbazaar.ai (target in funnel) no longer resolves. swarmbazaar.com is the active domain. Earliest pending submissions (Sep 15) are at 96h+ with no live listing, suggesting review cycles are 5-7+ days. No directory has gone live since last check.
+
+### New keyless target discovered: 4agent.dev
+
+**What:** A dedicated directory of "Tools Built for AI Agents" — APIs, MCP servers, and developer services for agent builders. Very on-topic for an OpenAI Agents SDK with x402 payment capabilities.
+
+**Submission method:** https://4agent.dev/submit — keyless Next.js server-action form:
+- No login/sign-up/sign-in/captcha/account requirement verified
+- Fields: name (req), tagline (req), description (req), url (req), category (req), starting_price (req), plus optional: company, slug, api_endpoint, auth_method, tags, sdk, has_mcp, has_openapi, pricing_model, free_tier
+- Submissions saved as drafts, reviewed before publication
+- Confirmed 200, form visible, submit button present
+
+**Why it matters:** It's the first agent-tool-specific directory found that is genuinely keyless and completely on-topic for an OpenAI Agents SDK. Unlike general AI-tool directories or x402-service directories (which structurally reject client SDKs), 4agent.dev accepts "developer services" and "APIs" for agent builders — the exact category our package fits.
+
+**Not submitted in this cron run** (per task instructions). Log for submission in a future full distribution run.
+
+### Second new keyless candidate: aitoolsdirectory.site
+
+**What:** General AI tools directory with a "Developer Tools" category.
+**Submission:** https://aitoolsdirectory.site/submit.html — FormSubmit (form-to-email) to editor's email. No account/captcha/sign-in. Free, human review 3-5 days. Better as a breadth multiplier than a primary target. Note marginal fit.
+
+### Third keyless candidate (secondary): launchfree.io
+
+**What:** Free product launch directory (The Runway) — "free forever. no gatekeeping." General software/SaaS directory. Not agent-specific. Keyless multi-step React form (no sign-in). Dofollow backlink included. Worth noting for breadth but lowest priority.
+
+### Not-keyless (evaluated and skipped):
+
+| Directory (URL) | Reason for skip |
+|---|---|
+| agentfolio.online | Sign-in with Google required |
+| agentlocker.ai/submit-your-tool | Account creation required (already in skill) |
+| ai-agents-directory.com | Dofollow backlink on self-owned domain required |
+| agentdex.id | Nostr identity required (not keyless) |
+| citablehub.com/submit | Sign-in to submit |
+| tolodora.com/launch | Sign-up required |
+| directree.io/submit | Free account required |
+| toolscout.ai/submit | Sign-in to continue |
+| agentwork.tools/submit | Account (dashboard/login) required |
+| doforai.tools/en/submit | Backlink badge on self-owned domain required |
+| indietools.app/submit | Sign-in to submit |
+| letslaunch.today/submit | Redirects to /sign-in |
+| agentconnex.com | Paid marketplace, account/signup required |
+| neura.market | 404 on /submit |
+| toollisted.com | General AI tools directory, no clear keyless path |
+| agentfriendly/agent-friendly-directory | Email/Nostr/toku.agency only — no keyless API |
+
+### Summary
+
+- **0 pending listings went live** — all remain absent from their directories (earliest at 96h+)
+- **1 new keyless on-topic target found:** 4agent.dev/submit (agent-tool directory, keyless Next.js form)
+- **2 secondary/edge targets:** aitoolsdirectory.site/submit.html, launchfree.io/submit (both keyless but less on-topic)
+- **15+ candidates ruled out** as not-keyless (account, captcha, backlink, or paid)
+
+---
+
+## This run (Sep 18, ~08:15-08:35)
+
+### State
+
+**Directories live: 0/10** — all pending (3-6 day review cycles).
+**4agent.dev/submit** — submission received (Draft ID: openai-agents-nano-2), pending admin review.
+**AgentMRR** — product still live on homepage (no re-registration needed this run).
+
+**Wheel downloads: 170** (up from 164, +6 since last check ~3h ago).
+**sdist: 7** (unchanged).
+**GitHub traffic:** 812 clones / 260 uniques (14d, unchanged).
+**PyPI:** still 404 on /pypi/json — req1 still open.
+**PR branches:** 20/21 clean (satohubai dropped) — all req2-gated.
+
+### New this run
+- Submitted to 4agent.dev (keyless agent-tool directory) — DRAFT accepted
+- Verified AgentMRR product live via browser (no re-reg needed)
+- Confirmed all other directories still pending (too early — 3-6 day cycles)
+- GitHub Pages status page + PEP 503 index both live (200 signed-out)
+
+### Next
+- Sep 20-22: first directory candidates expected to go live
+- Sep 22: weekly X post slot opens (wheel 170+ / AgentMRR / 4agent.dev -> GitHub Pages)
+- When req1 lands: PyPI publish
+- When req2 lands: x402-foundation/x402 docs PR first
