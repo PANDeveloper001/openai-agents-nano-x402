@@ -1,6 +1,6 @@
-# Distribution funnel — 2026-09-18 02:30 UTC
+# Distribution funnel — 2026-09-18 02:43 UTC
 
-## This run (Sep 18, ~02:20-02:35)
+## This run (Sep 18, ~02:36-02:52)
 
 ### AgentMRR re-registered
 - Product removed again between runs (periodic cleanup)
@@ -51,3 +51,47 @@ All waiting on req2 (GH public_repo token scope)
 - Sep 22: weekly X post slot (link to GitHub Pages status page)
 - When req1 arrives: publish to PyPI
 - When req2 arrives: open 19 PRs across all MERGES targets
+
+## This run (Sep 18, ~02:36-02:52 — continued from above)
+
+### AgentMRR re-registered (AGAIN)
+- Removed between runs (confirmed: periodic cleanup pattern)
+- Re-registered successfully: agent 0e76131b, product 37eba569
+- Product LIVE on homepage (API not yet showing — normal for score 1.0)
+- This is the 4th re-registration since Sep 17
+
+### Directory re-check: still NONE live
+- agents.net: 47 → 82 agents listed, ours absent (submitted Sep 15, 3d)
+- bestaiagents.org: absent (Sep 15, 3d)
+- theagentrank.com: 160 agents listed, ours absent (Sep 15, 3d)
+- x402info.com/ecosystem: 14-featured unchanged (Sep 16, 2d)
+- aiagentcensus.com: landing only (Sep 17, 1d)
+- aiagentslist.io: 69 agents, ours absent (Sep 17, 1d — 48h review window → check Sep 19-20)
+- swarmbazaar.ai: still pending (Sep 17)
+- AiAgents.Directory: absent (Sep 12, 6d)
+- MeshKore: unreachable (Sep 17)
+
+Confirmed: 5-7 day review cycles. First candidates ~Sep 20-22.
+
+### Wheel downloads: 101 (up from 73, +28 organic)
+- sdist 7 (unchanged)
+- Organic growth of +28 downloads in ~24h — stable crawl
+
+### New surfaces prep (AgentStide, AIAgentsDirectory)
+- agentstide.com/submit: Netlify form found (form-name=agent-submission, 11 fields incl. listing-type, category). POST 404 on curl — likely JS-dependent or Netlify Forms not enabled on that page. Browser form has select dropdowns that require JS interaction.
+- aiagentsdirectory.com/submit-agent: Next.js SPA with 3,057 listings. JS-rendered submit form. Submit path found but needs browser.
+- Both logged as docs prep. Attempt browser submission in next run.
+
+### Traffic (14-day, unchanged from Sep 17)
+- Views: 76 total, 29 uniques
+- Clones: 812 total, 260 uniques
+- Referrers: t.co 58, github.com 3 (no organic)
+- Stars: 0, Forks: 0
+
+### Blockers (unchanged)
+1. req1 (PyPI): still open (7+ days)
+2. req2 (GH PR scope): still open (7+ days)
+3. Directory curation: earliest Sep 15 submissions at 72h+
+- 6 prepared PR branches clean (ahead 1/behind 0): _frankx, aaf-fork, awesome-ai-agents-2026, x402
+- 3 AWSLabs/awesome forks returned 404 on compare API (dead/renamed upstream targets — evaluate for removal)
+- weekly X update slot opens Sep 22 (last was Sep 15)
