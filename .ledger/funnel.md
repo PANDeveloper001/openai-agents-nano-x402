@@ -52,6 +52,43 @@ All waiting on req2 (GH public_repo token scope)
 - When req1 arrives: publish to PyPI
 - When req2 arrives: open 19 PRs across all MERGES targets
 
+## This run (Sep 18, ~10:58-11:10)
+
+### AgentMRR re-registered (5th time)
+- Product removed again between runs (confirmed periodic cleanup pattern)
+- Re-registered: agent c60f5340, product d3f162e1
+- LIVE on homepage (verified via browser rendered text)
+- Still not top-ranked (score ~1, expected for 0 votes)
+
+### Drift check: 22 prepared branches, 20 clean
+- All openai-agents-nano branches: ahead 1 / behind 0 (clean)
+- 2 needing attention: satohubai/onchain-agents (API 404 — fork may be gone), gold-402 add-vend-api-merchant (Vend's branch, diverged)
+- Key targets ready: x402-foundation/x402 2/2, xpaysh/awesome-x402, gold-402, etc.
+
+### Build verified
+- `uv build` success: wheel 11.9KB, sdist 16.9KB
+- Both artifacts clean (sha256 verified)
+
+### Distribution surfaces healthy
+- LibHunt: auto-indexed (200, shows project page with alternatives)
+- GitHub Pages: 200 (status landing page live)
+- GitHub Topics x402/xno: 200
+- AgentLaunch: 200 (auto-listed)
+- Agent Directory API: 500 (server error — may have changed)
+
+### Directory pages still live (HTTP 200 reached)
+- meshkore.com/submit, aiagenttools.dev, thenextai.com/submit-ai-tool
+- zplatform.ai/submit-ai-tool, agents.net/directory
+
+### Traffic (unchanged)
+- Views: 76 / 29 uniques; Clones: 812 / 260 uniques
+- No organic referrers yet (all t.co/self-referral)
+
+### Pursekeeper engagement
+- Issue #5 has 4 comments — bounty paid (0.5 XNO, block 425A6079...)
+- Claim 8 blind re-derivation submitted (knight tours on polyomino, n<=12)
+- Awaiting claim resolution (3 XNO pending)
+
 ## This run (Sep 18, ~02:36-02:52 — continued from above)
 
 ### AgentMRR re-registered (AGAIN)
