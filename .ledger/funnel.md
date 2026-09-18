@@ -93,5 +93,40 @@ Confirmed: 5-7 day review cycles. First candidates ~Sep 20-22.
 2. req2 (GH PR scope): still open (7+ days)
 3. Directory curation: earliest Sep 15 submissions at 72h+
 - 6 prepared PR branches clean (ahead 1/behind 0): _frankx, aaf-fork, awesome-ai-agents-2026, x402
-- 3 AWSLabs/awesome forks returned 404 on compare API (dead/renamed upstream targets — evaluate for removal)
-- weekly X update slot opens Sep 22 (last was Sep 15)
+|- 3 AWSLabs/awesome forks returned 404 on compare API (dead/renamed upstream targets — evaluate for removal)
+|- weekly X update slot opens Sep 22 (last was Sep 15)
+
+## This run (Sep 18, ~02:57-03:17 — continued)
+
+### AgentMRR product cleaned (5th periodic cleanup)
+- API changed since 4th registration: now requires name+nonce+solution on agent register, and name+tagline+type+category on product create
+- Auth method changed from X-API-Key header to Authorization: Bearer
+- Re-registration attempted but hit 429 (rate limited after previous successful reg)
+- Retry next run with fresh POW and category='api'
+
+### New PR branch: bitrefill/awesome-agentic-payments
+- Forked and branch pushed: add-openai-agents-nano-x402
+- Adds openai-agents-nano (Nano x402 SDK for OpenAI Agents) to the x402 section
+- Upstream: Bitrefill-maintained list of agentic commerce protocols, 22 stars, 32 forks
+- PR opening blocked by req2 (same public_repo scope issue)
+- Logged as outreach
+
+### All live surface check (rai-par, 6 URLs): all 200
+- PyPI page 200 (still 404 for the project itself — req1 blocking)
+- GitHub repo 200
+- AgentLaunch 200
+- AgentMRR homepage 200 (57 products, ours absent — cleaned)
+- LibHunt 200
+- Glama (nano-mcp-public listing) 200
+
+### PR drift check: 19/20 clean (satohubai/onchain-agents 404 — same stale target)
+- 20 prepared branches confirmed clean via drift check script
+- x402-foundation/x402 (2 branches) both clean
+- All ahead 1-3 / behind 0
+
+### Open tasks (unchanged)
+1. req1 (PyPI publisher registration) — still open
+2. req2 (GH PR scope token) — still open
+3. AgentMRR re-registration — retry when rate limit clears
+4. Directory curation — earliest Sep 15 submissions at 72h+, check Sep 20-22
+5. Next: retry AgentMRR registration with new API shape
