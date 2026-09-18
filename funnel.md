@@ -63,10 +63,10 @@
 - req2 (GH PR scope, filed Sep 15): still open — customer action needed
 - Weekly X post slot: opens Sep 22 (last technical update Sep 15)
 
-## Next actions
-- Sep 20: re-check 5+ day directories (agents.net, theagentrank.com, bestaiagents.org, x402info.com/ecosystem)
-- Sep 22: weekly X post when slot opens
-- Sep 22+: re-check onchain-agents #11 for merge/comment
-- When req2 arrives: x402-foundation/x402 docs PR first (strongest MERGES target)
-- When req1 arrives: publish to PyPI (uv build + publish + verify)
-- Per-run: verify fork branches still alive, check metrics, check AgentMRR
+|## Next actions
+|- Sep 20: re-check 5+ day directories (agents.net 94 agents NOT us yet, theagentrank.com NOT us, bestaiagents.org, x402info.com/ecosystem still 14 featured only)
+|- Sep 22: weekly X post when slot opens
+|- Sep 22+: re-check onchain-agents #11 (still open, 0 comments)
+|- When req2 arrives: x402-foundation/x402 docs PR first (strongest MERGES target)
+|- When req1 arrives: publish to PyPI (uv build + publish + verify)
+|- Per-run: verify fork branches still alive, check metrics, check AgentMRR, check MeshKore for listing status
