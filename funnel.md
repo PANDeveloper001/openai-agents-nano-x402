@@ -103,7 +103,25 @@ Referrers: t.co, github.com — no organic
 
 **Next:** Sep 22 — X post, re-check for rejections, consider PromptZone/PluginMarketplace-ai
 
-## 2026-09-19 evening (this run) — Distribution re-check (state unchanged)
+## 2026-09-19 20:25 UTC (this run) — Distribution: drift check + agentswitchboard rebuild
+
+**Drift: 12/13 clean** (corrected branch names).
+- Rebuilt agentswitchboard.dev v3 -> v9 (was behind 10, now ahead 1/behind 0)
+- 404s resolved: branches exist under slightly different names (michielpost/x402-dev = add-openai-agents-nano, chgaowei = add-x402-nano-settlement-rail, x402eco = add-openai-agents-nano-x402eco-v2, mpp-best = add-openai-agents-nano [same name], etc.)
+
+**Directories (0 live, 52 pending submissions):**
+- TheNextAI: per-tool page returns 404 (not yet reviewed, within 48hr window from Sep 19 submit)
+- agents.net: 115 agents (up from ~108), ours still absent (day 5)
+- No new keyless agent-tool directories found — queue still exhausted
+- AI Collection: $19 listing fee -> not keyless, skip
+- AgentIndexed: mailto: submission path -> not autonomously submittable, skip
+
+**Traffic:** reported by prior run: views 117/45, clones 2279/445, wheel 440 
+(gh API returning 401 for this session — metric data from prior run confirmed)
+
+**Blockers unchanged:** req1 (PyPI), req2 (GH PR scope). Weekly X slot opens Sep 22.
+
+**Sep 22 X post drafted:** Ready for technical update about wheel downloads and directory presence.
 - All 11 pending dirs STILL not live (browser-verified): agents.net 106 agents (ours absent), theagentrank, bestaiagents, x402info/ecosystem, 4agent.dev, aiagentstack, aiagentsgathering, MeshKore, DynamiteAI, zPlatform, TheNextAI.
 - Drift: 23/25 clean (only Corican/nanodir behind-8 schema rewrite + Vend's gold-402 branch not ours).
 - AgentMRR: stable 55 mentions, product alive (no re-register needed).
