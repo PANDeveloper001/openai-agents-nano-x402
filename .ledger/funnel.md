@@ -164,3 +164,8 @@ bestaiagents, x402info/ecosystem, aiagentcensus, AiAgents.Directory, MeshKore, S
 all HTTP 200 but do not name the project. Day 5-7; human-curated review cycles.
 
 **PR branches:** 23/25 clean (drift_all). req2 still 403 on POST /repos/<up>/pulls (verified this run).
+
+**Correction (this run):** a `rai-distribution log --kind listing_submitted --url https://submitmap.com --note probe`
+row was created while probing whether that submit URL was already recorded. SubmitMap is a META-directory (a
+finder for other directories), not a listing target, so that row is misfiled and must not be counted as a
+submission. The honest record for submitmap.com is the older `docs` row (qualify_project evaluation).
