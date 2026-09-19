@@ -15,13 +15,13 @@
 - Topics: 12 (x402, nano, xno, payments, micropayments, ai-payments, openai-agents-sdk, openai-agents, python, agent-ai, agent-economy, ai-agent)
 
 ## AgentMRR
-- Product still active (id 32e89ac0, status active — survived between runs)
-- No re-registration needed this time
+- Product was REMOVED between sessions (id 32e89ac0 -> "Product not found"). Re-REGISTERED this run (new id 0c21198a, 53 mentions on homepage).
+- NOTE: AgentMRR continues to expire products between runs. MUST re-check and re-register each run.
 
-## Directories re-checked (Sep 20, all 11 still pending — day 6-8)
+## Directories re-checked (Sep 19 16:4x, all 11 still pending — day 4-8)
 - [LIVE] GitHub topics — 12 topics, repo on /topics/xno page 3
 - [LIVE] agents-launch.lovable.app, libhunt.com — auto-indexed
-- [LOST] nanodirectory.info — previously live, now NOT listed (schema rewrite removed our entry)
+- [LOST] nanodirectory.info — directory.json STILL contains our entry (verified in full JSON), but the site no longer renders individual projects (schema rewrite in progress — item arrays empty, no card on homepage, no per-project page). Effectively not live as a visible listing this run.
 - [LOST] AgentMRR — active but no per-product page; only tracked via API
 - All 11 pending directories still NOT listing us (browser-checked JS-rendered):
   - agents.net (day 8) — 98+ agents, 22 x402 mentions (others), ours not found
