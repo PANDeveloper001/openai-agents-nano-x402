@@ -1,8 +1,8 @@
-# openai-agents-nano-x402 funnel (2026-09-20 00:25 UTC)
+# openai-agents-nano-x402 funnel (2026-09-19 10:30 UTC)
 
 ## Package
-- GitHub release downloads: **343 total** (wheel 336, sdist 7 — wheel +6 from Sep 18)
-- PyPI: /pypi/openai-agents-nano/json -> 404 (NOT live — req1 still open on day 7)
+- GitHub release downloads: **377 total** (wheel 377, sdist 7 — wheel +34 from Sep 18, sdist flat)
+- PyPI: /pypi/openai-agents-nano/json -> 404 (NOT live — req1 still open on day 8)
 - pip install path: git+https://github.com/PANDeveloper001/openai-agents-nano-x402@v0.1.0
 - Wheel + sdist built and ready in dist/ (last build Sep 18)
 
@@ -106,6 +106,18 @@ HTML). Product id API needs auth now, but the render is real.
 - agents.one/submit-agent — requires account signup, NOT keyless.
 - WorthToTry — host-level dedup permits only non-GitHub-hosted tools; rewritten to confirm SKIP.
 - gigs.sh — earn-platform directory (agent task marketplaces), not a client-SDK fit.
+
+## 2026-09-19 ~10:30 UTC — Distribution run (this session)
+
+**Drift (prepared_pr_drift_all.py):** 23/25 clean, 2 needing attention (nanodir behind 8 — schema rewrite, gold-402 vend-api diverged 1 — not ours). x402 branches all pushed and matched.
+
+**One-click PR links verified 200 signed-out:** 20 clean upstream compare URLs, all ahead 1/behind 0. x402-foundation/x402 has 3 branches (extension-v1, v10, specs-v3) — strongest MERGES target.
+
+**Live surfaces healthy:** AgentMRR 200, release wheel 377 (+34 since last check), PyPI still 404 (req1 day 8).
+
+**curlship.com/api/submit:** Host-level dedup (github.com umbrella listing exists, listing_id 2061) — same blocker as WorthToTry. No self-owned domain means submission blocked.
+
+**No new keyless agent-tool directories found** — all previous targets already submitted or evaluated not-fit. Queue is exhausted until Sep 20-22 when first batch of pending dirs may approve.
 
 ## 2026-09-19 ~08:02 UTC — Nightly crawler
 
