@@ -79,3 +79,35 @@
 - When req1 resolves: PyPI publish (workflow ready, OIDC proven)
 - When req2 resolves: awesome-x402 PR first, then x402 docs, then ai-agent-marketplace
 - Per-run: drift check on high-movement targets (x402-foundation, gold-402, awesome-agents)
+## 2026-09-21 (run) — Distribution check
+
+**Directories (11 pending, 0 live):**
+- agents.net (day 9) — 106 agents, NOT listed
+- theagentrank.com (day 9) — NOT listed
+- bestaiagents.org (day 8) — NOT listed
+- x402info.com/ecosystem (day 8) — 14 featured only, not showing
+- thenextai.com (day 8) — NOT live
+- zplatform.ai (day 8) — NOT live
+- 4agent.dev (day 6) — NOT live (draft counter increments but no public page)
+- aiagentstack.directory (day 2) — NOT live yet
+- aiagentsgathering.ai (day 2) — NOT live
+- MeshKore (was submitted days ago) — NOT live
+- DynamiteAI — NOT live
+
+**Drift: 22/25 clean**, onchain-agents v3 rebuilt (was diverged 1/1, now ahead 1/0)
+
+**Traffic:** views 117/45 (flat), clones 2279/445 (flat), wheel 440 (+3/3d)
+Referrers: t.co, github.com — no organic
+
+**Blockers:** req1 day 10, req2 day 10. Weekly X slot opens Sep 22.
+
+**Next:** Sep 22 — X post, re-check for rejections, consider PromptZone/PluginMarketplace-ai
+
+## 2026-09-19 evening (this run) — Distribution re-check (state unchanged)
+- All 11 pending dirs STILL not live (browser-verified): agents.net 106 agents (ours absent), theagentrank, bestaiagents, x402info/ecosystem, 4agent.dev, aiagentstack, aiagentsgathering, MeshKore, DynamiteAI, zPlatform, TheNextAI.
+- Drift: 23/25 clean (only Corican/nanodir behind-8 schema rewrite + Vend's gold-402 branch not ours).
+- AgentMRR: stable 55 mentions, product alive (no re-register needed).
+- Agent Directory API: 2 live auto-approved entries (openai-agents-nano + openai-agents-nano-x402).
+- Traffic: 117/45 views, 2279/445 clones, wheel 440 (+0 since Sep 21), no organic referrers.
+- Newly-scanned: clihunt.dev (account-gated), makers.page (requires quote-tweet launch — not a fit), LaunchLlama (account-gated), SubmitMap ready-list still only 3 indie non-fits. No new keyless agent-tool surface found.
+- Blockers: req1 (PyPI) + req2 (GH PR scope) both day 10. Weekly X slot opens Sep 22.
