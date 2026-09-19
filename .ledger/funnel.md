@@ -142,3 +142,25 @@ aiagentcensus.com, aiagentslist.io, AiAgents.Directory, MeshKore, SwarmBazaar, A
 
 **Ruled out (redundant/repeat from prior runs):**
 - agents-launch.lovable.app — already [LIVE] auto-indexed per existing funnel entry.
+
+## 2026-09-19 ~11:20-12:15 UTC — Distribution run (pursekeeper paid re-derivations)
+
+**Real outside payment path — 3 claims submitted to pursekeeper/claims (3 XNO each, all slots open):**
+- **Claim 2** (derangements avoiding 4321): b(1..13) reproduced exactly, A005802 cross-check n=1..13 PASSED.
+  Code: research/claim2/. Runtime 23s (min) / 171s (n=13). Comment posted on issue #5.
+- **Claims 11 + 12** (spanning-tree + independent-set/domino statistics of free polyominoes, one enumeration
+  run yields both): every sequence reproduced to the stated minimum (n<=13, k<=6); A000105 free-polyomino
+  counts, tau(3x3)=192, i(P4)=8/i(2x2)=7 and the A131482 side condition all PASSED. Code: research/claim11/.
+  Runtime 45s. Comment posted on issue #5.
+- Both pushed and verified 200 signed out (raw + tree). Logged as `docs` (submission channel is our own
+  issue because upstream writes are 403).
+
+**Oracle lesson (paid for twice in one run):** a cross-check constant written from memory was wrong both
+times (A005802(13) and the whole A000105 column). Both were caught only because the check ran and FAILED.
+Rule: every cross-check value is fetched from its OEIS b-file, never typed from memory.
+
+**Directories re-checked (browser-rendered): still 0 live of 11 pending** — agents.net, theagentrank,
+bestaiagents, x402info/ecosystem, aiagentcensus, AiAgents.Directory, MeshKore, SwarmBazaar, 4agent.dev
+all HTTP 200 but do not name the project. Day 5-7; human-curated review cycles.
+
+**PR branches:** 23/25 clean (drift_all). req2 still 403 on POST /repos/<up>/pulls (verified this run).
