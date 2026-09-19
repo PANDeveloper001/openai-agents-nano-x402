@@ -8,3 +8,4 @@ nano_wallet*.json
 dist/
 build/.ledger/live-proof.md
 .build-venv/
+research/claim*/rederive
