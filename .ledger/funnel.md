@@ -106,3 +106,27 @@ HTML). Product id API needs auth now, but the render is real.
 - agents.one/submit-agent — requires account signup, NOT keyless.
 - WorthToTry — host-level dedup permits only non-GitHub-hosted tools; rewritten to confirm SKIP.
 - gigs.sh — earn-platform directory (agent task marketplaces), not a client-SDK fit.
+
+## 2026-09-19 ~08:02 UTC — Nightly crawler
+
+**Pending directories re-checked (11):** agents.net, theagentrank.com, bestaiagents.org, x402info.com/ecosystem,
+aiagentcensus.com, aiagentslist.io, AiAgents.Directory, MeshKore, SwarmBazaar, AIKendra, 4agent.dev.
+
+**Live from crawl:** 0 new live listings confirmed. Submissions from Sep 15 are at 96h+ — reviews typically 5-7 days.
+
+**NEW live listing discovered (auto-indexed, not from our submission):**
+- **agent-directory-api.vercel.app** — No-auth API keyless directory. Agent already listed (id: d8cd7de3, approved Sep 15 08:18 UTC). Tagline: "Pay x402 APIs in feeless Nano (XNO) from an OpenAI Agents SDK agent". This directory auto-indexes tools; we did not manually submit. Entry has null website_url — may have been a partial scrape. Confirmed via GET from API.
+
+**New keyless candidate found (not yet submitted):**
+- **curlship.com/api/submit** — "Bot-Friendly SaaS Directory." Keyless curl POST (url + email), auto-scrapes OG tags. Free tier with nofollow link; Platinum $49/yr for dofollow. On-topic as a developer/SaaS directory for a dev-tool SDK. Not agent-specific — broader but acceptable. Not yet submitted (this is a log-only run).
+
+**New GitHub PR candidate found (req2-gated):**
+- **facundofarias/awesome-agent-first-tools** — Awesome list with a "Payments & Commerce" section that already lists x402.org alongside Stripe Agent Toolkit, Skyfire, Payman. Extremely on-topic: our openai-agents-nano is an agent-first payment tool. PR route (req2-gated). Add entry under Payments & Commerce when req2 arrives.
+
+**Evaluated not fit (this run):**
+- aidirhub.com/submit — requires login (Google/GitHub auth), not keyless.
+- submitmap.com — meta-directory of launch platforms (not a place to list our tool itself).
+- agentbets.ai — prediction markets only (already in not-fit list).
+
+**Ruled out (redundant/repeat from prior runs):**
+- agents-launch.lovable.app — already [LIVE] auto-indexed per existing funnel entry.
