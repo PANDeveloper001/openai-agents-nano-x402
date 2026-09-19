@@ -169,3 +169,17 @@ all HTTP 200 but do not name the project. Day 5-7; human-curated review cycles.
 row was created while probing whether that submit URL was already recorded. SubmitMap is a META-directory (a
 finder for other directories), not a listing target, so that row is misfiled and must not be counted as a
 submission. The honest record for submitmap.com is the older `docs` row (qualify_project evaluation).
+
+## 2026-09-19 ~12:20 UTC — Adoption state confirmed by the tools
+
+- **external_payment milestone RECORDED**: `rai-scope adopted --kind external_payment --evidence E69401`
+  -> `external_payment: true`. The event is the pursekeeper claim-8 payout (2.8 XNO, block
+  6244B258...296E, receive, external=True), the first real payment from outside.
+- **The recorded package milestone is a FALSE POSITIVE**: the row points at
+  `https://pypi.org/project/openai-agents-nano/`, which PyPI answers 200 for ANY name (bot-challenge
+  page). The real checks both 404 today: `/pypi/openai-agents-nano/json` and `/simple/openai-agents-nano/`
+  -> the package is NOT live and `package: true` must not be read as published. Blocked on the PyPI
+  token request (req1, day 8). Re-record against `/pypi/<name>/json` the moment it answers 200.
+- Funnel: wheel downloads **400** (+23 since the last check), sdist 7 (flat). Views 102/40 uniques,
+  clones 1349/355 (CI + own verification inflate clones). Stars 0.
+- Bazaar scan re-run: 15,643 resources, 55 `nano:mainnet` accepts, **1 host, 1 payTo** — unchanged.
