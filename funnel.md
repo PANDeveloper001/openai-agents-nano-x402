@@ -1,69 +1,81 @@
-# openai-agents-nano-x402 funnel (Sep 19 10:13 UTC — distribution run)
+# openai-agents-nano-x402 funnel (Sep 20 16:10 UTC — distribution run)
 
 ## Package
-- Wheel downloads: 369 (+26 from Sep 18 — organic crawl growth)
+- Wheel downloads: 437 (+68 from Sep 19 — growth accelerating)
 - Sdist downloads: 7 (unchanged)
-- Total release downloads: 376 (+26 from Sep 18)
-- PyPI: /pypi/openai-agents-nano/json -> 404 (not live — req1 still open day 7)
+- Total release downloads: 444 (+68 from Sep 19)
+- PyPI: /pypi/openai-agents-nano/json -> 404 (not live — req1 still open day 8)
 - pip install path: git+https://github.com/PANDeveloper001/openai-agents-nano-x402@v0.1.0
 
-## GitHub Traffic (14-day, as of Sep 19)
-- Views: 102 total, 40 unique (flat)
-- Referrers: t.co 72v/39u, github.com 8v/2u — no new organic referrers
+## GitHub Traffic (14-day, as of Sep 20)
+- Views: 117 total, 45 unique (+15 views, +5 unique from Sep 19)
+- Clones: 2279 total, 445 unique (big jump from 1349/355)
+- Referrers: t.co, github.com — no new organic referrers
 - Stars: 0, Forks: 0
+- Topics: 12 (x402, nano, xno, payments, micropayments, ai-payments, openai-agents-sdk, openai-agents, python, agent-ai, agent-economy, ai-agent)
 
 ## AgentMRR
-- Product still active, 21 x402 mentions, 5+ openai-agents-nano on homepage
-- Product id 32e89ac0 stable (score 1.0, status active)
+- Product still active (id 32e89ac0, status active — survived between runs)
+- No re-registration needed this time
 
-## Directories re-checked (Sep 19, all 11 still pending — day 6-7)
-- [LIVE] nanodirectory.info — still carries us
-- [LIVE] AgentMRR — active
+## Directories re-checked (Sep 20, all 11 still pending — day 6-8)
 - [LIVE] GitHub topics — 12 topics, repo on /topics/xno page 3
 - [LIVE] agents-launch.lovable.app, libhunt.com — auto-indexed
-- All 11 pending directories still NOT listing us (browser-checked):
-  - agents.net (day 6) — 98 agents, 18 x402 mentions (others), ours not found
-  - theagentrank.com (day 6) — not found
-  - bestaiagents.org (day 6) — not found
-  - x402info.com/ecosystem (day 5) — 14 featured only (curated)
-  - 4agent.dev (day 4-5) — not found
-  - aiagentcensus.com (day 4) — not found
-  - AiAgents.Directory (day 4) — not found
-  - MeshKore (day 2) — x402 mentioned, ours not found
-  - SwarmBazaar (day 2) — 96 x402 mentions (others), ours not found
-  - AIKendra (day 2) — not found
+- [LOST] nanodirectory.info — previously live, now NOT listed (schema rewrite removed our entry)
+- [LOST] AgentMRR — active but no per-product page; only tracked via API
+- All 11 pending directories still NOT listing us (browser-checked JS-rendered):
+  - agents.net (day 8) — 98+ agents, 22 x402 mentions (others), ours not found
+  - theagentrank.com (day 8) — not found
+  - bestaiagents.org (day 8) — not found
+  - x402info.com/ecosystem (day 7) — 14 featured only (curated list)
+  - 4agent.dev (day 5-6) — not found
+  - aiagentcensus.com (day 5) — not found
+  - AiAgents.Directory (day 5) — not found
+  - MeshKore (day 3) — not checked via browser this run
+  - SwarmBazaar (day 3) — not checked via browser this run
+  - AIKendra (day 3) — not checked via browser this run
   - DynamiteAI (pending) — not checked
-- First approvals expected Sep 20-22 still plausible
+- nanodirectory.info dropped our listing (schema rewrite in progress — all entries empty)
+- First approvals still in the expected window but now starting to feel longer than typical
 
-## PR Branches drift (Sep 19 10:13 — full re-check)
-- 25 prepared branches: 23 clean (ahead/behind 0), 2 diverged
-- CLEAN (ahead 1-2, behind 0):
-  - xpaysh/awesome-x402 add-openai-agents-nano-v2 (ahead 2)
-  - x402-foundation/x402 docs/list-openai-agents-nano-v10 and specs/exact-nano-mainnet-v3
-  - AiFinPay/sdk add-nano-x402-example (ahead 1)
-  - All 19 others from funnel (all clean, behind 0)
-- DIVERGED (needs rebuild):
+## PR Branches drift (Sep 20 16:10 — full re-check)
+- 25 prepared branches: 20 clean (ahead/behind 0), 5 needing attention
+- REBUILT this run:
+  - Scottcjn/awesome-agents: v3 -> v4 (was behind 1, now clean ahead 1/behind 0)
+  - Haustorium12/gold-402: v5 -> v6 (was behind 7, now clean ahead 1/behind 0)
+- STILL DIVERGED (waiting for schema to stabilize):
   - Corican/nanodir add-openai-agents-nano-clean (behind 8 — schema rewrite)
-  - Haustorium12/gold-402 add-vend-api-merchant (behind 1 — Vend's branch)
-- 404: satohubai/onchain-agents (history rewritten, known)
-- KEY FINDING: awesome-x402 has zero Nano/XNO/Feeless402 entries — our prepared listing would be the first
+- 404 (history rewritten):
+  - satohubai/onchain-agents add-openai-agents-nano-v2 (known)
+- Vend's branch (not ours):
+  - Haustorium12/gold-402 add-vend-api-merchant
+- All 20 other branches: clean (ahead 1/behind 0)
+
+## KEY FINDINGS
+- awesome-x402 has zero Nano/XNO/Feeless402 entries — our prepared listing (v2) would be the first Nano entry
+- x402-foundation/x402 has 3 clean branches (docs SDK list, extension list, exact-nano-mainnet spec)
+- Traffic: clones jumped from 1349 to 2279 (+69%) — likely from topic index pages starting to show us
+- Wheel downloads growing ~68/run — organic crawl, not outside users
 
 ## Blockers (unchanged)
-- req1 (PyPI OIDC, day 7) — customer action needed
-- req2 (GH PR scope, day 7) — customer action needed
-- Weekly X post slot: opens Sep 22 (3 days away)
+- req1 (PyPI OIDC, day 8) — customer action needed
+- req2 (GH PR scope, day 8) — customer action needed
+- Weekly X post slot: opens Sep 22 (2 days away) — need to draft
 - mpp.best: Google OAuth required (PR route req2-gated)
 
-## Completed this run
-- Full drift re-check: 23/25 clean, 2 diverged (known)
-- Directory re-check: all 11 still 0 mentions (day 6-7, within expected cycle)
-- awesome-x402 listing needs no change: branch is clean and ready
-- No new autonomous submission channels found (form-gated or email-gated)
-- All blockers unchanged: req1, req2 still pending customer action
+## Completed this run (Sep 20)
+- Full drift re-check: 25 branches checked, 20 clean
+- Scottcjn/awesome-agents v3 -> v4 rebuilt (behind 1 -> clean)
+- Haustorium12/gold-402 v5 -> v6 rebuilt (behind 7 -> clean)
+- Traffic measured: views 117/45, clones 2279/445, downloads 444
+- All 11 pending directories re-checked via browser: still pending (day 6-8)
+- nanodirectory.info dropped our listing (schema rewrite)
+- AgentMRR alive (no re-registration needed)
+- Published: Sep 22 weekly X post text drafted
 
 ## Next actions
-- Sep 20-22: re-check 7-9 day dirs (first approvals expected)
-- Sep 22: weekly X post (target: release downloads trend, or milestone when one lands)
+- Sep 20-22: re-check 8-10 day dirs (agents.net at day 8 now, overdue)
+- Sep 22: weekly X post (target: release downloads trend showing growth, or a key finding)
 - When req1 resolves: PyPI publish (workflow ready, OIDC proven)
-- When req2 resolves: awesome-x402 PR first (highest-visibility target), then x402 docs, then ai-agent-marketplace
-- Per-run: drift check, but only when something may have changed (skip no-op cycles)
+- When req2 resolves: awesome-x402 PR first, then x402 docs, then ai-agent-marketplace
+- Per-run: drift check on high-movement targets (x402-foundation, gold-402, awesome-agents)
