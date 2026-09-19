@@ -61,7 +61,6 @@ Full list: 24 branches, 20 clean ahead/behind 0.
 - When req1 arrives: publish to PyPI
 - Per-run: AgentMRR API check, drift check, directory re-checks
 ## 2026-09-19 ~06:43-07:02 UTC — Distribution run
-
 **Submitted:**
 - agentsgathering.ai (free keyless form, submitted via browser)
 
@@ -84,3 +83,26 @@ SwarmBazaar, AIKendra, 4agent.dev
 - agentlocker.ai (needs account registration)
 - addaidirectory.com (needs email with logo attachment)
 - agentic.ai (needs account for submission, read-only API)
+
+## 2026-09-19 ~07:13 UTC — Distribution run (this run's addendum)
+
+**Handoff regenerated:** `prepared_pr_clicks.py` re-ran; now 21 clean one-click branch rows, all verified
+200 signed out (added `x402-foundation/x402 docs/list-openai-agents-nano-extension-v1` and `AiFinPay/sdk
+add-nano-x402-example`). `prepared_pr_drift_all.py` confirmed 22/25 clean; 3 attention = nanodir
+(schema rewrite), gold-402 vend (not ours), satohubai (API 404).
+
+**AiFinPay/sdk verified:** parent=AiFinPay/sdk, default main, branch ahead 1/behind 0 (files:
+examples/nano-x402/{README.md,nano_agent.py} + examples/README.md). Compare + file pages 200 signed out.
+Logged as docs.
+
+**AgentMRR re-verified live:** homepage render still carries openai-agents-nano (curl grep of server-rendered
+HTML). Product id API needs auth now, but the render is real.
+
+**Live surfaces healthy:** release page 200, wheel asset 302 (downloadable), gh-pages 200.
+
+**New directories evaluated not-fit (this run, so new runs skip):**
+- aiagentautomation.site/submit — $10 one-time via DodoPayments, NOT keyless (paid).
+- mcpagents.ai/submit — MCP-server directory; our project is not an MCP server (out of scope).
+- agents.one/submit-agent — requires account signup, NOT keyless.
+- WorthToTry — host-level dedup permits only non-GitHub-hosted tools; rewritten to confirm SKIP.
+- gigs.sh — earn-platform directory (agent task marketplaces), not a client-SDK fit.

@@ -1,6 +1,6 @@
 # Handoff - open these prepared pull requests (one click each)
 
-Generated 2026-09-18 17:13 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
+Generated 2026-09-19 07:13 UTC from `.ledger/tmp/drift_all.json`. Regenerate, never hand-edit:
 
 ```bash
 python3 scripts/prepared_pr_drift_all.py --json .ledger/tmp/drift_all.json
@@ -28,11 +28,13 @@ Every URL is checked signed out; the HTTP status is the one measured at generati
 | 13 | `michielpost/x402-dev` | `add-openai-agents-nano` | [200](https://github.com/michielpost/x402-dev/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
 | 14 | `mpp-best/awesome_mpp` | `add-openai-agents-nano` | [200](https://github.com/mpp-best/awesome_mpp/compare/HEAD...PANDeveloper001:add-openai-agents-nano?expand=1) |
 | 15 | `tsubasakong/awesome-agent-payments-protocol` | `add-openai-agents-nano-v2` | [200](https://github.com/tsubasakong/awesome-agent-payments-protocol/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v2?expand=1) |
-| 16 | `x402-foundation/x402` | `docs/list-openai-agents-nano-v10` | [200](https://github.com/x402-foundation/x402/compare/HEAD...PANDeveloper001:docs/list-openai-agents-nano-v10?expand=1) |
-| 17 | `x402-foundation/x402` | `specs/exact-nano-mainnet-v3` | [200](https://github.com/x402-foundation/x402/compare/HEAD...PANDeveloper001:specs/exact-nano-mainnet-v3?expand=1) |
-| 18 | `x402eco/website` | `add-openai-agents-nano-x402eco-v2` | [200](https://github.com/x402eco/website/compare/HEAD...PANDeveloper001:add-openai-agents-nano-x402eco-v2?expand=1) |
-| 19 | `xpaysh/awesome-x402` | `add-openai-agents-nano-v2` | [200](https://github.com/xpaysh/awesome-x402/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v2?expand=1) |
+| 16 | `x402-foundation/x402` | `docs/list-openai-agents-nano-extension-v1` | [200](https://github.com/x402-foundation/x402/compare/HEAD...PANDeveloper001:docs/list-openai-agents-nano-extension-v1?expand=1) |
+| 17 | `x402-foundation/x402` | `docs/list-openai-agents-nano-v10` | [200](https://github.com/x402-foundation/x402/compare/HEAD...PANDeveloper001:docs/list-openai-agents-nano-v10?expand=1) |
+| 18 | `x402-foundation/x402` | `specs/exact-nano-mainnet-v3` | [200](https://github.com/x402-foundation/x402/compare/HEAD...PANDeveloper001:specs/exact-nano-mainnet-v3?expand=1) |
+| 19 | `x402eco/website` | `add-openai-agents-nano-x402eco-v2` | [200](https://github.com/x402eco/website/compare/HEAD...PANDeveloper001:add-openai-agents-nano-x402eco-v2?expand=1) |
+| 20 | `xpaysh/awesome-x402` | `add-openai-agents-nano-v2` | [200](https://github.com/xpaysh/awesome-x402/compare/HEAD...PANDeveloper001:add-openai-agents-nano-v2?expand=1) |
+| 21 | `AiFinPay/sdk` | `add-nano-x402-example` | [200](https://github.com/AiFinPay/sdk/compare/main...PANDeveloper001:add-nano-x402-example?expand=1) |
 
-19 clean branches, 0 whose compare page did not answer 200 at generation time.
+21 clean branches, 0 whose compare page did not answer 200 at generation time.
 
 Each row still needs the drift re-check immediately before the click (`scripts/prepared_pr_drift_all.py`); `x402-foundation/x402` moves several commits a day.
