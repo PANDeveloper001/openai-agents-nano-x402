@@ -38,9 +38,9 @@ jobs:
       - name: Import and smoke-test the installed package
         run: |
           python3 -c "
-from openai_agents_nano import make_nano_x402_tool, NanoX402ToolError
-print(f'make_nano_x402_tool loaded: {make_nano_x402_tool}')
-print(f'NanoX402ToolError loaded: {NanoX402ToolError}')
+          from openai_agents_nano import make_nano_x402_tool, NanoX402ToolError
+          print(f'make_nano_x402_tool loaded: {make_nano_x402_tool}')
+          print(f'NanoX402ToolError loaded: {NanoX402ToolError}')
           "
 
       - name: Run project test suite (editable install)
