@@ -60,3 +60,27 @@ Full list: 24 branches, 20 clean ahead/behind 0.
 - When req2 arrives: x402-foundation/x402 docs PR first (strongest MERGES target), then mpp-best/awesome_mpp, then ai-agent-marketplace, then agentswitchboard v5
 - When req1 arrives: publish to PyPI
 - Per-run: AgentMRR API check, drift check, directory re-checks
+## 2026-09-19 ~06:43-07:02 UTC — Distribution run
+
+**Submitted:**
+- agentsgathering.ai (free keyless form, submitted via browser)
+
+**Prepared (req2-gated):**
+- AiFinPay/sdk PR: Nano x402 example (examples/nano-x402/)
+  One-click: https://github.com/AiFinPay/sdk/compare/main...PANDeveloper001:add-nano-x402-example?expand=1
+
+**Drift (21/24 clean):**
+- satohubai/onchain-agents: API 404 (non-emergency)
+- Corican/nanodir: diverged (upstream schema rewrite)
+- Haustorium12/gold-402: vend branch diverged (not our project)
+
+**Pending directories (11, due Sep 20-22):**
+agents.net, theagentrank.com, bestaiagents.org, x402info.com/ecosystem,
+aiagentcensus.com, aiagentslist.io, AiAgents.Directory, MeshKore,
+SwarmBazaar, AIKendra, 4agent.dev
+
+**Evaluated (not fit or not autonomous):**
+- agentbets.ai (prediction markets only)
+- agentlocker.ai (needs account registration)
+- addaidirectory.com (needs email with logo attachment)
+- agentic.ai (needs account for submission, read-only API)
