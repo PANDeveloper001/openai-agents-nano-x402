@@ -1,6 +1,6 @@
 # Target health - does this repo actually merge?
 
-Generated 2026-09-19 10:40 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
+Generated 2026-09-19 11:01 UTC by `scripts/target_merge_rate.py` from each target's own closed-PR history.
 A prepared branch is worth a click only where the second column says MERGES.
 
 | target | verdict | merged/closed (3 months) | per month | stars | last push | branches |
@@ -22,7 +22,7 @@ A prepared branch is worth a click only where the second column says MERGES.
 | `e2b-dev/awesome-ai-sdks` | DEAD - no push in 71 days and merges stopped | 1/26 | 2026-09 0/4, 2026-08 0/13, 2026-07 1/9 | 1223 | 2026-07-09 | 1 |
 | `Merit-Systems/awesome-agentic-commerce` | BLACK HOLE - merges have stopped; a branch here stays open | 1/27 | 2026-09 0/3, 2026-08 0/12, 2026-07 1/12 | 149 | 2026-07-29 | 1 |
 | `bitrefill/awesome-agentic-payments` | DEAD - no push in 81 days and merges stopped | 0/20 | 2026-07 0/1, 2026-06 0/17, 2026-05 0/2 | 22 | 2026-06-29 | 1 |
-| `caramaschiHG/awesome-ai-agents-2026` | DEAD - no push in 100 days and merges stopped | 0/48 | 2026-09 0/13, 2026-08 0/16, 2026-07 0/19 | 1832 | 2026-06-10 | 1 |
+| `caramaschiHG/awesome-ai-agents-2026` | DEAD - no push in 100 days and merges stopped | 0/48 | 2026-09 0/13, 2026-08 0/16, 2026-07 0/19 | 1833 | 2026-06-10 | 1 |
 | `mbeato/awesome-mpp` | DEAD - no push in 140 days and merges stopped | 0/6 | 2026-08 0/2, 2026-07 0/2, 2026-06 0/2 | 21 | 2026-05-02 | 1 |
 | `mpp-best/awesome_mpp` | UNMEASURED - API calls failed; do NOT read this as 'no merges' | 0/0 |  | 0 | 2026-09-01 | 1 |
 | `x402eco/website` | DEAD - no push in 143 days and merges stopped | 0/4 | 2026-07 0/2, 2026-06 0/1, 2026-05 0/1 | 2 | 2026-04-28 | 1 |
